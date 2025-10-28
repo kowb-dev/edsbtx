@@ -33,3 +33,6 @@ yarn.lock
 # Артефакты сборки
 /build/
 /dist/
+
+.vscode/
+.vscode-server/
