@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Mobile Accordion Menu Component Styles
+   @version 1.4
+   @description Soft and modern accordion-style mobile menu with smooth animations
+   ========================================================================== */
+
+/* ==========================================================================
+   Mobile Accordion Menu Container
+   ========================================================================== */
+
+.edsys-mobile-accordion {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(22rem, 85vw);
+    height: 100vh;
+    background: var(--edsys-white);
+    z-index: 99999;
+    transition: right var(--edsys-transition-medium) var(--edsys-ease);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.edsys-mobile-accordion.active {
+    right: 0;
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Header
+   ========================================================================== */
+
+.edsys-mobile-accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xl) var(--space-lg);
+    background: linear-gradient(135deg, var(--edsys-bg-light) 0%, rgba(255, 255, 255, 0.8) 100%);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.edsys-mobile-accordion__header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: var(--space-lg);
+    right: var(--space-lg);
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--edsys-border) 50%, transparent 100%);
+}
+
+.edsys-mobile-accordion__title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-medium);
+    color: var(--edsys-text);
+    margin: 0;
+    letter-spacing: var(--edsys-tracking-tight);
+}
+
+.edsys-mobile-accordion__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--edsys-text);
+    cursor: pointer;
+    transition: all var(--edsys-transition);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+}
+
+.edsys-mobile-accordion__close:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-mobile-accordion__close i {
+    font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Navigation
+   ========================================================================== */
+
+.edsys-mobile-accordion__nav {
+    flex: 1;
+    padding: var(--space-md) 0;
+    overflow-y: auto;
+}
+
+.edsys-mobile-accordion__list {
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.edsys-mobile-accordion__item {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all var(--edsys-transition);
+}
+
+.edsys-mobile-accordion__item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.edsys-mobile-accordion__item--active {
+    background: var(--edsys-bg);
+    border-color: var(--edsys-chrome);
+    box-shadow: 0 2px 12px rgba(var(--edsys-primary-rgb), 0.15);
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Links (Simple)
+   ========================================================================== */
+
+.edsys-mobile-accordion__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-snug);
+    min-height: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.edsys-mobile-accordion__link:hover {
+    background: linear-gradient(135deg, var(--edsys-bg) 0%, rgba(255, 255, 255, 0.9) 100%);
+    color: var(--edsys-primary);
+}
+
+.edsys-mobile-accordion__link--active {
+    color: var(--edsys-primary);
+    font-weight: var(--edsys-font-semibold);
+    background: transparent;
+}
+
+.edsys-mobile-accordion__link--active::before {
+    content: '';
+    position: absolute;
+    left: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, var(--edsys-primary) 0%, rgba(var(--edsys-primary-rgb), 0.6) 100%);
+    border-radius: var(--radius-sm);
+}
+
+.edsys-mobile-accordion__link-text {
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: var(--edsys-tracking-wide);
+    font-weight: inherit;
+    font-size: var(--fs-sm);
+}
+
+.edsys-mobile-accordion__link i {
+    font-size: 1.125rem;
+    color: var(--edsys-text-muted);
+    transition: all var(--edsys-transition);
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.edsys-mobile-accordion__link:hover i {
+    color: var(--edsys-primary);
+    transform: translateX(0.25rem);
+    opacity: 1;
+}
+
+.edsys-mobile-accordion__link--active i {
+    color: var(--edsys-primary);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Accordion
+   ========================================================================== */
+
+.edsys-mobile-accordion__dropdown {
+    position: relative;
+}
+
+.edsys-mobile-accordion__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 var(--space-xl);
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--edsys-transition);
+    font-size: var(--fs-base);
+    color: var(--edsys-text);
+    min-height: 3.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.edsys-mobile-accordion__trigger .edsys-mobile-accordion__link-text {
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: var(--edsys-tracking-wide);
+    font-weight: inherit;
+    font-size: var(--fs-sm);
+}
+
+.edsys-mobile-accordion__icon {
+    font-size: 1.125rem;
+    color: var(--edsys-text-muted);
+    transition: all var(--edsys-transition);
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.edsys-mobile-accordion__trigger:hover .edsys-mobile-accordion__icon {
+    color: var(--edsys-primary);
+    opacity: 1;
+}
+
+.edsys-mobile-accordion__trigger--active .edsys-mobile-accordion__icon {
+    color: var(--edsys-primary);
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Submenu
+   ========================================================================== */
+
+.edsys-mobile-accordion__submenu {
+    background: rgba(255, 255, 255, 0.95);
+    overflow: hidden;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    max-height: 0;
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+.edsys-mobile-accordion__submenu-content {
+    padding: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-mobile-accordion__submenu-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+    transition: all var(--edsys-transition);
+    position: relative;
+    line-height: var(--edsys-lh-snug);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.edsys-mobile-accordion__submenu-link:hover {
+    background: linear-gradient(135deg, var(--edsys-bg) 0%, rgba(255, 255, 255, 0.95) 100%);
+    color: var(--edsys-primary);
+    transform: translateX(0.25rem);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.edsys-mobile-accordion__submenu-link--active {
+    color: var(--edsys-primary);
+    font-weight: var(--edsys-font-semibold);
+    background: linear-gradient(135deg, rgba(var(--edsys-primary-rgb), 0.1) 0%, rgba(var(--edsys-primary-rgb), 0.05) 100%);
+    border-color: rgba(var(--edsys-primary-rgb), 0.2);
+}
+
+.edsys-mobile-accordion__submenu-link--active::before {
+    content: '';
+    position: absolute;
+    left: var(--space-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 3px;
+    background: var(--edsys-primary);
+    border-radius: var(--radius-sm);
+}
+
+.edsys-mobile-accordion__submenu-link--parent {
+    background: linear-gradient(135deg, var(--edsys-primary) 0%, rgba(var(--edsys-primary-rgb), 0.9) 100%);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-semibold);
+    border: none;
+    margin-bottom: var(--space-sm);
+    box-shadow: 0 4px 12px rgba(var(--edsys-primary-rgb), 0.3);
+}
+
+.edsys-mobile-accordion__submenu-link--parent:hover {
+    background: linear-gradient(135deg, rgba(var(--edsys-primary-rgb), 0.9) 0%, var(--edsys-primary) 100%);
+    color: var(--edsys-white);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(var(--edsys-primary-rgb), 0.4);
+}
+
+.edsys-mobile-accordion__submenu-link i {
+    font-size: 0.875rem;
+    color: var(--edsys-text-light);
+    transition: all var(--edsys-transition);
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.edsys-mobile-accordion__submenu-link:hover i {
+    color: var(--edsys-primary);
+    opacity: 1;
+}
+
+.edsys-mobile-accordion__submenu-link--active i {
+    color: var(--edsys-primary);
+    opacity: 1;
+}
+
+.edsys-mobile-accordion__submenu-link--parent i {
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+}
+
+.edsys-mobile-accordion__submenu-link--parent:hover i {
+    color: var(--edsys-white);
+}
+
+/* ==========================================================================
+   Mobile Accordion Menu Footer
+   ========================================================================== */
+
+.edsys-mobile-accordion__footer {
+    padding: var(--space-xl) var(--space-lg);
+    background: linear-gradient(135deg, var(--edsys-bg-light) 0%, rgba(255, 255, 255, 0.8) 100%);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.edsys-mobile-accordion__footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--space-lg);
+    right: var(--space-lg);
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--edsys-border) 50%, transparent 100%);
+}
+
+.edsys-mobile-accordion__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.edsys-mobile-accordion__contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    color: var(--edsys-text);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-lg);
+    transition: all var(--edsys-transition);
+    font-size: var(--fs-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    font-weight: var(--edsys-font-medium);
+}
+
+.edsys-mobile-accordion__contact-link:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    border-color: var(--edsys-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--edsys-primary-rgb), 0.3);
+}
+
+.edsys-mobile-accordion__contact-link i {
+    font-size: 1.25rem;
+    color: var(--edsys-text-muted);
+    transition: all var(--edsys-transition);
+    opacity: 0.8;
+}
+
+.edsys-mobile-accordion__contact-link:hover i {
+    color: var(--edsys-white);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive Optimizations
+   ========================================================================== */
+
+@media (max-width: 375px) {
+    .edsys-mobile-accordion {
+        width: 90vw;
+        border-radius: var(--radius-md) 0 0 var(--radius-md);
+    }
+
+    .edsys-mobile-accordion__link,
+    .edsys-mobile-accordion__trigger {
+        padding: var(--space-md) var(--space-lg);
+        min-height: 3rem;
+    }
+
+    .edsys-mobile-accordion__submenu-link {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .edsys-mobile-accordion__submenu-link--parent {
+        padding: var(--space-md);
+    }
+
+    .edsys-mobile-accordion__link--active::before,
+    .edsys-mobile-accordion__trigger--active::before {
+        left: var(--space-sm);
+    }
+
+    .edsys-mobile-accordion__submenu-link--active::before {
+        left: var(--space-xs);
+    }
+}
+
+@media (min-width: 425px) {
+    .edsys-mobile-accordion {
+        width: min(20rem, 80vw);
+    }
+}
+
+@media (min-width: 769px) {
+    .edsys-mobile-accordion {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Accessibility & Focus States
+   ========================================================================== */
+
+.edsys-mobile-accordion__trigger:focus,
+.edsys-mobile-accordion__link:focus,
+.edsys-mobile-accordion__submenu-link:focus {
+    outline: 2px solid var(--edsys-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+@media (prefers-contrast: high) {
+    .edsys-mobile-accordion {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-mobile-accordion__item {
+        border: 2px solid var(--edsys-text);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .edsys-mobile-accordion,
+    .edsys-mobile-accordion__submenu,
+    .edsys-mobile-accordion__icon,
+    .edsys-mobile-accordion__item--active {
+        transition: none;
+        animation: none;
+    }
+}
+
+@media print {
+    .edsys-mobile-accordion {
+        display: none !important;
+    }
+}

@@ -1,0 +1,674 @@
+[17-Jul-2025 23:13:27 Europe/Moscow] === HANDLER STARTED 2025-07-17 23:13:27 ===
+[2025-07-17 23:13:27] NEW REQUEST started
+[2025-07-17 23:13:27] REQUEST_METHOD: POST
+[2025-07-17 23:13:27] Bitrix loaded successfully
+[2025-07-17 23:13:27] Action: consultation_request
+[2025-07-17 23:13:27] Form data: Array
+(
+    [consultationName] => Егор
+    [consultationPhone] => +7 (902) 038-92-84
+)
+
+[2025-07-17 23:13:27] Consultation request: CONS-20250717-8840
+[2025-07-17 23:13:27] Found existing IBlock with ID: 10
+[2025-07-17 23:13:27] Consultation saved to database
+[2025-07-17 23:13:27] Attempting to send email via Bitrix
+[2025-07-17 23:13:27] Email sent successfully via bxmail to: ae001t@gmail.com
+[2025-07-17 23:13:27] Consultation notification email sent
+[2025-07-17 23:13:27] Handler completed successfully
+[17-Jul-2025 23:16:40 Europe/Moscow] === HANDLER STARTED 2025-07-17 23:16:40 ===
+[2025-07-17 23:16:40] NEW REQUEST started
+[2025-07-17 23:16:40] REQUEST_METHOD: POST
+[2025-07-17 23:16:40] Bitrix loaded successfully
+[2025-07-17 23:16:40] Files received: 1
+[2025-07-17 23:16:40] Action: submit_wizard
+[2025-07-17 23:16:40] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => permanent
+    [audienceSize] => 5
+    [performersCount] => 3
+    [powerRequirement] => medium
+    [powerConnection] => 380v
+    [equipment] => Array
+        (
+            [0] => dmx-equipment
+            [1] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+        )
+
+    [budget] => high
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => Грыша
+    [contactPhone] => +7 (992) 902-23-09
+    [contactEmail] => dont@mail.me
+    [contactCompany] => na
+    [contactPosition] => maganer
+    [additionalInfo] => Дополнительная информация
+    [attachments[]] => C:\fakepath\idea_17.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-17 23:16:40] Starting wizard submission
+[2025-07-17 23:16:40] Form data received: Array
+(
+    [objectType] => studio
+    [installationType] => permanent
+    [audienceSize] => 5
+    [performersCount] => 3
+    [powerRequirement] => medium
+    [powerConnection] => 380v
+    [equipment] => Array
+        (
+            [0] => dmx-equipment
+            [1] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+        )
+
+    [budget] => high
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => Грыша
+    [contactPhone] => +7 (992) 902-23-09
+    [contactEmail] => dont@mail.me
+    [contactCompany] => na
+    [contactPosition] => maganer
+    [additionalInfo] => Дополнительная информация
+    [attachments[]] => C:\fakepath\idea_17.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-17 23:16:40] Processing 1 files
+[2025-07-17 23:16:40] Processing file: idea_17.jpg
+[2025-07-17 23:16:40] File uploaded successfully: idea_17.jpg -> tz_20250717_231640_8d79f0_idea_17.jpg
+[2025-07-17 23:16:40] Successfully processed 1 files
+[2025-07-17 23:16:40] Processed 1 uploaded files
+[2025-07-17 23:16:40] Generated request ID: TZ-20250717-5955
+[2025-07-17 23:16:40] Found existing IBlock with ID: 10
+[2025-07-17 23:16:40] Using IBlock ID: 10
+[2025-07-17 23:16:40] Attempting to save element with data: Array
+(
+    [MODIFIED_BY] => 1
+    [IBLOCK_SECTION_ID] => 
+    [IBLOCK_ID] => 10
+    [NAME] => Technical Specification #TZ-20250717-5955 - Грыша
+    [ACTIVE] => Y
+    [DETAIL_TEXT] => ТЕХНИЧЕСКОЕ ЗАДАНИЕ НА ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ
+Создано: 17.07.2025 23:16:40
+
+ХАРАКТЕРИСТИКИ ПРОЕКТА:
+Тип объекта: Студия
+Тип инсталляции: Стационарная установка
+Размер аудитории: 50+ человек
+Количество исполнителей: 15-30 человек
+Требуемая мощность: 500 000 - 2 000 000 ₽
+Тип электропитания: 380В (трёхфазная сеть)
+Сроки: Стандартно (2-3 месяца)
+Бюджет: 2 000 000 - 5 000 000 ₽
+
+КАТЕГОРИИ ОБОРУДОВАНИЯ:
+• DMX-оборудование
+• Кабели и разъёмы
+
+ОСОБЫЕ ТРЕБОВАНИЯ:
+• Повышенные требования безопасности
+• Мониторинг параметров
+
+ОГРАНИЧЕНИЯ ПО УСТАНОВКЕ:
+• Ограничения по шуму
+
+КОНТАКТНАЯ ИНФОРМАЦИЯ:
+Имя: Грыша
+Телефон: +7 (992) 902-23-09
+Email: dont@mail.me
+Компания: na
+Должность: maganer
+
+ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:
+Дополнительная информация
+
+ПРИКРЕПЛЕННЫЕ ФАЙЛЫ:
+• idea_17.jpg (190.79 KB) - jpg
+  Сохранен как: tz_20250717_231640_8d79f0_idea_17.jpg
+
+СПОСОБЫ ПОЛУЧЕНИЯ ТЗ:
+• Email
+• Звонок менеджера
+
+
+    [DETAIL_TEXT_TYPE] => text
+    [PROPERTY_VALUES] => Array
+        (
+            [REQUEST_ID] => TZ-20250717-5955
+            [STATUS] => NEW
+            [PRIORITY] => NORMAL
+            [SOURCE] => WEBSITE_WIZARD
+            [CONTACT_NAME] => Грыша
+            [CONTACT_PHONE] => +7 (992) 902-23-09
+            [CONTACT_EMAIL] => dont@mail.me
+            [CONTACT_COMPANY] => na
+            [CONTACT_POSITION] => maganer
+            [OBJECT_TYPE] => studio
+            [INSTALLATION_TYPE] => permanent
+            [AUDIENCE_SIZE] => 5
+            [PERFORMERS_COUNT] => 3
+            [POWER_REQUIREMENT] => medium
+            [POWER_CONNECTION] => 380v
+            [TIMELINE] => standard
+            [BUDGET] => high
+            [EQUIPMENT_CATEGORIES] => Array
+                (
+                    [0] => dmx-equipment
+                    [1] => cables-connectors
+                )
+
+            [REQUIREMENTS] => Array
+                (
+                    [0] => safety
+                    [1] => monitoring
+                )
+
+            [INSTALLATION_LIMITATIONS] => Array
+                (
+                    [0] => noise-restrictions
+                )
+
+            [DELIVERY_METHOD] => Array
+                (
+                    [0] => email
+                    [1] => phone-call
+                )
+
+            [ADDITIONAL_INFO] => Дополнительная информация
+            [ATTACHED_FILES] => [{"original_name":"idea_17.jpg","saved_name":"tz_20250717_231640_8d79f0_idea_17.jpg","size":195368,"type":"jpg"}]
+            [FILES_COUNT] => 1
+        )
+
+)
+
+[2025-07-17 23:16:40] Lead saved successfully with ID: 1620
+[2025-07-17 23:16:40] Saved lead with ID: 1620
+[2025-07-17 23:16:41] PDF created successfully with wkhtmltopdf
+[2025-07-17 23:16:41] PDF generated successfully: TZ_TZ-20250717-5955_Grysha
+[2025-07-17 23:16:41] Generated PDF: TZ_TZ-20250717-5955_Grysha.pdf
+[2025-07-17 23:16:41] Attempting to send email via Bitrix
+[2025-07-17 23:16:41] Email sent successfully via bxmail to: ae001t@gmail.com
+[2025-07-17 23:16:41] Attempting to send email via Bitrix
+[2025-07-17 23:16:41] Email sent successfully via bxmail to: dont@mail.me
+[2025-07-17 23:16:41] Email to admin (ae001t@gmail.com): sent
+[2025-07-17 23:16:41] Email to client (dont@mail.me): sent
+[2025-07-17 23:16:41] Email notifications sent
+[2025-07-17 23:16:41] Handler completed successfully
+[17-Jul-2025 23:21:38 Europe/Moscow] === HANDLER STARTED 2025-07-17 23:21:38 ===
+[2025-07-17 23:21:38] NEW REQUEST started
+[2025-07-17 23:21:38] REQUEST_METHOD: POST
+[2025-07-17 23:21:38] Bitrix loaded successfully
+[2025-07-17 23:21:38] Files received: 1
+[2025-07-17 23:21:38] Action: submit_wizard
+[2025-07-17 23:21:38] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-17 23:21:38] Starting wizard submission
+[2025-07-17 23:21:38] Form data received: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-17 23:21:38] Processing 1 files
+[2025-07-17 23:21:38] Processing file: idea_28.jpg
+[2025-07-17 23:21:38] File uploaded successfully: idea_28.jpg -> tz_20250717_232138_2ba1de_idea_28.jpg
+[2025-07-17 23:21:38] Successfully processed 1 files
+[2025-07-17 23:21:38] Processed 1 uploaded files
+[2025-07-17 23:21:38] Generated request ID: TZ-20250717-2203
+[2025-07-17 23:21:38] Found existing IBlock with ID: 10
+[2025-07-17 23:21:38] Using IBlock ID: 10
+[2025-07-17 23:21:38] Attempting to save element with data: Array
+(
+    [MODIFIED_BY] => 1
+    [IBLOCK_SECTION_ID] => 
+    [IBLOCK_ID] => 10
+    [NAME] => Technical Specification #TZ-20250717-2203 - Жора
+    [ACTIVE] => Y
+    [DETAIL_TEXT] => ТЕХНИЧЕСКОЕ ЗАДАНИЕ НА ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ
+Создано: 17.07.2025 23:21:38
+
+ХАРАКТЕРИСТИКИ ПРОЕКТА:
+Тип объекта: Студия
+Тип инсталляции: Временная установка
+Размер аудитории: 30-50 человек
+Количество исполнителей: 5-15 человек
+Требуемая мощность: Свыше 200 кВт
+Тип электропитания: Не знаю
+Сроки: Стандартно (2-3 месяца)
+Бюджет: Гибкий бюджет
+
+КАТЕГОРИИ ОБОРУДОВАНИЯ:
+• Пульты управления лебёдками
+• Секвенсоры
+• Кабели и разъёмы
+
+ОСОБЫЕ ТРЕБОВАНИЯ:
+• Повышенные требования безопасности
+• Мониторинг параметров
+• Резервное питание
+
+ОГРАНИЧЕНИЯ ПО УСТАНОВКЕ:
+• Ограничения по шуму
+
+КОНТАКТНАЯ ИНФОРМАЦИЯ:
+Имя: Жора
+Телефон: +7 (923) 493-20-23
+Email: kon4994@ya.ru
+Компания: no
+Должность: mamager
+
+ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:
+ASAP
+
+ПРИКРЕПЛЕННЫЕ ФАЙЛЫ:
+• idea_28.jpg (369.85 KB) - jpg
+  Сохранен как: tz_20250717_232138_2ba1de_idea_28.jpg
+
+СПОСОБЫ ПОЛУЧЕНИЯ ТЗ:
+• Email
+• Звонок менеджера
+
+
+    [DETAIL_TEXT_TYPE] => text
+    [PROPERTY_VALUES] => Array
+        (
+            [REQUEST_ID] => TZ-20250717-2203
+            [STATUS] => NEW
+            [PRIORITY] => NORMAL
+            [SOURCE] => WEBSITE_WIZARD
+            [CONTACT_NAME] => Жора
+            [CONTACT_PHONE] => +7 (923) 493-20-23
+            [CONTACT_EMAIL] => kon4994@ya.ru
+            [CONTACT_COMPANY] => no
+            [CONTACT_POSITION] => mamager
+            [OBJECT_TYPE] => studio
+            [INSTALLATION_TYPE] => temporary
+            [AUDIENCE_SIZE] => 4
+            [PERFORMERS_COUNT] => 2
+            [POWER_REQUIREMENT] => very-high
+            [POWER_CONNECTION] => unknown
+            [TIMELINE] => standard
+            [BUDGET] => flexible
+            [EQUIPMENT_CATEGORIES] => Array
+                (
+                    [0] => winch-controls
+                    [1] => sequencers
+                    [2] => cables-connectors
+                )
+
+            [REQUIREMENTS] => Array
+                (
+                    [0] => safety
+                    [1] => monitoring
+                    [2] => backup-power
+                )
+
+            [INSTALLATION_LIMITATIONS] => Array
+                (
+                    [0] => noise-restrictions
+                )
+
+            [DELIVERY_METHOD] => Array
+                (
+                    [0] => email
+                    [1] => phone-call
+                )
+
+            [ADDITIONAL_INFO] => ASAP
+            [ATTACHED_FILES] => [{"original_name":"idea_28.jpg","saved_name":"tz_20250717_232138_2ba1de_idea_28.jpg","size":378723,"type":"jpg"}]
+            [FILES_COUNT] => 1
+        )
+
+)
+
+[2025-07-17 23:21:38] Lead saved successfully with ID: 1621
+[2025-07-17 23:21:38] Saved lead with ID: 1621
+[2025-07-17 23:21:39] PDF created successfully with wkhtmltopdf
+[2025-07-17 23:21:39] PDF generated successfully: TZ_TZ-20250717-2203_Zhora
+[2025-07-17 23:21:39] Generated PDF: TZ_TZ-20250717-2203_Zhora.pdf
+[2025-07-17 23:21:39] Attempting to send email via Bitrix
+[2025-07-17 23:21:39] Email sent successfully via bxmail to: ae001t@gmail.com
+[2025-07-17 23:21:39] Attempting to send email via Bitrix
+[2025-07-17 23:21:39] Email sent successfully via bxmail to: kon4994@ya.ru
+[2025-07-17 23:21:39] Email to admin (ae001t@gmail.com): sent
+[2025-07-17 23:21:39] Email to client (kon4994@ya.ru): sent
+[2025-07-17 23:21:39] Email notifications sent
+[2025-07-17 23:21:39] Handler completed successfully
+[18-Jul-2025 20:51:43 Europe/Moscow] === HANDLER STARTED 2025-07-18 20:51:43 ===
+[2025-07-18 20:51:43] NEW REQUEST started
+[2025-07-18 20:51:43] REQUEST_METHOD: POST
+[2025-07-18 20:51:43] Bitrix loaded successfully
+[2025-07-18 20:51:43] Files received: 1
+[2025-07-18 20:51:43] Action: submit_wizard
+[2025-07-18 20:51:43] Form data: Array
+(
+    [objectType] => concert
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 3
+    [powerRequirement] => medium
+    [powerConnection] => 380v
+    [equipment] => Array
+        (
+            [0] => power-distributors
+            [1] => dmx-equipment
+            [2] => sequencers
+            [3] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => weather-resistance
+            [2] => backup-power
+        )
+
+    [budget] => high
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => gpt
+    [contactPhone] => +7 (912) 081-02-83
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => none
+    [contactPosition] => mamager
+    [additionalInfo] => what's up
+    [attachments[]] => C:\fakepath\idea_19.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-18 20:51:43] Starting wizard submission
+[2025-07-18 20:51:43] Form data received: Array
+(
+    [objectType] => concert
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 3
+    [powerRequirement] => medium
+    [powerConnection] => 380v
+    [equipment] => Array
+        (
+            [0] => power-distributors
+            [1] => dmx-equipment
+            [2] => sequencers
+            [3] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => weather-resistance
+            [2] => backup-power
+        )
+
+    [budget] => high
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+        )
+
+    [contactName] => gpt
+    [contactPhone] => +7 (912) 081-02-83
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => none
+    [contactPosition] => mamager
+    [additionalInfo] => what's up
+    [attachments[]] => C:\fakepath\idea_19.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+            [1] => phone-call
+        )
+
+)
+
+[2025-07-18 20:51:43] Processing 1 files
+[2025-07-18 20:51:43] Processing file: idea_19.jpg
+[2025-07-18 20:51:43] File uploaded successfully: idea_19.jpg -> tz_20250718_205143_f76513_idea_19.jpg
+[2025-07-18 20:51:43] Successfully processed 1 files
+[2025-07-18 20:51:43] Processed 1 uploaded files
+[2025-07-18 20:51:43] Generated request ID: TZ-20250718-9875
+[2025-07-18 20:51:43] Found existing IBlock with ID: 10
+[2025-07-18 20:51:43] Using IBlock ID: 10
+[2025-07-18 20:51:43] Attempting to save element with data: Array
+(
+    [MODIFIED_BY] => 1
+    [IBLOCK_SECTION_ID] => 
+    [IBLOCK_ID] => 10
+    [NAME] => Technical Specification #TZ-20250718-9875 - gpt
+    [ACTIVE] => Y
+    [DETAIL_TEXT] => ТЕХНИЧЕСКОЕ ЗАДАНИЕ НА ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ
+Создано: 18.07.2025 20:51:43
+
+ХАРАКТЕРИСТИКИ ПРОЕКТА:
+Тип объекта: Концертная площадка
+Тип инсталляции: Временная установка
+Размер аудитории: 30-50 человек
+Количество исполнителей: 15-30 человек
+Требуемая мощность: 500 000 - 2 000 000 ₽
+Тип электропитания: 380В (трёхфазная сеть)
+Сроки: Стандартно (2-3 месяца)
+Бюджет: 2 000 000 - 5 000 000 ₽
+
+КАТЕГОРИИ ОБОРУДОВАНИЯ:
+• Дистрибьюторы питания
+• DMX-оборудование
+• Секвенсоры
+• Кабели и разъёмы
+
+ОСОБЫЕ ТРЕБОВАНИЯ:
+• Повышенные требования безопасности
+• Защита от внешних воздействий
+• Резервное питание
+
+ОГРАНИЧЕНИЯ ПО УСТАНОВКЕ:
+• Ограничения по шуму
+
+КОНТАКТНАЯ ИНФОРМАЦИЯ:
+Имя: gpt
+Телефон: +7 (912) 081-02-83
+Email: kon4994@ya.ru
+Компания: none
+Должность: mamager
+
+ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:
+what's up
+
+ПРИКРЕПЛЕННЫЕ ФАЙЛЫ:
+• idea_19.jpg (122.71 KB) - jpg
+  Сохранен как: tz_20250718_205143_f76513_idea_19.jpg
+
+СПОСОБЫ ПОЛУЧЕНИЯ ТЗ:
+• Email
+• Звонок менеджера
+
+
+    [DETAIL_TEXT_TYPE] => text
+    [PROPERTY_VALUES] => Array
+        (
+            [REQUEST_ID] => TZ-20250718-9875
+            [STATUS] => NEW
+            [PRIORITY] => NORMAL
+            [SOURCE] => WEBSITE_WIZARD
+            [CONTACT_NAME] => gpt
+            [CONTACT_PHONE] => +7 (912) 081-02-83
+            [CONTACT_EMAIL] => kon4994@ya.ru
+            [CONTACT_COMPANY] => none
+            [CONTACT_POSITION] => mamager
+            [OBJECT_TYPE] => concert
+            [INSTALLATION_TYPE] => temporary
+            [AUDIENCE_SIZE] => 4
+            [PERFORMERS_COUNT] => 3
+            [POWER_REQUIREMENT] => medium
+            [POWER_CONNECTION] => 380v
+            [TIMELINE] => standard
+            [BUDGET] => high
+            [EQUIPMENT_CATEGORIES] => Array
+                (
+                    [0] => power-distributors
+                    [1] => dmx-equipment
+                    [2] => sequencers
+                    [3] => cables-connectors
+                )
+
+            [REQUIREMENTS] => Array
+                (
+                    [0] => safety
+                    [1] => weather-resistance
+                    [2] => backup-power
+                )
+
+            [INSTALLATION_LIMITATIONS] => Array
+                (
+                    [0] => noise-restrictions
+                )
+
+            [DELIVERY_METHOD] => Array
+                (
+                    [0] => email
+                    [1] => phone-call
+                )
+
+            [ADDITIONAL_INFO] => what's up
+            [ATTACHED_FILES] => [{"original_name":"idea_19.jpg","saved_name":"tz_20250718_205143_f76513_idea_19.jpg","size":125654,"type":"jpg"}]
+            [FILES_COUNT] => 1
+        )
+
+)
+
+[2025-07-18 20:51:43] Lead saved successfully with ID: 1619
+[2025-07-18 20:51:43] Saved lead with ID: 1619
+[2025-07-18 20:51:43] PDF created successfully with wkhtmltopdf
+[2025-07-18 20:51:43] PDF generated successfully: TZ_TZ-20250718-9875_gpt
+[2025-07-18 20:51:43] Generated PDF: TZ_TZ-20250718-9875_gpt.pdf
+[2025-07-18 20:51:43] Attempting to send email via Bitrix
+[2025-07-18 20:51:44] Email sent successfully via bxmail to: ae001t@gmail.com
+[2025-07-18 20:51:44] Attempting to send email via Bitrix
+[2025-07-18 20:51:44] Email sent successfully via bxmail to: kon4994@ya.ru
+[2025-07-18 20:51:44] Email to admin (ae001t@gmail.com): sent
+[2025-07-18 20:51:44] Email to client (kon4994@ya.ru): sent
+[2025-07-18 20:51:44] Email notifications sent
+[2025-07-18 20:51:44] Handler completed successfully

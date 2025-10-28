@@ -1,0 +1,193 @@
+/* Search Page Container */
+.edsys-search-page {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 2rem var(--container-padding);
+}
+
+.edsys-search-page__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Search Results List */
+.edsys-search-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Search List Item */
+.edsys-search-list-item {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: 8px;
+    display: flex;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.edsys-search-list-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+}
+
+.edsys-search-list-item__image-link {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    margin-right: 1.5rem;
+}
+
+.edsys-search-list-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.edsys-search-list-item__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.edsys-search-list-item__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.edsys-search-list-item__title a {
+    text-decoration: none;
+    color: var(--edsys-text);
+}
+
+.edsys-search-list-item__title a:hover {
+    color: var(--edsys-primary);
+}
+
+.edsys-search-list-item__article {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.edsys-search-list-item__body {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.edsys-search-list-item__body b, .search-page span.highlight{
+    background-color: yellow;
+    font-weight: normal;
+}
+
+.edsys-search-list-item__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edsys-search-list-item__price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--edsys-primary);
+}
+
+.edsys-btn {
+    display: inline-block;
+    background-color: var(--edsys-primary);
+    color: var(--edsys-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.edsys-btn:hover {
+    background-color: #d6303e;
+}
+
+/* Pagination */
+.bx-pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.bx-pagination .bx-pagination-container ul {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bx-pagination .bx-pagination-container ul li {
+    margin: 0 2px;
+}
+
+.bx-pagination .bx-pagination-container ul li a,
+.bx-pagination .bx-pagination-container ul li span {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--edsys-text);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.bx-pagination .bx-pagination-container ul li a:hover {
+    background-color: var(--edsys-bg);
+    border-color: #ccc;
+}
+
+.bx-pagination .bx-pagination-container ul li.bx-active span {
+    background-color: var(--edsys-primary);
+    color: var(--edsys-white);
+    border-color: var(--edsys-primary);
+    cursor: default;
+}
+
+.bx-pagination .bx-pagination-container ul li.bx-pag-prev,
+.bx-pagination .bx-pagination-container ul li.bx-pag-next {
+    font-weight: bold;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .edsys-search-page__title {
+        font-size: 1.5rem;
+    }
+
+    .edsys-search-list-item {
+        flex-direction: column;
+    }
+
+    .edsys-search-list-item__image-link {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .edsys-search-list-item__image {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .edsys-search-list-item__footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

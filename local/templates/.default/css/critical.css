@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Critical CSS - Inline styles for above-the-fold content
+   ========================================================================== */
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables - Only critical ones */
+:root {
+    /* Typography */
+    --edsys-font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --edsys-font-regular: 400;
+    --edsys-font-bold: 700;
+
+    /* Critical Colors */
+    --edsys-primary: #ff4757;
+    --edsys-white: #ffffff;
+    --edsys-text: #21242D;
+    --edsys-bg: #f5f5f7;
+    --edsys-border: #e0e0e0;
+
+    /* Critical Sizes */
+    --container-max: min(103.2rem, 100vw - 2rem);
+    --container-padding: clamp(1rem, 3vw, 2rem);
+    --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+    --space-md: clamp(0.75rem, 1.5vw, 1rem);
+    --radius-md: clamp(0.375rem, 0.75vw, 0.75rem);
+}
+
+/* Base Styles */
+body {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    line-height: 1.5;
+    color: var(--edsys-text);
+    background: var(--edsys-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Critical Styles */
+.edsys-header {
+    position: relative;
+    z-index: 1000;
+    background: var(--edsys-white);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-header__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.edsys-header__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    flex-wrap: nowrap;
+}
+
+.edsys-header__logo {
+    flex-shrink: 0;
+}
+
+.edsys-header__logo img {
+    height: clamp(2rem, 4vw, 2.5rem);
+    width: auto;
+}
+
+.edsys-header__catalog-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    font-weight: var(--edsys-font-bold);
+    border: none;
+    cursor: pointer;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    white-space: nowrap;
+}
+
+.edsys-header__search {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.edsys-header__search-input {
+    width: 100%;
+    padding: var(--space-sm) calc(3rem) var(--space-sm) var(--space-md);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Hide elements to prevent FOUC */
+.edsys-megamenu,
+.edsys-mobile-menu,
+.edsys-mobile-catalog,
+.edsys-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Mobile Header */
+.edsys-header__mobile-top,
+.edsys-header__mobile-search {
+    display: none;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .edsys-header__top,
+    .edsys-header__nav {
+        display: none;
+    }
+
+    .edsys-header__mobile-top,
+    .edsys-header__mobile-search {
+        display: flex;
+    }
+
+    .edsys-header__mobile-top {
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--edsys-border);
+    }
+
+    .edsys-header__mobile-search {
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+    }
+
+    body {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Prevent Layout Shift */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Focus Visible */
+:focus {
+    outline: 2px solid var(--edsys-primary);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Smooth Transitions */
+* {
+    transition: opacity 0.3s ease;
+}
+
+/* Preload Critical Fonts */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'), local('OpenSans-Regular');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Open Sans Bold'), local('OpenSans-Bold');
+}

@@ -1,0 +1,48 @@
+/* Floating Compare Button */
+.edsys-compare-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.edsys-compare-floating.visible {
+    display: block;
+}
+
+.edsys-compare-floating__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-compare-floating__link:hover {
+    background-color: var(--edsys-accent-hover);
+    transform: translateY(-2px);
+}
+
+.edsys-compare-floating__icon {
+    font-size: 1.5rem;
+}
+
+.edsys-compare-floating__count {
+    background-color: var(--edsys-white);
+    color: var(--edsys-accent);
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+}

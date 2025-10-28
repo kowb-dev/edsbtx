@@ -1,0 +1,111 @@
+.bx-auth-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: 5px;
+}
+
+.bx-auth-profile h3 {
+    font-size: 24px;
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: 20px;
+}
+
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.profile-table .field-name {
+    width: 30%;
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+}
+
+.profile-table .field-value {
+    width: 70%;
+}
+
+.profile-table input[type="text"],
+.profile-table input[type="password"],
+.profile-table select,
+.profile-table textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--edsys-border);
+    border-radius: 3px;
+    font-family: var(--edsys-font-primary);
+    font-size: 14px;
+    color: var(--edsys-text);
+}
+
+.profile-table input[type="submit"],
+.profile-table input[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-family: var(--edsys-font-primary);
+    font-size: 14px;
+    font-weight: var(--edsys-font-bold);
+    cursor: pointer;
+}
+
+.profile-table input[type="submit"] {
+    background-color: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+.profile-table input[type="reset"] {
+    background-color: var(--edsys-border);
+    color: var(--edsys-text);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.edsys-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    text-decoration: none;
+    color: var(--edsys-white);
+    background-color: var(--edsys-accent);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-medium) var(--edsys-ease);
+    white-space: nowrap;
+}
+
+.edsys-btn:hover {
+    background-color: var(--edsys-accent-hover);
+}
+
+.edsys-btn i {
+    margin-right: var(--space-xs);
+    font-size: var(--fs-base);
+}
+
+.edsys-bestsellers__card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease;
+}
+
+.edsys-bestsellers__card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}

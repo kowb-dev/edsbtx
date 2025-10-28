@@ -1,0 +1,46 @@
+[0;34m[INFO][0m ==========================================
+[0;34m[INFO][0m EDS Articles Image Downloader
+[0;34m[INFO][0m ==========================================
+[0;34m[INFO][0m Starting download of 10 images...
+[0;34m[INFO][0m Output directory: ./images/stati
+[0;34m[INFO][0m Log file: ./images/download.log
+[0;34m[INFO][0m Created directories: images/ and ./images/stati
+[0;34m[INFO][0m Progress: [1/10] Processing: inrush-current-300x201.jpg
+[0;34m[INFO][0m Downloading [1/3]: inrush-current-300x201.jpg
+[0;32m[SUCCESS][0m Downloaded: inrush-current-300x201.jpg (10364 bytes)
+[0;34m[INFO][0m Progress: [2/10] Processing: zazemlenie-kak-eto-rabotaet-300x300.jpg
+[0;34m[INFO][0m Downloading [1/3]: zazemlenie-kak-eto-rabotaet-300x300.jpg
+[0;32m[SUCCESS][0m Downloaded: zazemlenie-kak-eto-rabotaet-300x300.jpg (4755 bytes)
+[0;34m[INFO][0m Progress: [3/10] Processing: raznost-potentsialov-300x300.jpg
+[0;34m[INFO][0m Downloading [1/3]: raznost-potentsialov-300x300.jpg
+[0;32m[SUCCESS][0m Downloaded: raznost-potentsialov-300x300.jpg (6146 bytes)
+[0;34m[INFO][0m Progress: [4/10] Processing: razveska-dc-870x460-1-300x159.jpg
+[0;34m[INFO][0m Downloading [1/3]: razveska-dc-870x460-1-300x159.jpg
+[0;32m[SUCCESS][0m Downloaded: razveska-dc-870x460-1-300x159.jpg (11320 bytes)
+[0;34m[INFO][0m Progress: [5/10] Processing: khd1miy-eei-300x139.jpg
+[0;34m[INFO][0m Downloading [1/3]: khd1miy-eei-300x139.jpg
+[0;32m[SUCCESS][0m Downloaded: khd1miy-eei-300x139.jpg (9428 bytes)
+[0;34m[INFO][0m Progress: [6/10] Processing: ethernet-604x460-1-300x228.jpg
+[0;34m[INFO][0m Downloading [1/3]: ethernet-604x460-1-300x228.jpg
+[0;32m[SUCCESS][0m Downloaded: ethernet-604x460-1-300x228.jpg (9384 bytes)
+[0;34m[INFO][0m Progress: [7/10] Processing: power-lose-300x169.jpg
+[0;34m[INFO][0m Downloading [1/3]: power-lose-300x169.jpg
+[0;32m[SUCCESS][0m Downloaded: power-lose-300x169.jpg (4715 bytes)
+[0;34m[INFO][0m Progress: [8/10] Processing: multimtr-mas838-300x146.jpg
+[0;34m[INFO][0m Downloading [1/3]: multimtr-mas838-300x146.jpg
+[0;32m[SUCCESS][0m Downloaded: multimtr-mas838-300x146.jpg (5240 bytes)
+[0;34m[INFO][0m Progress: [9/10] Processing: rkn-300x156.jpg
+[0;34m[INFO][0m Downloading [1/3]: rkn-300x156.jpg
+[0;32m[SUCCESS][0m Downloaded: rkn-300x156.jpg (9667 bytes)
+[0;34m[INFO][0m Progress: [10/10] Processing: cofr-300x168.jpg
+[0;34m[INFO][0m Downloading [1/3]: cofr-300x168.jpg
+[0;32m[SUCCESS][0m Downloaded: cofr-300x168.jpg (6830 bytes)
+[0;34m[INFO][0m ==========================================
+[0;34m[INFO][0m Download Summary:
+[0;32m[SUCCESS][0m Successfully downloaded: 10/10 images
+[0;34m[INFO][0m Total time: 11s
+[0;34m[INFO][0m Output directory: ./images/stati
+[0;34m[INFO][0m Report saved to: ./images/download-report.json
+[0;34m[INFO][0m Log saved to: ./images/download.log
+[0;34m[INFO][0m Downloaded files:
+[0;32m[SUCCESS][0m All images downloaded successfully! 🎉

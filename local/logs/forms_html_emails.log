@@ -1,0 +1,45 @@
+[2025-07-18 15:21:56] [v3.0.0] === NEW HTML EMAIL REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 15:21:56] [v3.0.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"kon4994@ya.ru\",\"timestamp\":1752841316349,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"kon4994@ya.ru","timestamp":1752841316349,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
+[2025-07-18 15:21:56] [v3.0.0] Processing newsletter subscription with HTML templates | {"email":"kon4994@ya.ru","timestamp":"2025-07-18 15:21:56"}
+[2025-07-18 15:21:56] [v3.0.0] Sending HTML email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":6415}
+[2025-07-18 15:21:56] [v3.0.0] HTML email send result | {"to":"a0123e@ya.ru","result":true,"message_length":7357,"last_error":null}
+[2025-07-18 15:21:56] [v3.0.0] Sending HTML email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":6415}
+[2025-07-18 15:21:56] [v3.0.0] HTML email send result | {"to":"ae001t@gmail.com","result":true,"message_length":7357,"last_error":null}
+[2025-07-18 15:21:56] [v3.0.0] Sending HTML email | {"to":"kon4994@ya.ru","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome","html_length":11922}
+[2025-07-18 15:21:56] [v3.0.0] HTML email send result | {"to":"kon4994@ya.ru","result":true,"message_length":13051,"last_error":null}
+[2025-07-18 15:48:45] [v3.0.0] === NEW HTML EMAIL REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 15:48:45] [v3.0.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"kon4994@ya.ru\",\"timestamp\":1752842925121,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"kon4994@ya.ru","timestamp":1752842925121,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
+[2025-07-18 15:48:45] [v3.0.0] Processing newsletter subscription with HTML templates | {"email":"kon4994@ya.ru","timestamp":"2025-07-18 15:48:45"}
+[2025-07-18 15:48:45] [v3.0.0] Sending HTML email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7885}
+[2025-07-18 15:48:45] [v3.0.0] HTML email send result | {"to":"a0123e@ya.ru","result":true,"message_length":8827,"last_error":null}
+[2025-07-18 15:48:45] [v3.0.0] Sending HTML email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7885}
+[2025-07-18 15:48:45] [v3.0.0] HTML email send result | {"to":"ae001t@gmail.com","result":true,"message_length":8827,"last_error":null}
+[2025-07-18 15:48:45] [v3.0.0] Sending HTML email | {"to":"kon4994@ya.ru","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome","html_length":13178}
+[2025-07-18 15:48:45] [v3.0.0] HTML email send result | {"to":"kon4994@ya.ru","result":true,"message_length":14307,"last_error":null}
+[2025-07-18 15:56:59] [v3.0.0] === NEW HTML EMAIL REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 15:56:59] [v3.0.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"snnivvn@gmail.com\",\"timestamp\":1752843419001,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"snnivvn@gmail.com","timestamp":1752843419001,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
+[2025-07-18 15:56:59] [v3.0.0] Processing newsletter subscription with HTML templates | {"email":"snnivvn@gmail.com","timestamp":"2025-07-18 15:56:59"}
+[2025-07-18 15:56:59] [v3.0.0] Sending HTML email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7913}
+[2025-07-18 15:56:59] [v3.0.0] HTML email send result | {"to":"a0123e@ya.ru","result":true,"message_length":8883,"last_error":null}
+[2025-07-18 15:56:59] [v3.0.0] Sending HTML email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7913}
+[2025-07-18 15:56:59] [v3.0.0] HTML email send result | {"to":"ae001t@gmail.com","result":true,"message_length":8883,"last_error":null}
+[2025-07-18 15:56:59] [v3.0.0] Sending HTML email | {"to":"snnivvn@gmail.com","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome","html_length":13178}
+[2025-07-18 15:56:59] [v3.0.0] HTML email send result | {"to":"snnivvn@gmail.com","result":true,"message_length":14307,"last_error":null}
+[2025-07-18 15:59:52] [v3.0.0] === NEW HTML EMAIL REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 15:59:52] [v3.0.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"kon4994@ya.ru\",\"timestamp\":1752843591942,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"kon4994@ya.ru","timestamp":1752843591942,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
+[2025-07-18 15:59:52] [v3.0.0] Processing newsletter subscription with HTML templates | {"email":"kon4994@ya.ru","timestamp":"2025-07-18 15:59:52"}
+[2025-07-18 15:59:52] [v3.0.0] Sending HTML email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7909}
+[2025-07-18 15:59:52] [v3.0.0] HTML email send result | {"to":"a0123e@ya.ru","result":true,"message_length":8875,"last_error":null}
+[2025-07-18 15:59:52] [v3.0.0] Sending HTML email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7909}
+[2025-07-18 15:59:52] [v3.0.0] HTML email send result | {"to":"ae001t@gmail.com","result":true,"message_length":8875,"last_error":null}
+[2025-07-18 15:59:52] [v3.0.0] Sending HTML email | {"to":"kon4994@ya.ru","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome","html_length":13178}
+[2025-07-18 15:59:52] [v3.0.0] HTML email send result | {"to":"kon4994@ya.ru","result":true,"message_length":14307,"last_error":null}
+[2025-07-18 16:03:19] [v3.0.0] === NEW HTML EMAIL REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
+[2025-07-18 16:03:19] [v3.0.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"ninngrn@gmail.com\",\"timestamp\":1752843798853,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"ninngrn@gmail.com","timestamp":1752843798853,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
+[2025-07-18 16:03:19] [v3.0.0] Processing newsletter subscription with HTML templates | {"email":"ninngrn@gmail.com","timestamp":"2025-07-18 16:03:19"}
+[2025-07-18 16:03:19] [v3.0.0] Sending HTML email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7913}
+[2025-07-18 16:03:19] [v3.0.0] HTML email send result | {"to":"a0123e@ya.ru","result":true,"message_length":8883,"last_error":null}
+[2025-07-18 16:03:19] [v3.0.0] Sending HTML email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin","html_length":7913}
+[2025-07-18 16:03:19] [v3.0.0] HTML email send result | {"to":"ae001t@gmail.com","result":true,"message_length":8883,"last_error":null}
+[2025-07-18 16:03:19] [v3.0.0] Sending HTML email | {"to":"ninngrn@gmail.com","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome","html_length":13178}
+[2025-07-18 16:03:19] [v3.0.0] HTML email send result | {"to":"ninngrn@gmail.com","result":true,"message_length":14307,"last_error":null}

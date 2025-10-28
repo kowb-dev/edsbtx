@@ -1,0 +1,715 @@
+
+/* ==========================================================================
+   Section Container
+   ========================================================================== */
+
+.edsys-bestsellers {
+    padding: var(--space-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/*.edsys-bestsellers__container {*/
+/*    max-width: var(--container-max);*/
+/*    margin: 0 auto;*/
+/*    padding: 0 var(--container-padding);*/
+/*}*/
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.edsys-bestsellers__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: var(--space-2xl);
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.edsys-bestsellers__title-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-bestsellers__title {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--edsys-fs-h2);
+    line-height: 1.2;
+    color: var(--edsys-text);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.edsys-bestsellers__subtitle {
+    font-size: clamp(1rem, 2vw + 0.25rem, 1.125rem);
+    color: var(--edsys-text-muted);
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: max-content;
+    text-align: center;
+}
+
+/* Navigation Controls */
+/* Удалены стили для навигации */
+
+/* ==========================================================================
+   Products Grid
+   ========================================================================== */
+
+.edsys-bestsellers__wrapper {
+    position: relative;
+    overflow: visible;
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-bestsellers__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-lg);
+    transition: var(--edsys-transition);
+}
+
+/* Desktop grid adjustments */
+@media (min-width: 1024px) {
+    .edsys-bestsellers__grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: var(--space-xl);
+    }
+}
+
+@media (min-width: 1400px) {
+    .edsys-bestsellers__grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Product Cards
+   ========================================================================== */
+
+.edsys-bestsellers__card {
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    overflow: visible;
+    transition: var(--edsys-transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+}
+
+.edsys-bestsellers__card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
+}
+
+/* Badge */
+.edsys-bestsellers__badge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: clamp(0.625rem, 1vw, 0.75rem);
+    font-weight: var(--edsys-font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    box-shadow: var(--edsys-shadow);
+}
+
+/* Badge variants */
+.edsys-bestsellers__card:nth-child(1) .edsys-bestsellers__badge { background: var(--edsys-accent); }
+.edsys-bestsellers__card:nth-child(2) .edsys-bestsellers__badge { background: var(--edsys-circuit); }
+.edsys-bestsellers__card:nth-child(3) .edsys-bestsellers__badge { background: var(--edsys-voltage); }
+.edsys-bestsellers__card:nth-child(4) .edsys-bestsellers__badge { background: var(--edsys-spark); color: var(--edsys-text); }
+.edsys-bestsellers__card:nth-child(5) .edsys-bestsellers__badge { background: var(--edsys-primary); }
+.edsys-bestsellers__card:nth-child(6) .edsys-bestsellers__badge { background: var(--edsys-text); }
+
+/* Image Section */
+.edsys-bestsellers__image-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--edsys-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    overflow: hidden;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.edsys-bestsellers__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--edsys-transition);
+    max-width: 280px;
+    max-height: 280px;
+}
+
+.edsys-bestsellers__card:hover .edsys-bestsellers__image {
+    transform: scale(1.05);
+}
+
+/* Content Section */
+.edsys-bestsellers__content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edsys-bestsellers__product-title {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.125rem);
+    line-height: 1.3;
+    color: var(--edsys-text);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.6rem;
+}
+
+/* Specifications */
+.edsys-bestsellers__specs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+}
+
+.edsys-bestsellers__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: clamp(0.75rem, 1vw + 0.125rem, 0.875rem);
+    line-height: 1.4;
+    color: var(--edsys-text);
+}
+
+.edsys-bestsellers__benefit i {
+    color: var(--edsys-primary);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.edsys-bestsellers__benefit span {
+    word-break: break-word;
+}
+
+/* Actions */
+.edsys-bestsellers__actions {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: auto;
+    padding-top: var(--space-sm);
+}
+
+.edsys-bestsellers__btn {
+    font-family: var(--edsys-font-primary);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: var(--fs-base);
+    line-height: 1;
+}
+
+.edsys-bestsellers__btn--primary {
+    flex: 1;
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    padding: var(--space-sm) var(--space-xs);
+    min-height: 2.5rem;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+}
+
+.edsys-bestsellers__btn--primary:hover {
+    background: var(--edsys-primary-dark);
+    transform: translateY(-1px);
+}
+
+.edsys-bestsellers__btn--secondary {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-text);
+    padding: var(--space-xs);
+    width: 2rem;
+    height: 2.5rem;
+    border: 1px solid var(--edsys-border);
+    flex-shrink: 0;
+}
+
+.edsys-bestsellers__btn--secondary:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    border-color: var(--edsys-primary);
+    transform: translateY(-1px);
+}
+
+.edsys-bestsellers__btn--secondary i {
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for cards */
+.edsys-bestsellers__card {
+    animation: fadeInUp 0.6s ease both;
+}
+
+.edsys-bestsellers__card:nth-child(1) { animation-delay: 0.1s; }
+.edsys-bestsellers__card:nth-child(2) { animation-delay: 0.2s; }
+.edsys-bestsellers__card:nth-child(3) { animation-delay: 0.3s; }
+.edsys-bestsellers__card:nth-child(4) { animation-delay: 0.4s; }
+.edsys-bestsellers__card:nth-child(5) { animation-delay: 0.5s; }
+.edsys-bestsellers__card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ==========================================================================
+   Mobile Responsive
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    .edsys-bestsellers {
+        padding: var(--container-padding);
+    }
+    .edsys-bestsellers__container {
+        padding: var(--container-padding);
+    }
+    .edsys-bestsellers__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+
+    .edsys-bestsellers__wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
+    }
+
+    .edsys-bestsellers__wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .edsys-bestsellers__grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: var(--space-sm);
+        overflow-x: visible;
+        scroll-snap-type: x mandatory;
+        padding: var(--space-sm) 0;
+    }
+
+    .edsys-bestsellers__card {
+        flex: 0 0 calc(80% - var(--space-sm));
+        max-width: calc(80% - var(--space-sm));
+        scroll-snap-align: start;
+        margin-right: var(--space-sm);
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edsys-bestsellers__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .edsys-bestsellers__specs {
+        flex: 1;
+        gap: var(--space-xs);
+        overflow: hidden;
+    }
+
+    .edsys-bestsellers__benefit {
+        flex-direction: row;
+        gap: var(--space-xs);
+        align-items: center;
+    }
+
+    .edsys-bestsellers__benefit i {
+        margin-top: 0;
+        font-size: 0.875rem;
+    }
+
+    .edsys-bestsellers__benefit span {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .edsys-bestsellers__badge {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.375rem;
+        top: -0.375rem;
+        right: -0.375rem;
+    }
+
+    .edsys-bestsellers__actions {
+        gap: 0.25rem;
+        margin-top: auto;
+    }
+
+    .edsys-bestsellers__btn--primary {
+        font-size: 0.625rem;
+        padding: 0.5rem 0.25rem;
+        min-height: 2rem;
+    }
+
+    .edsys-bestsellers__btn--secondary {
+        width: 1.75rem;
+        height: 2rem;
+        padding: 0.25rem;
+    }
+
+    .edsys-bestsellers__btn--secondary i {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .edsys-bestsellers {
+        padding: var(--space-2xl) 0;
+    }
+
+    .edsys-bestsellers__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+
+    .edsys-bestsellers__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .edsys-bestsellers__card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edsys-bestsellers__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .edsys-bestsellers__specs {
+        gap: var(--space-xs);
+    }
+
+    .edsys-bestsellers__benefit {
+        flex-direction: row;
+        gap: var(--space-xs);
+        align-items: center;
+    }
+
+    .edsys-bestsellers__benefit i {
+        margin-top: 0;
+        font-size: 0.875rem;
+    }
+
+    .edsys-bestsellers__benefit span {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .edsys-bestsellers__badge {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
+        top: -0.375rem;
+        right: -0.375rem;
+    }
+
+    .edsys-bestsellers__actions {
+        gap: 0.25rem;
+    }
+
+    .edsys-bestsellers__btn--primary {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.25rem;
+        min-height: 2rem;
+    }
+
+    .edsys-bestsellers__btn--secondary {
+        width: 1.75rem;
+        height: 2rem;
+        padding: 0.25rem;
+    }
+
+    .edsys-bestsellers__btn--secondary i {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1499px) {
+    .edsys-bestsellers {
+        padding: var(--space-2xl) 0;
+    }
+
+    .edsys-bestsellers__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+
+    .edsys-bestsellers__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .edsys-bestsellers__card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edsys-bestsellers__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .edsys-bestsellers__specs {
+        gap: var(--space-xs);
+    }
+
+    .edsys-bestsellers__benefit {
+        flex-direction: row;
+        gap: var(--space-xs);
+        align-items: center;
+    }
+
+    .edsys-bestsellers__benefit i {
+        margin-top: 0;
+        font-size: 0.875rem;
+    }
+
+    .edsys-bestsellers__benefit span {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .edsys-bestsellers__badge {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
+        top: -0.375rem;
+        right: -0.375rem;
+    }
+
+    .edsys-bestsellers__actions {
+        gap: 0.25rem;
+    }
+
+    .edsys-bestsellers__btn--primary {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.25rem;
+        min-height: 2rem;
+    }
+
+    .edsys-bestsellers__btn--secondary {
+        width: 1.75rem;
+        height: 2rem;
+        padding: 0.25rem;
+    }
+
+    .edsys-bestsellers__btn--secondary i {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 1500px) {
+    .edsys-bestsellers {
+        padding: var(--space-3xl) 0;
+    }
+
+    .edsys-bestsellers__header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-bottom: var(--space-2xl);
+        gap: var(--space-lg);
+        flex-wrap: wrap;
+    }
+
+    .edsys-bestsellers__title-wrapper {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .edsys-bestsellers__grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .edsys-bestsellers__card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edsys-bestsellers__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .edsys-bestsellers__specs {
+        gap: var(--space-sm);
+    }
+
+    .edsys-bestsellers__benefit {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-sm);
+        font-size: clamp(0.75rem, 1vw + 0.125rem, 0.875rem);
+        line-height: 1.4;
+        color: var(--edsys-text);
+    }
+
+    .edsys-bestsellers__benefit i {
+        color: var(--edsys-primary);
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+    }
+
+    .edsys-bestsellers__benefit span {
+        word-break: break-word;
+    }
+
+    .edsys-bestsellers__badge {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        background: var(--edsys-accent);
+        color: var(--edsys-white);
+        padding: var(--space-xs) var(--space-sm);
+        border-radius: var(--radius-sm);
+        font-size: clamp(0.625rem, 1vw, 0.75rem);
+        font-weight: var(--edsys-font-bold);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        z-index: 2;
+        box-shadow: var(--edsys-shadow);
+    }
+
+    .edsys-bestsellers__actions {
+        display: flex;
+        gap: var(--space-xs);
+        margin-top: auto;
+        padding-top: var(--space-sm);
+    }
+
+    .edsys-bestsellers__btn--primary {
+        flex: 1;
+        background: var(--edsys-primary);
+        color: var(--edsys-white);
+        padding: var(--space-sm) var(--space-xs);
+        min-height: 2.5rem;
+
+    }
+
+    .edsys-bestsellers__btn--secondary {
+        background: var(--edsys-bg-light);
+        color: var(--edsys-text);
+        padding: var(--space-xs);
+        width: 2rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+    }
+
+    .edsys-bestsellers__btn--secondary i {
+        font-size: 0.875rem;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/* Focus states */
+.edsys-bestsellers__btn:focus,
+.edsys-bestsellers__card:focus {
+    outline: 2px solid var(--edsys-primary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-bestsellers__card,
+    .edsys-bestsellers__image,
+    .edsys-bestsellers__btn {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .edsys-bestsellers__card {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-bestsellers__badge {
+        border: 1px solid var(--edsys-white);
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .edsys-bestsellers__card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .edsys-bestsellers__badge {
+        background: #000 !important;
+        color: #fff !important;
+    }
+}

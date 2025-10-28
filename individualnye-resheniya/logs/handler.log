@@ -1,0 +1,36 @@
+[2025-07-18 16:56:18] === NEW REQUEST 2025-07-18 16:56:18 ===
+[2025-07-18 16:56:18] REQUEST_METHOD: POST
+[2025-07-18 16:56:18] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 16:56:18] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 16:56:18] Bitrix loaded successfully
+[2025-07-18 16:56:18] Raw input: 
+[2025-07-18 16:56:18] ERROR: Invalid JSON input: Syntax error
+[2025-07-18 16:56:18] ERROR FILE: /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php
+[2025-07-18 16:56:18] ERROR LINE: 122
+[2025-07-18 16:56:18] ERROR TRACE: #0 {main}
+[18-Jul-2025 17:16:46 Europe/Moscow] PHP Warning:  require_once(/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php): Failed to open stream: No such file or directory in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:16:46 Europe/Moscow] PHP Fatal error:  Uncaught Error: Failed opening required '/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php' (include_path='.:/usr/share/php') in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:22:01 Europe/Moscow] PHP Warning:  require_once(/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php): Failed to open stream: No such file or directory in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/setup.php on line 34
+[18-Jul-2025 17:22:01 Europe/Moscow] PHP Fatal error:  Uncaught Error: Failed opening required '/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php' (include_path='.:/usr/share/php') in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/setup.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/setup.php on line 34
+[2025-07-18 17:24:38] Setup test log entry
+[18-Jul-2025 17:26:35 Europe/Moscow] PHP Warning:  require_once(/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php): Failed to open stream: No such file or directory in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:26:35 Europe/Moscow] PHP Fatal error:  Uncaught Error: Failed opening required '/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php' (include_path='.:/usr/share/php') in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:27:56 Europe/Moscow] PHP Warning:  require_once(/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php): Failed to open stream: No such file or directory in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:27:56 Europe/Moscow] PHP Fatal error:  Uncaught Error: Failed opening required '/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php' (include_path='.:/usr/share/php') in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:35:20 Europe/Moscow] PHP Warning:  require_once(/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php): Failed to open stream: No such file or directory in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34
+[18-Jul-2025 17:35:20 Europe/Moscow] PHP Fatal error:  Uncaught Error: Failed opening required '/home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/classes/EmailTemplateManager.php' (include_path='.:/usr/share/php') in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php on line 34

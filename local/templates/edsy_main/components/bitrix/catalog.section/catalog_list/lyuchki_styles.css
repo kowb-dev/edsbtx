@@ -1,0 +1,5 @@
+/* Custom styles for the 'lyuchki-sczenicheskie' page */
+.lyuchki-sczenicheskie-styles .edsys-catalog__table-row {
+    border-left: 3px solid var(--edsys-accent, #ff2545);
+    background-color: #fff8f8;
+}

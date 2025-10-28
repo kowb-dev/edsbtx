@@ -1,0 +1,23 @@
+# Настройки личного кабинета
+# Файл: /personal/.htaccess
+# @version 1.1.0
+# @author KW https://kowb.ru
+
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /personal/
+    
+    # Если запрашивается существующий файл или директория - отдаем как есть
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Иначе отдаем index.php
+    RewriteRule . index.php [L]
+</IfModule>
+
+<IfModule mod_dir.c>
+    DirectoryIndex index.php
+</IfModule>

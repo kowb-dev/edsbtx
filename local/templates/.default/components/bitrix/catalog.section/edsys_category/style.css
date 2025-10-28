@@ -1,0 +1,1268 @@
+/* ==========================================================================
+   EDS Catalog Section Styles - Hybrid Version
+   ========================================================================== */
+
+/* Основной контейнер */
+.edsys-catalog-section {
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1200px) {
+    .edsys-catalog-section {
+        max-width: calc(100vw - 4rem);
+        padding: 0 2rem;
+    }
+}
+
+/* ==========================================================================
+   Хлебные крошки
+   ========================================================================== */
+
+.edsys-breadcrumbs {
+    margin: var(--space-md, 1rem) 0;
+}
+
+.edsys-breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.edsys-breadcrumbs__item:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.5rem;
+    color: #999;
+}
+
+.edsys-breadcrumbs__link {
+    color: #666;
+    text-decoration: none;
+}
+
+.edsys-breadcrumbs__link:hover {
+    color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-breadcrumbs__current {
+    color: #333;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Основной лейаут с боковыми фильтрами
+   ========================================================================== */
+
+.edsys-catalog-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .edsys-catalog-layout {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* ==========================================================================
+   Боковая панель фильтров
+   ========================================================================== */
+
+.edsys-sidebar-filters {
+    width: 280px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+@media (max-width: 1024px) {
+    .edsys-sidebar-filters {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 320px;
+        max-width: 90vw;
+        max-height: 100vh;
+        transform: translateX(-100%);
+        border-radius: 0;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .edsys-sidebar-filters.active {
+        transform: translateX(0);
+    }
+}
+
+.edsys-sidebar-filters__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+    flex-shrink: 0;
+}
+
+.edsys-sidebar-filters__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.edsys-sidebar-filters__close {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: #666;
+    font-size: 1.125rem;
+}
+
+.edsys-sidebar-filters__close:hover {
+    color: #333;
+}
+
+@media (max-width: 1024px) {
+    .edsys-sidebar-filters__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.edsys-sidebar-filters__content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.edsys-sidebar-filters__content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.edsys-sidebar-filters__content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.edsys-sidebar-filters__content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.edsys-sidebar-filters__content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Группы фильтров */
+.edsys-filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.edsys-filter-group:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.edsys-filter-group__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+}
+
+.edsys-filter-group__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Чекбоксы */
+.edsys-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.edsys-checkbox input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.edsys-checkbox__mark {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    background: #fff;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.edsys-checkbox input:checked + .edsys-checkbox__mark {
+    background: var(--edsys-primary, #ff4757);
+    border-color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-checkbox input:checked + .edsys-checkbox__mark::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.edsys-checkbox__label {
+    flex: 1;
+    color: #333;
+}
+
+/* Кнопки управления фильтрами */
+.edsys-sidebar-filters__actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    background: #f8f9fa;
+    flex-shrink: 0;
+}
+
+.edsys-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.edsys-btn--primary {
+    background: var(--edsys-primary, #ff4757);
+    color: #fff;
+}
+
+.edsys-btn--primary:hover {
+    background: var(--edsys-primary-dark, #e63946);
+}
+
+.edsys-btn--secondary {
+    background: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.edsys-btn--secondary:hover {
+    background: #e9ecef;
+}
+
+/* Overlay для мобильных фильтров */
+.edsys-filters-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edsys-filters-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   Основной контент
+   ========================================================================== */
+
+.edsys-catalog-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Заголовок категории с сортировкой */
+.edsys-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+    .edsys-category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+.edsys-category-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+}
+
+/* Сортировка */
+.edsys-sort {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.edsys-sort--desktop {
+    display: flex;
+}
+
+.edsys-sort--mobile {
+    display: none;
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-sort__select {
+    padding: 0.25rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    background: #fff;
+    font-size: var(--fs-xs);
+    min-width: 200px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url(
+    "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    padding-right: 2.5rem;
+    color: var(--edsys-carbon);
+}
+
+.edsys-sort__select:focus {
+    outline: none;
+    border-color: var(--edsys-primary, #ff4757);
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
+}
+
+/* ==========================================================================
+   Мобильные контролы - статичные и плавающие
+   ========================================================================== */
+
+/* Общие стили для мобильных контролов */
+.edsys-mobile-controls {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+     padding: 1rem;
+     background: #fff;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 0.5rem;
+    z-index: 50;
+}
+
+/* Статичные контролы под заголовком (без поиска) */
+.edsys-mobile-controls--static {
+    margin-bottom: 1.5rem;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+/* Статичные контролы содержат только фильтры и сортировку */
+.edsys-mobile-controls--static .edsys-mobile-controls__filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Плавающие контролы при скролле (с поиском, фильтрами и сортировкой) */
+.edsys-mobile-controls--floating {
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    right: 1rem;
+    margin-bottom: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    /* Компактные размеры для плавающих контролов */
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: none;
+}
+
+.edsys-mobile-controls--floating.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Компактный поиск в плавающих контролах */
+.edsys-mobile-controls--floating .edsys-mobile-controls__search {
+    gap: 0.5rem;
+}
+
+.edsys-mobile-controls--floating .edsys-mobile-search__btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.edsys-mobile-controls--floating .edsys-search-input {
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    height: 2rem;
+}
+
+.edsys-mobile-controls--floating .edsys-search-btn {
+    right: 0.25rem;
+    padding: 0.25rem;
+}
+
+/* Компактные фильтры и сортировка в плавающих контролах */
+.edsys-mobile-controls--floating .edsys-mobile-controls__filters {
+    gap: 0.5rem;
+}
+
+.edsys-mobile-controls--floating .edsys-mobile-filter-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    border: none;
+    background: #f8f9fa;
+    color: var(--edsys-steel);
+    min-height: 2rem;
+}
+
+.edsys-mobile-controls--floating .edsys-mobile-filter-btn:hover {
+    background: #e9ecef;
+}
+
+.edsys-mobile-controls--floating .edsys-sort__select {
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    min-width: 0;
+    border: none;
+    color: var(--edsys-steel);
+    background: #f8f9fa;
+    background-size: 1rem 1rem;
+    background-position: right 0.5rem center;
+}
+
+.edsys-mobile-controls--floating .edsys-sort__select:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(255, 71, 87, 0.2);
+}
+
+/* Отображение контролов на мобильных */
+@media (max-width: 1024px) {
+    .edsys-mobile-controls {
+        display: flex;
+    }
+
+    .edsys-sort--desktop {
+        display: none;
+    }
+
+    .edsys-sort--mobile {
+        display: flex;
+    }
+}
+
+/* Скрываем статичные контролы на десктопе */
+@media (min-width: 1025px) {
+    .edsys-mobile-controls--static,
+    .edsys-mobile-controls--floating {
+        display: none;
+    }
+}
+
+/* Поиск в мобильных контролах */
+.edsys-mobile-controls__search {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.edsys-mobile-search__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--edsys-primary, #ff4757);
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.edsys-mobile-search__btn:hover {
+    background: var(--edsys-primary-dark, #e63946);
+}
+
+.edsys-mobile-search__btn i {
+    font-size: 1.25rem;
+}
+
+.edsys-mobile-search__form {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-search-form {
+    position: relative;
+    width: 100%;
+}
+
+.edsys-search-input {
+    width: 100%;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.edsys-search-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.edsys-search-btn:hover {
+    color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-search-btn i {
+    font-size: 1.125rem;
+}
+
+/* Фильтры в мобильных контролах */
+.edsys-mobile-controls__filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Кнопка мобильных фильтров */
+.edsys-mobile-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    position: relative;
+    white-space: nowrap;
+    font-size: var(--fs-xs);
+    color: var(--edsys-carbon);
+}
+
+.edsys-mobile-filter-btn:hover {
+    background: #f8f9fa;
+}
+
+.edsys-filters-counter {
+    background: var(--edsys-primary, #ff4757);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.125rem 0.375rem;
+    border-radius: 50px;
+    min-width: 1.125rem;
+    text-align: center;
+    line-height: 1;
+}
+
+.edsys-sort--mobile .edsys-sort__select {
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Информация о каталоге
+   ========================================================================== */
+
+.edsys-catalog-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.edsys-catalog-info__count {
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Сетка товаров
+   ========================================================================== */
+
+.edsys-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+    .edsys-products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .edsys-catalog-section {
+        max-width: calc(100vw - 0.1rem);
+        margin: 0 auto;
+        padding: 0 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   Карточка товара
+   ========================================================================== */
+
+.edsys-product-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.edsys-product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Изображение товара с галереей */
+.edsys-product-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+.edsys-product-card__image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.edsys-product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.edsys-product-card__image--main {
+    z-index: 2;
+    opacity: 1;
+}
+
+.edsys-product-card__image--additional {
+    z-index: 1;
+}
+
+.edsys-product-card__image.active {
+    opacity: 1;
+}
+
+.edsys-product-card__no-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    font-size: 0.875rem;
+}
+
+.edsys-product-card__no-image i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Навигация по изображениям */
+.edsys-product-card__image-nav {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.edsys-product-card:hover .edsys-product-card__image-nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.edsys-image-indicators {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    /*background: rgba(0, 0, 0, 0.6);*/
+    border-radius: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.edsys-image-indicator {
+    width: 1.5rem;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-image-indicator--active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.edsys-image-indicator:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.edsys-image-indicator--active:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .edsys-product-card__image-nav {
+        opacity: 0.8;
+        visibility: visible;
+    }
+
+    .edsys-image-indicators {
+        /*background: rgba(0, 0, 0, 0.4);*/
+        padding: 0.375rem 0.5rem;
+        gap: 0.375rem;
+    }
+
+    .edsys-image-indicator {
+        width: 1.25rem;
+        height: 0.05rem;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .edsys-image-indicator--active {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Убираем отображение навигации для карточек без дополнительных изображений */
+.edsys-product-card[data-has-additional="false"] .edsys-product-card__image-nav {
+    display: none !important;
+}
+
+/* Быстрые действия */
+.edsys-product-card__quick-actions {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    z-index: 5;
+}
+
+.edsys-product-card:hover .edsys-product-card__quick-actions {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .edsys-product-card__quick-actions {
+        opacity: 1;
+    }
+}
+
+.edsys-quick-action {
+    width: 2rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.edsys-quick-action:hover {
+    background: var(--edsys-primary, #ff4757);
+    color: #fff;
+    border-color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-quick-action.active {
+    background: var(--edsys-primary, #ff4757);
+    color: #fff;
+    border-color: var(--edsys-primary, #ff4757);
+}
+
+/* Контент карточки */
+.edsys-product-card__content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Артикул */
+.edsys-product-card__article {
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.edsys-product-card__title {
+    margin: 0 0 0.75rem 0;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.edsys-product-card__title-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.edsys-product-card__title-link:hover {
+    color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-product-card__description {
+    font-size: var(--fs-xxs);
+    color: var(--edsys-steel);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    flex: 1;
+    letter-spacing: var(--edsys-tracking-wide);
+}
+
+/* Ценообразование */
+.edsys-product-card__pricing {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.edsys-product-card__prices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.edsys-product-card__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edsys-product-card__price-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.edsys-product-card__price--retail .edsys-product-card__price-label {
+    color: #999;
+}
+
+.edsys-product-card__price--personal .edsys-product-card__price-label {
+    color: var(--edsys-primary, #ff4757);
+    font-weight: 600;
+}
+
+.edsys-product-card__price-value {
+    font-weight: 600;
+}
+
+.edsys-product-card__price--retail .edsys-product-card__price-value {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.edsys-product-card__price--personal .edsys-product-card__price-value {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Наличие */
+.edsys-availability {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.edsys-availability--in-stock {
+    color: #28a745;
+}
+
+.edsys-availability--preorder {
+    color: #ffc107;
+}
+
+.edsys-availability i {
+    font-size: 1rem;
+}
+
+/* Уведомление для неавторизованных */
+.edsys-product-card__auth-notice {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.edsys-auth-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--edsys-primary, #ff4757);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.edsys-auth-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Кнопка "Показать ещё"
+   ========================================================================== */
+
+.edsys-load-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.edsys-load-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 200px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.edsys-load-more-btn:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+    color: #333;
+}
+
+.edsys-load-more-btn:active {
+    transform: translateY(1px);
+}
+
+.edsys-load-more-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.edsys-load-more-btn:disabled:hover {
+    background: #f8f9fa;
+    border-color: #e9ecef;
+    color: #495057;
+}
+
+.edsys-load-more-btn__text {
+    display: flex;
+    align-items: center;
+}
+
+.edsys-load-more-btn__spinner {
+    display: none;
+    animation: spin 1s linear infinite;
+}
+
+.edsys-load-more-btn.loading .edsys-load-more-btn__text {
+    display: none;
+}
+
+.edsys-load-more-btn.loading .edsys-load-more-btn__spinner {
+    display: flex;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+    .edsys-load-more-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ==========================================================================
+   Пагинация
+   ========================================================================== */
+
+.edsys-pagination {
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.edsys-pagination__list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.edsys-pagination__item {
+    display: flex;
+}
+
+.edsys-pagination__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    border: 1px solid #e9ecef;
+    background: #fff;
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease;
+}
+
+.edsys-pagination__link:hover {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+.edsys-pagination__link--current {
+    background: var(--edsys-accent);
+    border-color: (--edsys-accent);
+    color: #fff;
+    cursor: default;
+    position: relative;
+}
+
+.edsys-pagination__link--current:hover {
+    background: #d0213b;
+    border-color: #D0213BFF;
+    color: #fff;
+}
+
+
+.edsys-pagination__link--prev,
+.edsys-pagination__link--next {
+    padding: 0 0.75rem;
+}
+
+.edsys-pagination__ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Первая и последняя страница */
+.edsys-pagination__item:first-child .edsys-pagination__link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.edsys-pagination__item:last-child .edsys-pagination__link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media (max-width: 640px) {
+    .edsys-pagination__list {
+        gap: 0.125rem;
+    }
+
+    .edsys-pagination__link {
+        min-width: 2rem;
+        height: 2rem;
+        padding: 0 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .edsys-pagination__link--prev,
+    .edsys-pagination__link--next {
+        padding: 0 0.5rem;
+    }
+
+    .edsys-pagination__ellipsis {
+        min-width: 1.5rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ==========================================================================
+   Индикатор загрузки
+   ========================================================================== */
+
+.edsys-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    color: #666;
+}
+
+.edsys-loading__spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--edsys-primary, #ff4757);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.edsys-loading__text {
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .edsys-sidebar-filters,
+    .edsys-filters-overlay,
+    .edsys-load-more-btn,
+    .edsys-pagination__link,
+    .edsys-loading__spinner {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    .edsys-sidebar-filters,
+    .edsys-mobile-controls,
+    .edsys-product-card__quick-actions,
+    .edsys-filters-overlay,
+    .edsys-product-card__image-nav,
+    .edsys-pagination {
+        display: none !important;
+    }
+
+    .edsys-catalog-layout {
+        flex-direction: column;
+    }
+
+    .edsys-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .edsys-product-card {
+        break-inside: avoid;
+        border: 1px solid #000;
+    }
+}

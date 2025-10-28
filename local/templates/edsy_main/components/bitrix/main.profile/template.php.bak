@@ -1,0 +1,454 @@
+<?php
+/**
+ * Шаблон профиля пользователя
+ * Файл: /local/templates/edsy_main/components/bitrix/main.profile/edsy_profile/template.php
+ */
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+
+CJSCore::Init(array("jquery"));
+?>
+
+<div class="edsy-profile-wrapper">
+    <?php if ($arResult["SHOW_RESULT_ERROR"] == "Y"): ?>
+        <div class="alert alert-danger edsy-alert">
+            <ul>
+                <?php foreach ($arResult["SHOW_RESULT_ERROR_ARRAY"] as $error): ?>
+                    <li><?= $error ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($arResult["SHOW_RESULT_SUCCESS"] == "Y"): ?>
+        <div class="alert alert-success edsy-alert">
+            <?= GetMessage("PROFILE_DATA_SAVED") ?>
+        </div>
+    <?php endif; ?>
+
+    <form method="post" name="form1" action="<?= POST_FORM_ACTION_URI ?>" enctype="multipart/form-data" class="edsy-profile-form">
+        <?= bitrix_sessid_post(); ?>
+        <input type="hidden" name="lang" value="<?= LANG ?>" />
+        <input type="hidden" name="ID" value="<?= $arResult["ID"] ?>" />
+
+        <!-- Личные данные -->
+        <div class="edsy-profile-section">
+            <h2 class="edsy-profile-section__title">Личные данные</h2>
+
+            <div class="edsy-profile-grid">
+                <!-- Имя -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["NAME"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="NAME">
+                            <?= GetMessage("NAME") ?><?php if ($arResult["USER_PROPERTIES"]["data"]["NAME"]["REQUIRED"] == "Y"): ?><span class="required">*</span><?php endif; ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="NAME"
+                                name="NAME"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["NAME"]) ?>"
+                                maxlength="50"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Фамилия -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["LAST_NAME"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="LAST_NAME">
+                            <?= GetMessage("LAST_NAME") ?><?php if ($arResult["USER_PROPERTIES"]["data"]["LAST_NAME"]["REQUIRED"] == "Y"): ?><span class="required">*</span><?php endif; ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="LAST_NAME"
+                                name="LAST_NAME"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["LAST_NAME"]) ?>"
+                                maxlength="50"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Отчество -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["SECOND_NAME"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="SECOND_NAME">
+                            <?= GetMessage("SECOND_NAME") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="SECOND_NAME"
+                                name="SECOND_NAME"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["SECOND_NAME"]) ?>"
+                                maxlength="50"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Email -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["EMAIL"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="EMAIL">
+                            <?= GetMessage("EMAIL") ?><?php if ($arResult["USER_PROPERTIES"]["data"]["EMAIL"]["REQUIRED"] == "Y"): ?><span class="required">*</span><?php endif; ?>
+                        </label>
+                        <input
+                                type="email"
+                                id="EMAIL"
+                                name="EMAIL"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["EMAIL"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Логин -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["LOGIN"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="LOGIN">
+                            <?= GetMessage("LOGIN") ?><?php if ($arResult["USER_PROPERTIES"]["data"]["LOGIN"]["REQUIRED"] == "Y"): ?><span class="required">*</span><?php endif; ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="LOGIN"
+                                name="LOGIN"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["LOGIN"]) ?>"
+                                maxlength="50"
+                                class="edsy-form-input"
+                                <?php if ($arResult["ID"] > 0): ?>disabled<?php endif; ?>
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Телефон -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_PHONE"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_PHONE">
+                            <?= GetMessage("PERSONAL_PHONE") ?>
+                        </label>
+                        <input
+                                type="tel"
+                                id="PERSONAL_PHONE"
+                                name="PERSONAL_PHONE"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_PHONE"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Мобильный телефон -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_MOBILE"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_MOBILE">
+                            <?= GetMessage("PERSONAL_MOBILE") ?>
+                        </label>
+                        <input
+                                type="tel"
+                                id="PERSONAL_MOBILE"
+                                name="PERSONAL_MOBILE"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_MOBILE"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- WWW-страница -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_WWW"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_WWW">
+                            <?= GetMessage("PERSONAL_WWW") ?>
+                        </label>
+                        <input
+                                type="url"
+                                id="PERSONAL_WWW"
+                                name="PERSONAL_WWW"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_WWW"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Дата рождения -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_BIRTHDAY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_BIRTHDAY">
+                            <?= GetMessage("PERSONAL_BIRTHDAY") ?>
+                        </label>
+                        <input
+                                type="date"
+                                id="PERSONAL_BIRTHDAY"
+                                name="PERSONAL_BIRTHDAY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_BIRTHDAY"]) ?>"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Пол -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_GENDER"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_GENDER">
+                            <?= GetMessage("PERSONAL_GENDER") ?>
+                        </label>
+                        <select id="PERSONAL_GENDER" name="PERSONAL_GENDER" class="edsy-form-select">
+                            <option value=""><?= GetMessage("NOT_SET") ?></option>
+                            <option value="M"<?php if ($arResult["arUser"]["PERSONAL_GENDER"] == "M"): ?> selected<?php endif; ?>><?= GetMessage("MALE") ?></option>
+                            <option value="F"<?php if ($arResult["arUser"]["PERSONAL_GENDER"] == "F"): ?> selected<?php endif; ?>><?= GetMessage("FEMALE") ?></option>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Страна -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_COUNTRY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_COUNTRY">
+                            <?= GetMessage("PERSONAL_COUNTRY") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="PERSONAL_COUNTRY"
+                                name="PERSONAL_COUNTRY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_COUNTRY"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Город -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_CITY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="PERSONAL_CITY">
+                            <?= GetMessage("PERSONAL_CITY") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="PERSONAL_CITY"
+                                name="PERSONAL_CITY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_CITY"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Адрес -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["PERSONAL_STREET"])): ?>
+                    <div class="edsy-form-group edsy-form-group--full">
+                        <label class="edsy-form-label" for="PERSONAL_STREET">
+                            <?= GetMessage("PERSONAL_STREET") ?>
+                        </label>
+                        <textarea
+                                id="PERSONAL_STREET"
+                                name="PERSONAL_STREET"
+                                rows="3"
+                                class="edsy-form-textarea"
+                        ><?= htmlspecialcharsEx($arResult["arUser"]["PERSONAL_STREET"]) ?></textarea>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <!-- Информация о работе -->
+        <div class="edsy-profile-section">
+            <h2 class="edsy-profile-section__title">Информация о работе</h2>
+
+            <div class="edsy-profile-grid">
+                <!-- Компания -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_COMPANY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_COMPANY">
+                            <?= GetMessage("WORK_COMPANY") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="WORK_COMPANY"
+                                name="WORK_COMPANY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_COMPANY"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Должность -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_POSITION"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_POSITION">
+                            <?= GetMessage("WORK_POSITION") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="WORK_POSITION"
+                                name="WORK_POSITION"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_POSITION"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Отдел / Департамент -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_DEPARTMENT"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_DEPARTMENT">
+                            <?= GetMessage("WORK_DEPARTMENT") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="WORK_DEPARTMENT"
+                                name="WORK_DEPARTMENT"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_DEPARTMENT"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- WWW-страница -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_WWW"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_WWW">
+                            <?= GetMessage("WORK_WWW") ?>
+                        </label>
+                        <input
+                                type="url"
+                                id="WORK_WWW"
+                                name="WORK_WWW"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_WWW"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Телефон -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_PHONE"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_PHONE">
+                            <?= GetMessage("WORK_PHONE") ?>
+                        </label>
+                        <input
+                                type="tel"
+                                id="WORK_PHONE"
+                                name="WORK_PHONE"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_PHONE"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Страна -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_COUNTRY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_COUNTRY">
+                            <?= GetMessage("WORK_COUNTRY") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="WORK_COUNTRY"
+                                name="WORK_COUNTRY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_COUNTRY"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Город -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_CITY"])): ?>
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="WORK_CITY">
+                            <?= GetMessage("WORK_CITY") ?>
+                        </label>
+                        <input
+                                type="text"
+                                id="WORK_CITY"
+                                name="WORK_CITY"
+                                value="<?= htmlspecialcharsEx($arResult["arUser"]["WORK_CITY"]) ?>"
+                                maxlength="255"
+                                class="edsy-form-input"
+                        />
+                    </div>
+                <?php endif; ?>
+
+                <!-- Адрес -->
+                <?php if (isset($arResult["USER_PROPERTIES"]["data"]["WORK_STREET"])): ?>
+                    <div class="edsy-form-group edsy-form-group--full">
+                        <label class="edsy-form-label" for="WORK_STREET">
+                            <?= GetMessage("WORK_STREET") ?>
+                        </label>
+                        <textarea
+                                id="WORK_STREET"
+                                name="WORK_STREET"
+                                rows="3"
+                                class="edsy-form-textarea"
+                        ><?= htmlspecialcharsEx($arResult["arUser"]["WORK_STREET"]) ?></textarea>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <!-- Смена пароля -->
+        <?php if ($arResult["CAN_EDIT_PASSWORD"]): ?>
+            <div class="edsy-profile-section">
+                <h2 class="edsy-profile-section__title">Смена пароля</h2>
+
+                <div class="edsy-profile-grid">
+                    <!-- Новый пароль -->
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="NEW_PASSWORD">
+                            <?= GetMessage("NEW_PASSWORD_REQ") ?>
+                        </label>
+                        <input
+                                type="password"
+                                id="NEW_PASSWORD"
+                                name="NEW_PASSWORD"
+                                value=""
+                                maxlength="50"
+                                class="edsy-form-input"
+                                autocomplete="new-password"
+                        />
+                    </div>
+
+                    <!-- Подтверждение пароля -->
+                    <div class="edsy-form-group">
+                        <label class="edsy-form-label" for="NEW_PASSWORD_CONFIRM">
+                            <?= GetMessage("NEW_PASSWORD_CONFIRM") ?>
+                        </label>
+                        <input
+                                type="password"
+                                id="NEW_PASSWORD_CONFIRM"
+                                name="NEW_PASSWORD_CONFIRM"
+                                value=""
+                                maxlength="50"
+                                class="edsy-form-input"
+                                autocomplete="new-password"
+                        />
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <!-- Кнопки -->
+        <div class="edsy-profile-actions">
+            <button type="submit" name="save" value="Y" class="edsy-btn edsy-btn--primary">
+                <?= GetMessage("MAIN_SAVE") ?>
+            </button>
+            <button type="reset" class="edsy-btn edsy-btn--secondary">
+                <?= GetMessage("MAIN_RESET") ?>
+            </button>
+        </div>
+    </form>
+</div>

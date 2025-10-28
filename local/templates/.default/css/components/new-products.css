@@ -1,0 +1,283 @@
+
+/* Полноширинный фон секции */
+.edsys-new-goods-section {
+    background: var(--edsys-white);
+    padding: var(--space-2xl) 0;
+    position: relative;
+    overflow: hidden;
+    margin: var(--space-3xl) auto;
+}
+
+/*.edsys-new-goods-section::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background:*/
+/*            radial-gradient(circle at 20% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 50%),*/
+/*            radial-gradient(circle at 80% 80%, rgba(0, 208, 132, 0.05) 0%, transparent 50%);*/
+/*    pointer-events: none;*/
+/*}*/
+
+/* Контейнер баннеров */
+.edsys-new-goods {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+    gap: var(--space-lg);
+    position: relative;
+    z-index: 2;
+}
+
+/* Горизонтальный баннер */
+.edsys-new-goods {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    min-height: clamp(8rem, 12vw, 10rem);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*.edsys-new-goods::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background: var(--gradient-mesh);*/
+/*    opacity: 0;*/
+/*    transition: opacity 0.4s ease;*/
+/*    pointer-events: none;*/
+/*}*/
+
+@media (hover: hover) {
+    .edsys-new-goods:hover {
+        box-shadow: var(--shadow-lg);
+        border-color: transparent;
+    }
+
+    .edsys-new-goods:hover::before {
+        opacity: 1;
+    }
+}
+
+/* Контент баннера */
+.edsys-new-goods__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    position: relative;
+    z-index: 2;
+}
+
+.edsys-new-goods__category {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-weight: 600;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    align-self: flex-start;
+    position: relative;
+    background: var(--edsys-wire);
+    color: var(--edsys-white);
+    opacity: .7;
+    transition: opacity 0.3s ease;
+}
+
+.edsys-new-goods:hover .edsys-new-goods__category {
+    opacity: 1;
+}
+/*.edsys-new-goods__category::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    border-radius: inherit;*/
+/*    padding: 1px;*/
+/*    background: linear-gradient(135deg, currentColor, transparent);*/
+/*    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
+/*    mask-composite: xor;*/
+/*    -webkit-mask-composite: xor;*/
+/*    opacity: 0.3;*/
+/*}*/
+
+.edsys-new-goods__title {
+    font-weight: 800;
+    font-size: var(--fs-lg);
+    line-height: 1.1;
+    color: var(--edsys-text);
+    letter-spacing: -0.01em;
+}
+
+.edsys-new-goods__subtitle {
+    color: var(--edsys-text-light);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Особенности товара - горизонтально */
+.edsys-new-goods__features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+}
+
+.edsys-new-goods__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-light);
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.03);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.edsys-new-goods__feature-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+}
+
+/* Кнопка действия */
+.edsys-new-goods__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: var(--space-sm);
+    position: relative;
+    overflow: hidden;
+    background: var(--edsys-accent);
+    color: var(--edsys-bg-light);
+}
+
+.edsys-new-goods__cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+@media (hover: hover) {
+    .edsys-new-goods__cta:hover::before {
+        left: 100%;
+    }
+
+    .edsys-new-goods__cta:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Изображение товара */
+.edsys-new-goods__image-wrapper {
+    position: relative;
+    width: clamp(6rem, 12vw, 15rem);
+    height: clamp(6rem, 12vw, 15rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.edsys-new-goods__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease;
+}
+
+@media (hover: hover) {
+    .edsys-new-goods:hover .edsys-new-goods__image {
+        transform: scale(1.05);
+    }
+}
+
+
+
+/* Адаптив для мобильных */
+@media (max-width: 48rem) {
+
+    .edsys-new-goods {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: var(--space-lg);
+        gap: var(--space-md);
+    }
+    .edsys-new-goods__category{
+        display: none;
+    }
+    .edsys-new-goods__image-wrapper {
+        width: clamp(10rem, 23vw, 20rem);
+        height: clamp(10rem, 23vw, 20rem);
+        margin: 0 auto;
+    }
+
+    .edsys-new-goods__features {
+        justify-content: center;
+    }
+
+    .edsys-new-goods__cta {
+        align-self: center;
+    }
+}
+
+/* Микроанимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.edsys-new-goods {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.edsys-new-goods:nth-child(2) {
+    animation-delay: 0.1s;
+}

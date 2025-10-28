@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Brands Component Styles
+   ========================================================================== */
+
+/* Секция с логотипами партнеров */
+.edsys-partners {
+    padding: var(--space-3xl) 0;
+    background-color: var(--edsys-white);
+    overflow: hidden;
+    margin: var(--space-2xl) 0;
+}
+
+.edsys-partners__container {
+    max-width: min(103.2rem, 100vw - 2rem);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.edsys-partners__header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-partners__title {
+    font-size: var(--edsys-fs-h2);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-partners__subtitle {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+/* Контейнер для бесконечной прокрутки */
+.edsys-partners__carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%
+    );
+}
+
+.edsys-partners__track {
+    display: flex;
+    width: 200%;
+    animation: edsys-scroll-infinite 60s linear infinite;
+}
+
+.edsys-partners__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 50%;
+    gap: clamp(2rem, 5vw, 4rem);
+    flex-shrink: 0;
+    padding: 0 clamp(1rem, 2.5vw, 2rem);
+}
+
+.edsys-partners__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(10rem, 18vw, 14rem);
+    height: clamp(3.5rem, 8vw, 10rem);
+    padding: var(--space-lg);
+    transition: var(--edsys-transition);
+    opacity: 0.6;
+    filter: grayscale(100%);
+    flex-shrink: 0;
+}
+
+.edsys-partners__logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.edsys-partners__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    loading: "lazy";
+}
+
+/* Анимация бесконечной прокрутки */
+@keyframes edsys-scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Пауза анимации при наведении */
+.edsys-partners__carousel:hover .edsys-partners__track {
+    animation-play-state: paused;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .edsys-partners__track {
+        animation-duration: 25s;
+    }
+
+    .edsys-partners__group {
+        gap: clamp(1rem, 2vw, 1.5rem);
+        padding: 0 clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .edsys-partners__logo {
+        min-width: clamp(8rem, 22vw, 10rem);
+        height: clamp(3.5rem, 6vw, 4rem);
+        padding: clamp(0.75rem, 2vw, 1rem);
+    }
+}
+
+/* Высокий контраст для логотипов */
+@media (prefers-contrast: high) {
+    .edsys-partners__logo {
+        opacity: 1;
+        filter: contrast(1.2);
+    }
+}
+
+/* Уменьшение движения для пользователей с ограниченными возможностями */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-partners__track {
+        animation-duration: 120s;
+    }
+}

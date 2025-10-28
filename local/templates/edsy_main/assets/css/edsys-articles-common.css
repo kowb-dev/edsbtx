@@ -1,0 +1,3601 @@
+/* ==========================================================================
+   EDS Articles Common Styles v2.0
+   Общие стили для всех статей раздела "Полезно знать"
+   Исправленная версия без дублей и конфликтов
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE LAYOUT
+   ========================================================================== */
+
+/* Main article page layout */
+.edsys-article-page {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: var(--space-3xl);
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--container-padding);
+    font-family: var(--edsys-font-primary);
+    position: relative;
+}
+
+/* Article Content */
+.edsys-article-content {
+    min-width: 0;
+}
+
+/* ==========================================================================
+   BREADCRUMBS
+   ========================================================================== */
+
+.edsys-breadcrumbs {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-xs);
+}
+
+.edsys-breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.edsys-breadcrumbs__link {
+    color: var(--edsys-text-muted);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+    transition: color var(--edsys-transition-fast);
+}
+
+.edsys-breadcrumbs__link:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-breadcrumbs__current {
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-sm);
+}
+
+.edsys-breadcrumbs__item i {
+    color: var(--edsys-text-light);
+    font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   ARTICLE HEADER
+   ========================================================================== */
+
+.edsys-article-header {
+    margin-bottom: var(--space-2xl);
+    text-align: center;
+}
+
+.edsys-article-title {
+    font-size: var(--edsys-fs-h1);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-md);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-article-subtitle {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* Action Buttons */
+.edsys-article-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    align-items: flex-end;
+}
+
+.edsys-action-btn-title {
+    text-transform: uppercase;
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-3xs) var(--space-xs);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.edsys-action-btn--whatsapp {
+    background: #25D366;
+    color: var(--edsys-white);
+    border: 2px solid #25D366;
+}
+
+.edsys-action-btn--whatsapp:hover {
+    background: #128C7E;
+    border-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
+}
+
+.edsys-action-btn--telegram {
+    background: #0088cc;
+    color: var(--edsys-white);
+    border: 2px solid #0088cc;
+}
+
+.edsys-action-btn--telegram:hover {
+    background: #006bb3;
+    border-color: #006bb3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 136, 204, 0.3);
+}
+
+.edsys-action-btn i {
+    font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   HERO IMAGE
+   ========================================================================== */
+
+.edsys-article-hero {
+    margin-bottom: var(--space-2xl);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.edsys-article-hero__image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+}
+
+/* ==========================================================================
+   ARTICLE BODY
+   ========================================================================== */
+
+.edsys-article-body {
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+    color: var(--edsys-text);
+}
+
+.edsys-article-intro {
+    font-size: var(--fs-lg);
+    line-height: var(--edsys-lh-relaxed);
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.edsys-content-section {
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-content-section h2 {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--edsys-accent);
+}
+
+.edsys-content-section h3 {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: var(--space-xl) 0 var(--space-md) 0;
+}
+
+.edsys-content-section h4 {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: var(--space-lg) 0 var(--space-sm) 0;
+}
+
+.edsys-content-section h5 {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: var(--space-md) 0 var(--space-sm) 0;
+}
+
+.edsys-content-section p {
+    margin-bottom: var(--space-md);
+}
+
+.edsys-content-section ul,
+.edsys-content-section ol {
+    margin: var(--space-md) 0;
+    padding-left: var(--space-xl);
+}
+
+.edsys-content-section li {
+    margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   SPECIAL CONTENT BLOCKS
+   ========================================================================== */
+
+/* Highlight Box */
+.edsys-highlight-box {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 1px solid var(--edsys-spark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+/* Definition Box */
+.edsys-definition-box {
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+    border: 1px solid var(--edsys-voltage);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-definition-box h3 {
+    color: var(--edsys-voltage);
+    margin-top: 0;
+}
+
+/* Danger Warning */
+.edsys-danger-warning {
+    background: linear-gradient(135deg, #fff5f5, #fee);
+    border: 2px solid var(--edsys-surge);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-danger-warning h3 {
+    color: var(--edsys-surge);
+    margin-top: 0;
+}
+
+/* Technical Note */
+.edsys-technical-note {
+    background: var(--edsys-bg-light);
+    border-left: 4px solid var(--edsys-voltage);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-technical-note h4 {
+    color: var(--edsys-voltage);
+    margin-top: 0;
+}
+
+/* Problem Card */
+.edsys-problem-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-problem-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-radius: 50%;
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    margin-right: var(--space-sm);
+}
+
+/* Solution Card */
+.edsys-solution-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-solution-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   HIGHLIGHT SECTION - ПОЛНОСТЬЮ ИСПРАВЛЕННАЯ ВЕРСИЯ
+   ========================================================================== */
+
+.edsys-highlight-section {
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    margin: var(--space-3xl) 0;
+    color: var(--edsys-white);
+    position: relative;
+}
+
+/* Все элементы в highlight-section белые */
+.edsys-highlight-section *,
+.edsys-highlight-section h2,
+.edsys-highlight-section h3,
+.edsys-highlight-section h4,
+.edsys-highlight-section h5,
+.edsys-highlight-section p,
+.edsys-highlight-section span,
+.edsys-highlight-section div,
+.edsys-highlight-section ul,
+.edsys-highlight-section ol,
+.edsys-highlight-section li {
+    color: var(--edsys-white) !important;
+}
+
+.edsys-highlight-section h2,
+.edsys-highlight-section h3,
+.edsys-highlight-section h4,
+.edsys-highlight-section h5 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.edsys-highlight-section strong,
+.edsys-highlight-section b {
+    color: var(--edsys-white) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-highlight-section small {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Вложенные блоки в highlight-section */
+.edsys-highlight-section .edsys-step-item {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: var(--space-md);
+}
+
+.edsys-highlight-section .edsys-step-number {
+    background: var(--edsys-white) !important;
+    color: var(--edsys-accent) !important;
+    font-weight: var(--edsys-font-bold);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edsys-highlight-section .edsys-product-highlight {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-md) 0;
+    backdrop-filter: blur(5px);
+}
+
+.edsys-highlight-section .edsys-product-highlight .edsys-product-icon {
+    color: var(--edsys-white);
+}
+
+.edsys-highlight-section .edsys-recommendation-card {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.edsys-highlight-section .edsys-recommendation-card::before {
+    background: linear-gradient(90deg, var(--edsys-white), rgba(255, 255, 255, 0.7)) !important;
+}
+
+.edsys-highlight-section .edsys-recommendation-icon {
+    background: var(--edsys-white) !important;
+    color: var(--edsys-accent) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edsys-highlight-section .edsys-recommendation-note {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.edsys-highlight-section .edsys-safety-result,
+.edsys-highlight-section .edsys-final-advice {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--edsys-white);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+    backdrop-filter: blur(5px);
+}
+
+.edsys-highlight-section .edsys-feature-tag {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: var(--edsys-white) !important;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.edsys-highlight-section .edsys-tip-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    backdrop-filter: blur(5px);
+}
+
+/* ==========================================================================
+   GRIDS AND LAYOUTS
+   ========================================================================== */
+
+.edsys-solutions-grid {
+    display: grid;
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-comparison-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-comparison-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-comparison-card h3 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+}
+
+.edsys-comparison-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--edsys-accent);
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin: 0 auto var(--space-md) auto;
+}
+
+/* ==========================================================================
+   STEP BY STEP
+   ========================================================================== */
+
+.edsys-step-by-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.edsys-step-item {
+    display: flex;
+    gap: var(--space-md);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.edsys-step-item.edsys-animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-radius: 50%;
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    flex-shrink: 0;
+}
+
+.edsys-step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-step-content h4,
+.edsys-step-content h5 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--edsys-text);
+}
+
+.edsys-step-content p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+}
+
+/* ==========================================================================
+   TECHNICAL ELEMENTS
+   ========================================================================== */
+
+.edsys-technical-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    margin: 0 auto;
+    padding: var(--space-2xs);
+    background: var(--edsys-white);
+}
+
+.edsys-image-caption {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+
+.edsys-scheme-block h3 {
+    color: var(--edsys-text);
+    margin-top: 0;
+}
+
+.edsys-scheme-image {
+    margin: var(--space-lg) 0;
+}
+
+.edsys-scheme-caption {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+
+.edsys-formula-block {
+    text-align: center;
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-formula-image {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto var(--space-md);
+}
+
+.edsys-formula-explanation {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    font-style: italic;
+}
+
+.edsys-tech-image-block {
+    float: left;
+    margin: 0 var(--space-lg) var(--space-lg) 0;
+    text-align: center;
+    max-width: 450px;
+}
+
+.edsys-tech-image-block .edsys-technical-image {
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--edsys-white);
+    padding: var(--space-sm);
+}
+
+.edsys-technical-explanation {
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+/* ==========================================================================
+   RESISTANCE AND MEASUREMENTS
+   ========================================================================== */
+
+.edsys-resistance-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-lg);
+}
+
+.edsys-resistance-item {
+    text-align: center;
+    flex: 1;
+}
+
+.edsys-resistance-value {
+    display: block;
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-resistance-label {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+}
+
+.edsys-vs-divider {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+}
+
+.edsys-conclusion-highlight {
+    text-align: center;
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+}
+
+.edsys-measurement-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+}
+
+.edsys-measurement-item {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.edsys-measurement-item h4 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+}
+
+.edsys-measurement-value {
+    font-size: var(--fs-2xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-area-value {
+    font-size: var(--fs-lg);
+    color: var(--edsys-voltage);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-vs {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    background: var(--edsys-white);
+    padding: var(--space-sm);
+    border-radius: 50%;
+    min-width: 50px;
+    border: 2px solid var(--edsys-accent);
+}
+
+/* ==========================================================================
+   DANGER LEVELS
+   ========================================================================== */
+
+.edsys-danger-progression {
+    background: linear-gradient(135deg, #fff5f5, #fee);
+    border: 2px solid var(--edsys-surge);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-danger-progression h3 {
+    color: var(--edsys-surge);
+    margin-top: 0;
+}
+
+.edsys-danger-levels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.edsys-danger-level {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-md);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-danger-level--critical {
+    background: rgba(220, 53, 69, 0.1);
+    border: 2px solid var(--edsys-surge);
+}
+
+.edsys-danger-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--edsys-accent);
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.edsys-danger-level--critical .edsys-danger-icon {
+    background: var(--edsys-surge);
+    animation: edsys-pulse 2s infinite;
+}
+
+@keyframes edsys-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.edsys-danger-content {
+    flex: 1;
+}
+
+.edsys-danger-content h4 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--edsys-text);
+}
+
+.edsys-danger-content p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+}
+
+.edsys-critical-values {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+    padding: var(--space-md);
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.edsys-critical-number {
+    font-size: 2.5rem;
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-surge);
+}
+
+.edsys-critical-text {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text);
+}
+
+/* ==========================================================================
+   CONSEQUENCES
+   ========================================================================== */
+
+.edsys-consequences {
+    background: var(--edsys-bg-light);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-consequences h3 {
+    color: var(--edsys-text);
+    margin-top: 0;
+}
+
+.edsys-consequences-variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.edsys-consequence-item {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.edsys-consequence-item--mild {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid var(--edsys-circuit);
+}
+
+.edsys-consequence-item--severe {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid var(--edsys-surge);
+}
+
+.edsys-consequence-item h4 {
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.edsys-consequence-item--mild h4 {
+    color: var(--edsys-circuit);
+}
+
+.edsys-consequence-item--severe h4 {
+    color: var(--edsys-surge);
+}
+
+.edsys-consequence-item p {
+    margin: 0;
+    font-size: var(--fs-sm);
+}
+
+/* ==========================================================================
+   RELATED CONTENT
+   ========================================================================== */
+
+.edsys-related-info {
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-related-article-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    margin-top: var(--space-md);
+}
+
+.edsys-related-article-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-related-article-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--edsys-accent);
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.edsys-related-article-content {
+    flex: 1;
+}
+
+.edsys-related-article-content h4 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--edsys-text);
+}
+
+.edsys-related-article-content p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+}
+
+.edsys-related-article-link i:last-child {
+    color: var(--edsys-white);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-related-article-link:hover i:last-child {
+    color: var(--edsys-neon);
+    transform: translateX(1px);
+}
+
+.edsys-related-articles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.edsys-related-articles .edsys-related-article-link {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-related-articles .edsys-related-article-link:hover {
+    border-color: var(--edsys-voltage);
+    background: var(--edsys-bg-light);
+}
+
+/* ==========================================================================
+   SUMMARY
+   ========================================================================== */
+
+.edsys-summary {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    margin: var(--space-2xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-summary-content {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.edsys-summary-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0;
+}
+
+.edsys-summary-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-summary-list li:last-child {
+    border-bottom: none;
+}
+
+.edsys-summary-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--edsys-accent);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-lg);
+}
+
+.edsys-final-advice {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+.edsys-final-advice h4 {
+    color: var(--edsys-accent);
+    margin-top: 0;
+}
+
+.edsys-conclusion {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-conclusion p {
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-conclusion p:last-of-type {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-final-recommendation {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.edsys-final-recommendation h3 {
+    color: var(--edsys-accent);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-final-recommendation p {
+    margin: 0;
+    color: var(--edsys-text);
+}
+
+/* ==========================================================================
+   ARTICLE NAVIGATION
+   ========================================================================== */
+
+.edsys-article-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-3xl);
+    padding: var(--space-xl);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-article-nav-link {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    color: var(--edsys-text);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-sm);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    flex: 1;
+    max-width: fit-content;
+    align-items: center;
+}
+
+.edsys-article-nav-link:hover {
+    border-color: var(--edsys-accent);
+    background: var(--edsys-bg-light);
+}
+
+.edsys-article-nav-direction {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    font-weight: var(--edsys-font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-article-nav-title {
+    font-size: var(--fs-base);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    text-align: center;
+}
+
+.edsys-article-nav-all {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    color: var(--edsys-white);
+    background: var(--edsys-accent);
+    border-radius: var(--radius-sm);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    font-weight: var(--edsys-font-bold);
+    text-transform: uppercase;
+}
+
+.edsys-article-nav-all:hover {
+    background: var(--edsys-accent-hover);
+    transform: translateY(-2px);
+}
+
+.edsys-article-nav-next .edsys-article-nav-direction {
+    flex-direction: row-reverse;
+}
+
+.edsys-article-nav-next {
+    flex-direction: row-reverse;
+}
+
+/* ==========================================================================
+   TECHNICAL REQUIREMENTS SECTION
+   ========================================================================== */
+
+.edsys-technical-requirements {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-technical-requirements h2 {
+    color: var(--edsys-voltage);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+.edsys-requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-requirement-item {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-requirement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-requirement-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--edsys-voltage);
+}
+
+.edsys-requirement-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin: 0 auto var(--space-md) auto;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-requirement-item:hover .edsys-requirement-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+}
+
+.edsys-requirement-item h4 {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-requirement-item p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-requirement-item strong {
+    color: var(--edsys-voltage);
+    font-weight: var(--edsys-font-bold);
+}
+
+/* ==========================================================================
+   PRODUCT CATEGORIES
+   ========================================================================== */
+
+.edsys-product-categories {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: var(--space-3xl) 0;
+    position: relative;
+    z-index: 10;
+}
+
+.edsys-categories-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-categories-title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-categories-subtitle {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-categories-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.edsys-categories-grid--single {
+    grid-template-columns: 1fr;
+}
+
+.edsys-categories-grid--double {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.edsys-categories-grid--triple {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.edsys-categories-grid--quad {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.edsys-categories-grid--auto {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.edsys-category-card {
+    display: flex !important;
+    flex-direction: column;
+    padding: var(--space-2xl);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    min-height: 280px;
+    cursor: pointer;
+}
+
+.edsys-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
+}
+
+.edsys-category-icon {
+    width: 76px;
+    height: 76px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    flex-shrink: 0;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    background: #FFD700;
+}
+
+.edsys-category-card[data-color="circuit"] .edsys-category-icon,
+.edsys-category-card[data-color="voltage"] .edsys-category-icon {
+    background: #00D084;
+}
+
+.edsys-category-card[data-color="wire"] .edsys-category-icon,
+.edsys-category-card[data-color="spark"] .edsys-category-icon {
+    background: #FF8A00;
+}
+
+.edsys-category-card[data-color="accent"] .edsys-category-icon {
+    background: #0066CC;
+}
+
+.edsys-category-card:hover .edsys-category-icon {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-category-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-category-name {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-category-description {
+    font-size: var(--fs-base);
+    color: var(--edsys-text-muted);
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--edsys-lh-normal);
+    flex: 1;
+}
+
+.edsys-category-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-category-features li {
+    position: relative;
+    padding-left: var(--space-md);
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-category-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--edsys-voltage);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-category-arrow {
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: var(--edsys-bg-light);
+    border-radius: 50%;
+    color: var(--edsys-text-muted);
+    font-size: 1.25rem;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-category-card:hover .edsys-category-arrow {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    transform: scale(1.1);
+}
+
+.edsys-product-categories--fallback {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 2px dashed var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+}
+
+.edsys-product-categories--fallback .edsys-categories-title {
+    color: var(--edsys-text);
+}
+
+.edsys-product-categories.loading {
+    min-height: 400px;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+    );
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(100% + 200px) 0; }
+}
+
+/* ==========================================================================
+   SPECIALIZED CONTENT SECTIONS
+   ========================================================================== */
+
+/* AVR Applications */
+.edsys-avr-applications {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.edsys-application-item {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-application-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-application-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--edsys-voltage);
+}
+
+.edsys-application-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 2rem;
+    margin: 0 auto var(--space-lg) auto;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-application-item:hover .edsys-application-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+}
+
+.edsys-application-item h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-application-item p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* Blocking Explanation */
+.edsys-blocking-explanation {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-blocking-explanation h3 {
+    color: var(--edsys-voltage);
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-blocking-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.edsys-blocking-type {
+    background: var(--edsys-bg-light);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-lg);
+}
+
+.edsys-blocking-type h4 {
+    color: var(--edsys-accent);
+    margin: 0 0 var(--space-md) 0;
+    font-size: var(--fs-lg);
+}
+
+.edsys-blocking-type p {
+    margin: 0;
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* Technical Specifications */
+.edsys-tech-specs {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    margin: var(--space-xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-tech-specs h3 {
+    color: var(--edsys-voltage);
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    font-size: var(--edsys-fs-h3);
+}
+
+/* Timing Comparison */
+.edsys-timing-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-timing-item {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-timing-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-timing-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-spark), var(--edsys-wire));
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin: 0 auto var(--space-md) auto;
+}
+
+.edsys-timing-item h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+}
+
+.edsys-timing-item p {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-timing-value {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    background: var(--edsys-white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    border: 2px solid var(--edsys-accent);
+}
+
+/* AVR Types Grid */
+.edsys-avr-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-avr-type-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-avr-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-avr-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-avr-type-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 2.5rem;
+    margin: 0 auto var(--space-lg) auto;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-avr-type-card:hover .edsys-avr-type-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+}
+
+.edsys-avr-type-card h3 {
+    text-align: center;
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+}
+
+/* AVR Workflow Section */
+.edsys-avr-workflow {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    margin: var(--space-xl) 0;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-avr-workflow h3 {
+    text-align: center;
+    color: var(--edsys-voltage);
+    margin: 0 0 var(--space-2xl) 0;
+    font-size: var(--edsys-fs-h3);
+}
+
+.edsys-avr-workflow .edsys-step-by-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.edsys-avr-workflow .edsys-step-item {
+    display: flex;
+    gap: var(--space-lg);
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.edsys-avr-workflow .edsys-step-item.edsys-animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.edsys-avr-workflow .edsys-step-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--edsys-voltage);
+}
+
+.edsys-avr-workflow .edsys-step-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.edsys-avr-workflow .edsys-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    color: var(--edsys-white);
+    border-radius: 50%;
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-avr-workflow .edsys-step-item:hover .edsys-step-number {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+.edsys-avr-workflow .edsys-step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-avr-workflow .edsys-step-content h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-voltage);
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-avr-workflow .edsys-step-content p {
+    margin: 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-avr-workflow .edsys-step-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.edsys-avr-workflow .edsys-step-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.edsys-avr-workflow .edsys-step-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.edsys-avr-workflow .edsys-step-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.edsys-avr-workflow .edsys-step-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.edsys-avr-diagram {
+    text-align: center;
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+}
+
+/* Selection Criteria */
+.edsys-selection-criteria {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.edsys-criteria-item {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-criteria-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-criteria-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--edsys-voltage);
+}
+
+.edsys-criteria-item:hover i {
+    color: var(--edsys-white);
+}
+
+.edsys-criteria-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-criteria-item:hover .edsys-criteria-icon {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+}
+
+.edsys-criteria-item h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-criteria-item p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* Advantages Grid */
+.edsys-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-advantage-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-circuit), var(--edsys-neon));
+}
+
+.edsys-advantage-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--edsys-circuit);
+}
+
+.edsys-advantage-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-circuit), var(--edsys-neon));
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 2.25rem;
+    margin: 0 auto var(--space-lg) auto;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-advantage-card:hover .edsys-advantage-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-circuit));
+}
+
+.edsys-advantage-card h3 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-advantage-card p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* ==========================================================================
+   CABLE TESTING SPECIFIC STYLES
+   ========================================================================== */
+
+.edsys-test-intro {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+    text-align: center;
+}
+
+.edsys-test-block {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-test-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-test-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--edsys-border);
+}
+
+.edsys-test-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+    color: var(--edsys-white);
+    border-radius: 50%;
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    flex-shrink: 0;
+}
+
+.edsys-test-header h3 {
+    margin: 0;
+    color: var(--edsys-text);
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-test-content {
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-test-image-block {
+    float: left;
+    margin: 0 var(--space-lg) var(--space-lg) 0;
+    text-align: center;
+}
+
+.edsys-test-image-block .edsys-technical-image {
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-test-result {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.edsys-score-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.edsys-score {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--edsys-white);
+    border: 2px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-lg);
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-score--winning {
+    background: linear-gradient(135deg, var(--edsys-circuit), var(--edsys-neon));
+    color: var(--edsys-white);
+    border-color: var(--edsys-circuit);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 204, 153, 0.3);
+}
+
+.edsys-score-text {
+    margin: 0;
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    font-size: var(--fs-base);
+}
+
+.edsys-pros-cons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-pros,
+.edsys-cons {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+}
+
+.edsys-pros {
+    background: rgba(0, 204, 153, 0.1);
+    border: 1px solid var(--edsys-circuit);
+}
+
+.edsys-cons {
+    background: rgba(255, 55, 95, 0.1);
+    border: 1px solid var(--edsys-accent);
+}
+
+.edsys-pros h4 {
+    color: var(--edsys-circuit);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-cons h4 {
+    color: var(--edsys-accent);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-pros ul,
+.edsys-cons ul {
+    margin: 0;
+    padding-left: var(--space-lg);
+}
+
+.edsys-pros li,
+.edsys-cons li {
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-price-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--edsys-bg-light), #fff9c4);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+}
+
+.edsys-price-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.edsys-price-item h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+}
+
+.edsys-price-value {
+    font-size: var(--fs-3xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-price-note {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    margin: 0;
+}
+
+.edsys-recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-recommendation-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-recommendation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-recommendation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-recommendation-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: 50%;
+    color: var(--edsys-white);
+    font-size: 2.5rem;
+    margin: 0 auto var(--space-lg) auto;
+}
+
+.edsys-recommendation-card h3 {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+}
+
+.edsys-recommendation-card ul {
+    text-align: left;
+    margin: var(--space-lg) 0;
+    padding-left: var(--space-lg);
+}
+
+.edsys-recommendation-card li {
+    margin-bottom: var(--space-md);
+    color: var(--edsys-text);
+}
+
+.edsys-recommendation-note {
+    font-style: italic;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+    margin: var(--space-lg) 0 0 0;
+    padding: var(--space-md);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-md);
+}
+
+.edsys-eds-policy {
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+    color: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+.edsys-eds-policy h3 {
+    color: var(--edsys-white);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-eds-policy p {
+    color: var(--edsys-white);
+    margin: 0;
+    font-size: var(--fs-lg);
+}
+
+.edsys-additional-tips {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-tip-card {
+    background: var(--edsys-bg-light);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-tip-card h3 {
+    color: var(--edsys-accent);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-catalog-link {
+    margin-top: var(--space-lg);
+}
+
+/* ==========================================================================
+   TWISTED PAIR SPECIFIC STYLES
+   ========================================================================== */
+
+.edsys-cables-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-cable-type-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-cable-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--edsys-voltage), var(--edsys-circuit));
+}
+
+.edsys-cable-type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--edsys-voltage);
+}
+
+.edsys-cable-type-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-voltage), var(--edsys-circuit));
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-cable-type-card h3 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+}
+
+.edsys-cable-type-card > p {
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-lg);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-shielding-explanation {
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-shielding-explanation h3 {
+    color: var(--edsys-voltage);
+    margin: 0 0 var(--space-lg) 0;
+}
+
+.edsys-shielding-codes {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.edsys-code-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--edsys-border);
+}
+
+.edsys-code-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-radius: 50%;
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-lg);
+}
+
+.edsys-code-description {
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+}
+
+.edsys-shielding-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-shielding-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-shielding-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-shielding-card h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-voltage);
+    font-size: var(--fs-lg);
+}
+
+.edsys-shielding-card p {
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.edsys-application {
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    color: var(--edsys-text);
+    border-left: 3px solid var(--edsys-circuit);
+}
+
+.edsys-sheath-types {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-sheath-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-sheath-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-sheath-card--premium {
+    border-color: var(--edsys-circuit);
+    background: linear-gradient(135deg, var(--edsys-white), #f0fff0);
+}
+
+.edsys-sheath-card--premium::before {
+    content: '★';
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    color: var(--edsys-circuit);
+    font-size: var(--fs-lg);
+}
+
+.edsys-sheath-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-sheath-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-sheath-header h4 {
+    margin: 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-xl);
+}
+
+.edsys-sheath-colors {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-muted);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-sheath-content p {
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-usage,
+.edsys-advantage {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-sm);
+}
+
+.edsys-usage {
+    background: rgba(0, 102, 204, 0.1);
+    border-left: 3px solid var(--edsys-voltage);
+}
+
+.edsys-advantage {
+    background: rgba(0, 204, 153, 0.1);
+    border-left: 3px solid var(--edsys-circuit);
+}
+
+.edsys-important-note {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 1px solid var(--edsys-spark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.edsys-important-note h4 {
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.edsys-important-note p {
+    margin: 0;
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-categories-overview {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-category-note {
+    background: var(--edsys-bg-light);
+    border-left: 4px solid var(--edsys-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-category-note p {
+    margin: 0;
+    color: var(--edsys-text);
+    font-style: italic;
+}
+
+.edsys-category-card--popular {
+    border-color: var(--edsys-circuit);
+    background: linear-gradient(135deg, var(--edsys-white), #f0fff0);
+}
+
+.edsys-category-card--popular::before {
+    content: 'ПОПУЛЯРНЫЙ';
+    position: absolute;
+    top: var(--space-sm);
+    right: -30px;
+    background: var(--edsys-circuit);
+    color: var(--edsys-white);
+    padding: var(--space-xs) 40px;
+    font-size: var(--fs-xs);
+    font-weight: var(--edsys-font-bold);
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.edsys-category-card--premium {
+    border-color: var(--edsys-voltage);
+    background: linear-gradient(135deg, var(--edsys-white), #f0f8ff);
+}
+
+.edsys-category-card--premium::before {
+    content: 'ПРЕМИУМ';
+    position: absolute;
+    top: var(--space-sm);
+    right: -30px;
+    background: var(--edsys-voltage);
+    color: var(--edsys-white);
+    padding: var(--space-xs) 40px;
+    font-size: var(--fs-xs);
+    font-weight: var(--edsys-font-bold);
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.edsys-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--edsys-border);
+}
+
+.edsys-category-header h4 {
+    margin: 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-2xl);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-category-specs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: right;
+}
+
+.edsys-category-specs span {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-muted);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-speed {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, var(--edsys-accent), var(--edsys-voltage));
+    color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.edsys-category-content p {
+    color: var(--edsys-text-muted);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-important-principle {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border: 1px solid var(--edsys-voltage);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-important-principle h4 {
+    color: var(--edsys-voltage);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-important-principle p {
+    margin: 0;
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-practical-recommendations {
+    color: var(--edsys-white) !important;
+}
+
+.edsys-connectors-image {
+    float: right;
+    margin: 0 0 var(--space-lg) var(--space-lg);
+    text-align: center;
+}
+
+.edsys-recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+    clear: both;
+}
+
+.edsys-recommendation-card--premium {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.edsys-recommendation-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    justify-content: center;
+    margin: var(--space-md) 0;
+}
+
+.edsys-recommendation-specs span {
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    color: var(--edsys-white) !important;
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-eds-solutions {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-eds-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-eds-product-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-eds-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--edsys-circuit);
+}
+
+.edsys-product-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-circuit), var(--edsys-neon));
+    border-radius: var(--radius-lg);
+    color: var(--edsys-white);
+    font-size: 1.75rem;
+    margin: 0 auto var(--space-lg) auto;
+}
+
+.edsys-eds-product-card h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-lg);
+}
+
+.edsys-eds-product-card p {
+    color: var(--edsys-text-muted);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-quality-guarantee {
+    background: linear-gradient(135deg, var(--edsys-bg-light), #f0f8ff);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+.edsys-quality-guarantee h4 {
+    color: var(--edsys-voltage);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-quality-guarantee p {
+    margin: 0;
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-expert-advice {
+    background: linear-gradient(135deg, var(--edsys-wire), var(--edsys-charge));
+    color: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+.edsys-expert-advice h4 {
+    color: var(--edsys-white);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-expert-advice p {
+    color: var(--edsys-white);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-cable-cores-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-cable-cores-item {
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--edsys-border);
+}
+
+.edsys-cable-cores-item h4 {
+    margin: 0 0 var(--space-md) 0;
+    color: var(--edsys-voltage);
+}
+
+.edsys-cable-cores-item ul {
+    margin: 0;
+    padding-left: var(--space-lg);
+}
+
+.edsys-cable-cores-item li {
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-cable-description {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.edsys-cable-structure,
+.edsys-temperature-advantage {
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+}
+
+.edsys-cable-structure h3,
+.edsys-temperature-advantage h3 {
+    color: var(--edsys-voltage);
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+.edsys-example {
+    font-style: italic;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+    margin-top: var(--space-sm);
+}
+
+.edsys-buying-guide {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.edsys-guide-item {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-guide-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-guide-item i {
+    font-size: 1.75rem;
+    color: var(--edsys-circuit);
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-guide-item h4 {
+    margin: 0 0 var(--space-xs) 0;
+    color: var(--edsys-text);
+    font-size: var(--fs-base);
+}
+
+.edsys-guide-item p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+}
+
+.edsys-specs-table {
+    text-align: center;
+    margin: var(--space-xl) 0;
+}
+
+/* EDS Recommendations in Highlight Section */
+.edsys-eds-recommendations {
+    color: var(--edsys-white) !important;
+}
+
+.edsys-recommended-products {
+    margin: var(--space-xl) 0;
+}
+
+.edsys-product-highlight {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    backdrop-filter: blur(10px);
+    margin: var(--space-lg) 0;
+}
+
+.edsys-product-highlight .edsys-product-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edsys-product-info h4 {
+    color: var(--edsys-white) !important;
+    margin: 0 0 var(--space-md) 0;
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-product-info p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.edsys-application-tips {
+    margin-top: var(--space-xl);
+}
+
+.edsys-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.edsys-tip-item h4 {
+    color: var(--edsys-white) !important;
+    margin: 0 0 var(--space-md) 0;
+    font-size: var(--fs-lg);
+}
+
+.edsys-tip-item p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .edsys-article-page {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        padding: var(--space-lg) var(--container-padding);
+    }
+
+    .edsys-comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-resistance-comparison {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .edsys-vs-divider {
+        transform: rotate(90deg);
+    }
+
+    .edsys-consequences-variants {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-article-navigation {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .edsys-article-nav-link {
+        max-width: none;
+        text-align: center;
+    }
+
+    .edsys-article-nav-next {
+        flex-direction: row;
+    }
+
+    .edsys-article-nav-next .edsys-article-nav-direction {
+        flex-direction: row;
+    }
+
+    .edsys-article-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edsys-action-btn {
+        min-width: 160px;
+    }
+
+    .edsys-categories-grid--auto,
+    .edsys-categories-grid--double,
+    .edsys-categories-grid--triple,
+    .edsys-categories-grid--quad {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-requirements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edsys-applications-grid,
+    .edsys-avr-types-grid,
+    .edsys-advantages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .edsys-timing-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .edsys-blocking-types {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-criteria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-cables-types-grid,
+    .edsys-shielding-types,
+    .edsys-sheath-comparison,
+    .edsys-recommendations-grid,
+    .edsys-eds-products {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-connectors-image {
+        float: none;
+        margin: var(--space-lg) auto;
+    }
+
+    .edsys-recommendation-specs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edsys-category-header {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .edsys-category-specs {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .edsys-shielding-codes {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .edsys-article-title {
+        font-size: var(--edsys-fs-h2);
+    }
+
+    .edsys-article-subtitle {
+        font-size: var(--fs-base);
+    }
+
+    .edsys-danger-level {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .edsys-step-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .edsys-related-article-link {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .edsys-resistance-comparison {
+        padding: var(--space-md);
+    }
+
+    .edsys-resistance-value {
+        font-size: var(--fs-lg);
+    }
+
+    .edsys-critical-values {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .edsys-critical-number {
+        font-size: 2rem;
+    }
+
+    .edsys-requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-category-card {
+        min-height: 240px;
+        padding: var(--space-xl);
+    }
+
+    .edsys-category-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.75rem;
+    }
+
+    .edsys-category-name {
+        font-size: var(--fs-lg);
+    }
+
+    .edsys-category-arrow {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        width: 36px;
+        height: 36px;
+    }
+
+    .edsys-application-icon,
+    .edsys-avr-type-icon,
+    .edsys-advantage-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+    }
+
+    .edsys-timing-icon,
+    .edsys-criteria-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .edsys-related-articles {
+        gap: var(--space-sm);
+    }
+
+    .edsys-feature-tag {
+        font-size: var(--fs-xs);
+    }
+
+    .edsys-avr-workflow .edsys-step-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+        padding: var(--space-lg);
+    }
+
+    .edsys-avr-workflow .edsys-step-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-lg);
+        margin: 0 auto;
+    }
+
+    .edsys-avr-workflow .edsys-step-content h4 {
+        font-size: var(--fs-lg);
+    }
+
+    .edsys-avr-workflow .edsys-step-content p {
+        font-size: var(--fs-sm);
+    }
+
+    .edsys-test-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+
+    .edsys-test-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-lg);
+    }
+
+    .edsys-test-image-block {
+        float: none;
+        margin: var(--space-lg) auto;
+        text-align: center;
+    }
+
+    .edsys-score-card {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .edsys-measurement-comparison,
+    .edsys-price-comparison {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .edsys-vs-divider {
+        transform: rotate(90deg);
+    }
+
+    .edsys-guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edsys-pros-cons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .edsys-article-page {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .edsys-article-intro,
+    .edsys-content-section,
+    .edsys-highlight-section {
+        padding: var(--space-md);
+    }
+
+    .edsys-action-btn {
+        min-width: 140px;
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .edsys-step-by-step {
+        gap: var(--space-md);
+    }
+
+    .edsys-step-item {
+        padding: var(--space-md);
+    }
+
+    .edsys-comparison-card {
+        padding: var(--space-md);
+    }
+
+    .edsys-danger-level {
+        padding: var(--space-sm);
+    }
+
+    .edsys-related-article-link {
+        padding: var(--space-md);
+    }
+
+    .edsys-technical-requirements,
+    .edsys-product-categories {
+        margin: var(--space-lg) 0;
+    }
+
+    .edsys-category-card {
+        padding: var(--space-lg);
+        min-height: 220px;
+    }
+
+    .edsys-category-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+        margin-bottom: var(--space-md);
+    }
+
+    .edsys-requirement-item {
+        padding: var(--space-lg);
+    }
+
+    .edsys-category-icon,
+    .edsys-requirement-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .edsys-tech-specs,
+    .edsys-avr-workflow,
+    .edsys-conclusion {
+        padding: var(--space-lg);
+    }
+
+    .edsys-application-item,
+    .edsys-avr-type-card,
+    .edsys-advantage-card,
+    .edsys-criteria-item {
+        padding: var(--space-lg);
+    }
+
+    .edsys-timing-value {
+        font-size: var(--fs-lg);
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .edsys-product-features {
+        justify-content: center;
+    }
+
+    .edsys-avr-workflow .edsys-step-item {
+        padding: var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .edsys-avr-workflow .edsys-step-number {
+        width: 35px;
+        height: 35px;
+        font-size: var(--fs-base);
+    }
+
+    .edsys-avr-workflow .edsys-step-content h4 {
+        font-size: var(--fs-base);
+        margin-bottom: var(--space-sm);
+    }
+
+    .edsys-avr-workflow .edsys-step-content p {
+        font-size: var(--fs-xs);
+        line-height: var(--edsys-lh-relaxed);
+    }
+
+    .edsys-cable-type-card,
+    .edsys-shielding-card,
+    .edsys-sheath-card,
+    .edsys-recommendation-card,
+    .edsys-eds-product-card {
+        padding: var(--space-lg);
+    }
+
+    .edsys-cable-type-icon,
+    .edsys-product-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .edsys-recommendation-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .edsys-shielding-explanation,
+    .edsys-important-note,
+    .edsys-important-principle,
+    .edsys-quality-guarantee,
+    .edsys-conclusion {
+        padding: var(--space-lg);
+    }
+
+    .edsys-criteria-grid,
+    .edsys-guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-test-block {
+        padding: var(--space-lg);
+    }
+
+    .edsys-price-value {
+        font-size: var(--fs-2xl);
+    }
+
+    .edsys-recommendation-card {
+        padding: var(--space-lg);
+    }
+
+    .edsys-cable-cores-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .edsys-highlight-section {
+        padding: var(--space-xl);
+        margin: var(--space-xl) 0;
+    }
+
+    .edsys-highlight-section .edsys-step-item {
+        padding: var(--space-md);
+    }
+
+    .edsys-highlight-section .edsys-step-by-step {
+        gap: var(--space-md);
+    }
+
+    .edsys-highlight-section .edsys-product-highlight {
+        padding: var(--space-md);
+    }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    @keyframes edsys-pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes loading {
+        0% { background-position: -200px 0; }
+        100% { background-position: -200px 0; }
+    }
+
+    .edsys-application-item,
+    .edsys-avr-type-card,
+    .edsys-advantage-card,
+    .edsys-criteria-item,
+    .edsys-timing-item,
+    .edsys-application-icon,
+    .edsys-avr-type-icon,
+    .edsys-advantage-icon,
+    .edsys-criteria-icon,
+    .edsys-timing-icon {
+        transition: none !important;
+    }
+
+    .edsys-application-item:hover,
+    .edsys-avr-type-card:hover,
+    .edsys-advantage-card:hover,
+    .edsys-criteria-item:hover,
+    .edsys-timing-item:hover {
+        transform: none !important;
+    }
+
+    .edsys-application-icon:hover,
+    .edsys-avr-type-icon:hover,
+    .edsys-advantage-icon:hover,
+    .edsys-criteria-icon:hover {
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .edsys-problem-card,
+    .edsys-solution-card,
+    .edsys-comparison-card,
+    .edsys-definition-box,
+    .edsys-technical-note,
+    .edsys-summary,
+    .edsys-category-card,
+    .edsys-application-item,
+    .edsys-avr-type-card,
+    .edsys-advantage-card,
+    .edsys-criteria-item,
+    .edsys-timing-item {
+        border-width: 2px;
+        border-color: var(--edsys-text);
+    }
+
+    .edsys-application-icon,
+    .edsys-avr-type-icon,
+    .edsys-advantage-icon,
+    .edsys-criteria-icon,
+    .edsys-timing-icon {
+        background: var(--edsys-text) !important;
+        color: var(--edsys-white) !important;
+    }
+}
+
+/* Focus Styles */
+.edsys-action-btn:focus,
+.edsys-related-article-link:focus,
+.edsys-article-nav-link:focus,
+.edsys-article-nav-all:focus,
+.edsys-technical-image:focus,
+.edsys-category-card:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .edsys-solution-card:hover,
+    .edsys-comparison-card:hover,
+    .edsys-related-article-link:hover,
+    .edsys-category-card:hover,
+    .edsys-application-item:hover,
+    .edsys-avr-type-card:hover,
+    .edsys-advantage-card:hover {
+        transform: none;
+    }
+
+    .edsys-action-btn,
+    .edsys-article-nav-link,
+    .edsys-category-card {
+        min-height: 44px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .edsys-product-categories,
+    .edsys-technical-requirements,
+    .edsys-avr-workflow,
+    .edsys-highlight-section {
+        background: white !important;
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    .edsys-category-card,
+    .edsys-application-item,
+    .edsys-avr-type-card,
+    .edsys-advantage-card,
+    .edsys-criteria-item,
+    .edsys-timing-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+
+    .edsys-category-icon,
+    .edsys-application-icon,
+    .edsys-avr-type-icon,
+    .edsys-advantage-icon,
+    .edsys-criteria-icon,
+    .edsys-timing-icon {
+        background: #ccc !important;
+        color: #000 !important;
+    }
+
+    .edsys-highlight-section * {
+        color: #000 !important;
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "hasSeenIdeIntegrationNudge": true,
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  }
+}

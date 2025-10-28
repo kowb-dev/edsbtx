@@ -1,0 +1,157 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  # ========================================================================
+  # ЗАЩИТА ОТ БОТОВ И ПОИСКОВИКОВ - АУТЕНТИФИКАЦИЯ
+  # ========================================================================
+
+  # Разрешить доступ без пароля для белых IP-адресов
+  # 77.244.75.142 - ваш IP адрес
+  # 94.242.176.192 - ваш IP адрес
+  # 46.37.123.153 - ваш IP адрес
+  RewriteCond %{REMOTE_ADDR} !^77\.244\.75\.142$
+  RewriteCond %{REMOTE_ADDR} !^94\.242\.176\.192$
+  RewriteCond %{REMOTE_ADDR} !^46\.37\.123\.153$
+
+  # Блокировать известных ботов и поисковиков по User-Agent
+  RewriteCond %{HTTP_USER_AGENT} "bot|crawl|spider|slurp|yahoo|google|bing|msn|duckduckgo|baidu|yandex|seo|facebook|twitter|linkedin|pinterest|instagram|whatsapp|telegram" [NC]
+  RewriteRule ^(.*)$ /auth-required.php [R=401,L]
+
+  # Блокировать пустые User-Agent (часто используется ботами)
+  RewriteCond %{REMOTE_ADDR} !^77\.244\.75\.142$
+  RewriteCond %{REMOTE_ADDR} !^94\.242\.176\.192$
+  RewriteCond %{REMOTE_ADDR} !^46\.37\.123\.153$
+  RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+  RewriteCond %{HTTP_USER_AGENT} ^-$
+  RewriteRule ^(.*)$ /auth-required.php [R=401,L]
+
+  # ========================================================================
+  # ОСНОВНЫЕ ПРАВИЛА ПЕРЕНАПРАВЛЕНИЯ
+  # ========================================================================
+
+  # Перенаправление с /new на корневой домен
+  RewriteRule ^new/?$ / [R=301,L]
+
+  # WordPress-совместимые URL для категорий: /cat/category-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/([^/]+)/?$ /cat/index.php?category=$1 [QSA,L]
+
+  # Главная страница каталога: /cat/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/?$ /cat/index.php [QSA,L]
+
+  # WordPress-совместимые URL для товаров: /product/product-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^product/([^/]+)/?$ /product/index.php?product=$1 [QSA,L]
+
+  # Перенаправления со старых Битрикс URL на новые WordPress URL (если есть)
+  # RewriteRule ^catalog/([^/]+)/?$ /cat/$1/ [R=301,L]
+  # RewriteRule ^catalog/([^/]+)/([^/]+)/?$ /product/$2/ [R=301,L]
+
+  # Исключения для служебных скриптов
+  RewriteRule ^edsys_update_articles\.php$ - [L]
+  RewriteRule ^edsys_check_properties\.php$ - [L]
+
+  # Стандартные правила Битрикса (должны быть в конце)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+# ========================================================================
+# КЕШИРОВАНИЕ СТАТИЧЕСКИХ РЕСУРСОВ
+# ========================================================================
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  # Кеширование изображений
+  ExpiresByType image/jpeg "access plus 7 day"
+  ExpiresByType image/gif "access plus 7 day"
+  ExpiresByType image/png "access plus 7 day"
+  ExpiresByType image/webp "access plus 7 day"
+  ExpiresByType image/svg+xml "access plus 30 day"
+
+  # Кеширование CSS и JS
+  ExpiresByType text/css "access plus 7 day"
+  ExpiresByType application/javascript "access plus 7 day"
+  ExpiresByType text/javascript "access plus 7 day"
+
+  # Кеширование шрифтов
+  ExpiresByType font/woff "access plus 30 day"
+  ExpiresByType font/woff2 "access plus 30 day"
+  ExpiresByType application/font-woff "access plus 30 day"
+  ExpiresByType application/font-woff2 "access plus 30 day"
+</IfModule>
+
+# ========================================================================
+# НАСТРОЙКИ CORS И БЕЗОПАСНОСТИ
+# ========================================================================
+
+<IfModule mod_headers.c>
+    # Настройки CORS для модулей ES6
+    <FilesMatch "\.(js)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type"
+    </FilesMatch>
+
+    # Базовые заголовки безопасности
+    Header always append X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options nosniff
+
+    # Заголовки против индексации поисковиками
+    Header always set X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
+</IfModule>
+
+# ========================================================================
+# БЛОКИРОВКА ROBOTS.TXT ДЛЯ БОТОВ (КРОМЕ БЕЛЫХ IP)
+# ========================================================================
+
+<Files "robots.txt">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REMOTE_ADDR} !^77\.244\.75\.142$
+        RewriteCond %{REMOTE_ADDR} !^94\.242\.176\.192$
+        RewriteCond %{REMOTE_ADDR} !^46\.37\.123\.153$
+        RewriteRule ^ - [F]
+    </IfModule>
+</Files>
+
+# ========================================================================
+# ДОПОЛНИТЕЛЬНАЯ ЗАЩИТА ОТ БОТОВ
+# ========================================================================
+
+# Блокировка подозрительных запросов
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Блокировать запросы с подозрительными параметрами
+    RewriteCond %{QUERY_STRING} (eval\(|base64_decode|gzip|benchmark|boot\.ini|etc/passwd) [NC,OR]
+    RewriteCond %{QUERY_STRING} (mosconfig_[a-zA-Z_]{1,21}(=|\%3D)) [NC,OR]
+    RewriteCond %{QUERY_STRING} (union.*select|insert.*into|drop.*table) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+
+    # Блокировать запросы к чувствительным файлам
+    RewriteCond %{REQUEST_URI} (wp-config|configuration\.php|config\.inc\.php) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>

@@ -1,0 +1,766 @@
+/* ==========================================================================
+   EDS About Page Styles
+   Использует глобальную дизайн-систему из root.css
+   Mobile-First Responsive Design
+   ========================================================================== */
+
+/* ==========================================================================
+   About Page Specific Variables
+   Только уникальные переменные для данной страницы
+   ========================================================================== */
+
+.edsys-about {
+    /* Обновленные градиенты для светлой темы */
+    --about-hero-bg: linear-gradient(135deg, var(--edsys-white) 0%, var(--edsys-bg-light) 50%, #f0f4f8 100%);
+    --about-stats-bg: linear-gradient(135deg, var(--edsys-bg-light) 0%, var(--edsys-white) 50%, #f8fafb 100%);
+    --about-cta-bg: linear-gradient(135deg, var(--edsys-accent) 0%, var(--edsys-voltage) 100%);
+
+    /* Специфичные размеры */
+    --about-accent-line: 4px;
+    --about-hero-aspect: 3/2;
+
+    /* Layout */
+    min-height: 100vh;
+    background-color: var(--edsys-bg);
+    line-height: var(--edsys-lh-normal);
+    font-family: var(--edsys-font-primary);
+}
+
+.edsys-about * {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+.edsys-about__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.edsys-about__hero {
+    padding: var(--space-3xl) 0;
+    background: var(--about-hero-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-about__hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            linear-gradient(45deg, transparent 40%, rgba(255, 37, 69, 0.02) 50%, transparent 60%),
+            linear-gradient(-45deg, transparent 40%, rgba(0, 102, 204, 0.02) 50%, transparent 60%);
+    pointer-events: none;
+}
+
+.edsys-about__hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.edsys-about__hero-text {
+    text-align: center;
+}
+
+.edsys-about__title {
+    font-size: var(--edsys-fs-h1);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+}
+
+.edsys-about__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--edsys-text-muted);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+    max-width: 48ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edsys-about__hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.edsys-about__image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    aspect-ratio: var(--about-hero-aspect);
+    object-fit: cover;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+/* ==========================================================================
+   Content Section - Timeline Design
+   ========================================================================== */
+
+.edsys-about__content {
+    padding: var(--space-3xl) 0;
+}
+
+.edsys-about__text-blocks {
+    position: relative;
+    max-width: 142ch;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Вертикальная линия timeline по центру */
+.edsys-about__text-blocks::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--edsys-accent) 0%, var(--edsys-voltage) 25%, var(--edsys-circuit) 50%, var(--edsys-power) 75%, var(--edsys-accent) 100%);
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+.edsys-about__block {
+    background: var(--edsys-white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    position: relative;
+    margin-bottom: var(--space-xl);
+    width: calc(50% - var(--space-2xl));
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-about__block:last-child {
+    margin-bottom: 0;
+}
+
+/* Левые блоки (нечетные) */
+.edsys-about__block:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Правые блоки (четные) */
+.edsys-about__block:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Круглая иконка для каждого блока */
+.edsys-about__block::before {
+    content: "";
+    position: absolute;
+    top: var(--space-lg);
+    width: 5rem;
+    height: 5rem;
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: var(--edsys-shadow);
+}
+
+/* Позиционирование иконок для левых блоков */
+.edsys-about__block:nth-child(odd)::before {
+    right: calc(-1 * var(--space-2xl) - 2.5rem);
+}
+
+/* Позиционирование иконок для правых блоков */
+.edsys-about__block:nth-child(even)::before {
+    left: calc(-1 * var(--space-2xl) - 2.5rem);
+}
+
+/* Иконки для каждого блока */
+.edsys-about__block-icon {
+    position: absolute;
+    top: var(--space-lg);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Позиционирование иконок для левых блоков */
+.edsys-about__block:nth-child(odd) .edsys-about__block-icon {
+    right: calc(-1 * var(--space-2xl) - 2.5rem);
+}
+
+/* Позиционирование иконок для правых блоков */
+.edsys-about__block:nth-child(even) .edsys-about__block-icon {
+    left: calc(-1 * var(--space-2xl) - 2.5rem);
+}
+
+.edsys-about__block-icon i {
+    font-size: 2rem;
+    color: var(--edsys-accent);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-about__block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.edsys-about__block:hover::before {
+    border-color: var(--edsys-voltage);
+    transform: scale(1.1);
+}
+
+.edsys-about__block:hover .edsys-about__block-icon i {
+    color: var(--edsys-voltage);
+    transform: scale(1.1);
+}
+
+.edsys-about__block-title {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-about__block p {
+    margin: 0;
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-relaxed);
+    color: var(--edsys-text);
+}
+
+.edsys-about__block strong {
+    color: var(--edsys-accent);
+    font-weight: var(--edsys-font-bold);
+}
+
+/* ==========================================================================
+   Advantages Section - Улучшенная адаптивность
+   ========================================================================== */
+
+.edsys-about__advantages {
+    padding: var(--space-3xl) 0;
+    background: var(--edsys-white);
+    position: relative;
+}
+
+.edsys-about__advantages::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--edsys-accent) 20%, var(--edsys-voltage) 50%, var(--edsys-circuit) 80%, transparent 100%);
+}
+
+.edsys-about__section-title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    text-align: center;
+    margin: 0 0 var(--space-2xl) 0;
+    line-height: var(--edsys-lh-snug);
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edsys-about__advantages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+}
+
+.edsys-about__advantage {
+    text-align: center;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--edsys-bg-light) 0%, var(--edsys-surface) 100%);
+    border-radius: var(--radius-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-about__advantage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 37, 69, 0.02) 0%, rgba(0, 102, 204, 0.02) 100%);
+    opacity: 0;
+    transition: opacity var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-about__advantage:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-about__advantage:hover::before {
+    opacity: 1;
+}
+
+.edsys-about__advantage-icon {
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-about__advantage-icon i {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    color: var(--edsys-accent);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-about__advantage:hover .edsys-about__advantage-icon i {
+    color: var(--edsys-voltage);
+    transform: scale(1.1);
+}
+
+.edsys-about__advantage-title {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--edsys-lh-snug);
+    position: relative;
+    z-index: 1;
+}
+
+.edsys-about__advantage-text {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    margin: 0;
+    line-height: var(--edsys-lh-normal);
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   Stats Section - Светлая тема
+   ========================================================================== */
+
+.edsys-about__stats {
+    padding: var(--space-3xl) 0;
+    background: var(--about-stats-bg);
+    color: var(--edsys-text);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--edsys-border);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-about__stats::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            radial-gradient(ellipse at top left, rgba(255, 37, 69, 0.03) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom right, rgba(0, 102, 204, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.edsys-about__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: var(--space-2xl);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.edsys-about__stat {
+    padding: var(--space-lg);
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    border: 2px solid transparent;
+}
+
+.edsys-about__stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--edsys-accent);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.edsys-about__stat-number {
+    font-size: clamp(2.5rem, 6vw + 1rem, 4rem);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    line-height: var(--edsys-lh-tight);
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-about__stat-label {
+    font-size: var(--fs-base);
+    color: var(--edsys-text-muted);
+    font-weight: var(--edsys-font-regular);
+    line-height: var(--edsys-lh-snug);
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+
+.edsys-about__cta {
+    padding: var(--space-3xl) 0;
+    background: var(--about-cta-bg);
+    color: var(--edsys-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-about__cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.edsys-about__cta-content {
+    text-align: center;
+    max-width: 60ch;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.edsys-about__cta-title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--edsys-lh-snug);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edsys-about__cta-text {
+    font-size: var(--fs-base);
+    margin: 0 0 var(--space-2xl) 0;
+    opacity: 0.95;
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-about__cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.edsys-about__cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-base);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    border: 2px solid transparent;
+    min-width: 200px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-about__cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--edsys-transition-slow);
+}
+
+.edsys-about__cta-button:hover::before {
+    left: 100%;
+}
+
+.edsys-about__cta-button--primary {
+    background: var(--edsys-white);
+    color: var(--edsys-voltage);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-about__cta-button--primary:hover {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.edsys-about__cta-button--secondary {
+    background: transparent;
+    color: var(--edsys-white);
+    border-color: var(--edsys-white);
+}
+
+.edsys-about__cta-button--secondary:hover {
+    background: var(--edsys-white);
+    color: var(--edsys-voltage);
+    transform: translateY(-3px);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-about__cta-button i {
+    font-size: 1.2em;
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-about__cta-button:hover i {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Responsive Design - Улучшенная мобильная адаптивность
+   ========================================================================== */
+
+/* Мобильная версия - вертикальный timeline слева */
+@media (max-width: 767px) {
+    .edsys-about__text-blocks {
+        padding: 0 var(--space-md) 0 var(--space-3xl);
+        max-width: none;
+    }
+
+    /* Вертикальная линия слева на мобильных */
+    .edsys-about__text-blocks::before {
+        left: 2rem;
+        transform: none;
+    }
+
+    .edsys-about__block {
+        width: auto;
+        margin-left: var(--space-2xl);
+        margin-right: 0;
+        margin-bottom: var(--space-2xl);
+    }
+
+    /* Все иконки слева на мобильных */
+    .edsys-about__block::before {
+        left: calc(-1 * var(--space-2xl) - 2rem) !important;
+        right: auto !important;
+        width: 4rem;
+        height: 4rem;
+        top: var(--space-md);
+    }
+
+    .edsys-about__block-icon {
+        left: calc(-1 * var(--space-2xl) - 2rem) !important;
+        right: auto !important;
+        width: 4rem;
+        height: 4rem;
+        top: var(--space-md);
+    }
+
+    .edsys-about__block-icon i {
+        font-size: 1.5rem;
+    }
+
+    /* Уменьшенные отступы для мобильных */
+    .edsys-about__block {
+        padding: var(--space-lg);
+    }
+
+    .edsys-about__block-title {
+        font-size: var(--fs-lg);
+        margin-bottom: var(--space-sm);
+    }
+
+    .edsys-about__block p {
+        font-size: var(--fs-sm);
+        line-height: var(--edsys-lh-normal);
+    }
+
+    /* Мобильная адаптация для блока преимуществ */
+    .edsys-about__advantages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .edsys-about__advantage {
+        padding: var(--space-lg);
+    }
+
+    .edsys-about__advantage-title {
+        font-size: var(--fs-lg);
+    }
+
+    .edsys-about__advantage-text {
+        font-size: var(--fs-xs);
+    }
+
+    /* Мобильная сетка статистики */
+    .edsys-about__stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+/* Маленькие мобильные устройства */
+@media (max-width: 480px) {
+    .edsys-about__advantages-grid {
+        gap: var(--space-md);
+    }
+
+    .edsys-about__advantage {
+        padding: var(--space-md);
+    }
+
+    .edsys-about__advantage-icon i {
+        font-size: 2rem;
+    }
+
+    .edsys-about__advantage-title {
+        font-size: var(--fs-base);
+        margin-bottom: var(--space-sm);
+    }
+
+    .edsys-about__stats-grid {
+        gap: var(--space-md);
+    }
+
+    .edsys-about__stat {
+        padding: var(--space-md);
+    }
+}
+
+/* Tablet и больше */
+@media (min-width: 768px) {
+    .edsys-about__hero-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .edsys-about__hero-text {
+        text-align: center;
+    }
+
+    .edsys-about__cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Адаптивная сетка для блока преимуществ */
+    .edsys-about__advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edsys-about__stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop hover эффекты */
+@media (hover: hover) {
+    .edsys-about__image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1200px) {
+    .edsys-about__advantages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/* Focus стили */
+.edsys-about__cta-button:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+/* Уменьшение движения */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-about *,
+    .edsys-about *::before,
+    .edsys-about *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Высокий контраст */
+@media (prefers-contrast: high) {
+    .edsys-about__block {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-about__advantage {
+        border: 2px solid var(--edsys-text);
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .edsys-about__cta,
+    .edsys-about__cta-buttons {
+        display: none;
+    }
+
+    .edsys-about__stats,
+    .edsys-about__advantages {
+        background: transparent !important;
+        color: black !important;
+    }
+
+    .edsys-about__stat-number {
+        color: black !important;
+        text-shadow: none !important;
+    }
+
+    .edsys-about__image {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,585 @@
+/* ==========================================================================
+   Useful Information Navigation Styles - Updated with Visual Improvements
+   Стили навигации по полезной информации - обновленные с визуальными улучшениями
+   ========================================================================== */
+
+/* Desktop Navigation Container - Reduced width */
+.edsys-useful-nav {
+    position: sticky;
+    top: var(--space-xl);
+    padding: var(--space-lg);
+    min-width: 200px; /* Reduced from 280px */
+    max-width: 200px; /* Ensure consistent width */
+}
+
+/* Quick Navigation Section (for schemes page) */
+.edsys-useful-nav__quick-section {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+}
+
+.edsys-useful-nav__quick-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text-muted);
+    margin: 0 0 var(--space-md) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.edsys-useful-nav__quick-title i {
+    color: var(--edsys-spark);
+}
+
+.edsys-useful-nav__quick-nav {
+    background: var(--edsys-white); /* White background for navigation block */
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.edsys-useful-nav__quick-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 6px 12px;
+    color: var(--edsys-text);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: var(--fs-sm);
+    transition: all var(--edsys-transition-fast);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-useful-nav__quick-item:hover {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-accent);
+    transform: translateX(2px);
+}
+
+.edsys-useful-nav__quick-item.active {
+    background: color-mix(in srgb, var(--edsys-accent) 10%, transparent);
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__quick-item i {
+    font-size: 1rem;
+    color: var(--edsys-voltage);
+    flex-shrink: 0;
+}
+
+.edsys-useful-nav__quick-item.active i {
+    color: var(--edsys-accent);
+}
+
+/* Main Navigation Section */
+.edsys-useful-nav__main-section {
+    /* No additional margins needed */
+}
+
+.edsys-useful-nav__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-useful-nav__title i {
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__list {
+    background: var(--edsys-white); /* White background for navigation block */
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-useful-nav__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: var(--edsys-transition);
+    position: relative;
+}
+
+.edsys-useful-nav__item.active {
+    background: color-mix(in srgb, var(--edsys-accent) 10%, transparent);
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__item:hover {
+    background: var(--edsys-bg-light);
+    transform: translateX(4px);
+}
+
+.edsys-useful-nav__item.active:hover {
+    background: color-mix(in srgb, var(--edsys-accent) 15%, transparent);
+}
+
+.edsys-useful-nav__item i:first-child {
+    font-size: 1.1rem;
+    color: var(--edsys-voltage);
+    flex-shrink: 0;
+}
+
+.edsys-useful-nav__item.active i:first-child {
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-useful-nav__item-title {
+    display: block;
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-snug);
+    font-size: var(--fs-sm);
+    margin-bottom: 2px;
+}
+
+.edsys-useful-nav__item-desc {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-useful-nav__item.active .edsys-useful-nav__item-desc {
+    color: color-mix(in srgb, var(--edsys-accent) 70%, var(--edsys-text-muted) 30%);
+}
+
+.edsys-useful-nav__arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--edsys-transition);
+    font-size: 0.875rem;
+}
+
+.edsys-useful-nav__item:hover .edsys-useful-nav__arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   MOBILE NAVIGATION - Updated breakpoint
+   ========================================================================== */
+
+/* Mobile Navigation Button */
+.edsys-useful-nav__mobile-btn {
+    display: none;
+    position: fixed;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 60px;
+    background: var(--edsys-accent);
+    border: none;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 998;
+    transition: var(--edsys-transition);
+    align-items: center;
+    justify-content: center;
+    color: var(--edsys-white);
+    font-size: 1.5rem;
+}
+
+.edsys-useful-nav__mobile-btn:hover,
+.edsys-useful-nav__mobile-btn:active {
+    right: -15px;
+    background: var(--edsys-accent-hover);
+}
+
+.edsys-useful-nav__mobile-btn i {
+    margin-left: -5px;
+}
+
+/* Mobile Side Menu */
+.edsys-useful-nav__mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: var(--edsys-white);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: right var(--edsys-transition-medium) var(--edsys-ease);
+    overflow-y: auto;
+}
+
+.edsys-useful-nav__mobile-menu.open {
+    right: 0;
+}
+
+.edsys-useful-nav__mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border-bottom: 2px solid var(--edsys-border); /* Visual separator */
+    background: var(--edsys-bg-light);
+}
+
+.edsys-useful-nav__mobile-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.edsys-useful-nav__mobile-title i {
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__mobile-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--edsys-text-muted);
+    cursor: pointer;
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    transition: var(--edsys-transition);
+}
+
+.edsys-useful-nav__mobile-close:hover {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+}
+
+.edsys-useful-nav__mobile-content {
+    padding: var(--space-lg);
+}
+
+/* Mobile Quick Navigation */
+.edsys-useful-nav__mobile-quick {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--edsys-border); /* Visual separator */
+}
+
+.edsys-useful-nav__mobile-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-base);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-useful-nav__mobile-section-title i {
+    color: var(--edsys-spark);
+    font-size: 1.1rem;
+}
+
+.edsys-useful-nav__mobile-quick-list {
+    background: var(--edsys-white); /* White background for navigation block */
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-useful-nav__mobile-quick-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    text-decoration: none;
+    color: var(--edsys-text);
+    border-radius: var(--radius-md);
+    transition: var(--edsys-transition);
+    font-size: var(--fs-sm);
+}
+
+.edsys-useful-nav__mobile-quick-item:hover {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__mobile-quick-item.active {
+    background: color-mix(in srgb, var(--edsys-accent) 10%, transparent);
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__mobile-quick-item i {
+    font-size: 1rem;
+    color: var(--edsys-voltage);
+    width: 20px;
+    text-align: center;
+}
+
+.edsys-useful-nav__mobile-quick-item:hover i,
+.edsys-useful-nav__mobile-quick-item.active i {
+    color: var(--edsys-accent);
+}
+
+/* Mobile Main Navigation */
+.edsys-useful-nav__mobile-main-list {
+    background: var(--edsys-white); /* White background for navigation block */
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.edsys-useful-nav__mobile-main-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    text-decoration: none;
+    color: var(--edsys-text);
+    border-radius: var(--radius-md);
+    transition: var(--edsys-transition);
+    position: relative;
+}
+
+.edsys-useful-nav__mobile-main-item.active {
+    background: color-mix(in srgb, var(--edsys-accent) 10%, transparent);
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__mobile-main-item:hover {
+    background: var(--edsys-bg-light);
+}
+
+.edsys-useful-nav__mobile-main-item.active:hover {
+    background: color-mix(in srgb, var(--edsys-accent) 15%, transparent);
+}
+
+.edsys-useful-nav__mobile-main-item i:first-child {
+    font-size: 1.25rem;
+    color: var(--edsys-voltage);
+    width: 24px;
+    text-align: center;
+}
+
+.edsys-useful-nav__mobile-main-item.active i:first-child {
+    color: var(--edsys-accent);
+}
+
+.edsys-useful-nav__mobile-item-content {
+    flex: 1;
+}
+
+.edsys-useful-nav__mobile-item-title {
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-snug);
+    margin-bottom: 2px;
+}
+
+.edsys-useful-nav__mobile-item-desc {
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-useful-nav__mobile-main-item.active .edsys-useful-nav__mobile-item-desc {
+    color: color-mix(in srgb, var(--edsys-accent) 70%, var(--edsys-text-muted) 30%);
+}
+
+.edsys-useful-nav__mobile-arrow {
+    font-size: 1rem;
+    color: var(--edsys-text-light);
+    transition: var(--edsys-transition);
+}
+
+.edsys-useful-nav__mobile-main-item:hover .edsys-useful-nav__mobile-arrow {
+    color: var(--edsys-accent);
+    transform: translateX(4px);
+}
+
+/* Mobile Overlay */
+.edsys-useful-nav__mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--edsys-transition-medium) var(--edsys-ease),
+    visibility var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-useful-nav__mobile-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - Updated breakpoints
+   ========================================================================== */
+
+/* Large Desktop - Keep sidebar behavior */
+@media (min-width: 1025px) {
+    .edsys-useful-nav {
+        position: sticky;
+        top: var(--space-md);
+        margin-bottom: var(--space-xl);
+        width: 330px;
+        min-width: 200px;
+        max-width: 330px;
+    }
+}
+
+/* Tablet and Mobile - Updated breakpoint to 1024px */
+@media (max-width: 1024px) {
+    /* Hide desktop navigation */
+    .edsys-useful-nav {
+        display: none;
+    }
+
+    /* Show mobile navigation */
+    .edsys-useful-nav__mobile-btn {
+        display: flex;
+    }
+
+    .edsys-useful-nav__mobile-menu {
+        display: block;
+    }
+
+    .edsys-useful-nav__mobile-overlay {
+        display: block;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .edsys-useful-nav__mobile-btn {
+        width: 45px;
+        height: 55px;
+        right: -18px;
+        font-size: 1.25rem;
+    }
+
+    .edsys-useful-nav__mobile-btn:hover,
+    .edsys-useful-nav__mobile-btn:active {
+        right: -13px;
+    }
+
+    .edsys-useful-nav__mobile-menu {
+        width: 85%;
+        right: -85%;
+    }
+
+    .edsys-useful-nav__mobile-header,
+    .edsys-useful-nav__mobile-content {
+        padding: var(--space-md);
+    }
+
+    .edsys-useful-nav__mobile-main-item {
+        padding: var(--space-sm) var(--space-md);
+    }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & INTERACTIONS
+   ========================================================================== */
+
+/* Focus Styles */
+.edsys-useful-nav__item:focus,
+.edsys-useful-nav__quick-item:focus,
+.edsys-useful-nav__mobile-btn:focus,
+.edsys-useful-nav__mobile-close:focus,
+.edsys-useful-nav__mobile-quick-item:focus,
+.edsys-useful-nav__mobile-main-item:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .edsys-useful-nav__item:hover,
+    .edsys-useful-nav__quick-item:hover {
+        transform: none;
+    }
+
+    .edsys-useful-nav__item:hover .edsys-useful-nav__arrow {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    /* Increase touch targets */
+    .edsys-useful-nav__mobile-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .edsys-useful-nav__mobile-quick-item,
+    .edsys-useful-nav__mobile-main-item {
+        min-height: 44px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .edsys-useful-nav__item:hover,
+    .edsys-useful-nav__quick-item:hover {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .edsys-useful-nav,
+    .edsys-useful-nav__quick-nav,
+    .edsys-useful-nav__list,
+    .edsys-useful-nav__mobile-quick-list,
+    .edsys-useful-nav__mobile-main-list {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-useful-nav__item.active,
+    .edsys-useful-nav__quick-item.active {
+        border: 2px solid var(--edsys-accent);
+        background: var(--edsys-accent);
+        color: var(--edsys-white);
+    }
+
+    .edsys-useful-nav__mobile-menu {
+        border-left: 2px solid var(--edsys-text);
+    }
+}

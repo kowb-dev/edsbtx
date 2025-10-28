@@ -1,0 +1,66 @@
+Sanitized phone: +79038948230
+Registration result: Array
+(
+    [MESSAGE] => Указан некорректный номер телефона.
+    [TYPE] => ERROR
+)
+
+Sanitized phone: +79283549823
+Registration result: Array
+(
+    [MESSAGE] => Указан некорректный номер телефона.
+    [TYPE] => ERROR
+)
+
+Sanitized phone: 79349234833
+Registration result: Array
+(
+    [MESSAGE] => Указан некорректный номер телефона.
+    [TYPE] => ERROR
+)
+
+Sanitized phone: 79038948230
+Registration result: Array
+(
+    [MESSAGE] => Указан некорректный номер телефона.
+    [TYPE] => ERROR
+)
+
+Sanitized phone: 79038948230
+OnAfterUserRegisterHandler: Array
+(
+    [LOGIN] => 79038948230
+    [NAME] => Иван
+    [LAST_NAME] => 
+    [PASSWORD] => 232323
+    [CHECKWORD] => 69o173lp9sgen8tx16r06zc6poncc1s4
+    [~CHECKWORD_TIME] => now()
+    [CONFIRM_PASSWORD] => 232323
+    [EMAIL] => kon4994@ya.ru
+    [PHONE_NUMBER] => N
+    [ACTIVE] => N
+    [CONFIRM_CODE] => EpcMUshB
+    [SITE_ID] => s1
+    [LANGUAGE_ID] => ru
+    [USER_IP] => 46.37.123.153
+    [USER_HOST] => 46.37.123.153
+    [GROUP_ID] => Array
+        (
+            [0] => 6
+        )
+
+    [LID] => s1
+    [RESULT_MESSAGE] => Array
+        (
+            [MESSAGE] => Указан некорректный номер телефона.
+            [TYPE] => ERROR
+        )
+
+)
+
+Registration result: Array
+(
+    [MESSAGE] => Указан некорректный номер телефона.
+    [TYPE] => ERROR
+)
+

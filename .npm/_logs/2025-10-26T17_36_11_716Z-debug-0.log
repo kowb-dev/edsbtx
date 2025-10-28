@@ -1,0 +1,45 @@
+0 verbose cli /home/c/contes1u/btx.edsy.ru/public_html/.nvm/versions/node/v20.19.5/bin/node /home/c/contes1u/btx.edsy.ru/public_html/.nvm/versions/node/v20.19.5/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.5
+3 silly config load:file:/home/c/contes1u/btx.edsy.ru/public_html/.nvm/versions/node/v20.19.5/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/c/contes1u/btx.edsy.ru/public_html/.cache/typescript/5.9/.npmrc
+5 silly config load:file:/home/c/contes1u/btx.edsy.ru/public_html/.npmrc
+6 silly config load:file:/home/c/contes1u/btx.edsy.ru/public_html/.nvm/versions/node/v20.19.5/etc/npmrc
+7 verbose title npm install types-registry@latest
+8 verbose argv "install" "--ignore-scripts" "types-registry@latest"
+9 verbose logfile logs-max:10 dir:/home/c/contes1u/btx.edsy.ru/public_html/.npm/_logs/2025-10-26T17_36_11_716Z-
+10 verbose logfile /home/c/contes1u/btx.edsy.ru/public_html/.npm/_logs/2025-10-26T17_36_11_716Z-debug-0.log
+11 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+12 silly logfile start cleaning logs, removing 1 files
+13 silly logfile done cleaning log files
+14 silly packumentCache corgi:https://registry.npmjs.org/types-registry cache-miss
+15 http fetch GET 200 https://registry.npmjs.org/types-registry 388ms (cache updated)
+16 silly packumentCache corgi:https://registry.npmjs.org/types-registry set size:undefined disposed:false
+17 silly idealTree buildDeps
+18 silly fetch manifest types-registry@0.1.744
+19 silly packumentCache full:https://registry.npmjs.org/types-registry cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/types-registry 81ms (cache updated)
+21 silly packumentCache full:https://registry.npmjs.org/types-registry set size:undefined disposed:false
+22 silly placeDep ROOT types-registry@0.1.744 REPLACE for:  want: 0.1.744
+23 silly reify mark retired [
+23 silly reify   '/home/c/contes1u/btx.edsy.ru/public_html/.cache/typescript/5.9/node_modules/types-registry'
+23 silly reify ]
+24 silly reify moves {
+24 silly reify   '/home/c/contes1u/btx.edsy.ru/public_html/.cache/typescript/5.9/node_modules/types-registry': '/home/c/contes1u/btx.edsy.ru/public_html/.cache/typescript/5.9/node_modules/.types-registry-hnX6ALU0'
+24 silly reify }
+25 silly audit bulk request {
+25 silly audit   '@types/react': [ '19.2.2' ],
+25 silly audit   csstype: [ '3.1.3' ],
+25 silly audit   'types-registry': [ '0.1.744' ]
+25 silly audit }
+26 silly tarball no local data for types-registry@https://registry.npmjs.org/types-registry/-/types-registry-0.1.744.tgz. Extracting by manifest.
+27 http fetch GET 200 https://registry.npmjs.org/types-registry/-/types-registry-0.1.744.tgz 246ms (cache miss)
+28 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 253ms
+29 silly audit report {}
+30 silly CHANGE node_modules/types-registry
+31 verbose cwd /home/c/contes1u/btx.edsy.ru/public_html/.cache/typescript/5.9
+32 verbose os Linux 5.10.196-0-beget-acl
+33 verbose node v20.19.5
+34 verbose npm  v10.8.2
+35 verbose exit 0
+36 info ok

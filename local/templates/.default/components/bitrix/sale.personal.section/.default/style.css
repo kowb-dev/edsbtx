@@ -1,0 +1,660 @@
+/**
+ * Стили личного кабинета пользователя
+ * Компонент: sale.personal.section
+ * 
+ * @version 1.1.0
+ * @author KW https://kowb.ru
+ */
+
+/* Скрываем кнопки авторизации через соцсети */
+.bx-auth-services,
+.bx-ss-buttons,
+.bx-soc-auth-title,
+[class*="socserv"],
+[class*="social-services"],
+.social-auth {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Основной контейнер аккаунта
+   ========================================================================== */
+
+.edsys-account {
+    background: var(--edsys-bg);
+    padding-block: var(--space-2xl);
+    min-height: calc(100vh - var(--header-height, 5rem));
+}
+
+.edsys-account__container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* ==========================================================================
+   Мобильный переключатель меню
+   ========================================================================== */
+
+.edsys-account__mobile-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    margin-block-end: var(--space-lg);
+}
+
+.edsys-account__mobile-toggle i {
+    font-size: var(--fs-xl);
+    color: var(--edsys-accent);
+}
+
+.edsys-account__mobile-toggle span {
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+}
+
+@media (hover: hover) {
+    .edsys-account__mobile-toggle:hover {
+        border-color: var(--edsys-accent);
+        box-shadow: var(--edsys-shadow);
+    }
+}
+
+.edsys-account__mobile-toggle:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   Wrapper для Sidebar и Content
+   ========================================================================== */
+
+.edsys-account__wrapper {
+    display: grid;
+    gap: var(--space-2xl);
+}
+
+.edsys-account__sidebar {
+    display: none;
+}
+
+.edsys-account__sidebar.is-open {
+    display: block;
+}
+
+/* ==========================================================================
+   Боковое меню навигации
+   ========================================================================== */
+
+.edsys-account__nav {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-account__nav-title {
+    margin-block-end: var(--space-lg);
+    padding-block-end: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-account__company-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--edsys-accent) 0%, var(--edsys-accent-hover) 100%);
+    border-radius: var(--radius-md);
+    margin-block-end: var(--space-lg);
+    color: var(--edsys-white);
+}
+
+.edsys-account__company-badge i {
+    font-size: var(--fs-xl);
+    flex-shrink: 0;
+}
+
+.edsys-account__company-badge span {
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-snug);
+}
+
+/* ==========================================================================
+   Меню навигации
+   ========================================================================== */
+
+.edsys-account__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-account__menu-item {
+    margin: 0;
+}
+
+.edsys-account__menu-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    position: relative;
+}
+
+.edsys-account__menu-link i {
+    font-size: var(--fs-xl);
+    flex-shrink: 0;
+    color: var(--edsys-text-muted);
+    transition: color var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-account__menu-link span {
+    flex: 1;
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-account__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding-inline: var(--space-xs);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-radius: 100vw;
+    font-weight: var(--edsys-font-bold);
+    line-height: 1;
+}
+
+@media (hover: hover) {
+    .edsys-account__menu-link:hover {
+        background: var(--edsys-bg-light);
+    }
+
+    .edsys-account__menu-link:hover i {
+        color: var(--edsys-accent);
+    }
+}
+
+.edsys-account__menu-link.is-active {
+    background: linear-gradient(135deg, var(--edsys-accent) 0%, var(--edsys-accent-hover) 100%);
+    color: var(--edsys-white);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-account__menu-link.is-active i {
+    color: var(--edsys-white);
+}
+
+.edsys-account__menu-link.is-active .edsys-account__badge {
+    background: var(--edsys-white);
+    color: var(--edsys-accent);
+}
+
+/* ==========================================================================
+   Кнопка выхода
+   ========================================================================== */
+
+.edsys-account__logout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    margin-block-start: var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--edsys-border);
+    text-decoration: none;
+    color: var(--edsys-text-muted);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    
+}
+
+.edsys-account__logout i {
+    font-size: var(--fs-xl);
+}
+
+@media (hover: hover) {
+    .edsys-account__logout:hover {
+        border-color: var(--edsys-accent);
+        color: var(--edsys-accent);
+    }
+}
+
+/* ==========================================================================
+   Основной контент
+   ========================================================================== */
+
+.edsys-account__content {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+}
+
+/* ==========================================================================
+   Дашборд
+   ========================================================================== */
+
+.edsys-dashboard__header {
+    margin-block-end: var(--space-2xl);
+    padding: var(--space-xl);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-dashboard__title {
+    margin-block-end: var(--space-sm);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-dashboard__name {
+    color: var(--edsys-accent);
+}
+
+.edsys-dashboard__subtitle {
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+}
+
+.edsys-dashboard__grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+/* ==========================================================================
+   Карточки дашборда
+   ========================================================================== */
+
+.edsys-dashboard__card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-md);
+    align-items: start;
+    padding: var(--space-xl);
+    background: var(--edsys-bg-light);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-dashboard__card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(3rem, 8vw, 4rem);
+    height: clamp(3rem, 8vw, 4rem);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.edsys-dashboard__card-icon i {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--edsys-white);
+}
+
+.edsys-dashboard__card-icon--orders {
+    background: linear-gradient(135deg, var(--edsys-voltage) 0%, var(--edsys-pulse) 100%);
+}
+
+.edsys-dashboard__card-icon--profile {
+    background: linear-gradient(135deg, var(--edsys-accent) 0%, var(--edsys-surge) 100%);
+}
+
+.edsys-dashboard__card-icon--favorites {
+    background: linear-gradient(135deg, var(--edsys-laser) 0%, var(--edsys-glow) 100%);
+}
+
+.edsys-dashboard__card-icon--address {
+    background: linear-gradient(135deg, var(--edsys-circuit) 0%, var(--edsys-signal) 100%);
+}
+
+.edsys-dashboard__card-content {
+    min-width: 0;
+}
+
+.edsys-dashboard__card-title {
+    margin-block-end: var(--space-xs);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-dashboard__card-desc {
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+    margin-block-end: var(--space-md);
+}
+
+.edsys-dashboard__card-stat {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-md);
+}
+
+.edsys-dashboard__card-number {
+    color: var(--edsys-accent);
+    font-weight: var(--edsys-font-bold);
+    line-height: 1;
+}
+
+.edsys-dashboard__card-label {
+    color: var(--edsys-text-light);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-dashboard__card-company {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-md);
+    color: var(--edsys-text-muted);
+}
+
+.edsys-dashboard__card-company i {
+    font-size: var(--fs-lg);
+}
+
+.edsys-dashboard__card-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(2rem, 6vw, 2.5rem);
+    height: clamp(2rem, 6vw, 2.5rem);
+    border-radius: 50%;
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    text-decoration: none;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    flex-shrink: 0;
+}
+
+.edsys-dashboard__card-link i {
+    font-size: var(--fs-lg);
+    transition: transform var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+@media (hover: hover) {
+    .edsys-dashboard__card:hover {
+        border-color: var(--edsys-accent);
+        box-shadow: 0 4px 16px rgba(255, 37, 69, 0.15);
+    }
+
+    .edsys-dashboard__card:hover .edsys-dashboard__card-link {
+        background: var(--edsys-accent-hover);
+    }
+
+    .edsys-dashboard__card:hover .edsys-dashboard__card-link i {
+        transform: translateX(0.25rem);
+    }
+}
+
+/* ==========================================================================
+   Адаптивность от 768px
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+    .edsys-account__mobile-toggle {
+        display: none;
+    }
+
+    .edsys-account__sidebar {
+        display: block;
+    }
+
+    .edsys-account__wrapper {
+        grid-template-columns: clamp(15rem, 25vw, 18rem) 1fr;
+    }
+
+    .edsys-dashboard__grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+}
+@media (max-width: 768px) {
+     .edsys-account__nav {
+    margin-top: 10rem;
+}}
+/* ==========================================================================
+   Адаптивность от 1024px
+   ========================================================================== */
+
+@media (min-width: 64rem) {
+    .edsys-account__wrapper {
+        grid-template-columns: 18rem 1fr;
+    }
+
+    .edsys-dashboard__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.container-fluid.sale-order-detail {
+    width: var(--container-max)!important;
+    padding: var(--container-padding)!important;
+}
+
+/* ==========================================================================
+   Стили страницы "Избранное"
+   ========================================================================== */
+
+.edsys-favorites-list-header {
+    display: none; /* Hidden on mobile by default */
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text-muted);
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: 1px solid var(--edsys-border);
+    text-transform: uppercase;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--edsys-tracking-wide);
+}
+
+.edsys-favorite-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    grid-template-areas:
+        "image info actions"
+        "image price actions";
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+    background-color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--edsys-shadow);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.edsys-favorite-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-favorite-item__link {
+    text-decoration: none;
+    color: inherit;
+    display: contents; /* Allows the grid layout to work on the parent */
+}
+
+.edsys-favorite-item__image {
+    grid-area: image;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.edsys-favorite-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.edsys-favorite-item__info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edsys-favorite-item__article {
+    font-size: var(--fs-xs);
+    color: var(--edsys-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-favorite-item__title {
+    font-size: var(--fs-base);
+    font-weight: var(--edsys-font-bold);
+    margin: 0;
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-favorite-item__availability {
+    margin-top: var(--space-sm);
+}
+
+.edsys-favorite-item__description {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    margin-top: var(--space-xs);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-price-block {
+    grid-area: price;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: var(--fs-base);
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-price-block .edsys-price__actual {
+    color: var(--edsys-text);
+}
+
+.edsys-price-block .edsys-price__old {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    text-decoration: line-through;
+}
+
+.edsys-price-block .edsys-price__on-request {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+}
+
+.edsys-favorite-item__actions {
+    grid-area: actions;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.edsys-favorite-item__actions .edsys-btn,
+.edsys-favorite-item__actions .favorite-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+    font-size: var(--fs-sm);
+    min-width: 140px;
+}
+
+.edsys-favorite-item__actions .edsys-btn--primary {
+    background-color: var(--edsys-accent);
+    color: var(--edsys-white);
+}
+.edsys-favorite-item__actions .edsys-btn--primary:hover {
+    background-color: var(--edsys-accent-hover);
+}
+
+.edsys-favorite-item__actions .favorite-toggle-btn {
+    background-color: transparent;
+    color: var(--edsys-text-muted);
+    border-color: var(--edsys-border);
+}
+
+.edsys-favorite-item__actions .favorite-toggle-btn:hover {
+    background-color: var(--edsys-bg-light);
+    color: var(--edsys-accent);
+}
+
+.edsys-favorite-item__actions .ph-thin {
+    margin-right: var(--space-xs);
+}
+
+/* Desktop view - Table-like layout */
+@media (min-width: 768px) {
+    .edsys-favorites-list-header {
+        display: grid;
+        grid-template-columns: 100px 1fr 120px 120px 150px;
+        gap: var(--space-lg);
+        align-items: center;
+    }
+
+    .edsys-favorite-item {
+        grid-template-columns: 100px 1fr 120px 120px 150px;
+        grid-template-areas: "image info article price actions";
+        align-items: center;
+        padding: var(--space-sm) var(--space-lg);
+    }
+
+    .edsys-favorite-item__info {
+        grid-area: info;
+    }
+
+    .edsys-favorite-item__article {
+        grid-area: article;
+        text-align: center;
+    }
+
+    .edsys-price-block {
+        grid-area: price;
+        align-items: center;
+    }
+
+    .edsys-favorite-item__actions {
+        grid-area: actions;
+    }
+
+    .edsys-favorite-item__availability {
+        display: none; /* Hide from main area, show in article column */
+    }
+}

@@ -1,0 +1,1100 @@
+/* ==========================================================================
+   Стили карточки товара EDS - edsys_product_detail
+   ========================================================================== */
+
+/* Импорт иконок Phosphor */
+
+/* Основной контейнер товара */
+.edsys-product {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+/* ==========================================================================
+   Хлебные крошки
+   ========================================================================== */
+.edsys-breadcrumb {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.edsys-breadcrumb__item {
+    display: flex;
+    align-items: center;
+}
+
+.edsys-breadcrumb__item:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-xs);
+    color: var(--edsys-text-light);
+}
+
+.edsys-breadcrumb__link {
+    color: var(--edsys-voltage);
+    text-decoration: none;
+    transition: color var(--edsys-transition-fast);
+}
+
+@media (hover: hover) {
+    .edsys-breadcrumb__link:hover {
+        color: var(--edsys-accent);
+        text-decoration: underline;
+    }
+}
+
+.edsys-breadcrumb__item--current {
+    color: var(--edsys-text-muted);
+}
+
+/* ==========================================================================
+   Заголовок товара
+   ========================================================================== */
+.edsys-product__header {
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-product__title {
+    margin: 0 0 var(--space-sm) 0;
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    color: var(--edsys-text);
+}
+
+.edsys-product__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    color: var(--edsys-text-muted);
+}
+
+.edsys-product__article,
+.edsys-product__category {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+/* ==========================================================================
+   Основная сетка товара
+   ========================================================================== */
+.edsys-product__main {
+    display: grid;
+    gap: var(--grid-gap);
+    margin-bottom: var(--space-3xl);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "gallery"
+        "specs"
+        "purchase";
+}
+
+@media (min-width: 768px) {
+    .edsys-product__main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "gallery specs"
+            "gallery purchase";
+    }
+}
+
+@media (min-width: 1200px) {
+    .edsys-product__main {
+        grid-template-columns: 40% 35% 25%;
+        grid-template-areas: "gallery specs purchase";
+        align-items: start;
+    }
+}
+
+.edsys-product__gallery {
+    grid-area: gallery;
+}
+
+.edsys-product__specs {
+    grid-area: specs;
+}
+.edsys-specs {
+    font-size: var(--fs-sm);
+}
+.edsys-product__purchase {
+    grid-area: purchase;
+}
+
+@media (min-width: 768px) {
+    .edsys-product__main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "gallery specs"
+            "gallery purchase";
+    }
+}
+
+@media (min-width: 1200px) {
+    .edsys-product__main {
+        grid-template-columns: 40% 35% 25%;
+        grid-template-areas: "gallery specs purchase";
+        align-items: start;
+    }
+}
+
+.edsys-product__gallery {
+    grid-area: gallery;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Галерея изображений
+   ========================================================================== */
+.edsys-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.edsys-gallery__main {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--edsys-white);
+    box-shadow: var(--edsys-shadow);
+    margin-bottom: var(--space-md);
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .edsys-gallery__main {
+        aspect-ratio: 3/2;
+        margin-bottom: var(--space-sm);
+    }
+}
+
+.edsys-gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity var(--edsys-transition-medium);
+    display: block;
+}
+
+.edsys-gallery__fullscreen {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--edsys-white);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+@media (hover: hover) {
+    .edsys-gallery__fullscreen:hover {
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+.edsys-gallery__thumbnails {
+    display: flex;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: var(--space-xs);
+    scrollbar-width: thin;
+    scrollbar-color: var(--edsys-border) transparent;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    width: 100%;
+    min-width: 0;
+}
+
+.edsys-gallery__thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.edsys-gallery__thumbnails::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.edsys-gallery__thumbnails::-webkit-scrollbar-thumb {
+    background: var(--edsys-border);
+    border-radius: 2px;
+}
+
+.edsys-gallery__thumbnail {
+    flex: 0 0 5rem;
+    width: 5rem;
+    height: 3.75rem;
+    border: 2px solid var(--edsys-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--edsys-white);
+    cursor: pointer;
+    transition: border-color var(--edsys-transition-fast);
+    padding: 0;
+}
+
+.edsys-gallery__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.edsys-gallery__thumbnail--active {
+    border-color: var(--edsys-voltage);
+}
+
+@media (hover: hover) {
+    .edsys-gallery__thumbnail:hover {
+        border-color: var(--edsys-accent);
+    }
+}
+/* ==========================================================================
+   Характеристики товара
+   ========================================================================== */
+.edsys-product__specs-title {
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--edsys-text);
+}
+
+.edsys-specs__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-specs__table td {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+    vertical-align: top;
+}
+
+.edsys-specs__table td:first-child {
+    font-weight: var(--edsys-font-medium);
+    color: var(--edsys-text);
+    width: 35%;
+    min-width: 8rem;
+}
+
+.edsys-specs__table td:last-child {
+    color: var(--edsys-text-muted);
+}
+
+.edsys-specs__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+    .edsys-specs__actions {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* ==========================================================================
+   Блок покупки
+   ========================================================================== */
+.edsys-purchase {
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: 3px 3px 20px  rgb(56 49 49 / 10%);
+    font-size: var(--fs-sm);
+}
+
+.edsys-purchase__article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-purchase__article-label {
+    color: var(--edsys-text-muted);
+}
+
+.edsys-purchase__article-value {
+    font-weight: var(--edsys-font-semibold);
+    color: var(--edsys-text);
+}
+
+.edsys-purchase__category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+    gap: 1rem;
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-purchase__category-label {
+    color: var(--edsys-text-muted);
+}
+
+.edsys-purchase__category-link {
+    color: var(--edsys-voltage);
+    text-decoration: none;
+    font-weight: var(--edsys-font-medium);
+    transition: color var(--edsys-transition-fast);
+}
+
+@media (hover: hover) {
+    .edsys-purchase__category-link:hover {
+        color: var(--edsys-accent);
+        text-decoration: underline;
+    }
+}
+
+.edsys-purchase__availability {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-purchase__prices {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-purchase__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+}
+
+.edsys-purchase__price:last-child {
+    margin-bottom: 0;
+}
+
+.edsys-purchase__price--retail .edsys-purchase__price-value {
+    color: var(--edsys-text-light);
+}
+
+.edsys-purchase__price--user {
+    padding: var(--space-sm);
+    background: var(--edsys-bg);
+    border-radius: var(--radius-md);
+}
+
+.edsys-purchase__price--user .edsys-purchase__price-value {
+    font-weight: var(--edsys-font-semibold);
+    color: var(--edsys-voltage);
+}
+
+.edsys-purchase__stock {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-weight: var(--edsys-font-medium);
+}
+
+.edsys-purchase__stock--available {
+    color: var(--edsys-circuit);
+}
+
+.edsys-purchase__stock--preorder {
+    color: var(--edsys-wire);
+}
+
+.edsys-purchase__controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* Количество - новый дизайн */
+.edsys-quantity__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto var(--space-md);
+}
+
+.edsys-quantity__btn {
+    border: none;
+    padding: var(--space-sm);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--edsys-text-muted);
+}
+
+@media (hover: hover) {
+    .edsys-quantity__btn:hover {
+        background: var(--edsys-bg);
+        color: var(--edsys-text);
+    }
+}
+
+.edsys-quantity__input {
+    border: none;
+    text-align: center;
+    width: 3rem;
+    padding: var(--space-sm);
+    background: var(--edsys-bg);
+    font-weight: var(--edsys-font-medium);
+}
+
+/* Действия покупки */
+.edsys-purchase__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+.edsys-purchase__actions i{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.edsys-purchase__secondary {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+.edsys-purchase__secondary i{
+    color: var(--edsys-titanium);
+}
+
+/* Блок для неавторизованных */
+.edsys-purchase__auth-required {
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.edsys-purchase__auth-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--edsys-text-muted);
+}
+
+.edsys-purchase__auth-message a {
+    color: var(--edsys-voltage);
+    text-decoration: none;
+    font-weight: var(--edsys-font-medium);
+}
+
+@media (hover: hover) {
+    .edsys-purchase__auth-message a:hover {
+        color: var(--edsys-accent);
+        text-decoration: underline;
+    }
+}
+
+/* ==========================================================================
+   Кнопки
+   ========================================================================== */
+.edsys-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: var(--edsys-font-medium);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast);
+    white-space: nowrap;
+    min-height: 2.75rem;
+}
+
+.edsys-button--primary {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border-color: var(--edsys-accent);
+    text-transform: uppercase;
+}
+
+@media (hover: hover) {
+    .edsys-button--primary:hover {
+        background: var(--edsys-accent-hover);
+        border-color: var(--edsys-voltage);
+    }
+}
+
+.edsys-button--secondary {
+    background: var(--edsys-bg);
+    color: var(--edsys-text);
+    border-color: var(--edsys-border);
+}
+
+@media (hover: hover) {
+    .edsys-button--secondary:hover {
+        background: var(--edsys-border);
+    }
+}
+
+.edsys-button--outline {
+    background: transparent;
+    color: var(--edsys-voltage);
+    border-color: var(--edsys-voltage);
+}
+
+@media (hover: hover) {
+    .edsys-button--outline:hover {
+        background: var(--edsys-voltage);
+        color: var(--edsys-white);
+    }
+}
+
+.edsys-button--icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    background: transparent;
+    color: var(--edsys-text-muted);
+    border-color: var(--edsys-border);
+}
+
+@media (hover: hover) {
+    .edsys-button--icon:hover {
+        color: var(--edsys-voltage);
+        border-color: var(--edsys-voltage);
+    }
+}
+
+/* ==========================================================================
+   Видео блок
+   ========================================================================== */
+.edsys-product__video {
+    margin: var(--space-3xl) calc(-1 * var(--container-padding));
+    background: linear-gradient(135deg, var(--edsys-carbon) 0%, var(--edsys-steel) 100%);
+    padding: var(--space-3xl) var(--container-padding);
+}
+
+.edsys-video__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.edsys-video__title {
+    color: var(--edsys-white);
+    margin: 0 0 var(--space-xl) 0;
+}
+
+.edsys-video__embed {
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.edsys-video__embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   Похожие товары
+   ========================================================================== */
+.edsys-product__related {
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-related {
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-related__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-related__title {
+    margin: 0;
+    color: var(--edsys-text);
+}
+
+.edsys-related__navigation {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+@media (max-width: 767px) {
+    .edsys-related__navigation {
+        display: none;
+    }
+}
+
+.edsys-related__nav {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--edsys-border);
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--edsys-text-muted);
+}
+
+@media (hover: hover) {
+    .edsys-related__nav:hover {
+        border-color: var(--edsys-voltage);
+        color: var(--edsys-voltage);
+    }
+}
+
+.edsys-related__nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edsys-related__slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.edsys-related__track {
+    display: flex;
+    gap: var(--space-lg);
+    transition: transform var(--edsys-transition-medium);
+    overflow-x: auto;
+    scrollbar-width: none;
+    width: 100%;
+}
+
+.edsys-related__track::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .edsys-related__track {
+        overflow-x: visible;
+    }
+}
+
+/* Карточка товара */
+.edsys-product-card {
+    flex-shrink: 0;
+    width: min(100%, 18rem);
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--edsys-shadow);
+    transition: all var(--edsys-transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-product-card--clone {
+    /* Клонированные элементы для бесконечного слайдера */
+    pointer-events: none;
+}
+
+.edsys-product-card--clone .edsys-product-card__link {
+    pointer-events: auto;
+}
+
+@media (hover: hover) {
+    .edsys-product-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+}
+
+.edsys-product-card__link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.edsys-product-card__image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--edsys-white);
+}
+
+.edsys-product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform var(--edsys-transition-medium);
+}
+
+@media (hover: hover) {
+    .edsys-product-card:hover .edsys-product-card__image img {
+        transform: scale(1.05);
+    }
+}
+
+.edsys-product-card__content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-product-card__article {
+    color: var(--edsys-text-light);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--fs-xxs);
+}
+
+.edsys-product-card__title {
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+    font-weight: var(--edsys-font-semibold);
+}
+
+.edsys-product-card__description {
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+    hyphens: auto;
+    font-size: var(--fs-xxs);
+}
+
+.edsys-product-card__description strong {
+    font-weight: var(--edsys-font-semibold);
+    color: var(--edsys-text);
+}
+
+.edsys-product-card__description em {
+    font-style: italic;
+}
+
+.edsys-product-card__description br {
+    line-height: 1.2;
+}
+
+.edsys-product-card__footer {
+    padding: 0 var(--space-lg) var(--space-lg);
+}
+
+.edsys-product-card__order {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    color: var(--edsys-wire);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast);
+    font-weight: var(--edsys-font-medium);
+    font-size: var(--fs-sm);
+}
+
+@media (hover: hover) {
+    .edsys-product-card__order:hover {
+        background: var(--edsys-wire);
+        color: var(--edsys-white);
+    }
+}
+
+/* ==========================================================================
+   Полноэкранная галерея
+   ========================================================================== */
+.edsys-fullscreen-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--edsys-transition-medium);
+}
+
+.edsys-fullscreen-gallery[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.edsys-fullscreen-gallery__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edsys-fullscreen-gallery__container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edsys-fullscreen-gallery__close {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast);
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (hover: hover) {
+    .edsys-fullscreen-gallery__close:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.edsys-fullscreen-gallery__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast);
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edsys-fullscreen-gallery__nav--prev {
+    left: var(--space-lg);
+}
+
+.edsys-fullscreen-gallery__nav--next {
+    right: var(--space-lg);
+}
+
+@media (hover: hover) {
+    .edsys-fullscreen-gallery__nav:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.edsys-fullscreen-gallery__nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.edsys-fullscreen-gallery__image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl);
+}
+
+.edsys-fullscreen-gallery__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.edsys-fullscreen-gallery__counter {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--edsys-white);
+    background: rgba(0, 0, 0, 0.5);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    font-weight: var(--edsys-font-medium);
+}
+
+/* ==========================================================================
+   Утилиты для мобильных устройств
+   ========================================================================== */
+@media (max-width: 767px) {
+    .edsys-product {
+        padding: var(--space-md);
+    }
+
+    .edsys-product__main {
+        gap: var(--space-lg);
+        margin-bottom: var(--space-2xl);
+    }
+
+    .edsys-product__gallery {
+        margin-bottom: var(--space-lg);
+    }
+
+    .edsys-product__specs {
+        margin-bottom: var(--space-lg);
+    }
+
+    .edsys-purchase {
+        position: sticky;
+        bottom: var(--space-md);
+        margin: var(--space-xl) calc(-1 * var(--space-md)) 0;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .edsys-specs__actions {
+        flex-direction: column;
+    }
+
+    /* Исправление для блока рекомендаций на мобильных */
+    .edsys-product__related {
+        margin: var(--space-3xl) calc(-1 * var(--space-md)) var(--space-2xl);
+        padding: 0 var(--space-md);
+        display: block;
+        width: auto;
+        clear: both;
+    }
+
+    .edsys-related__track {
+        padding-left: 0;
+        margin-left: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .edsys-related__track::after {
+        content: '';
+        flex-shrink: 0;
+        width: var(--space-md);
+    }
+
+    /* Адаптивность карточек товаров на мобильных */
+    .edsys-product-card {
+        width: min(100%, 16rem);
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
+    /* Заголовок рекомендаций на мобильных */
+    .edsys-related__header {
+        margin-bottom: var(--space-lg);
+    }
+
+    .edsys-related__title {
+        font-size: var(--edsys-fs-h3);
+    }
+}
+
+/* ==========================================================================
+   Touch устройства - удаление hover эффектов
+   ========================================================================== */
+@media (hover: none) {
+    .edsys-gallery__thumbnail:hover,
+    .edsys-breadcrumb__link:hover,
+    .edsys-button--primary:hover,
+    .edsys-button--secondary:hover,
+    .edsys-button--outline:hover,
+    .edsys-button--icon:hover,
+    .edsys-quantity__btn:hover,
+    .edsys-purchase__auth-message a:hover,
+    .edsys-related__nav:hover,
+    .edsys-product-card:hover,
+    .edsys-product-card:hover .edsys-product-card__image img,
+    .edsys-fullscreen-gallery__close:hover,
+    .edsys-fullscreen-gallery__nav:hover,
+    .edsys-gallery__fullscreen:hover {
+        /* Сброс hover эффектов на touch устройствах */
+        background: revert;
+        color: revert;
+        border-color: revert;
+        transform: revert;
+        box-shadow: revert;
+        text-decoration: revert;
+    }
+}
+
+/* Styles for tables within the product specifications block (from DETAIL_TEXT) */
+h2.sprod {
+    font-size: var(--fs-lg);
+}
+.edsys-specs table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.edsys-specs table td,
+.edsys-specs table th {
+    padding: 12px 8px; /* Adds vertical and horizontal spacing */
+    border-bottom: 1px dotted #c5c5c5; /* Your requested style */
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Remove border from the last row for a cleaner look */
+.edsys-specs table tr:last-child td,
+.edsys-specs table tr:last-child th {
+    border-bottom: none;
+}
+
+.edsys-specs table td:first-child {
+    font-weight: bold;
+    width: 40%; /* Allocate space for the characteristic name */
+}
+input::-webkit-inner-spin-button {
+    display: none!important;
+    }

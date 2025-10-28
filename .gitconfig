@@ -1,0 +1,7 @@
+[user]
+	name = CostaWebin
+	email = constiv@icloud.com
+[safe]
+	directory = /home/c/contes1u/btx.edsy.ru/public_html
+[init]
+	defaultBranch = main

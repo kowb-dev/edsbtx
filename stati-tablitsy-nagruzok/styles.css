@@ -1,0 +1,716 @@
+/* ==========================================================================
+   Cable Tables Page Styles - Updated for Integrated Navigation with 1024px breakpoint
+   ========================================================================== */
+
+/* Import Phosphor Icons */
+
+/* Page-specific CSS Variables */
+:root {
+    /* Professional color scheme */
+    --edsys-table-border: #e1e5e9;
+    --edsys-table-header-bg: #f8f9fa;
+    --edsys-table-hover: #f5f6f7;
+    --edsys-sidebar-bg: #ffffff;
+    --edsys-sidebar-border: #dee2e6;
+
+    /* Subtle accent colors */
+    --edsys-accent-blue: #0066cc;
+    --edsys-accent-teal: #20c997;
+    --edsys-accent-orange: #fd7e14;
+
+    /* Icon styling */
+    --edsys-icon-size: 24px;
+    --edsys-icon-size-lg: 32px;
+    --edsys-icon-size-xl: 48px;
+}
+
+/* ==========================================================================
+   Layout & Container
+   ========================================================================== */
+
+.edsys-cable-page {
+    min-height: 100vh;
+    background: var(--edsys-bg);
+    display: flex;
+    position: relative;
+}
+
+.edsys-cable-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    flex: 1;
+}
+
+.edsys-cable-main {
+    display: flex;
+    gap: var(--space-2xl);
+    align-items: flex-start;
+}
+
+.edsys-cable-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.edsys-cable-hero {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-cable-hero__title {
+    font-size: var(--edsys-fs-hero);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-md);
+}
+
+.edsys-cable-hero__subtitle {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
+.edsys-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xl);
+    font-size: var(--fs-sm);
+}
+
+.edsys-breadcrumbs__link {
+    color: var(--edsys-text-muted);
+    text-decoration: none;
+    transition: color var(--edsys-transition-fast);
+}
+
+.edsys-breadcrumbs__link:hover {
+    color: var(--edsys-voltage);
+}
+
+.edsys-breadcrumbs__separator {
+    color: var(--edsys-text-light);
+}
+
+.edsys-breadcrumbs__current {
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+}
+
+/* ==========================================================================
+   Cable Navigation Cards
+   ========================================================================== */
+
+.edsys-cable-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-cable-card {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    cursor: pointer;
+    transition: all var(--edsys-transition-medium);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.edsys-cable-card:hover {
+    border-color: var(--current-color, var(--edsys-accent-blue));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.edsys-cable-card[data-color="voltage"] {
+    --current-color: var(--edsys-accent-blue);
+}
+
+.edsys-cable-card[data-color="circuit"] {
+    --current-color: var(--edsys-accent-teal);
+}
+
+.edsys-cable-card[data-color="spark"] {
+    --current-color: var(--edsys-accent-orange);
+}
+
+.edsys-cable-card__icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--current-color, var(--edsys-accent-blue)), var(--current-color-light, var(--edsys-accent-blue)));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all var(--edsys-transition-medium);
+}
+
+.edsys-cable-card__icon i {
+    font-size: var(--edsys-icon-size-lg);
+    color: var(--edsys-white);
+}
+
+.edsys-cable-card[data-color="voltage"] .edsys-cable-card__icon {
+    --current-color: var(--edsys-accent-blue);
+    --current-color-light: #3d8bfd;
+}
+
+.edsys-cable-card[data-color="circuit"] .edsys-cable-card__icon {
+    --current-color: var(--edsys-accent-teal);
+    --current-color-light: #6edcd6;
+}
+
+.edsys-cable-card[data-color="spark"] .edsys-cable-card__icon {
+    --current-color: var(--edsys-accent-orange);
+    --current-color-light: #fd9843;
+}
+
+.edsys-cable-card:hover .edsys-cable-card__icon {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-cable-card__content {
+    flex: 1;
+}
+
+.edsys-cable-card__title {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-xs);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-cable-card__desc {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Cable Sections & Tables
+   ========================================================================== */
+
+.edsys-cable-section {
+    margin-bottom: var(--space-3xl);
+    scroll-margin-top: var(--space-xl);
+}
+
+.edsys-cable-section__header {
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-cable-section__title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    margin: 0;
+}
+
+/* Professional table styling */
+.edsys-cable-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--edsys-table-border);
+    border-radius: var(--radius-md);
+    background: var(--edsys-white);
+}
+
+.edsys-cable-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-sm);
+    min-width: 600px;
+}
+
+.edsys-cable-table thead {
+    background: var(--edsys-table-header-bg);
+}
+
+.edsys-cable-table th,
+.edsys-cable-table td {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    border-bottom: 1px solid var(--edsys-table-border);
+}
+
+.edsys-cable-table th {
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    font-size: var(--fs-sm);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.edsys-cable-table tbody tr {
+    transition: background-color var(--edsys-transition-fast);
+}
+
+.edsys-cable-table tbody tr:hover {
+    background-color: var(--edsys-table-hover);
+}
+
+.edsys-cable-table td {
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-regular);
+}
+
+/* Highlight current values */
+.edsys-cable-table td:last-child {
+    font-weight: var(--edsys-font-bold);
+    color: var(--current-accent, var(--edsys-accent-blue));
+}
+
+.edsys-cable-table[data-color="voltage"] td:last-child {
+    --current-accent: var(--edsys-accent-blue);
+}
+
+.edsys-cable-table[data-color="circuit"] td:last-child {
+    --current-accent: var(--edsys-accent-teal);
+}
+
+.edsys-cable-table[data-color="spark"] td:last-child {
+    --current-accent: var(--edsys-accent-orange);
+}
+
+/* ==========================================================================
+   INTEGRATION WITH USEFUL INFO NAVIGATION - Updated for 200px sidebar
+   ========================================================================== */
+
+/* Override sidebar navigation - now handled by useful-info-navigation component */
+.edsys-sidebar-nav {
+    display: none; /* Hide legacy sidebar navigation */
+}
+
+/* Hide legacy mobile navigation */
+.edsys-mobile-nav-btn {
+    display: none !important; /* Hide legacy mobile navigation */
+}
+
+/* Ensure useful-info navigation is properly positioned */
+.edsys-useful-nav {
+    /* Styles are provided by useful-info-navigation.css */
+    /* Width is now 200px as defined in useful-info-navigation.css */
+}
+
+/* Adjust main layout for 200px sidebar */
+.edsys-cable-main {
+    gap: var(--space-xl); /* Slightly reduced gap due to smaller sidebar */
+}
+
+/* ==========================================================================
+   Related Sections
+   ========================================================================== */
+
+.edsys-cable-related {
+    margin: var(--space-3xl) 0;
+}
+
+.edsys-cable-related h3 {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-xl);
+}
+
+.edsys-cable-related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.edsys-cable-related__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-medium);
+}
+
+.edsys-cable-related__link:hover {
+    border-color: var(--edsys-accent-blue);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.edsys-cable-related__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--edsys-accent-blue), #3d8bfd);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+    transition: all var(--edsys-transition-medium);
+}
+
+.edsys-cable-related__icon i {
+    font-size: var(--edsys-icon-size-lg);
+    color: var(--edsys-white);
+}
+
+.edsys-cable-related__link:hover .edsys-cable-related__icon {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.3);
+}
+
+.edsys-cable-related__content {
+    flex: 1;
+}
+
+.edsys-cable-related__title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-cable-related__desc {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* ==========================================================================
+   Info Section
+   ========================================================================== */
+
+.edsys-cable-info {
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    margin: var(--space-3xl) 0;
+}
+
+.edsys-cable-info h3 {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.edsys-cable-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.edsys-cable-info__item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.edsys-cable-info__item i {
+    font-size: var(--fs-2xl);
+    color: var(--edsys-accent-blue);
+    flex-shrink: 0;
+    margin-top: var(--space-xs);
+}
+
+.edsys-cable-info__item h4 {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-cable-info__item p {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+.edsys-link {
+    color: var(--edsys-accent-blue);
+    text-decoration: none;
+    font-weight: var(--edsys-font-bold);
+    transition: color var(--edsys-transition-fast);
+}
+
+.edsys-link:hover {
+    color: var(--edsys-text);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - Updated for 1024px breakpoint
+   ========================================================================== */
+
+/* Large Desktop */
+@media (min-width: 1025px) {
+    .edsys-cable-main {
+        gap: var(--space-2xl);
+    }
+
+    /* Ensure sidebar width consistency */
+    .edsys-useful-nav {
+        width: 330px;
+        min-width: 280px;
+        max-width: 330px;
+    }
+}
+
+/* Tablet and Mobile - Updated breakpoint to 1024px */
+@media (max-width: 1024px) {
+    .edsys-cable-main {
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+
+    /* Useful info navigation will handle mobile layout */
+
+    .edsys-cable-nav {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .edsys-cable-card {
+        padding: var(--space-lg);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .edsys-cable-card__icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .edsys-cable-card__icon i {
+        font-size: var(--edsys-icon-size);
+    }
+
+    .edsys-cable-table-wrapper {
+        margin: 0 calc(-1 * var(--container-padding));
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .edsys-cable-table {
+        font-size: var(--fs-xs);
+    }
+
+    .edsys-cable-table th,
+    .edsys-cable-table td {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .edsys-cable-hero {
+        padding: var(--space-xl) 0;
+    }
+
+    .edsys-cable-info {
+        padding: var(--space-xl);
+        margin: var(--space-2xl) 0;
+    }
+
+    .edsys-cable-info__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .edsys-cable-related__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .edsys-cable-related__link {
+        padding: var(--space-lg);
+    }
+
+    .edsys-cable-related__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .edsys-cable-related__icon i {
+        font-size: var(--edsys-icon-size);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .edsys-cable-table {
+        min-width: 500px;
+    }
+
+    .edsys-breadcrumbs {
+        font-size: var(--fs-xs);
+        flex-wrap: wrap;
+    }
+
+    .edsys-cable-card__icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Mobile table headers - show/hide versions */
+.edsys-table-header-mobile {
+    display: none;
+}
+
+.edsys-table-header-desktop {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .edsys-table-header-desktop {
+        display: none;
+    }
+
+    .edsys-table-header-mobile {
+        display: inline;
+        font-size: var(--fs-xxs);
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .edsys-cable-table {
+        min-width: 100%;
+        table-layout: fixed;
+    }
+
+    .edsys-cable-table th {
+        font-size: var(--fs-xxs);
+        padding: var(--space-xs) 2px;
+        width: 25%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .edsys-cable-table td {
+        padding: var(--space-xs) 2px;
+        font-size: var(--fs-xxs);
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .edsys-cable-table-wrapper {
+        overflow-x: hidden;
+    }
+
+    .edsys-cable-container {
+        padding: 0;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .edsys-useful-nav,
+    .edsys-cable-hero__icon {
+        display: none !important;
+    }
+
+    .edsys-cable-main {
+        flex-direction: column;
+    }
+
+    .edsys-cable-table-wrapper {
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .edsys-cable-table {
+        font-size: 10pt;
+    }
+
+    .edsys-cable-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================================================
+   Accessibility & Touch Devices
+   ========================================================================== */
+
+/* Focus Styles */
+.edsys-cable-card:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .edsys-cable-card:hover {
+        transform: none;
+    }
+
+    .edsys-cable-card:hover .edsys-cable-card__icon {
+        transform: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Increase touch targets */
+    .edsys-cable-card {
+        min-height: 44px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-cable-card,
+    .edsys-cable-card__icon,
+    .edsys-cable-related__icon {
+        transition: none;
+    }
+
+    .edsys-cable-card:hover,
+    .edsys-cable-card:hover .edsys-cable-card__icon,
+    .edsys-cable-related__link:hover .edsys-cable-related__icon {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .edsys-cable-card,
+    .edsys-cable-table-wrapper,
+    .edsys-cable-info,
+    .edsys-cable-related__link {
+        border-width: 2px;
+        border-color: var(--edsys-text);
+    }
+
+    .edsys-cable-table th {
+        border-bottom-width: 2px;
+    }
+}

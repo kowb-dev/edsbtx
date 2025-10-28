@@ -1,0 +1,93 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  # ========================================================================
+  # ЭКСТРЕННЫЙ РЕЖИМ: НИКАКОЙ БЛОКИРОВКИ! ТОЛЬКО БАЗОВЫЕ ПРАВИЛА!
+  # ========================================================================
+
+  # Перенаправление с /new на корневой домен
+  RewriteRule ^new/?$ / [R=301,L]
+
+  # WordPress-совместимые URL для категорий: /cat/category-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/([^/]+)/?$ /cat/index.php?category=$1 [QSA,L]
+
+  # Главная страница каталога: /cat/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/?$ /cat/index.php [QSA,L]
+
+  # WordPress-совместимые URL для товаров: /product/product-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^product/([^/]+)/?$ /product/index.php?product=$1 [QSA,L]
+
+  # Стандартные правила Битрикса (должны быть в конце)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+
+  # Authorization header passthrough
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+# ========================================================================
+# НАСТРОЙКИ PHP ДЛЯ 1С ОБМЕНА (оба файла)
+# ========================================================================
+
+<Files "1c_exchange.php">
+    php_value memory_limit 512M
+    php_value max_execution_time 600
+    php_value upload_max_filesize 50M
+    php_value post_max_size 50M
+    php_value max_input_vars 10000
+    php_value session.gc_maxlifetime 7200
+    php_flag display_errors off
+    php_flag log_errors on
+</Files>
+
+<Files "shop_sync.php">
+    php_value memory_limit 1024M
+    php_value max_execution_time 900
+    php_value upload_max_filesize 100M
+    php_value post_max_size 100M
+    php_value max_input_vars 20000
+    php_value session.gc_maxlifetime 14400
+    php_flag display_errors off
+    php_flag log_errors on
+    php_value max_input_time 900
+    php_value default_socket_timeout 900
+</Files>
+
+# ========================================================================
+# БАЗОВЫЕ ЗАГОЛОВКИ ДЛЯ ОБОИХ СКРИПТОВ
+# ========================================================================
+
+<IfModule mod_headers.c>
+    <FilesMatch "(1c_exchange|shop_sync)\.php$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate"
+        Header always set Pragma "no-cache"
+        Header always set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ========================================================================
+# КОММЕНТАРИЙ: ВСЯ ЗАЩИТА ОТКЛЮЧЕНА ДЛЯ ТЕСТИРОВАНИЯ 1С!
+# После успешного обмена можно будет добавить защиту обратно
+# с правильно работающими исключениями
+# ========================================================================

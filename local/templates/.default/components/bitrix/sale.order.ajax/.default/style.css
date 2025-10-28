@@ -1,0 +1,889 @@
+/**
+ * Order Checkout Styles
+ * Component: sale.order.ajax
+ * 
+ * @version 2.0.0
+ * @author KW https://kowb.ru
+ * 
+ * Path: /local/templates/.default/components/bitrix/sale.order.ajax/.default/style.css
+ */
+
+/* ==========================================================================
+   Order Page Container
+   ========================================================================== */
+
+.edsys-order-page {
+    background: var(--edsys-bg);
+    padding-block: var(--space-2xl);
+    min-height: calc(100vh - var(--header-height, 5rem));
+}
+
+.edsys-order-page__container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* ==========================================================================
+   Order Container
+   ========================================================================== */
+
+.edsys-account__content--full {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.edsys-order {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.edsys-order__header {
+    margin-bottom: var(--space-md);
+}
+
+.edsys-order__title {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.edsys-order__subtitle {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+.edsys-order__layout {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 62em) {
+    .edsys-order__layout {
+        grid-template-columns: 1fr min(29rem, 35%);
+        align-items: start;
+    }
+}
+
+/* ==========================================================================
+   Error Messages
+   ========================================================================== */
+
+.edsys-order__error {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: rgba(255, 37, 69, 0.1);
+    border-left: 3px solid var(--edsys-accent);
+    border-radius: var(--radius-md);
+}
+
+.edsys-order__error i {
+    font-size: 1.5rem;
+    color: var(--edsys-accent);
+    flex-shrink: 0;
+}
+
+.edsys-order__error-content {
+    flex: 1;
+}
+
+.edsys-order__error-message {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+.edsys-order__error-message + .edsys-order__error-message {
+    margin-top: var(--space-xs);
+}
+
+/* ==========================================================================
+   Section Styling
+   ========================================================================== */
+
+.edsys-order__section {
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-order__section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-order__section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(2rem, 6vw, 2.5rem);
+    height: clamp(2rem, 6vw, 2.5rem);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.edsys-order__section-title {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    margin: 0;
+    flex: 1;
+}
+
+/* ==========================================================================
+   User Profiles
+   ========================================================================== */
+
+.edsys-order__profiles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edsys-order__profile {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__profile:hover {
+    border-color: var(--edsys-accent);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-order__profile:has(.edsys-order__profile-radio:checked) {
+    background: var(--edsys-white);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-order__profile-radio {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--edsys-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.edsys-order__profile-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-order__profile-name {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-order__profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-order__profile-info span::after {
+    content: "•";
+    margin-inline: var(--space-xs);
+}
+
+.edsys-order__profile-info span:last-child::after {
+    display: none;
+}
+
+/* ==========================================================================
+   Form Fields
+   ========================================================================== */
+
+.edsys-order__fields {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 48em) {
+    .edsys-order__fields {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .edsys-order__field--full {
+        grid-column: 1 / -1;
+    }
+}
+
+.edsys-order__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.edsys-order__label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+}
+
+.edsys-order__required {
+    color: var(--edsys-accent);
+}
+
+.edsys-order__input,
+.edsys-order__textarea,
+.edsys-order__select {
+    width: 100%;
+    padding: var(--space-md);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    background: var(--edsys-white);
+    color: var(--edsys-text);
+    transition: border-color var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__input:focus,
+.edsys-order__textarea:focus,
+.edsys-order__select:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 1px;
+    border-color: var(--edsys-accent);
+}
+
+.edsys-order__textarea {
+    min-height: 6rem;
+    resize: vertical;
+}
+
+.edsys-order__field-note {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-light);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-order__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    cursor: pointer;
+}
+
+.edsys-order__checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--edsys-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+#edsys-prop-6-53cef3 .bx-sls .dropdown-block {
+  border: 1px solid #bdbdbd !important;
+  border-radius: var(--radius-md)!important;
+  -webkit-box-shadow: inset 0 1px 2px #ebebeb !important;
+  box-shadow: inset 0 1px 2px #ebebeb !important;
+  font-size: 14px !important;
+  padding: var(--space-md) !important;
+  position: relative !important;
+  background-color: #fff !important;
+}
+
+/* ==========================================================================
+   Delivery Options
+   ========================================================================== */
+
+.edsys-order__delivery-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edsys-order__delivery-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-md);
+    align-items: start;
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__delivery-item:hover {
+    border-color: var(--edsys-accent);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-order__delivery-item--selected {
+    background: var(--edsys-white);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-order__delivery-radio {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--edsys-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.edsys-order__delivery-content {
+    min-width: 0;
+}
+
+.edsys-order__delivery-name {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-order__delivery-desc {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-order__delivery-price {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Payment Options
+   ========================================================================== */
+
+.edsys-order__payment-info {
+    padding: var(--space-md);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-order__payment-notice {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+.edsys-order__payment-notice + .edsys-order__payment-notice {
+    margin-top: var(--space-sm);
+}
+
+.edsys-order__payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edsys-order__payment-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-md);
+    align-items: start;
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: default;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__payment-item--selected {
+    background: var(--edsys-white);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-order__payment-radio {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--edsys-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.edsys-order__payment-content {
+    min-width: 0;
+}
+
+.edsys-order__payment-name {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-order__payment-desc {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+/* ==========================================================================
+   User Consent
+   ========================================================================== */
+
+.edsys-order__consent {
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.edsys-order__consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-normal);
+    cursor: pointer;
+}
+
+.edsys-order__consent-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--edsys-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+/* ==========================================================================
+   Action Buttons
+   ========================================================================== */
+
+.edsys-order__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.edsys-order__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-fast) var(--edsys-ease);
+    min-height: 3.5rem;
+}
+
+.edsys-order__submit:hover {
+    background: var(--edsys-accent-hover);
+}
+
+.edsys-order__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edsys-order__submit i {
+    font-size: 1.25rem;
+}
+
+.edsys-order__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    color: var(--edsys-text-muted);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    text-decoration: none;
+    transition: color var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__back:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-order__back i {
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Sidebar Summary
+   ========================================================================== */
+
+.edsys-order__sidebar {
+    position: sticky;
+    top: var(--space-lg);
+}
+
+.edsys-order__summary {
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-order__summary-title {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    margin: 0 0 var(--space-lg) 0;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+/* ==========================================================================
+   Basket Items in Sidebar
+   ========================================================================== */
+
+.edsys-order__basket-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-order__basket-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.edsys-order__basket-image {
+    width: clamp(3rem, 10vw, 3.75rem);
+    height: clamp(3rem, 10vw, 3.75rem);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.edsys-order__basket-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edsys-order__basket-info {
+    min-width: 0;
+}
+
+.edsys-order__basket-name {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-snug);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-order__basket-quantity {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-order__basket-price {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Promo Code
+   ========================================================================== */
+
+.edsys-order__promo {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-order__promo-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--edsys-bg-light);
+    color: var(--edsys-text);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__promo-toggle:hover {
+    border-color: var(--edsys-accent);
+}
+
+.edsys-order__promo-toggle.active {
+    border-color: var(--edsys-accent);
+    background: var(--edsys-white);
+}
+
+.edsys-order__promo-toggle i:first-child {
+    font-size: 1.25rem;
+}
+
+.edsys-order__promo-toggle span {
+    flex: 1;
+}
+
+.edsys-order__promo-arrow {
+    margin-left: auto;
+    transition: transform var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-order__promo-toggle[aria-expanded="true"] .edsys-order__promo-arrow {
+    transform: rotate(180deg);
+}
+
+.edsys-order__promo-form {
+    display: none;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.edsys-order__promo-form[aria-hidden="false"] {
+    display: flex !important;
+}
+
+.edsys-order__promo-input {
+    flex: 1;
+    padding: var(--space-md);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    background: var(--edsys-white);
+    color: var(--edsys-text);
+}
+
+.edsys-order__promo-input:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 1px;
+}
+
+.edsys-order__promo-apply {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-fast) var(--edsys-ease);
+    white-space: nowrap;
+}
+
+.edsys-order__promo-apply:hover {
+    background: var(--edsys-accent-hover);
+}
+
+/* ==========================================================================
+   Order Totals
+   ========================================================================== */
+
+.edsys-order__totals {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edsys-order__total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-order__total-row:last-child {
+    border-bottom: none;
+}
+
+.edsys-order__total-label {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-regular);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-order__total-value {
+    font-family: var(--edsys-font-primary);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    text-align: right;
+}
+
+.edsys-order__total-row--discount .edsys-order__total-value {
+    color: var(--edsys-accent);
+}
+
+.edsys-order__total-row--final {
+    padding-top: var(--space-lg);
+    border-top: 2px solid var(--edsys-border);
+}
+
+.edsys-order__total-row--final .edsys-order__total-label,
+.edsys-order__total-row--final .edsys-order__total-value {
+    font-weight: var(--edsys-font-bold);
+}
+
+.edsys-order__total-row--final .edsys-order__total-value {
+    color: var(--edsys-accent);
+}
+
+/* ==========================================================================
+   Loading Overlay
+   ========================================================================== */
+
+.edsys-order__loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--edsys-overlay);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.edsys-order__loading[aria-hidden="false"] {
+    display: flex;
+}
+
+.edsys-order__loader {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-order__loader-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid var(--edsys-bg-light);
+    border-top-color: var(--edsys-accent);
+    border-radius: 50%;
+    animation: edsys-order-spin 0.8s linear infinite;
+}
+
+@keyframes edsys-order-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.edsys-order__input:focus-visible,
+.edsys-order__textarea:focus-visible,
+.edsys-order__select:focus-visible,
+.edsys-order__submit:focus-visible,
+.edsys-order__back:focus-visible,
+.edsys-order__promo-toggle:focus-visible,
+.edsys-order__promo-apply:focus-visible {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Mobile Optimizations
+   ========================================================================== */
+
+@media (max-width: 47.99em) {
+    .edsys-order__section {
+        padding: var(--space-md);
+    }
+
+    .edsys-order__sidebar {
+        position: static;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .edsys-order__back,
+    .edsys-order__promo {
+        display: none;
+    }
+}
+
+.container-fluid .sale-order-detail {
+    width: var(--container-max)!important;
+    padding: var(--container-padding)!important;
+}
+.container-fluid,
+.bx_my_order_cancel{
+    width: var(--container-max)!important;
+    padding: var(--container-padding)!important;
+}

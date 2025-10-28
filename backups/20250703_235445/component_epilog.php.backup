@@ -1,0 +1,83 @@
+<?php
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+use Bitrix\Main\Page\Asset;
+
+/**
+ * Эпилог компонента каталога - подключение дополнительных ресурсов
+ */
+
+// Подключаем иконки Phosphor
+Asset::getInstance()->addCss("https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css");
+
+// Подключаем основные стили темы, если они не подключены
+if (!Asset::getInstance()->getCss('TEMPLATE_THEME')) {
+    Asset::getInstance()->addCss("/local/templates/main/css/_root.css");
+}
+
+// Добавляем мета-теги для каталога
+$APPLICATION->SetPageProperty("description", 
+    "Каталог профессионального электрооборудования EDS. " . 
+    ($arResult["NAME"] ? $arResult["NAME"] . ". " : "") .
+    "Дистрибьюторы питания, пульты управления, DMX оборудование для сцены и концертов."
+);
+
+$APPLICATION->SetPageProperty("keywords", 
+    "электрооборудование, дистрибьюторы питания, сценическое оборудование, " .
+    "DMX, пульты управления, профессиональное освещение, туровое оборудование"
+);
+
+// Добавляем Open Graph теги
+$APPLICATION->SetPageProperty("og:type", "website");
+$APPLICATION->SetPageProperty("og:title", $APPLICATION->GetTitle());
+$APPLICATION->SetPageProperty("og:description", $APPLICATION->GetPageProperty("description"));
+
+// JSON-LD разметка для поисковых систем
+if (!empty($arResult["ITEMS"])) {
+    $jsonLd = [
+        "@context" => "https://schema.org",
+        "@type" => "ItemList",
+        "name" => $arResult["NAME"],
+        "description" => $APPLICATION->GetPageProperty("description"),
+        "numberOfItems" => count($arResult["ITEMS"]),
+        "itemListElement" => []
+    ];
+    
+    foreach ($arResult["ITEMS"] as $index => $arItem) {
+        $price = null;
+        if (!empty($arItem["PRICES"])) {
+            foreach ($arItem["PRICES"] as $priceCode => $arPrice) {
+                if ($arPrice["CAN_ACCESS"] && $arPrice["VALUE"] > 0) {
+                    $price = [
+                        "@type" => "Offer",
+                        "price" => $arPrice["VALUE"],
+                        "priceCurrency" => $arPrice["CURRENCY"],
+                        "availability" => $arItem["CAN_BUY"] ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+                    ];
+                    break;
+                }
+            }
+        }
+        
+        $jsonLd["itemListElement"][] = [
+            "@type" => "Product",
+            "position" => $index + 1,
+            "name" => $arItem["NAME"],
+            "description" => $arItem["PREVIEW_TEXT"],
+            "url" => $arItem["DETAIL_PAGE_URL"],
+            "image" => !empty($arItem["PREVIEW_PICTURE"]) ? CFile::GetPath($arItem["PREVIEW_PICTURE"]) : null,
+            "offers" => $price,
+            "brand" => [
+                "@type" => "Brand",
+                "name" => "EDS"
+            ]
+        ];
+    }
+    
+    $APPLICATION->AddHeadString(
+        '<script type="application/ld+json">' . 
+        json_encode($jsonLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . 
+        '</script>'
+    );
+}
+?>

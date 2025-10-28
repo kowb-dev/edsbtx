@@ -1,0 +1,607 @@
+/**
+ * Payment and Delivery Page Styles
+ * Version: 1.0.0
+ * Date: 2025-07-16
+ * Description: Адаптивные стили для страницы оплаты и доставки EDS
+ */
+
+/* Page Layout */
+.edsys-payment-delivery {
+    min-height: 100vh;
+    background-color: var(--edsys-bg);
+    padding: var(--space-lg) 0;
+}
+
+.edsys-payment-delivery__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Header Section */
+.edsys-payment-delivery__header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-payment-delivery__title {
+    font-size: var(--edsys-fs-h1);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    margin: 0 0 var(--space-lg) 0;
+}
+
+.edsys-payment-delivery__description {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+    margin: 0;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Process Steps */
+.edsys-process-steps {
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-process-steps__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /*gap: var(--space-xl);*/
+    /*max-width: 1200px;*/
+    margin: 0 auto;
+}
+
+.edsys-process-step {
+    text-align: center;
+    position: relative;
+}
+
+.edsys-process-step__icon {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto var(--space-lg) auto;
+    background: var(--edsys-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--edsys-shadow);
+    transition: var(--edsys-transition);
+    position: relative;
+    z-index: 1;
+}
+
+.edsys-process-step__icon:hover {
+    background: var(--edsys-text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.edsys-process-step__icon i {
+    font-size: 100px;
+    color: var(--edsys-accent);
+    transition: var(--edsys-transition);
+}
+
+.edsys-process-step__icon:hover i {
+    color: var(--edsys-white);
+}
+
+.edsys-process-step__title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0;
+    line-height: var(--edsys-lh-snug);
+}
+
+/* Info Cards */
+.edsys-info-cards {
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-info-cards__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+}
+
+.edsys-info-card {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    border: 1px solid var(--edsys-border);
+    padding: var(--space-xl);
+    position: relative;
+    transition: var(--edsys-transition);
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-info-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.edsys-info-card__icon {
+    position: absolute;
+    top: calc(-1 * var(--space-md));
+    left: var(--space-lg);
+    width: 35px;
+    height: 35px;
+    background: var(--edsys-steel);
+    border-radius: 5px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.edsys-info-card__icon i {
+    color: var(--edsys-white);
+    font-size: 20px;
+    transform: rotate(-45deg);
+}
+
+.edsys-info-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-info-card__title {
+    font-size: var(--fs-xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--edsys-lh-tight);
+    text-align: center;
+}
+
+.edsys-info-card__text {
+    flex: 1;
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-relaxed);
+}
+
+.edsys-info-card__text p {
+    margin: 0 0 var(--space-md) 0;
+    font-size: var(--fs-base);
+}
+
+.edsys-info-card__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Info */
+.edsys-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.edsys-contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--edsys-accent);
+    text-decoration: none;
+    font-weight: var(--edsys-font-bold);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    transition: var(--edsys-transition);
+}
+
+.edsys-contact-link:hover {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-accent-hover);
+    text-decoration: none;
+}
+
+.edsys-contact-link i {
+    font-size: 18px;
+}
+
+/* Payment Methods */
+.edsys-payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.edsys-payment-method {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+}
+
+.edsys-payment-method i {
+    color: var(--edsys-accent);
+    font-size: 18px;
+}
+
+/* Delivery Options */
+.edsys-delivery-option {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-delivery-option:last-child {
+    margin-bottom: 0;
+}
+
+.edsys-delivery-option__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.edsys-delivery-option__title i {
+    color: var(--edsys-accent);
+}
+
+.edsys-delivery-list {
+    list-style: none;
+    margin: var(--space-sm) 0;
+    padding: 0;
+}
+
+.edsys-delivery-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-xs);
+    color: var(--edsys-text);
+}
+
+.edsys-delivery-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background: var(--edsys-accent);
+    border-radius: 50%;
+}
+
+/* Pickup Info */
+.edsys-pickup-info {
+    margin-top: var(--space-lg);
+}
+
+.edsys-pickup-address {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--edsys-accent);
+    text-decoration: none;
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+    transition: var(--edsys-transition);
+}
+
+.edsys-pickup-address:hover {
+    background: var(--edsys-surface);
+    color: var(--edsys-accent-hover);
+    text-decoration: none;
+}
+
+.edsys-pickup-address i {
+    font-size: 20px;
+}
+
+.edsys-pickup-hours {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-sm);
+}
+
+.edsys-pickup-hours i {
+    color: var(--edsys-accent);
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+/* Additional Info */
+.edsys-additional-info {
+    margin-bottom: var(--space-3xl);
+}
+
+.edsys-additional-info__container {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    border: 1px solid var(--edsys-border);
+    padding: var(--space-2xl);
+}
+
+.edsys-additional-info__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-xl) 0;
+    text-align: center;
+}
+
+.edsys-additional-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.edsys-additional-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-md);
+    transition: var(--edsys-transition);
+}
+
+.edsys-additional-info__item:hover {
+    background: var(--edsys-surface);
+}
+
+.edsys-additional-info__item i {
+    color: var(--edsys-accent);
+    font-size: 24px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.edsys-additional-info__item strong {
+    display: block;
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+    margin-bottom: var(--space-xs);
+}
+
+.edsys-additional-info__item p {
+    margin: 0;
+    color: var(--edsys-text-muted);
+    font-size: var(--fs-sm);
+    line-height: var(--edsys-lh-snug);
+}
+
+/* CTA Section */
+.edsys-cta-section {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    background: linear-gradient(135deg, var(--edsys-bg-light) 0%, var(--edsys-surface) 100%);
+    border-radius: var(--radius-lg);
+}
+
+.edsys-cta-section__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.edsys-cta-section__text {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    margin: 0 0 var(--space-xl) 0;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edsys-cta-section__buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.edsys-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-2xl);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-base);
+    transition: var(--edsys-transition);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.edsys-cta-button--primary {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+}
+
+.edsys-cta-button--primary:hover {
+    background: var(--edsys-accent-hover);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.edsys-cta-button--secondary {
+    background: var(--edsys-white);
+    color: var(--edsys-accent);
+    border: 2px solid var(--edsys-accent);
+}
+
+.edsys-cta-button--secondary:hover {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .edsys-payment-delivery {
+        padding: var(--space-md) 0;
+    }
+
+    .edsys-payment-delivery__header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .edsys-process-steps__container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-lg);
+    }
+
+    .edsys-process-step__icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .edsys-process-step__icon i {
+        font-size: 60px;
+    }
+
+    .edsys-info-cards__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .edsys-info-card {
+        min-height: auto;
+        padding: var(--space-lg);
+    }
+
+    .edsys-info-card__icon {
+        width: 30px;
+        height: 30px;
+        top: calc(-1 * var(--space-md));
+        left: var(--space-md);
+    }
+
+    .edsys-info-card__icon i {
+        font-size: 16px;
+    }
+
+    .edsys-contact-info {
+        gap: var(--space-xs);
+    }
+
+    .edsys-additional-info__container {
+        padding: var(--space-lg);
+    }
+
+    .edsys-additional-info__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .edsys-additional-info__item {
+        padding: var(--space-md);
+    }
+
+    .edsys-cta-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .edsys-cta-section__buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .edsys-cta-button {
+        width: 100%;
+        max-width: 300px;
+        padding: var(--space-md) var(--space-lg);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .edsys-process-steps__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .edsys-process-step__icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .edsys-process-step__icon i {
+        font-size: 50px;
+    }
+
+    .edsys-info-card {
+        padding: var(--space-md);
+    }
+
+    .edsys-additional-info__item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+
+    .edsys-additional-info__item i {
+        align-self: center;
+    }
+}
+
+/* Focus and Accessibility */
+.edsys-contact-link:focus,
+.edsys-pickup-address:focus,
+.edsys-cta-button:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .edsys-info-card,
+    .edsys-additional-info__container {
+        border-width: 2px;
+    }
+
+    .edsys-process-step__icon {
+        border: 2px solid var(--edsys-border);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-process-step__icon,
+    .edsys-info-card,
+    .edsys-contact-link,
+    .edsys-pickup-address,
+    .edsys-additional-info__item,
+    .edsys-cta-button {
+        transition: none;
+    }
+
+    .edsys-process-step__icon:hover,
+    .edsys-info-card:hover,
+    .edsys-cta-button:hover {
+        transform: none;
+    }
+}

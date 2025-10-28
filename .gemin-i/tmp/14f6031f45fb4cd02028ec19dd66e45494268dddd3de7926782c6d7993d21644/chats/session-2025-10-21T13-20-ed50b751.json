@@ -1,0 +1,14 @@
+{
+  "sessionId": "ed50b751-1468-47fe-b265-04aa6de21732",
+  "projectHash": "14f6031f45fb4cd02028ec19dd66e45494268dddd3de7926782c6d7993d21644",
+  "startTime": "2025-10-21T13:22:23.588Z",
+  "lastUpdated": "2025-10-21T13:22:23.588Z",
+  "messages": [
+    {
+      "id": "711bac63-90d7-4e66-a99c-20bbcdd76eb6",
+      "timestamp": "2025-10-21T13:22:23.588Z",
+      "type": "user",
+      "content": "Hi! Please, read the instructions @GEMINI.md and tell me how can you help me according to the instructions?\n--- Content from referenced files ---No files matching the criteria were found or all were skipped."
+    }
+  ]
+}

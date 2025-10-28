@@ -1,0 +1,11 @@
+{
+    "timestamp": "2025-06-29T01:03:20+03:00",
+    "duration_seconds": 11,
+    "total": 10,
+    "success": 10,
+    "failed": 0,
+    "output_directory": "./images/stati",
+    "downloaded_files": [
+"cofr-300x168.jpg","ethernet-604x460-1-300x228.jpg","inrush-current-300x201.jpg","khd1miy-eei-300x139.jpg","multimtr-mas838-300x146.jpg","power-lose-300x169.jpg","raznost-potentsialov-300x300.jpg","razveska-dc-870x460-1-300x159.jpg","rkn-300x156.jpg","zazemlenie-kak-eto-rabotaet-300x300.jpg"
+    ]
+}

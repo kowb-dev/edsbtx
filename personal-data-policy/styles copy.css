@@ -1,0 +1,241 @@
+/**
+ * Personal Data Policy Page Styles
+ * Version: 1.0
+ * Last Updated: 2025-01-17
+ */
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.edsys-personal-data-policy {
+    background-color: var(--edsys-bg);
+    color: var(--edsys-text);
+    min-height: 100vh;
+    padding: var(--space-lg) 0;
+}
+
+/* Container wrapper */
+.edsys-personal-data-policy__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    background-color: var(--edsys-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--edsys-shadow);
+}
+
+/* Header styles */
+.edsys-personal-data-policy__header {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-personal-data-policy__title {
+    font-size: var(--edsys-fs-h1);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    margin-bottom: var(--space-lg);
+    color: var(--edsys-text);
+}
+
+/* Meta information */
+.edsys-personal-data-policy__meta {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-light);
+    line-height: var(--edsys-lh-normal);
+}
+
+.edsys-personal-data-policy__location,
+.edsys-personal-data-policy__date {
+    margin: 0;
+}
+
+/* Content area */
+.edsys-personal-data-policy__content {
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+/* Section styles */
+.edsys-personal-data-policy__section {
+    margin-bottom: var(--space-2xl);
+}
+
+.edsys-personal-data-policy__section:last-child {
+    margin-bottom: 0;
+}
+
+.edsys-personal-data-policy__section-title {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+/* Subsection styles */
+.edsys-personal-data-policy__subsection {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-personal-data-policy__subsection:last-child {
+    margin-bottom: 0;
+}
+
+.edsys-personal-data-policy__subsection-title {
+    font-size: var(--fs-base);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-snug);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-sm);
+}
+
+/* Text styles */
+.edsys-personal-data-policy__text {
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-md);
+    text-align: justify;
+}
+
+.edsys-personal-data-policy__text:last-child {
+    margin-bottom: 0;
+}
+
+/* List styles */
+.edsys-personal-data-policy__list {
+    list-style: none;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.edsys-personal-data-policy__list-item {
+    position: relative;
+    font-size: var(--fs-base);
+    line-height: var(--edsys-lh-normal);
+    color: var(--edsys-text);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-sm);
+    text-align: justify;
+}
+
+.edsys-personal-data-policy__list-item:last-child {
+    margin-bottom: 0;
+}
+
+.edsys-personal-data-policy__list-item::before {
+    content: "•";
+    position: absolute;
+    left: calc(var(--space-sm) * -1);
+    color: var(--edsys-text-muted);
+}
+
+/* Strong text emphasis */
+.edsys-personal-data-policy__list-item strong {
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+}
+
+/* Responsive design */
+@media (max-width: 48rem) {
+    .edsys-personal-data-policy {
+        padding: var(--space-md) 0;
+    }
+
+    .edsys-personal-data-policy__container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .edsys-personal-data-policy__header {
+        padding: var(--space-xl) var(--space-md) var(--space-lg);
+    }
+
+    .edsys-personal-data-policy__content {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .edsys-personal-data-policy__section {
+        margin-bottom: var(--space-xl);
+    }
+
+    .edsys-personal-data-policy__list {
+        padding-left: var(--space-md);
+    }
+
+    .edsys-personal-data-policy__text {
+        text-align: left;
+    }
+
+    .edsys-personal-data-policy__list-item {
+        text-align: left;
+    }
+}
+
+@media (max-width: 30rem) {
+    .edsys-personal-data-policy__header {
+        padding: var(--space-lg) var(--space-sm) var(--space-md);
+    }
+
+    .edsys-personal-data-policy__content {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .edsys-personal-data-policy__section {
+        margin-bottom: var(--space-lg);
+    }
+
+    .edsys-personal-data-policy__subsection {
+        margin-bottom: var(--space-md);
+    }
+
+    .edsys-personal-data-policy__list {
+        padding-left: var(--space-sm);
+    }
+}
+
+/* Print styles */
+@media print {
+    .edsys-personal-data-policy {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .edsys-personal-data-policy__container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+        padding: 0;
+    }
+
+    .edsys-personal-data-policy__header {
+        padding: 0 0 var(--space-lg) 0;
+        border-bottom: 1px solid var(--edsys-text);
+    }
+
+    .edsys-personal-data-policy__content {
+        padding: var(--space-lg) 0 0 0;
+    }
+
+    .edsys-personal-data-policy__section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .edsys-personal-data-policy__section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+}

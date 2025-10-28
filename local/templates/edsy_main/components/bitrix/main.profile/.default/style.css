@@ -1,0 +1,278 @@
+/**
+ * Стили профиля пользователя
+ * Файл: /local/templates/edsy_main/components/bitrix/main.profile/edsy_profile/style.css
+ */
+
+/* Основной контейнер */
+.edsy-profile-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Алерты */
+.edsy-alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.alert-danger {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+}
+
+.alert-success {
+    background-color: #efe;
+    border: 1px solid #cfc;
+    color: #3c3;
+}
+
+.edsy-alert ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Форма */
+.edsy-profile-form {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 0;
+}
+
+/* Секции */
+.edsy-profile-section {
+    padding: 32px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.edsy-profile-section:last-of-type {
+    border-bottom: none;
+}
+
+.edsy-profile-section__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 24px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #6366f1;
+}
+
+/* Аккордеон */
+.edsy-accordion-toggle {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s ease;
+}
+
+.edsy-accordion-toggle:hover {
+    color: #6366f1;
+}
+
+.edsy-accordion-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.edsy-profile-section.active .edsy-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.edsy-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Сетка формы */
+.edsy-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+}
+
+@media (max-width: 768px) {
+    .edsy-profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Группа полей */
+.edsy-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.edsy-form-group--full {
+    grid-column: 1 / -1;
+}
+
+/* Лейблы */
+.edsy-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.edsy-form-label .required {
+    color: #ef4444;
+    margin-left: 4px;
+}
+
+/* Поля ввода */
+.edsy-form-input,
+.edsy-form-select,
+.edsy-form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    transition: all 0.15s ease-in-out;
+    font-family: inherit;
+}
+
+.edsy-form-input:focus,
+.edsy-form-select:focus,
+.edsy-form-textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.edsy-form-input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.edsy-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.edsy-form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+/* Кнопки действий */
+.edsy-profile-actions {
+    padding: 24px 32px;
+    display: flex;
+    gap: 12px;
+    background-color: #f9fafb;
+    border-radius: 0 0 12px 12px;
+}
+
+.edsy-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.edsy-btn--primary {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+
+.edsy-btn--primary:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.edsy-btn--primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+}
+
+.edsy-btn--secondary {
+    background-color: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.edsy-btn--secondary:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
+
+/* Заголовок контента */
+.edsys-content-header {
+    margin-bottom: 32px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.edsys-dashboard__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 8px 0;
+}
+
+.edsys-dashboard__subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .edsy-profile-section {
+        padding: 24px;
+    }
+
+    .edsy-profile-actions {
+        padding: 20px 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .edsy-profile-section {
+        padding: 20px;
+    }
+
+    .edsy-profile-actions {
+        padding: 16px 20px;
+        flex-direction: column;
+    }
+
+    .edsy-btn {
+        width: 100%;
+    }
+
+    .edsys-dashboard__title {
+        font-size: 24px;
+    }
+
+    .edsys-dashboard__subtitle {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,696 @@
+/* ==========================================================================
+   EDS Modern Category Page - Mobile First
+   ========================================================================== */
+
+:root {
+    --edsys-primary: #ff4757;
+    --edsys-white: #ffffff;
+    --edsys-text: #21242D;
+    --edsys-text-muted: #666;
+    --edsys-border: #e0e0e0;
+    --edsys-bg: #f5f5f7;
+    --edsys-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --edsys-radius: 0.75rem;
+}
+
+/* Основной контейнер */
+.edsys-category-modern {
+    max-width: min(98%, 1400px);
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Хлебные крошки */
+.edsys-category-modern__breadcrumbs {
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: var(--edsys-text-muted);
+}
+
+/* Заголовок */
+.edsys-category-modern__header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.edsys-category-modern__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--edsys-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.edsys-category-modern__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    color: var(--edsys-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Layout - Mobile First */
+.edsys-category-modern__layout {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    .edsys-category-modern__layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .edsys-category-modern__sidebar {
+        flex: 0 0 280px;
+        position: sticky;
+        top: 2rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+
+    .edsys-category-modern__main {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* ==========================================================================
+   Filter Styles
+   ========================================================================== */
+
+.edsys-filter-modern {
+    background: var(--edsys-white);
+    border-radius: var(--edsys-radius);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-filter-modern__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-filter-modern__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 600;
+    margin: 0;
+    color: var(--edsys-text);
+}
+
+.edsys-filter-modern__title i {
+    color: var(--edsys-primary);
+    font-size: 1.25em;
+}
+
+.edsys-filter-modern__reset {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background: var(--edsys-bg);
+    border: 1px solid var(--edsys-border);
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    color: var(--edsys-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edsys-filter-modern__reset:hover {
+    background: var(--edsys-border);
+    color: var(--edsys-text);
+}
+
+/* Filter Groups */
+.edsys-filter-modern__group {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--edsys-border);
+    padding-bottom: 1rem;
+}
+
+.edsys-filter-modern__group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.edsys-filter-modern__group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.edsys-filter-modern__group-header h4 {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    margin: 0;
+    color: var(--edsys-text);
+}
+
+.edsys-filter-modern__group-header i {
+    color: var(--edsys-text-muted);
+    transition: transform 0.2s ease;
+}
+
+.edsys-filter-modern__group.collapsed .edsys-filter-modern__group-header i {
+    transform: rotate(-90deg);
+}
+
+.edsys-filter-modern__group-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.edsys-filter-modern__group.collapsed .edsys-filter-modern__group-content {
+    max-height: 0;
+}
+
+/* Checkboxes */
+.edsys-filter-modern__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.edsys-filter-modern__checkbox:hover {
+    color: var(--edsys-primary);
+}
+
+.edsys-filter-modern__checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.edsys-filter-modern__checkbox .checkmark {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--edsys-border);
+    border-radius: 0.25rem;
+    background: var(--edsys-white);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.edsys-filter-modern__checkbox .checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.375rem;
+    height: 0.625rem;
+    border: solid var(--edsys-white);
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.edsys-filter-modern__checkbox input:checked + .checkmark {
+    background: var(--edsys-primary);
+    border-color: var(--edsys-primary);
+}
+
+.edsys-filter-modern__checkbox input:checked + .checkmark::after {
+    opacity: 1;
+}
+
+/* Price Range */
+.edsys-filter-modern__price-range {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--edsys-border);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: var(--edsys-primary);
+}
+
+/* ==========================================================================
+   Toolbar Styles
+   ========================================================================== */
+
+.edsys-category-modern__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: var(--edsys-white);
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-radius: var(--edsys-radius);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-category-modern__results {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: var(--edsys-text);
+}
+
+.edsys-category-modern__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edsys-category-modern__sort {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.sort-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--edsys-border);
+    border-radius: 0.375rem;
+    background: var(--edsys-white);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--edsys-primary);
+}
+
+.edsys-category-modern__view {
+    display: flex;
+    gap: 0.25rem;
+    background: var(--edsys-bg);
+    border-radius: 0.375rem;
+    padding: 0.25rem;
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--edsys-text-muted);
+}
+
+.view-btn.active,
+.view-btn:hover {
+    background: var(--edsys-white);
+    color: var(--edsys-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Products Grid
+   ========================================================================== */
+
+.edsys-category-modern__products {
+    min-height: 400px;
+}
+
+.edsys-category-modern__products[data-view="grid"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.edsys-category-modern__products[data-view="list"] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Product Cards */
+.edsys-product-modern {
+    background: var(--edsys-white);
+    border-radius: var(--edsys-radius);
+    overflow: hidden;
+    box-shadow: var(--edsys-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.edsys-category-modern__products[data-view="list"] .edsys-product-modern {
+    flex-direction: row;
+    height: auto;
+}
+
+@media (hover: hover) {
+    .edsys-product-modern:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+    }
+}
+
+.edsys-product-modern__image-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--edsys-bg);
+    overflow: hidden;
+}
+
+.edsys-category-modern__products[data-view="list"] .edsys-product-modern__image-wrapper {
+    flex: 0 0 200px;
+    aspect-ratio: 1;
+}
+
+.edsys-product-modern__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    transition: transform 0.3s ease;
+}
+
+.edsys-product-modern__actions {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+    transform: translateX(0.5rem);
+    transition: all 0.3s ease;
+}
+
+@media (hover: hover) {
+    .edsys-product-modern:hover .edsys-product-modern__actions {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (hover: none) {
+    .edsys-product-modern__actions {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.edsys-product-modern__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--edsys-text-muted);
+}
+
+.edsys-product-modern__action:hover,
+.edsys-product-modern__action.active {
+    background: var(--edsys-primary);
+    border-color: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+.edsys-product-modern__content {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.edsys-product-modern__title {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.edsys-product-modern__title a {
+    color: var(--edsys-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.edsys-product-modern__title a:hover {
+    color: var(--edsys-primary);
+}
+
+.edsys-product-modern__article {
+    font-size: 0.75rem;
+    color: var(--edsys-text-muted);
+}
+
+.edsys-product-modern__description {
+    font-size: 0.875rem;
+    color: var(--edsys-text-muted);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.edsys-product-modern__specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--edsys-text-muted);
+}
+
+.edsys-product-modern__availability {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.edsys-product-modern__availability--available {
+    color: #10b981;
+}
+
+.edsys-product-modern__availability--preorder {
+    color: #f59e0b;
+}
+
+.edsys-product-modern__prices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: auto;
+}
+
+.edsys-product-modern__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edsys-product-modern__price-label {
+    font-size: 0.75rem;
+    color: var(--edsys-text-muted);
+}
+
+.edsys-product-modern__price-value {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.edsys-product-modern__price--retail .edsys-product-modern__price-value {
+    color: var(--edsys-text-muted);
+    text-decoration: line-through;
+}
+
+.edsys-product-modern__price--user .edsys-product-modern__price-value {
+    color: var(--edsys-primary);
+}
+
+.edsys-product-modern__footer {
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.edsys-product-modern__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edsys-product-modern__btn--primary {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+.edsys-product-modern__btn--primary:hover {
+    background: #e63946;
+}
+
+.edsys-product-modern__btn--secondary {
+    background: var(--edsys-bg);
+    color: var(--edsys-text);
+}
+
+.edsys-product-modern__btn--secondary:hover {
+    background: var(--edsys-border);
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.edsys-category-modern__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+    text-align: center;
+    color: var(--edsys-text-muted);
+}
+
+.loader-spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--edsys-border);
+    border-top: 2px solid var(--edsys-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.edsys-category-modern__load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.load-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--edsys-white);
+    border: 2px solid var(--edsys-primary);
+    border-radius: 0.5rem;
+    color: var(--edsys-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.load-more-btn:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+/* ==========================================================================
+   Mobile Optimizations
+   ========================================================================== */
+
+@media (max-width: 640px) {
+    .edsys-category-modern__toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .edsys-category-modern__controls {
+        justify-content: space-between;
+    }
+
+    .edsys-category-modern__products[data-view="grid"] {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edsys-filter-modern__group-content {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 1023px) {
+    .edsys-filter-modern {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .edsys-product-modern,
+    .edsys-product-modern__image,
+    .edsys-product-modern__actions,
+    .loader-spinner {
+        transition: none;
+        animation: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .edsys-product-modern {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-filter-modern__checkbox .checkmark {
+        border-width: 3px;
+    }
+}

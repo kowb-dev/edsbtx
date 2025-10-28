@@ -1,0 +1,359 @@
+/* ==========================================================================
+   EDS Filter Styles - Mobile First
+   ========================================================================== */
+
+.edsys-filter {
+    background: var(--edsys-white, #fff);
+    border-radius: clamp(0.5rem, 1vw, 1rem);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+/* Header */
+.edsys-filter__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    padding-bottom: clamp(0.75rem, 2vw, 1rem);
+    border-bottom: 1px solid var(--edsys-border, #e0e0e0);
+}
+
+.edsys-filter__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 600;
+    color: var(--edsys-text, #21242D);
+    margin: 0;
+}
+
+.edsys-filter__title i {
+    font-size: 1.25em;
+    color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-filter__reset {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background: var(--edsys-bg, #f5f5f7);
+    border: 1px solid var(--edsys-border, #e0e0e0);
+    border-radius: 0.375rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: var(--edsys-text-muted, #666);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edsys-filter__reset:hover {
+    background: var(--edsys-border, #e0e0e0);
+    color: var(--edsys-text, #21242D);
+}
+
+/* Form */
+.edsys-filter__form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Filter Groups */
+.edsys-filter__group {
+    border-bottom: 1px solid var(--edsys-border, #e0e0e0);
+    padding-bottom: clamp(0.75rem, 2vw, 1rem);
+}
+
+.edsys-filter__group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.edsys-filter__group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    user-select: none;
+}
+
+.edsys-filter__group-title {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    color: var(--edsys-text, #21242D);
+    margin: 0;
+}
+
+.edsys-filter__group-icon {
+    font-size: 1rem;
+    color: var(--edsys-text-muted, #666);
+    transition: transform 0.2s ease;
+}
+
+.edsys-filter__group-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.edsys-filter__group-content.show {
+    max-height: 500px; /* Достаточно большое значение */
+}
+
+.edsys-filter__group-content.show {
+    padding-top: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+/* Checkboxes */
+.edsys-filter__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.edsys-filter__checkbox:hover {
+    color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-filter__checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.edsys-filter__checkbox-mark {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--edsys-border, #e0e0e0);
+    border-radius: 0.25rem;
+    background: var(--edsys-white, #fff);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    margin-top: 0.125rem;
+}
+
+.edsys-filter__checkbox-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.375rem;
+    height: 0.625rem;
+    border: solid var(--edsys-white, #fff);
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.edsys-filter__checkbox-input:checked + .edsys-filter__checkbox-mark {
+    background: var(--edsys-primary, #ff4757);
+    border-color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-filter__checkbox-input:checked + .edsys-filter__checkbox-mark::after {
+    opacity: 1;
+}
+
+.edsys-filter__checkbox-text {
+    flex: 1;
+    color: var(--edsys-text, #21242D);
+}
+
+.edsys-filter__count {
+    color: var(--edsys-text-muted, #666);
+    font-size: 0.875em;
+}
+
+/* Range Inputs */
+.edsys-filter__range {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edsys-filter__range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.edsys-filter__range-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--edsys-border, #e0e0e0);
+    border-radius: 0.375rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    background: var(--edsys-white, #fff);
+    transition: border-color 0.2s ease;
+}
+
+.edsys-filter__range-input:focus {
+    outline: none;
+    border-color: var(--edsys-primary, #ff4757);
+}
+
+.edsys-filter__range-input::placeholder {
+    color: var(--edsys-text-muted, #666);
+}
+
+.edsys-filter__range-separator {
+    font-weight: 600;
+    color: var(--edsys-text-muted, #666);
+}
+
+.edsys-filter__range-slider {
+    height: 0.5rem;
+    background: var(--edsys-border, #e0e0e0);
+    border-radius: 0.25rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.edsys-filter__range-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--edsys-primary, #ff4757);
+    border-radius: inherit;
+    width: 50%; /* Будет обновляться через JS */
+}
+
+/* Actions */
+.edsys-filter__actions {
+    padding-top: clamp(1rem, 3vw, 1.5rem);
+    border-top: 1px solid var(--edsys-border, #e0e0e0);
+}
+
+.edsys-filter__apply-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: clamp(0.75rem, 2vw, 0.875rem);
+    background: var(--edsys-primary, #ff4757);
+    color: var(--edsys-white, #fff);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edsys-filter__apply-btn:hover {
+    background: var(--edsys-primary-dark, #e63946);
+}
+
+.edsys-filter__apply-btn:active {
+    transform: translateY(1px);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1023px) {
+    .edsys-filter {
+        margin-bottom: 1rem;
+    }
+
+    .edsys-filter__group-content.show {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    /* Scroll styling */
+    .edsys-filter__group-content::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .edsys-filter__group-content::-webkit-scrollbar-track {
+        background: var(--edsys-bg, #f5f5f7);
+        border-radius: 2px;
+    }
+
+    .edsys-filter__group-content::-webkit-scrollbar-thumb {
+        background: var(--edsys-border, #e0e0e0);
+        border-radius: 2px;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .edsys-filter {
+        position: sticky;
+        top: 2rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+    .edsys-filter {
+        min-width: 280px;
+    }
+}
+
+/* Loading State */
+.edsys-filter--loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.edsys-filter--loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-filter__group-content,
+    .edsys-filter__group-icon,
+    .edsys-filter__checkbox-mark {
+        transition: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .edsys-filter__checkbox-mark {
+        border-width: 3px;
+    }
+
+    .edsys-filter__range-input {
+        border-width: 2px;
+    }
+}
+
+/* Focus states */
+.edsys-filter__checkbox-input:focus + .edsys-filter__checkbox-mark {
+    outline: 2px solid var(--edsys-primary, #ff4757);
+    outline-offset: 2px;
+}
+
+.edsys-filter__group-header:focus {
+    outline: 2px solid var(--edsys-primary, #ff4757);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+}

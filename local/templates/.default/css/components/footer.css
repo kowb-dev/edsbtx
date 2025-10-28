@@ -1,0 +1,875 @@
+/**
+ * Footer Styles - Tablet Layout Version
+ * Version: 1.5.0
+ * Date: 2025-07-19
+ * Description: Updated with logo and company title structure matching header
+ * File: /local/templates/edsy_main/css/footer.css
+ */
+
+/* ==========================================================================
+   Footer Component Styles
+   ========================================================================== */
+
+.edsys-footer {
+    background: var(--edsys-carbon);
+    color: var(--edsys-chrome);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top gradient line */
+.edsys-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+    var(--edsys-accent) 0%,
+    var(--edsys-voltage) 25%,
+    var(--edsys-circuit) 50%,
+    var(--edsys-spark) 75%,
+    var(--edsys-accent) 100%);
+}
+
+.edsys-footer__container {
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Newsletter Section for Tablet Layout (768px - 1300px)
+   ========================================================================== */
+
+.edsys-footer__newsletter-tablet {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-2xl) 0;
+}
+
+.edsys-footer__newsletter-tablet-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.edsys-footer__newsletter-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Show tablet newsletter and hide desktop/mobile versions */
+@media (min-width: 768px) and (max-width: 1300px) {
+    .edsys-footer__newsletter-tablet {
+        display: block;
+    }
+
+    .edsys-footer__newsletter {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Main Footer Content
+   ========================================================================== */
+
+.edsys-footer__main {
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--container-padding);
+    max-width: var(--container-max);
+}
+
+.edsys-footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+    .edsys-footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
+
+/* Tablet layout (768px - 1300px) */
+@media (min-width: 768px) and (max-width: 1300px) {
+    .edsys-footer__grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: var(--space-2xl);
+        align-items: start;
+    }
+
+    .edsys-footer__newsletter {
+        display: none;
+    }
+}
+
+/* Desktop layout (1300px+) */
+@media (min-width: 1300px) {
+    .edsys-footer__grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+        gap: var(--space-2xl);
+        align-items: start;
+    }
+
+    .edsys-footer__newsletter-tablet {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Brand Section
+   ========================================================================== */
+
+.edsys-footer__brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.edsys-footer__logo {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-footer__logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    max-width: min(15rem, 100%);
+}
+
+.edsys-footer__logo-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: min(15rem, 100%);
+}
+
+.edsys-footer__logo-link img,
+.edsys-footer__logo-content img {
+    height: clamp(3.75rem, 6vw, 4.5rem);
+    width: auto;
+    filter: brightness(1.1);
+    flex-shrink: 0;
+}
+
+.edsys-footer__title {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1.05rem, 1.5vw, 1.275rem);
+    line-height: 1.05;
+    color: var(--edsys-white);
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
+.edsys-footer__title span {
+    white-space: nowrap;
+}
+
+.edsys-footer__logo-link:hover {
+    text-decoration: none;
+}
+
+.edsys-footer__logo-link:hover .edsys-footer__title {
+    color: var(--edsys-accent);
+}
+
+.edsys-footer__tagline {
+    font-size: var(--fs-sm);
+    color: var(--edsys-chrome);
+    margin-bottom: var(--space-lg);
+    line-height: 1.4;
+}
+
+/* Contacts */
+.edsys-footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-footer__contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--edsys-chrome);
+    text-decoration: none;
+    transition: var(--edsys-transition);
+    font-size: var(--fs-sm);
+}
+
+.edsys-footer__contact-item:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-footer__contact-icon {
+    color: var(--edsys-accent);
+    min-width: 1.2rem;
+}
+
+/* Social Links */
+.edsys-footer__social {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.edsys-footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--edsys-chrome);
+    text-decoration: none;
+    transition: var(--edsys-transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edsys-footer__social-link:hover {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    transform: translateY(-2px);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-footer__social-icon {
+    font-size: var(--fs-base);
+}
+
+/* ==========================================================================
+   Footer Sections (Mobile Accordion)
+   ========================================================================== */
+
+.edsys-footer__section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edsys-footer__section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--edsys-transition);
+}
+
+.edsys-footer__section-header:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-footer__section-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-white);
+    margin: 0;
+    transition: var(--edsys-transition);
+}
+
+.edsys-footer__accordion-icon {
+    font-size: var(--fs-lg);
+    color: var(--edsys-accent);
+    transition: var(--edsys-transition);
+}
+
+.edsys-footer__section.active .edsys-footer__accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* Mobile accordion behavior */
+.edsys-footer__section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.edsys-footer__section.active .edsys-footer__section-content {
+    max-height: 20rem;
+}
+
+/* Footer Links */
+.edsys-footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-lg);
+    margin: 0;
+}
+
+.edsys-footer__link {
+    color: var(--edsys-chrome);
+    text-decoration: none;
+    transition: var(--edsys-transition);
+    font-size: var(--fs-sm);
+    padding: var(--space-xs) 0;
+    position: relative;
+    display: inline-block;
+}
+
+.edsys-footer__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--edsys-accent);
+    transition: width var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-footer__link:hover {
+    color: var(--edsys-white);
+}
+
+.edsys-footer__link:hover::after {
+    width: 100%;
+}
+
+/* Desktop/Tablet section styles */
+@media (min-width: 768px) {
+    .edsys-footer__section {
+        border-bottom: none;
+    }
+
+    .edsys-footer__section-header {
+        padding: 0 0 var(--space-lg) 0;
+        cursor: default;
+    }
+
+    .edsys-footer__section-header:hover {
+        color: inherit;
+    }
+
+    .edsys-footer__accordion-icon {
+        display: none;
+    }
+
+    .edsys-footer__section-content {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .edsys-footer__section-title {
+        position: relative;
+        padding-bottom: var(--space-sm);
+    }
+
+    .edsys-footer__section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 2rem;
+        height: 2px;
+        background: var(--edsys-accent);
+    }
+
+    .edsys-footer__links {
+        padding-bottom: 0;
+    }
+}
+
+/* ==========================================================================
+   Newsletter Section (Mobile & Desktop)
+   ========================================================================== */
+
+.edsys-footer__newsletter {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.edsys-footer__newsletter-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-white);
+    margin-bottom: var(--space-md);
+}
+
+.edsys-footer__newsletter-text {
+    font-size: var(--fs-sm);
+    color: var(--edsys-chrome);
+    margin-bottom: var(--space-lg);
+    line-height: 1.4;
+}
+
+.edsys-footer__newsletter-wrapper {
+    position: relative;
+}
+
+.edsys-footer__newsletter-form {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+    align-items: stretch;
+    width: 100%;
+}
+
+.edsys-footer__newsletter-input {
+    flex: 1;
+    padding: var(--space-md);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--edsys-white);
+    font-family: var(--edsys-font-primary);
+    font-size: var(--fs-base);
+    transition: var(--edsys-transition);
+    min-height: 2.8rem;
+    box-sizing: border-box;
+}
+
+.edsys-footer__newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.edsys-footer__newsletter-input:focus {
+    outline: none;
+    border-color: var(--edsys-accent);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.edsys-footer__newsletter-input.error {
+    border-color: var(--edsys-accent);
+    background: rgba(255, 37, 69, 0.1);
+}
+
+.edsys-footer__newsletter-input.valid {
+    border-color: var(--edsys-circuit);
+    background: rgba(0, 204, 153, 0.1);
+}
+
+.edsys-footer__newsletter-btn {
+    padding: var(--space-md) var(--space-xl);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: var(--edsys-font-bold);
+    font-size: var(--fs-base);
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    white-space: nowrap;
+    position: relative;
+    min-width: 140px;
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edsys-footer__newsletter-btn:hover:not(:disabled) {
+    background: var(--edsys-accent-hover);
+    transform: translateY(-1px);
+}
+
+.edsys-footer__newsletter-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.edsys-footer__newsletter-btn:disabled:hover {
+    background: var(--edsys-accent);
+    transform: none;
+}
+
+.edsys-newsletter-btn__text {
+    transition: opacity var(--edsys-transition-fast);
+}
+
+.edsys-newsletter-btn__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity var(--edsys-transition-fast);
+}
+
+.edsys-footer__newsletter-btn.loading .edsys-newsletter-btn__text {
+    opacity: 0;
+}
+
+.edsys-footer__newsletter-btn.loading .edsys-newsletter-btn__loading {
+    opacity: 1;
+}
+
+.edsys-newsletter-btn__loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Newsletter Messages */
+.edsys-newsletter__messages {
+    width: 100%;
+    margin-top: var(--space-md);
+    min-height: 0;
+}
+
+.edsys-newsletter__success,
+.edsys-newsletter__error {
+    display: none;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid;
+    margin-bottom: var(--space-sm);
+    position: relative;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.edsys-newsletter__success.show,
+.edsys-newsletter__error.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.edsys-newsletter__success {
+    background: rgba(0, 204, 153, 0.15);
+    color: var(--edsys-circuit);
+    border-color: var(--edsys-circuit);
+}
+
+.edsys-newsletter__error {
+    background: rgba(255, 37, 69, 0.15);
+    color: var(--edsys-accent);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-newsletter__success i,
+.edsys-newsletter__error i {
+    font-size: var(--fs-lg);
+    flex-shrink: 0;
+}
+
+.edsys-newsletter__success span,
+.edsys-newsletter__error span {
+    flex: 1;
+}
+
+/* Field error messages */
+.edsys-footer__error-message {
+    color: var(--edsys-accent);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    animation: slideInUp 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile newsletter form */
+@media (max-width: 768px) {
+    .edsys-footer__newsletter-form {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .edsys-footer__newsletter-btn {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .edsys-footer__newsletter {
+        padding: var(--space-lg);
+    }
+
+    .edsys-newsletter__messages {
+        margin-top: var(--space-md);
+    }
+}
+
+/* ==========================================================================
+   Features Section
+   ========================================================================== */
+
+.edsys-footer__features {
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edsys-footer__features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-lg);
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.edsys-footer__feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--edsys-chrome);
+}
+
+.edsys-footer__feature-icon {
+    color: var(--edsys-accent);
+    font-size: var(--fs-lg);
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Bottom Section with Improved Layout
+   ========================================================================== */
+
+.edsys-footer__bottom {
+    background: var(--edsys-black);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.edsys-footer__bottom-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Mobile bottom layout */
+@media (max-width: 767px) {
+    .edsys-footer__bottom-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
+
+/* Tablet bottom layout (768px - 1300px) */
+@media (min-width: 768px) and (max-width: 1300px) {
+    .edsys-footer__bottom-content {
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-xl);
+        text-align: left;
+        align-items: start;
+    }
+
+    .edsys-footer__copyright {
+        text-align: left;
+    }
+
+    .edsys-footer__legal-links {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+/* Desktop bottom layout (1300px+) */
+@media (min-width: 1300px) {
+    .edsys-footer__bottom-content {
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-xl);
+        text-align: left;
+        align-items: center;
+    }
+
+    .edsys-footer__copyright {
+        text-align: left;
+    }
+
+    .edsys-footer__legal-links {
+        justify-content: flex-end;
+        text-align: right;
+    }
+}
+
+.edsys-footer__copyright {
+    font-size: calc(var(--fs-sm) * 0.67);
+    color: var(--edsys-titanium);
+    margin: 0;
+}
+
+.edsys-footer__legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-md);
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.edsys-footer__legal-link {
+    font-size: calc(var(--fs-sm) * 0.67);
+    color: var(--edsys-titanium);
+    text-decoration: none;
+    transition: var(--edsys-transition);
+    position: relative;
+    display: inline-block;
+}
+
+.edsys-footer__legal-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--edsys-white);
+    transition: width var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-footer__legal-link:hover {
+    color: var(--edsys-white);
+}
+
+.edsys-footer__legal-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.edsys-footer__section,
+.edsys-footer__brand,
+.edsys-footer__newsletter,
+.edsys-footer__newsletter-tablet {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.edsys-footer__section.visible,
+.edsys-footer__brand.visible,
+.edsys-footer__newsletter.visible,
+.edsys-footer__newsletter-tablet.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.edsys-footer__link:focus,
+.edsys-footer__contact-item:focus,
+.edsys-footer__social-link:focus,
+.edsys-footer__legal-link:focus,
+.edsys-footer__newsletter-input:focus,
+.edsys-footer__newsletter-btn:focus,
+.edsys-footer__section-header:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-footer__section-content,
+    .edsys-footer__accordion-icon,
+    .edsys-footer__link::after,
+    .edsys-footer__legal-link::after,
+    .edsys-newsletter-btn__loading i,
+    .edsys-newsletter__success,
+    .edsys-footer__section-header,
+    .edsys-newsletter__error {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .edsys-footer {
+        border-top: 2px solid var(--edsys-white);
+    }
+
+    .edsys-footer__section {
+        border-bottom: 2px solid var(--edsys-white);
+    }
+
+    .edsys-footer__newsletter,
+    .edsys-footer__newsletter-tablet {
+        border: 2px solid var(--edsys-white);
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .edsys-footer {
+        background: white;
+        color: black;
+        border-top: 1px solid black;
+    }
+
+    .edsys-footer::before {
+        display: none;
+    }
+
+    .edsys-footer__social,
+    .edsys-footer__newsletter,
+    .edsys-footer__newsletter-tablet,
+    .edsys-footer__features {
+        display: none;
+    }
+
+    .edsys-footer__link,
+    .edsys-footer__contact-item {
+        color: black;
+        text-decoration: underline;
+    }
+}

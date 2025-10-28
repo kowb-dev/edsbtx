@@ -1,0 +1,152 @@
+/* ==========================================================================
+   EDS Compare Button Styles
+   Version: 1.0.0
+   Author: KW
+   URI: https://kowb.ru
+   
+   Add to your main CSS file or as separate compare.css
+   ========================================================================== */
+
+/* Compare quick action button for product cards */
+.edsys-quick-action--compare {
+    position: relative;
+    transition: all var(--edsys-transition-fast, 0.2s) ease;
+}
+
+.edsys-quick-action--compare:hover {
+    background: var(--edsys-voltage, #0066cc);
+    color: var(--edsys-white, #fff);
+    border-color: var(--edsys-voltage, #0066cc);
+    transform: scale(1.1);
+}
+
+.edsys-quick-action--compare.active {
+    background: var(--edsys-voltage, #0066cc);
+    color: var(--edsys-white, #fff);
+    border-color: var(--edsys-voltage, #0066cc);
+}
+
+.edsys-quick-action--compare.active::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: var(--edsys-circuit, #00cc99);
+    border: 2px solid var(--edsys-white, #fff);
+    border-radius: 50%;
+}
+
+/* Compare button for product detail page */
+.edsys-action-button--compare {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--edsys-white, #fff);
+    border: 1px solid var(--edsys-border, #e0e0e0);
+    border-radius: var(--radius-md, 0.5rem);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast, 0.2s) ease;
+    font-weight: 500;
+    color: var(--edsys-text, #21242D);
+    text-decoration: none;
+}
+
+.edsys-action-button--compare:hover {
+    background: var(--edsys-voltage, #0066cc);
+    color: var(--edsys-white, #fff);
+    border-color: var(--edsys-voltage, #0066cc);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2);
+}
+
+.edsys-action-button--compare.active {
+    background: var(--edsys-voltage, #0066cc);
+    color: var(--edsys-white, #fff);
+    border-color: var(--edsys-voltage, #0066cc);
+}
+
+.edsys-action-button--compare.active::before {
+    content: '✓ ';
+    font-weight: bold;
+}
+
+.edsys-action-button--compare:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Icon inside button */
+.edsys-action-button--compare i {
+    font-size: 1.25rem;
+    transition: transform var(--edsys-transition-fast, 0.2s) ease;
+}
+
+.edsys-action-button--compare:hover i {
+    transform: scale(1.1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .edsys-action-button--compare {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+        min-height: 44px; /* Touch-friendly */
+    }
+    
+    .edsys-action-button--compare i {
+        font-size: 1.125rem;
+    }
+}
+
+/* Loading state */
+.edsys-action-button--compare.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.edsys-action-button--compare.loading::after {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Focus styles for accessibility */
+.edsys-quick-action--compare:focus,
+.edsys-action-button--compare:focus {
+    outline: 2px solid var(--edsys-voltage, #0066cc);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .edsys-quick-action--compare,
+    .edsys-action-button--compare {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-quick-action--compare,
+    .edsys-action-button--compare,
+    .edsys-quick-action--compare i,
+    .edsys-action-button--compare i {
+        transition: none;
+        animation: none;
+    }
+}

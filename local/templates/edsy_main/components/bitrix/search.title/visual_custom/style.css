@@ -1,0 +1,130 @@
+/* Version: 1.0.1, Author: KW, URI: https://kowb.ru */
+/* Reset and base styles from existing site */
+.edsys-header__search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.edsys-header__search-input {
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    flex-grow: 1;
+    background: var(--edsys-white);
+    color: var(--edsys-text);
+    order: 1; /* Поле ввода */
+}
+
+.edsys-header__search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--edsys-primary-a30);
+}
+
+.edsys-header__search-btn {
+    background: transparent;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--edsys-text);
+    order: 3; /* Кнопка поиска */
+}
+
+.edsys-header__search-reset {
+    background: transparent;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+    display: none; /* Скрыт по умолчанию */
+    align-items: center;
+    justify-content: center;
+    color: var(--edsys-text);
+    order: 2; /* Кнопка сброса */
+}
+
+.edsys-header__search-input:not(:placeholder-shown) + .edsys-header__search-reset {
+    display: flex; /* Показываем, когда есть текст */
+}
+
+.edsys-header__search-btn i,
+.edsys-header__search-reset i {
+    font-size: 1.2rem;
+}
+
+/* Styles for the dropdown */
+div.title-search-result {
+	border:1px solid var(--edsys-border);
+	display:none;
+	overflow:hidden;
+	z-index:999;
+	min-width: 370px;
+	margin-top: 5px;
+	background-color: var(--edsys-white);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.bx_searche .bx_item_block {
+    padding: 10px;
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.bx_searche .bx_item_block:last-child {
+    border-bottom: none;
+}
+
+.bx_searche .bx_img_element {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+.bx_searche .bx_image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+.bx_searche .bx_item_element {
+    margin-left: 60px;
+}
+
+.bx_searche .bx_item_element a {
+    color: var(--edsys-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bx_searche .bx_item_element a:hover {
+    color: var(--edsys-primary);
+}
+
+.bx_item_article {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.bx_searche .bx_price {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.bx_searche .all_result {
+    padding: 10px;
+    text-align: center;
+}
+
+.bx_searche .all_result_title a {
+    color: var(--edsys-primary);
+    font-weight: bold;
+}

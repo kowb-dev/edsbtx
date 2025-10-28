@@ -1,0 +1,1148 @@
+[2025-07-18 19:55:44] === NEW REQUEST 2025-07-18 19:55:44 ===
+[2025-07-18 19:55:44] REQUEST_METHOD: POST
+[2025-07-18 19:55:44] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 19:55:44] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 19:55:44] POST data: Array
+(
+    [action] => submit_wizard
+    [data] => {"objectType":"studio","installationType":"temporary","audienceSize":"4","performersCount":"2","powerRequirement":"very-high","powerConnection":"unknown","equipment":["winch-controls","sequencers","cables-connectors"],"requirements":["safety","monitoring","backup-power"],"budget":"flexible","timeline":"standard","installationLimitations":["noise-restrictions","time-limited"],"contactName":"Жора","contactPhone":"+7 (923) 493-20-23","contactEmail":"kon4994@ya.ru","contactCompany":"no","contactPosition":"mamager","additionalInfo":"ASAP","attachments[]":"C:\\fakepath\\idea_28.jpg","deliveryMethod":["email"]}
+    [sessid] => 3d9c0e725ca895948259a9e5fc41519a
+)
+
+[2025-07-18 19:55:44] FILES data: Array
+(
+)
+
+[2025-07-18 19:55:44] Bitrix loaded successfully
+[2025-07-18 19:55:44] Raw input: 
+[2025-07-18 19:55:44] ERROR: No input data received
+[2025-07-18 19:55:44] ERROR FILE: /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php
+[2025-07-18 19:55:44] ERROR LINE: 147
+[2025-07-18 19:55:44] ERROR TRACE: #0 {main}
+[2025-07-18 19:55:44] === NEW REQUEST 2025-07-18 19:55:44 ===
+[2025-07-18 19:55:44] REQUEST_METHOD: POST
+[2025-07-18 19:55:44] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 19:55:44] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 19:55:44] POST data: Array
+(
+    [action] => submit_wizard
+    [data] => {"objectType":"studio","installationType":"temporary","audienceSize":"4","performersCount":"2","powerRequirement":"very-high","powerConnection":"unknown","equipment":["winch-controls","sequencers","cables-connectors"],"requirements":["safety","monitoring","backup-power"],"budget":"flexible","timeline":"standard","installationLimitations":["noise-restrictions","time-limited"],"contactName":"Жора","contactPhone":"+7 (923) 493-20-23","contactEmail":"kon4994@ya.ru","contactCompany":"no","contactPosition":"mamager","additionalInfo":"ASAP","attachments[]":"C:\\fakepath\\idea_28.jpg","deliveryMethod":["email"]}
+    [sessid] => 3d9c0e725ca895948259a9e5fc41519a
+)
+
+[2025-07-18 19:55:44] FILES data: Array
+(
+)
+
+[2025-07-18 19:55:44] Bitrix loaded successfully
+[2025-07-18 19:55:44] Raw input: 
+[2025-07-18 19:55:44] ERROR: No input data received
+[2025-07-18 19:55:44] ERROR FILE: /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php
+[2025-07-18 19:55:44] ERROR LINE: 147
+[2025-07-18 19:55:44] ERROR TRACE: #0 {main}
+[2025-07-18 20:22:59] === NEW REQUEST 2025-07-18 20:22:59 ===
+[2025-07-18 20:22:59] REQUEST_METHOD: POST
+[2025-07-18 20:22:59] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 20:22:59] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 20:22:59] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryzFFMngrFWQhWkVuY
+[2025-07-18 20:22:59] RAW INPUT LENGTH: 0
+[2025-07-18 20:22:59] POST data: Array
+(
+    [action] => submit_wizard
+    [data] => {"objectType":"studio","installationType":"temporary","audienceSize":"4","performersCount":"2","powerRequirement":"very-high","powerConnection":"unknown","equipment":["winch-controls","sequencers","cables-connectors"],"requirements":["safety","monitoring","backup-power"],"budget":"flexible","timeline":"standard","installationLimitations":["noise-restrictions","time-limited"],"contactName":"Жора","contactPhone":"+7 (923) 493-20-23","contactEmail":"kon4994@ya.ru","contactCompany":"no","contactPosition":"mamager","additionalInfo":"ASAP","attachments[]":"C:\\fakepath\\idea_28.jpg","deliveryMethod":["email"]}
+    [sessid] => 3d9c0e725ca895948259a9e5fc41519a
+)
+
+[2025-07-18 20:22:59] FILES data: Array
+(
+)
+
+[2025-07-18 20:22:59] === NEW REQUEST 2025-07-18 20:22:59 ===
+[2025-07-18 20:22:59] REQUEST_METHOD: POST
+[2025-07-18 20:22:59] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 20:22:59] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 20:22:59] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryxbaBn4NOXLbstL6f
+[2025-07-18 20:22:59] RAW INPUT LENGTH: 0
+[2025-07-18 20:22:59] POST data: Array
+(
+    [action] => submit_wizard
+    [data] => {"objectType":"studio","installationType":"temporary","audienceSize":"4","performersCount":"2","powerRequirement":"very-high","powerConnection":"unknown","equipment":["winch-controls","sequencers","cables-connectors"],"requirements":["safety","monitoring","backup-power"],"budget":"flexible","timeline":"standard","installationLimitations":["noise-restrictions","time-limited"],"contactName":"Жора","contactPhone":"+7 (923) 493-20-23","contactEmail":"kon4994@ya.ru","contactCompany":"no","contactPosition":"mamager","additionalInfo":"ASAP","attachments[]":"C:\\fakepath\\idea_28.jpg","deliveryMethod":["email"]}
+    [sessid] => 3d9c0e725ca895948259a9e5fc41519a
+)
+
+[2025-07-18 20:22:59] FILES data: Array
+(
+)
+
+[2025-07-18 20:22:59] Bitrix loaded successfully
+[2025-07-18 20:22:59] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryzFFMngrFWQhWkVuY
+[2025-07-18 20:22:59] Processing multipart form data
+[2025-07-18 20:22:59] Action: submit_wizard
+[2025-07-18 20:22:59] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:22:59] Starting wizard submission
+[2025-07-18 20:22:59] Form data received: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:22:59] Generated request ID: TZ-20250718-5901
+[2025-07-18 20:22:59] Found existing IBlock with ID: 10
+[2025-07-18 20:22:59] Using IBlock ID: 10
+[2025-07-18 20:22:59] Attempting to save element
+[2025-07-18 20:22:59] Lead saved successfully with ID: 1619
+[2025-07-18 20:22:59] Saved lead with ID: 1619
+[2025-07-18 20:22:59] Sending email to: orders@edsy.ru
+[2025-07-18 20:22:59] Subject: 🔔 Новое техническое задание #TZ-20250718-5901 - EDS
+[2025-07-18 20:22:59] Email sent successfully to: orders@edsy.ru
+[2025-07-18 20:22:59] Sending email to: ae001t@gmail.com
+[2025-07-18 20:22:59] Subject: 🔔 Новое техническое задание #TZ-20250718-5901 - EDS
+[2025-07-18 20:22:59] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 20:22:59] Sending email to: kon4994@ya.ru
+[2025-07-18 20:22:59] Subject: ✅ Ваше техническое задание #TZ-20250718-5901 получено - EDS
+[2025-07-18 20:22:59] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 20:22:59] Email to manager (orders@edsy.ru): sent
+[2025-07-18 20:22:59] Email to admin (ae001t@gmail.com): sent
+[2025-07-18 20:22:59] Email to client (kon4994@ya.ru): sent
+[2025-07-18 20:22:59] Email notifications sent
+[2025-07-18 20:22:59] Bitrix loaded successfully
+[2025-07-18 20:22:59] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryxbaBn4NOXLbstL6f
+[2025-07-18 20:22:59] Processing multipart form data
+[2025-07-18 20:22:59] Action: submit_wizard
+[2025-07-18 20:22:59] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:22:59] Starting wizard submission
+[2025-07-18 20:22:59] Form data received: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:22:59] Generated request ID: TZ-20250718-6105
+[2025-07-18 20:22:59] Found existing IBlock with ID: 10
+[2025-07-18 20:22:59] Using IBlock ID: 10
+[2025-07-18 20:22:59] Attempting to save element
+[2025-07-18 20:22:59] Lead saved successfully with ID: 1620
+[2025-07-18 20:22:59] Saved lead with ID: 1620
+[2025-07-18 20:22:59] Sending email to: orders@edsy.ru
+[2025-07-18 20:22:59] Subject: 🔔 Новое техническое задание #TZ-20250718-6105 - EDS
+[2025-07-18 20:22:59] Email sent successfully to: orders@edsy.ru
+[2025-07-18 20:22:59] Sending email to: ae001t@gmail.com
+[2025-07-18 20:22:59] Subject: 🔔 Новое техническое задание #TZ-20250718-6105 - EDS
+[2025-07-18 20:22:59] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 20:22:59] Sending email to: kon4994@ya.ru
+[2025-07-18 20:22:59] Subject: ✅ Ваше техническое задание #TZ-20250718-6105 получено - EDS
+[2025-07-18 20:22:59] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 20:22:59] Email to manager (orders@edsy.ru): sent
+[2025-07-18 20:22:59] Email to admin (ae001t@gmail.com): sent
+[2025-07-18 20:22:59] Email to client (kon4994@ya.ru): sent
+[2025-07-18 20:22:59] Email notifications sent
+[2025-07-18 20:23:58] === NEW REQUEST 2025-07-18 20:23:58 ===
+[2025-07-18 20:23:58] REQUEST_METHOD: POST
+[2025-07-18 20:23:58] === NEW REQUEST 2025-07-18 20:23:58 ===
+[2025-07-18 20:23:58] REQUEST_METHOD: POST
+[2025-07-18 20:23:58] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 20:23:58] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 20:23:58] CONTENT_TYPE: application/json
+[2025-07-18 20:23:58] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 20:23:58] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 20:23:58] CONTENT_TYPE: application/json
+[2025-07-18 20:23:58] RAW INPUT LENGTH: 648
+[2025-07-18 20:23:58] POST data: Array
+(
+)
+
+[2025-07-18 20:23:58] RAW INPUT LENGTH: 648
+[2025-07-18 20:23:58] POST data: Array
+(
+)
+
+[2025-07-18 20:23:58] FILES data: Array
+(
+)
+
+[2025-07-18 20:23:58] FILES data: Array
+(
+)
+
+[2025-07-18 20:23:58] Bitrix loaded successfully
+[2025-07-18 20:23:58] Processing content type: application/json
+[2025-07-18 20:23:58] Processing JSON data
+[2025-07-18 20:23:58] Action: generate_pdf
+[2025-07-18 20:23:58] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:23:58] PDF download requested
+[2025-07-18 20:23:58] Bitrix loaded successfully
+[2025-07-18 20:23:58] Processing content type: application/json
+[2025-07-18 20:23:58] Processing JSON data
+[2025-07-18 20:23:58] Action: generate_pdf
+[2025-07-18 20:23:58] Form data: Array
+(
+    [objectType] => studio
+    [installationType] => temporary
+    [audienceSize] => 4
+    [performersCount] => 2
+    [powerRequirement] => very-high
+    [powerConnection] => unknown
+    [equipment] => Array
+        (
+            [0] => winch-controls
+            [1] => sequencers
+            [2] => cables-connectors
+        )
+
+    [requirements] => Array
+        (
+            [0] => safety
+            [1] => monitoring
+            [2] => backup-power
+        )
+
+    [budget] => flexible
+    [timeline] => standard
+    [installationLimitations] => Array
+        (
+            [0] => noise-restrictions
+            [1] => time-limited
+        )
+
+    [contactName] => Жора
+    [contactPhone] => +7 (923) 493-20-23
+    [contactEmail] => kon4994@ya.ru
+    [contactCompany] => no
+    [contactPosition] => mamager
+    [additionalInfo] => ASAP
+    [attachments[]] => C:\fakepath\idea_28.jpg
+    [deliveryMethod] => Array
+        (
+            [0] => email
+        )
+
+)
+
+[2025-07-18 20:23:58] PDF download requested
+[2025-07-18 21:30:09] === NEW REQUEST 2025-07-18 21:30:09 ===
+[2025-07-18 21:30:09] REQUEST_METHOD: POST
+[2025-07-18 21:30:09] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:30:09] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 21:30:09] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryBBWAoZsre73jouMl
+[2025-07-18 21:30:09] RAW INPUT LENGTH: 0
+[2025-07-18 21:30:09] POST data count: 3
+[2025-07-18 21:30:09] FILES data count: 1
+[2025-07-18 21:30:09] ERROR: Could not start session because headers have already been sent. "":0.
+[2025-07-18 21:30:09] ERROR FILE: /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/lib/session/session.php
+[2025-07-18 21:30:09] ERROR LINE: 143
+[2025-07-18 21:30:09] ERROR TRACE: #0 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/lib/session/kernelsessionproxy.php(47): Bitrix\Main\Session\Session->start()
+#1 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/include.php(182): Bitrix\Main\Session\KernelSessionProxy->start()
+#2 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/include/prolog_before.php(19): require_once('/home/c/contes1...')
+#3 /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php(101): require_once('/home/c/contes1...')
+#4 {main}
+[2025-07-18 21:31:46] === NEW REQUEST 2025-07-18 21:31:46 ===
+[2025-07-18 21:31:46] REQUEST_METHOD: POST
+[2025-07-18 21:31:46] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:31:46] HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-18 21:31:46] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryoLxLNa9AMN61eVuC
+[2025-07-18 21:31:46] RAW INPUT LENGTH: 0
+[2025-07-18 21:31:46] POST data count: 3
+[2025-07-18 21:31:46] FILES data count: 0
+[2025-07-18 21:31:46] ERROR: Could not start session because headers have already been sent. "":0.
+[2025-07-18 21:31:46] ERROR FILE: /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/lib/session/session.php
+[2025-07-18 21:31:46] ERROR LINE: 143
+[2025-07-18 21:31:46] ERROR TRACE: #0 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/lib/session/kernelsessionproxy.php(47): Bitrix\Main\Session\Session->start()
+#1 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/include.php(182): Bitrix\Main\Session\KernelSessionProxy->start()
+#2 /home/c/contes1u/btx.edsy.ru/public_html/bitrix/modules/main/include/prolog_before.php(19): require_once('/home/c/contes1...')
+#3 /home/c/contes1u/btx.edsy.ru/public_html/individualnye-resheniya/handler.php(101): require_once('/home/c/contes1...')
+#4 {main}
+[2025-07-18 21:45:46] === NEW REQUEST 2025-07-18 21:45:46 ===
+[2025-07-18 21:45:46] REQUEST_METHOD: POST
+[2025-07-18 21:45:46] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:45:46] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryeeUsVFzTlsqbqfZI
+[2025-07-18 21:45:46] RAW INPUT LENGTH: 0
+[2025-07-18 21:45:46] POST data count: 3
+[2025-07-18 21:45:46] FILES data count: 0
+[2025-07-18 21:45:47] Bitrix loaded successfully
+[2025-07-18 21:45:47] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryeeUsVFzTlsqbqfZI
+[2025-07-18 21:45:47] Processing multipart form data
+[2025-07-18 21:45:47] Action: submit_wizard
+[2025-07-18 21:45:47] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, additionalInfo, attachments[], deliveryMethod
+[2025-07-18 21:45:47] Starting wizard submission
+[2025-07-18 21:45:47] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, additionalInfo, attachments[], deliveryMethod
+[2025-07-18 21:45:47] Generated request ID: TZ-20250718-3112
+[2025-07-18 21:45:47] Sending email to: orders@edsy.ru
+[2025-07-18 21:45:47] Subject: 🔔 Новое техническое задание #TZ-20250718-3112 - EDS
+[2025-07-18 21:45:47] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:45:47] Sending email to: ae001t@gmail.com
+[2025-07-18 21:45:47] Subject: 🔔 Новое техническое задание #TZ-20250718-3112 - EDS
+[2025-07-18 21:45:47] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:45:47] Sending email to: kon4994@ya.ru
+[2025-07-18 21:45:47] Subject: ✅ Ваше техническое задание #TZ-20250718-3112 получено - EDS
+[2025-07-18 21:45:47] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:45:47] Sent 3 emails successfully
+[2025-07-18 21:45:47] Email notifications processed
+[2025-07-18 21:45:47] Found existing IBlock with ID: 10
+[2025-07-18 21:45:47] Using IBlock ID: 10
+[2025-07-18 21:45:47] Attempting to save element
+[2025-07-18 21:45:47] Lead saved successfully with ID: 1620
+[2025-07-18 21:45:47] Saved lead with ID: 1620
+[2025-07-18 21:47:14] === NEW REQUEST 2025-07-18 21:47:14 ===
+[2025-07-18 21:47:14] REQUEST_METHOD: POST
+[2025-07-18 21:47:14] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:47:14] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryBNJ7Eo0ATSJ6bhgv
+[2025-07-18 21:47:14] RAW INPUT LENGTH: 0
+[2025-07-18 21:47:14] POST data count: 3
+[2025-07-18 21:47:14] FILES data count: 0
+[2025-07-18 21:47:14] Bitrix loaded successfully
+[2025-07-18 21:47:14] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryBNJ7Eo0ATSJ6bhgv
+[2025-07-18 21:47:14] Processing multipart form data
+[2025-07-18 21:47:14] Action: submit_wizard
+[2025-07-18 21:47:14] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, additionalInfo, attachments[], deliveryMethod
+[2025-07-18 21:47:14] Starting wizard submission
+[2025-07-18 21:47:14] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, additionalInfo, attachments[], deliveryMethod
+[2025-07-18 21:47:14] Generated request ID: TZ-20250718-2399
+[2025-07-18 21:47:14] Sending email to: orders@edsy.ru
+[2025-07-18 21:47:14] Subject: 🔔 Новое техническое задание #TZ-20250718-2399 - EDS
+[2025-07-18 21:47:14] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:47:14] Sending email to: ae001t@gmail.com
+[2025-07-18 21:47:14] Subject: 🔔 Новое техническое задание #TZ-20250718-2399 - EDS
+[2025-07-18 21:47:14] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:47:14] Sending email to: kon4994@ya.ru
+[2025-07-18 21:47:14] Subject: ✅ Ваше техническое задание #TZ-20250718-2399 получено - EDS
+[2025-07-18 21:47:14] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:47:14] Sent 3 emails successfully
+[2025-07-18 21:47:14] Email notifications processed
+[2025-07-18 21:47:14] Found existing IBlock with ID: 10
+[2025-07-18 21:47:14] Using IBlock ID: 10
+[2025-07-18 21:47:14] Attempting to save element
+[2025-07-18 21:47:14] Lead saved successfully with ID: 1621
+[2025-07-18 21:47:14] Saved lead with ID: 1621
+[2025-07-18 21:47:56] === NEW REQUEST 2025-07-18 21:47:56 ===
+[2025-07-18 21:47:56] REQUEST_METHOD: POST
+[2025-07-18 21:47:56] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:47:56] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryPMD9mAuiuqcvNWyB
+[2025-07-18 21:47:56] RAW INPUT LENGTH: 0
+[2025-07-18 21:47:56] POST data count: 3
+[2025-07-18 21:47:56] FILES data count: 0
+[2025-07-18 21:47:56] Bitrix loaded successfully
+[2025-07-18 21:47:56] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryPMD9mAuiuqcvNWyB
+[2025-07-18 21:47:56] Processing multipart form data
+[2025-07-18 21:47:56] Action: submit_wizard
+[2025-07-18 21:47:56] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:47:56] Starting wizard submission
+[2025-07-18 21:47:56] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:47:56] Generated request ID: TZ-20250718-5055
+[2025-07-18 21:47:56] Sending email to: orders@edsy.ru
+[2025-07-18 21:47:56] Subject: 🔔 Новое техническое задание #TZ-20250718-5055 - EDS
+[2025-07-18 21:47:56] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:47:56] Sending email to: ae001t@gmail.com
+[2025-07-18 21:47:56] Subject: 🔔 Новое техническое задание #TZ-20250718-5055 - EDS
+[2025-07-18 21:47:56] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:47:56] Sending email to: kon4994@ya.ru
+[2025-07-18 21:47:56] Subject: ✅ Ваше техническое задание #TZ-20250718-5055 получено - EDS
+[2025-07-18 21:47:56] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:47:56] Sent 3 emails successfully
+[2025-07-18 21:47:56] Email notifications processed
+[2025-07-18 21:47:56] Found existing IBlock with ID: 10
+[2025-07-18 21:47:56] Using IBlock ID: 10
+[2025-07-18 21:47:56] Attempting to save element
+[2025-07-18 21:47:56] Lead saved successfully with ID: 1622
+[2025-07-18 21:47:56] Saved lead with ID: 1622
+[2025-07-18 21:51:30] === NEW REQUEST 2025-07-18 21:51:30 ===
+[2025-07-18 21:51:30] REQUEST_METHOD: POST
+[2025-07-18 21:51:30] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:51:30] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundarypk6byw4yzfeVl1l9
+[2025-07-18 21:51:30] RAW INPUT LENGTH: 0
+[2025-07-18 21:51:30] POST data count: 3
+[2025-07-18 21:51:30] FILES data count: 0
+[2025-07-18 21:51:30] Bitrix loaded successfully
+[2025-07-18 21:51:30] Processing content type: multipart/form-data; boundary=----WebKitFormBoundarypk6byw4yzfeVl1l9
+[2025-07-18 21:51:30] Processing multipart form data
+[2025-07-18 21:51:30] Action: submit_wizard
+[2025-07-18 21:51:30] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:51:30] Starting wizard submission
+[2025-07-18 21:51:30] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:51:30] Generated request ID: TZ-20250718-1779
+[2025-07-18 21:51:30] Sending email to: orders@edsy.ru
+[2025-07-18 21:51:30] Subject: 🔔 Новое техническое задание #TZ-20250718-1779 - EDS
+[2025-07-18 21:51:30] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:51:30] Sending email to: ae001t@gmail.com
+[2025-07-18 21:51:30] Subject: 🔔 Новое техническое задание #TZ-20250718-1779 - EDS
+[2025-07-18 21:51:30] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:51:30] Sending email to: kon4994@ya.ru
+[2025-07-18 21:51:30] Subject: ✅ Ваше техническое задание #TZ-20250718-1779 получено - EDS
+[2025-07-18 21:51:30] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:51:30] Sent 3 emails successfully
+[2025-07-18 21:51:30] Email notifications processed
+[2025-07-18 21:51:30] Found existing IBlock with ID: 10
+[2025-07-18 21:51:30] Using IBlock ID: 10
+[2025-07-18 21:51:30] Attempting to save element
+[2025-07-18 21:51:30] Lead saved successfully with ID: 1623
+[2025-07-18 21:51:30] Saved lead with ID: 1623
+[2025-07-18 21:52:36] === NEW REQUEST 2025-07-18 21:52:36 ===
+[2025-07-18 21:52:36] REQUEST_METHOD: POST
+[2025-07-18 21:52:36] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:52:36] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryBorpMyBFUbAWSWQS
+[2025-07-18 21:52:36] RAW INPUT LENGTH: 0
+[2025-07-18 21:52:36] POST data count: 3
+[2025-07-18 21:52:36] FILES data count: 0
+[2025-07-18 21:52:36] Bitrix loaded successfully
+[2025-07-18 21:52:36] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryBorpMyBFUbAWSWQS
+[2025-07-18 21:52:36] Processing multipart form data
+[2025-07-18 21:52:36] Action: submit_wizard
+[2025-07-18 21:52:36] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:52:36] Starting wizard submission
+[2025-07-18 21:52:36] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:52:36] Generated request ID: TZ-20250718-7350
+[2025-07-18 21:52:36] Sending email to: orders@edsy.ru
+[2025-07-18 21:52:36] Subject: 🔔 Новое техническое задание #TZ-20250718-7350 - EDS
+[2025-07-18 21:52:36] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:52:36] Sending email to: ae001t@gmail.com
+[2025-07-18 21:52:36] Subject: 🔔 Новое техническое задание #TZ-20250718-7350 - EDS
+[2025-07-18 21:52:36] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:52:36] Sending email to: kon4994@ya.ru
+[2025-07-18 21:52:36] Subject: ✅ Ваше техническое задание #TZ-20250718-7350 получено - EDS
+[2025-07-18 21:52:36] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:52:36] Sent 3 emails successfully
+[2025-07-18 21:52:36] Email notifications processed
+[2025-07-18 21:52:36] Found existing IBlock with ID: 10
+[2025-07-18 21:52:36] Using IBlock ID: 10
+[2025-07-18 21:52:36] Attempting to save element
+[2025-07-18 21:52:36] Lead saved successfully with ID: 1624
+[2025-07-18 21:52:36] Saved lead with ID: 1624
+[2025-07-18 21:53:13] === NEW REQUEST 2025-07-18 21:53:13 ===
+[2025-07-18 21:53:13] REQUEST_METHOD: POST
+[2025-07-18 21:53:13] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:53:13] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryWSUeESNNiYH2ojpJ
+[2025-07-18 21:53:13] RAW INPUT LENGTH: 0
+[2025-07-18 21:53:13] POST data count: 3
+[2025-07-18 21:53:13] FILES data count: 0
+[2025-07-18 21:53:14] Bitrix loaded successfully
+[2025-07-18 21:53:14] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryWSUeESNNiYH2ojpJ
+[2025-07-18 21:53:14] Processing multipart form data
+[2025-07-18 21:53:14] Action: submit_wizard
+[2025-07-18 21:53:14] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:53:14] Starting wizard submission
+[2025-07-18 21:53:14] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:53:14] Generated request ID: TZ-20250718-9875
+[2025-07-18 21:53:14] Sending email to: orders@edsy.ru
+[2025-07-18 21:53:14] Subject: 🔔 Новое техническое задание #TZ-20250718-9875 - EDS
+[2025-07-18 21:53:14] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:53:14] Sending email to: ae001t@gmail.com
+[2025-07-18 21:53:14] Subject: 🔔 Новое техническое задание #TZ-20250718-9875 - EDS
+[2025-07-18 21:53:14] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:53:14] Sending email to: kon4994@ya.ru
+[2025-07-18 21:53:14] Subject: ✅ Ваше техническое задание #TZ-20250718-9875 получено - EDS
+[2025-07-18 21:53:14] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:53:14] Sent 3 emails successfully
+[2025-07-18 21:53:14] Email notifications processed
+[2025-07-18 21:53:14] Found existing IBlock with ID: 10
+[2025-07-18 21:53:14] Using IBlock ID: 10
+[2025-07-18 21:53:14] Attempting to save element
+[2025-07-18 21:53:14] Lead saved successfully with ID: 1625
+[2025-07-18 21:53:14] Saved lead with ID: 1625
+[2025-07-18 21:56:32] === NEW REQUEST 2025-07-18 21:56:32 ===
+[2025-07-18 21:56:32] REQUEST_METHOD: POST
+[2025-07-18 21:56:32] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:56:32] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryZtEFAUiAvQdjSZlb
+[2025-07-18 21:56:32] RAW INPUT LENGTH: 0
+[2025-07-18 21:56:32] POST data count: 3
+[2025-07-18 21:56:32] FILES data count: 0
+[2025-07-18 21:56:32] Bitrix loaded successfully
+[2025-07-18 21:56:32] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryZtEFAUiAvQdjSZlb
+[2025-07-18 21:56:32] Processing multipart form data
+[2025-07-18 21:56:32] Action: submit_wizard
+[2025-07-18 21:56:32] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:56:32] Starting wizard submission
+[2025-07-18 21:56:32] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:56:32] Generated request ID: TZ-20250718-8715
+[2025-07-18 21:56:32] Sending email to: orders@edsy.ru
+[2025-07-18 21:56:32] Subject: 🔔 Новое техническое задание #TZ-20250718-8715 - EDS
+[2025-07-18 21:56:32] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:56:32] Sending email to: ae001t@gmail.com
+[2025-07-18 21:56:32] Subject: 🔔 Новое техническое задание #TZ-20250718-8715 - EDS
+[2025-07-18 21:56:32] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:56:32] Sending email to: kon4994@ya.ru
+[2025-07-18 21:56:32] Subject: ✅ Ваше техническое задание #TZ-20250718-8715 получено - EDS
+[2025-07-18 21:56:32] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:56:32] Sent 3 emails successfully
+[2025-07-18 21:56:32] Email notifications processed
+[2025-07-18 21:56:32] Found existing IBlock with ID: 10
+[2025-07-18 21:56:32] Using IBlock ID: 10
+[2025-07-18 21:56:32] Attempting to save element
+[2025-07-18 21:56:32] Lead saved successfully with ID: 1626
+[2025-07-18 21:56:32] Saved lead with ID: 1626
+[2025-07-18 21:59:04] === NEW REQUEST 2025-07-18 21:59:04 ===
+[2025-07-18 21:59:04] REQUEST_METHOD: POST
+[2025-07-18 21:59:04] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 21:59:04] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryIJHEVm1EBRozSk24
+[2025-07-18 21:59:04] RAW INPUT LENGTH: 0
+[2025-07-18 21:59:04] POST data count: 3
+[2025-07-18 21:59:04] FILES data count: 0
+[2025-07-18 21:59:04] Bitrix loaded successfully
+[2025-07-18 21:59:04] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryIJHEVm1EBRozSk24
+[2025-07-18 21:59:04] Processing multipart form data
+[2025-07-18 21:59:04] Action: submit_wizard
+[2025-07-18 21:59:04] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:59:04] Starting wizard submission
+[2025-07-18 21:59:04] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 21:59:04] Generated request ID: TZ-20250718-5816
+[2025-07-18 21:59:04] Sending email to: orders@edsy.ru
+[2025-07-18 21:59:04] Subject: 🔔 Новое техническое задание #TZ-20250718-5816 - EDS
+[2025-07-18 21:59:04] Email sent successfully to: orders@edsy.ru
+[2025-07-18 21:59:04] Sending email to: ae001t@gmail.com
+[2025-07-18 21:59:04] Subject: 🔔 Новое техническое задание #TZ-20250718-5816 - EDS
+[2025-07-18 21:59:04] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 21:59:04] Sending email to: kon4994@ya.ru
+[2025-07-18 21:59:04] Subject: ✅ Ваше техническое задание #TZ-20250718-5816 получено - EDS
+[2025-07-18 21:59:04] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 21:59:04] Sent 3 emails successfully
+[2025-07-18 21:59:04] Email notifications processed
+[2025-07-18 21:59:04] Found existing IBlock with ID: 10
+[2025-07-18 21:59:04] Using IBlock ID: 10
+[2025-07-18 21:59:04] Attempting to save element
+[2025-07-18 21:59:04] Lead saved successfully with ID: 1627
+[2025-07-18 21:59:04] Saved lead with ID: 1627
+[2025-07-18 22:02:07] === NEW REQUEST 2025-07-18 22:02:07 ===
+[2025-07-18 22:02:07] REQUEST_METHOD: POST
+[2025-07-18 22:02:07] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-18 22:02:07] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryuHSdMNSqXtJbS5wr
+[2025-07-18 22:02:07] RAW INPUT LENGTH: 0
+[2025-07-18 22:02:07] POST data count: 3
+[2025-07-18 22:02:07] FILES data count: 0
+[2025-07-18 22:02:07] Bitrix loaded successfully
+[2025-07-18 22:02:07] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryuHSdMNSqXtJbS5wr
+[2025-07-18 22:02:07] Processing multipart form data
+[2025-07-18 22:02:07] Action: submit_wizard
+[2025-07-18 22:02:07] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 22:02:07] Starting wizard submission
+[2025-07-18 22:02:07] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-18 22:02:07] Generated request ID: TZ-20250718-8193
+[2025-07-18 22:02:07] Sending email to: orders@edsy.ru
+[2025-07-18 22:02:07] Subject: 🔔 Новое техническое задание #TZ-20250718-8193 - EDS
+[2025-07-18 22:02:07] Email sent successfully to: orders@edsy.ru
+[2025-07-18 22:02:07] Sending email to: ae001t@gmail.com
+[2025-07-18 22:02:07] Subject: 🔔 Новое техническое задание #TZ-20250718-8193 - EDS
+[2025-07-18 22:02:07] Email sent successfully to: ae001t@gmail.com
+[2025-07-18 22:02:07] Sending email to: kon4994@ya.ru
+[2025-07-18 22:02:07] Subject: ✅ Ваше техническое задание #TZ-20250718-8193 получено - EDS
+[2025-07-18 22:02:07] Email sent successfully to: kon4994@ya.ru
+[2025-07-18 22:02:07] Sent 3 emails successfully
+[2025-07-18 22:02:07] Email notifications processed
+[2025-07-18 22:02:07] Found existing IBlock with ID: 10
+[2025-07-18 22:02:07] Using IBlock ID: 10
+[2025-07-18 22:02:07] Attempting to save element
+[2025-07-18 22:02:08] Lead saved successfully with ID: 1628
+[2025-07-18 22:02:08] Saved lead with ID: 1628
+[2025-07-19 00:33:07] === NEW REQUEST 2025-07-19 00:33:07 ===
+[2025-07-19 00:33:07] === NEW REQUEST 2025-07-19 00:33:07 ===
+[2025-07-19 00:33:07] REQUEST_METHOD: POST
+[2025-07-19 00:33:07] REQUEST_METHOD: POST
+[2025-07-19 00:33:07] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:33:07] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:33:07] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryfDB14MDItvAtVED7
+[2025-07-19 00:33:07] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryfuAacjVpso6ZohJj
+[2025-07-19 00:33:07] RAW INPUT LENGTH: 0
+[2025-07-19 00:33:07] RAW INPUT LENGTH: 0
+[2025-07-19 00:33:07] POST data count: 3
+[2025-07-19 00:33:07] POST data count: 3
+[2025-07-19 00:33:07] FILES data count: 0
+[2025-07-19 00:33:07] FILES data count: 0
+[2025-07-19 00:33:07] Bitrix loaded successfully
+[2025-07-19 00:33:07] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryfDB14MDItvAtVED7
+[2025-07-19 00:33:07] Processing multipart form data
+[2025-07-19 00:33:07] Action: submit_wizard
+[2025-07-19 00:33:07] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:33:07] Starting wizard submission
+[2025-07-19 00:33:07] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:33:07] Generated request ID: TZ-20250719-8620
+[2025-07-19 00:33:07] Sending email to: orders@edsy.ru
+[2025-07-19 00:33:07] Subject: 🔔 Новое техническое задание #TZ-20250719-8620 - EDS
+[2025-07-19 00:33:07] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:33:07] Sending email to: ae001t@gmail.com
+[2025-07-19 00:33:07] Subject: 🔔 Новое техническое задание #TZ-20250719-8620 - EDS
+[2025-07-19 00:33:08] Email sent successfully to: ae001t@gmail.com
+[2025-07-19 00:33:08] Sending email to: kon4994@ya.ru
+[2025-07-19 00:33:08] Subject: ✅ Ваше техническое задание #TZ-20250719-8620 получено - EDS
+[2025-07-19 00:33:08] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 00:33:08] Sent 3 emails successfully
+[2025-07-19 00:33:08] Email notifications processed
+[2025-07-19 00:33:08] Found existing IBlock with ID: 10
+[2025-07-19 00:33:08] Using IBlock ID: 10
+[2025-07-19 00:33:08] Attempting to save element
+[2025-07-19 00:33:08] Lead saved successfully with ID: 1629
+[2025-07-19 00:33:08] Saved lead with ID: 1629
+[2025-07-19 00:33:08] Bitrix loaded successfully
+[2025-07-19 00:33:08] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryfuAacjVpso6ZohJj
+[2025-07-19 00:33:08] Processing multipart form data
+[2025-07-19 00:33:08] Action: submit_wizard
+[2025-07-19 00:33:08] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:33:08] Starting wizard submission
+[2025-07-19 00:33:08] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:33:08] Generated request ID: TZ-20250719-5025
+[2025-07-19 00:33:08] Sending email to: orders@edsy.ru
+[2025-07-19 00:33:08] Subject: 🔔 Новое техническое задание #TZ-20250719-5025 - EDS
+[2025-07-19 00:33:08] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:33:08] Sending email to: ae001t@gmail.com
+[2025-07-19 00:33:08] Subject: 🔔 Новое техническое задание #TZ-20250719-5025 - EDS
+[2025-07-19 00:33:08] Email sent successfully to: ae001t@gmail.com
+[2025-07-19 00:33:08] Sending email to: kon4994@ya.ru
+[2025-07-19 00:33:08] Subject: ✅ Ваше техническое задание #TZ-20250719-5025 получено - EDS
+[2025-07-19 00:33:08] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 00:33:08] Sent 3 emails successfully
+[2025-07-19 00:33:08] Email notifications processed
+[2025-07-19 00:33:08] Found existing IBlock with ID: 10
+[2025-07-19 00:33:08] Using IBlock ID: 10
+[2025-07-19 00:33:08] Attempting to save element
+[2025-07-19 00:33:08] Lead saved successfully with ID: 1630
+[2025-07-19 00:33:08] Saved lead with ID: 1630
+[2025-07-19 00:36:30] === NEW REQUEST 2025-07-19 00:36:30 ===
+[2025-07-19 00:36:30] REQUEST_METHOD: POST
+[2025-07-19 00:36:30] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:36:30] === NEW REQUEST 2025-07-19 00:36:30 ===
+[2025-07-19 00:36:30] REQUEST_METHOD: POST
+[2025-07-19 00:36:30] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:36:30] CONTENT_TYPE: application/json
+[2025-07-19 00:36:30] CONTENT_TYPE: application/json
+[2025-07-19 00:36:30] RAW INPUT LENGTH: 110
+[2025-07-19 00:36:30] RAW INPUT LENGTH: 110
+[2025-07-19 00:36:30] POST data count: 0
+[2025-07-19 00:36:30] FILES data count: 0
+[2025-07-19 00:36:30] POST data count: 0
+[2025-07-19 00:36:30] FILES data count: 0
+[2025-07-19 00:36:30] Bitrix loaded successfully
+[2025-07-19 00:36:30] Processing content type: application/json
+[2025-07-19 00:36:30] Processing JSON data
+[2025-07-19 00:36:30] Action: consultation_request
+[2025-07-19 00:36:30] Form data keys: consultationName, consultationPhone
+[2025-07-19 00:36:30] Consultation request: CONS-20250719-6933
+[2025-07-19 00:36:30] Sending email to: orders@edsy.ru
+[2025-07-19 00:36:30] Subject: 📞 Запрос на консультацию #CONS-20250719-6933 - EDS
+[2025-07-19 00:36:30] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:36:30] Sending email to: ae001t@gmail.com
+[2025-07-19 00:36:30] Subject: 📞 Запрос на консультацию #CONS-20250719-6933 - EDS
+[2025-07-19 00:36:30] Email sent successfully to: ae001t@gmail.com
+[2025-07-19 00:36:30] Consultation notification email sent
+[2025-07-19 00:36:30] Found existing IBlock with ID: 10
+[2025-07-19 00:36:30] Consultation saved to database
+[2025-07-19 00:36:30] Bitrix loaded successfully
+[2025-07-19 00:36:30] Processing content type: application/json
+[2025-07-19 00:36:30] Processing JSON data
+[2025-07-19 00:36:30] Action: consultation_request
+[2025-07-19 00:36:30] Form data keys: consultationName, consultationPhone
+[2025-07-19 00:36:30] Consultation request: CONS-20250719-6085
+[2025-07-19 00:36:30] Sending email to: orders@edsy.ru
+[2025-07-19 00:36:30] Subject: 📞 Запрос на консультацию #CONS-20250719-6085 - EDS
+[2025-07-19 00:36:30] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:36:30] Sending email to: ae001t@gmail.com
+[2025-07-19 00:36:30] Subject: 📞 Запрос на консультацию #CONS-20250719-6085 - EDS
+[2025-07-19 00:36:30] Email sent successfully to: ae001t@gmail.com
+[2025-07-19 00:36:30] Consultation notification email sent
+[2025-07-19 00:36:30] Found existing IBlock with ID: 10
+[2025-07-19 00:36:30] Consultation saved to database
+[2025-07-19 00:58:01] === NEW REQUEST 2025-07-19 00:58:01 ===
+[2025-07-19 00:58:01] REQUEST_METHOD: POST
+[2025-07-19 00:58:01] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:58:01] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryH2tKCFEf8lAyFkEA
+[2025-07-19 00:58:01] RAW INPUT LENGTH: 0
+[2025-07-19 00:58:01] POST data count: 3
+[2025-07-19 00:58:01] FILES data count: 0
+[2025-07-19 00:58:01] === NEW REQUEST 2025-07-19 00:58:01 ===
+[2025-07-19 00:58:01] REQUEST_METHOD: POST
+[2025-07-19 00:58:01] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 00:58:01] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryHmRcrRWjNJILRJ3j
+[2025-07-19 00:58:01] RAW INPUT LENGTH: 0
+[2025-07-19 00:58:01] POST data count: 3
+[2025-07-19 00:58:01] FILES data count: 0
+[2025-07-19 00:58:01] Bitrix loaded successfully
+[2025-07-19 00:58:01] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryH2tKCFEf8lAyFkEA
+[2025-07-19 00:58:01] Processing multipart form data
+[2025-07-19 00:58:01] Action: submit_wizard
+[2025-07-19 00:58:01] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:58:01] Starting wizard submission
+[2025-07-19 00:58:01] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:58:01] Generated request ID: TZ-20250719-7951
+[2025-07-19 00:58:01] Sending email to: orders@edsy.ru
+[2025-07-19 00:58:01] Subject: Новое техническое задание #TZ-20250719-7951 - EDS
+[2025-07-19 00:58:01] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:58:01] Sending email to: a0123e@ya.ru
+[2025-07-19 00:58:01] Subject: Новое техническое задание #TZ-20250719-7951 - EDS
+[2025-07-19 00:58:01] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 00:58:01] Sending email to: kon4994@ya.ru
+[2025-07-19 00:58:01] Subject: Ваше техническое задание #TZ-20250719-7951 получено - EDS
+[2025-07-19 00:58:01] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 00:58:01] Sent 3 emails successfully
+[2025-07-19 00:58:01] Email notifications processed
+[2025-07-19 00:58:01] Found existing IBlock with ID: 10
+[2025-07-19 00:58:01] Using IBlock ID: 10
+[2025-07-19 00:58:01] Attempting to save element
+[2025-07-19 00:58:01] Lead saved successfully with ID: 1633
+[2025-07-19 00:58:01] Saved lead with ID: 1633
+[2025-07-19 00:58:01] Bitrix loaded successfully
+[2025-07-19 00:58:01] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryHmRcrRWjNJILRJ3j
+[2025-07-19 00:58:01] Processing multipart form data
+[2025-07-19 00:58:01] Action: submit_wizard
+[2025-07-19 00:58:01] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:58:01] Starting wizard submission
+[2025-07-19 00:58:01] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition, deliveryMethod
+[2025-07-19 00:58:01] Generated request ID: TZ-20250719-9345
+[2025-07-19 00:58:01] Sending email to: orders@edsy.ru
+[2025-07-19 00:58:01] Subject: Новое техническое задание #TZ-20250719-9345 - EDS
+[2025-07-19 00:58:01] Email sent successfully to: orders@edsy.ru
+[2025-07-19 00:58:01] Sending email to: a0123e@ya.ru
+[2025-07-19 00:58:01] Subject: Новое техническое задание #TZ-20250719-9345 - EDS
+[2025-07-19 00:58:01] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 00:58:01] Sending email to: kon4994@ya.ru
+[2025-07-19 00:58:01] Subject: Ваше техническое задание #TZ-20250719-9345 получено - EDS
+[2025-07-19 00:58:01] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 00:58:01] Sent 3 emails successfully
+[2025-07-19 00:58:01] Email notifications processed
+[2025-07-19 00:58:01] Found existing IBlock with ID: 10
+[2025-07-19 00:58:01] Using IBlock ID: 10
+[2025-07-19 00:58:01] Attempting to save element
+[2025-07-19 00:58:01] Lead saved successfully with ID: 1634
+[2025-07-19 00:58:01] Saved lead with ID: 1634
+[2025-07-19 01:00:23] === NEW REQUEST 2025-07-19 01:00:23 ===
+[2025-07-19 01:00:23] === NEW REQUEST 2025-07-19 01:00:23 ===
+[2025-07-19 01:00:23] REQUEST_METHOD: POST
+[2025-07-19 01:00:23] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 01:00:23] CONTENT_TYPE: application/json
+[2025-07-19 01:00:23] RAW INPUT LENGTH: 113
+[2025-07-19 01:00:23] REQUEST_METHOD: POST
+[2025-07-19 01:00:23] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 01:00:23] CONTENT_TYPE: application/json
+[2025-07-19 01:00:23] POST data count: 0
+[2025-07-19 01:00:23] FILES data count: 0
+[2025-07-19 01:00:23] RAW INPUT LENGTH: 113
+[2025-07-19 01:00:23] POST data count: 0
+[2025-07-19 01:00:23] FILES data count: 0
+[2025-07-19 01:00:23] Bitrix loaded successfully
+[2025-07-19 01:00:23] Processing content type: application/json
+[2025-07-19 01:00:23] Processing JSON data
+[2025-07-19 01:00:23] Action: consultation_request
+[2025-07-19 01:00:23] Form data keys: consultationName, consultationPhone
+[2025-07-19 01:00:23] Consultation request: CONS-20250719-6862
+[2025-07-19 01:00:23] Sending email to: orders@edsy.ru
+[2025-07-19 01:00:23] Subject: Запрос на консультацию #CONS-20250719-6862 - EDS
+[2025-07-19 01:00:23] Email sent successfully to: orders@edsy.ru
+[2025-07-19 01:00:23] Sending email to: a0123e@ya.ru
+[2025-07-19 01:00:23] Subject: Запрос на консультацию #CONS-20250719-6862 - EDS
+[2025-07-19 01:00:23] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 01:00:23] Consultation notification emails sent
+[2025-07-19 01:00:23] Found existing IBlock with ID: 10
+[2025-07-19 01:00:23] Consultation saved to database
+[2025-07-19 01:00:23] Bitrix loaded successfully
+[2025-07-19 01:00:23] Processing content type: application/json
+[2025-07-19 01:00:23] Processing JSON data
+[2025-07-19 01:00:23] Action: consultation_request
+[2025-07-19 01:00:23] Form data keys: consultationName, consultationPhone
+[2025-07-19 01:00:23] Consultation request: CONS-20250719-3700
+[2025-07-19 01:00:23] Sending email to: orders@edsy.ru
+[2025-07-19 01:00:23] Subject: Запрос на консультацию #CONS-20250719-3700 - EDS
+[2025-07-19 01:00:23] Email sent successfully to: orders@edsy.ru
+[2025-07-19 01:00:23] Sending email to: a0123e@ya.ru
+[2025-07-19 01:00:23] Subject: Запрос на консультацию #CONS-20250719-3700 - EDS
+[2025-07-19 01:00:23] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 01:00:23] Consultation notification emails sent
+[2025-07-19 01:00:23] Found existing IBlock with ID: 10
+[2025-07-19 01:00:23] Consultation saved to database
+[2025-07-19 02:39:48] === NEW REQUEST 2025-07-19 02:39:48 ===
+[2025-07-19 02:39:48] REQUEST_METHOD: POST
+[2025-07-19 02:39:48] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 02:39:48] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryJWuPqMr8wS1jTwd0
+[2025-07-19 02:39:48] RAW INPUT LENGTH: 0
+[2025-07-19 02:39:48] POST data count: 3
+[2025-07-19 02:39:48] FILES data count: 0
+[2025-07-19 02:39:48] Bitrix loaded successfully
+[2025-07-19 02:39:48] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryJWuPqMr8wS1jTwd0
+[2025-07-19 02:39:48] Processing multipart form data
+[2025-07-19 02:39:48] Action: submit_wizard
+[2025-07-19 02:39:48] Form data keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, budget, deliveryMethod, equipment, requirements, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 02:39:48] Starting wizard submission
+[2025-07-19 02:39:48] Form data received keys: objectType, installationType, audienceSize, performersCount, powerRequirement, powerConnection, budget, deliveryMethod, equipment, requirements, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 02:39:48] Generated request ID: TZ-20250719-1062
+[2025-07-19 02:39:48] Sending email to: orders@edsy.ru
+[2025-07-19 02:39:48] Subject: Новое техническое задание #TZ-20250719-1062 - EDS
+[2025-07-19 02:39:48] Email sent successfully to: orders@edsy.ru
+[2025-07-19 02:39:48] Sending email to: a0123e@ya.ru
+[2025-07-19 02:39:48] Subject: Новое техническое задание #TZ-20250719-1062 - EDS
+[2025-07-19 02:39:48] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 02:39:48] Sending email to: kon4994@ya.ru
+[2025-07-19 02:39:48] Subject: Ваше техническое задание #TZ-20250719-1062 получено - EDS
+[2025-07-19 02:39:48] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 02:39:48] Sent 3 emails successfully
+[2025-07-19 02:39:48] Email notifications processed
+[2025-07-19 02:39:48] Found existing IBlock with ID: 10
+[2025-07-19 02:39:48] Using IBlock ID: 10
+[2025-07-19 02:39:48] Attempting to save element
+[2025-07-19 02:39:48] Lead saved successfully with ID: 1637
+[2025-07-19 02:39:48] Saved lead with ID: 1637
+[2025-07-19 03:06:35] === NEW REQUEST 2025-07-19 03:06:35 ===
+[2025-07-19 03:06:35] REQUEST_METHOD: POST
+[2025-07-19 03:06:35] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 03:06:35] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryxECmP2P0l6UoFKLj
+[2025-07-19 03:06:35] RAW INPUT LENGTH: 0
+[2025-07-19 03:06:35] POST data count: 3
+[2025-07-19 03:06:35] FILES data count: 0
+[2025-07-19 03:06:35] Bitrix loaded successfully
+[2025-07-19 03:06:35] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryxECmP2P0l6UoFKLj
+[2025-07-19 03:06:35] Processing multipart form data
+[2025-07-19 03:06:35] Action: submit_wizard
+[2025-07-19 03:06:35] Form data keys: objectType, audienceSize, performersCount, installationType, deliveryMethod, powerRequirement, powerConnection, requirements, budget, equipment, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:06:35] Starting wizard submission
+[2025-07-19 03:06:35] Form data received keys: objectType, audienceSize, performersCount, installationType, deliveryMethod, powerRequirement, powerConnection, requirements, budget, equipment, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:06:35] Generated request ID: TZ-20250719-6699
+[2025-07-19 03:06:35] Sending email to: orders@edsy.ru
+[2025-07-19 03:06:35] Subject: Новое техническое задание #TZ-20250719-6699 - EDS
+[2025-07-19 03:06:36] Email sent successfully to: orders@edsy.ru
+[2025-07-19 03:06:36] Sending email to: a0123e@ya.ru
+[2025-07-19 03:06:36] Subject: Новое техническое задание #TZ-20250719-6699 - EDS
+[2025-07-19 03:06:36] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 03:06:36] Sending email to: kon4994@ya.ru
+[2025-07-19 03:06:36] Subject: Ваше техническое задание #TZ-20250719-6699 получено - EDS
+[2025-07-19 03:06:36] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 03:06:36] Sent 3 emails successfully
+[2025-07-19 03:06:36] Email notifications processed
+[2025-07-19 03:06:36] Found existing IBlock with ID: 10
+[2025-07-19 03:06:36] Using IBlock ID: 10
+[2025-07-19 03:06:36] Attempting to save element
+[2025-07-19 03:06:36] Lead saved successfully with ID: 1638
+[2025-07-19 03:06:36] Saved lead with ID: 1638
+[2025-07-19 03:11:50] === NEW REQUEST 2025-07-19 03:11:50 ===
+[2025-07-19 03:11:50] REQUEST_METHOD: POST
+[2025-07-19 03:11:50] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 03:11:50] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryeZltv2pBwzMHAOPM
+[2025-07-19 03:11:50] RAW INPUT LENGTH: 0
+[2025-07-19 03:11:50] POST data count: 3
+[2025-07-19 03:11:50] FILES data count: 0
+[2025-07-19 03:11:50] === NEW REQUEST 2025-07-19 03:11:50 ===
+[2025-07-19 03:11:50] REQUEST_METHOD: POST
+[2025-07-19 03:11:50] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 03:11:50] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundarykWUtuHo5YLmKuQ9j
+[2025-07-19 03:11:50] RAW INPUT LENGTH: 0
+[2025-07-19 03:11:50] POST data count: 3
+[2025-07-19 03:11:50] FILES data count: 0
+[2025-07-19 03:11:50] Bitrix loaded successfully
+[2025-07-19 03:11:50] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryeZltv2pBwzMHAOPM
+[2025-07-19 03:11:50] Processing multipart form data
+[2025-07-19 03:11:50] Action: submit_wizard
+[2025-07-19 03:11:50] Form data keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:11:50] Starting wizard submission
+[2025-07-19 03:11:50] Form data received keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:11:50] Generated request ID: TZ-20250719-8359
+[2025-07-19 03:11:50] Sending email to: orders@edsy.ru
+[2025-07-19 03:11:50] Subject: Новое техническое задание #TZ-20250719-8359 - EDS
+[2025-07-19 03:11:50] Email sent successfully to: orders@edsy.ru
+[2025-07-19 03:11:50] Sending email to: a0123e@ya.ru
+[2025-07-19 03:11:50] Subject: Новое техническое задание #TZ-20250719-8359 - EDS
+[2025-07-19 03:11:50] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 03:11:50] Sending email to: kon4994@ya.ru
+[2025-07-19 03:11:50] Subject: Ваше техническое задание #TZ-20250719-8359 получено - EDS
+[2025-07-19 03:11:50] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 03:11:50] Sent 3 emails successfully
+[2025-07-19 03:11:50] Email notifications processed
+[2025-07-19 03:11:50] Found existing IBlock with ID: 10
+[2025-07-19 03:11:50] Using IBlock ID: 10
+[2025-07-19 03:11:50] Attempting to save element
+[2025-07-19 03:11:51] Lead saved successfully with ID: 1639
+[2025-07-19 03:11:51] Saved lead with ID: 1639
+[2025-07-19 03:11:51] Bitrix loaded successfully
+[2025-07-19 03:11:51] Processing content type: multipart/form-data; boundary=----WebKitFormBoundarykWUtuHo5YLmKuQ9j
+[2025-07-19 03:11:51] Processing multipart form data
+[2025-07-19 03:11:51] Action: submit_wizard
+[2025-07-19 03:11:51] Form data keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:11:51] Starting wizard submission
+[2025-07-19 03:11:51] Form data received keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:11:51] Generated request ID: TZ-20250719-8631
+[2025-07-19 03:11:51] Sending email to: orders@edsy.ru
+[2025-07-19 03:11:51] Subject: Новое техническое задание #TZ-20250719-8631 - EDS
+[2025-07-19 03:11:51] Email sent successfully to: orders@edsy.ru
+[2025-07-19 03:11:51] Sending email to: a0123e@ya.ru
+[2025-07-19 03:11:51] Subject: Новое техническое задание #TZ-20250719-8631 - EDS
+[2025-07-19 03:11:51] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 03:11:51] Sending email to: kon4994@ya.ru
+[2025-07-19 03:11:51] Subject: Ваше техническое задание #TZ-20250719-8631 получено - EDS
+[2025-07-19 03:11:51] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 03:11:51] Sent 3 emails successfully
+[2025-07-19 03:11:51] Email notifications processed
+[2025-07-19 03:11:51] Found existing IBlock with ID: 10
+[2025-07-19 03:11:51] Using IBlock ID: 10
+[2025-07-19 03:11:51] Attempting to save element
+[2025-07-19 03:11:51] Lead saved successfully with ID: 1640
+[2025-07-19 03:11:51] Saved lead with ID: 1640
+[2025-07-19 03:14:50] === NEW REQUEST 2025-07-19 03:14:50 ===
+[2025-07-19 03:14:50] REQUEST_METHOD: POST
+[2025-07-19 03:14:50] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 03:14:50] CONTENT_TYPE: multipart/form-data; boundary=----WebKitFormBoundaryBrK81QflYBtvd4ub
+[2025-07-19 03:14:50] RAW INPUT LENGTH: 0
+[2025-07-19 03:14:50] POST data count: 3
+[2025-07-19 03:14:50] FILES data count: 0
+[2025-07-19 03:14:50] Bitrix loaded successfully
+[2025-07-19 03:14:50] Processing content type: multipart/form-data; boundary=----WebKitFormBoundaryBrK81QflYBtvd4ub
+[2025-07-19 03:14:50] Processing multipart form data
+[2025-07-19 03:14:50] Action: submit_wizard
+[2025-07-19 03:14:50] Form data keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:14:50] Starting wizard submission
+[2025-07-19 03:14:50] Form data received keys: objectType, audienceSize, performersCount, deliveryMethod, installationType, powerRequirement, powerConnection, equipment, requirements, budget, timeline, installationLimitations, contactName, contactPhone, contactEmail, contactCompany, contactPosition
+[2025-07-19 03:14:50] Generated request ID: TZ-20250719-8819
+[2025-07-19 03:14:50] Sending email to: orders@edsy.ru
+[2025-07-19 03:14:50] Subject: Новое техническое задание #TZ-20250719-8819 - EDS
+[2025-07-19 03:14:50] Email sent successfully to: orders@edsy.ru
+[2025-07-19 03:14:50] Sending email to: a0123e@ya.ru
+[2025-07-19 03:14:50] Subject: Новое техническое задание #TZ-20250719-8819 - EDS
+[2025-07-19 03:14:50] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 03:14:50] Sending email to: kon4994@ya.ru
+[2025-07-19 03:14:50] Subject: Ваше техническое задание #TZ-20250719-8819 получено - EDS
+[2025-07-19 03:14:50] Email sent successfully to: kon4994@ya.ru
+[2025-07-19 03:14:50] Sent 3 emails successfully
+[2025-07-19 03:14:50] Email notifications processed
+[2025-07-19 03:14:50] Found existing IBlock with ID: 10
+[2025-07-19 03:14:50] Using IBlock ID: 10
+[2025-07-19 03:14:50] Attempting to save element
+[2025-07-19 03:14:50] Lead saved successfully with ID: 1641
+[2025-07-19 03:14:50] Saved lead with ID: 1641
+[2025-07-19 07:34:36] === NEW REQUEST 2025-07-19 07:34:36 ===
+[2025-07-19 07:34:36] REQUEST_METHOD: POST
+[2025-07-19 07:34:36] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 07:34:36] CONTENT_TYPE: application/json
+[2025-07-19 07:34:36] RAW INPUT LENGTH: 109
+[2025-07-19 07:34:36] POST data count: 0
+[2025-07-19 07:34:36] FILES data count: 0
+[2025-07-19 07:34:36] === NEW REQUEST 2025-07-19 07:34:36 ===
+[2025-07-19 07:34:36] REQUEST_METHOD: POST
+[2025-07-19 07:34:36] REQUEST_URI: /individualnye-resheniya/handler.php
+[2025-07-19 07:34:36] CONTENT_TYPE: application/json
+[2025-07-19 07:34:36] RAW INPUT LENGTH: 109
+[2025-07-19 07:34:36] POST data count: 0
+[2025-07-19 07:34:36] FILES data count: 0
+[2025-07-19 07:34:36] Bitrix loaded successfully
+[2025-07-19 07:34:36] Processing content type: application/json
+[2025-07-19 07:34:36] Processing JSON data
+[2025-07-19 07:34:36] Action: consultation_request
+[2025-07-19 07:34:36] Form data keys: consultationName, consultationPhone
+[2025-07-19 07:34:36] Consultation request: CONS-20250719-8984
+[2025-07-19 07:34:36] Sending email to: orders@edsy.ru
+[2025-07-19 07:34:36] Subject: Запрос на консультацию #CONS-20250719-8984 - EDS
+[2025-07-19 07:34:36] Email sent successfully to: orders@edsy.ru
+[2025-07-19 07:34:36] Sending email to: a0123e@ya.ru
+[2025-07-19 07:34:36] Subject: Запрос на консультацию #CONS-20250719-8984 - EDS
+[2025-07-19 07:34:36] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 07:34:36] Consultation notification emails sent
+[2025-07-19 07:34:36] Found existing IBlock with ID: 10
+[2025-07-19 07:34:36] Consultation saved to database
+[2025-07-19 07:34:36] Bitrix loaded successfully
+[2025-07-19 07:34:36] Processing content type: application/json
+[2025-07-19 07:34:36] Processing JSON data
+[2025-07-19 07:34:36] Action: consultation_request
+[2025-07-19 07:34:36] Form data keys: consultationName, consultationPhone
+[2025-07-19 07:34:36] Consultation request: CONS-20250719-3079
+[2025-07-19 07:34:36] Sending email to: orders@edsy.ru
+[2025-07-19 07:34:36] Subject: Запрос на консультацию #CONS-20250719-3079 - EDS
+[2025-07-19 07:34:36] Email sent successfully to: orders@edsy.ru
+[2025-07-19 07:34:36] Sending email to: a0123e@ya.ru
+[2025-07-19 07:34:36] Subject: Запрос на консультацию #CONS-20250719-3079 - EDS
+[2025-07-19 07:34:36] Email sent successfully to: a0123e@ya.ru
+[2025-07-19 07:34:36] Consultation notification emails sent
+[2025-07-19 07:34:36] Found existing IBlock with ID: 10
+[2025-07-19 07:34:36] Consultation saved to database

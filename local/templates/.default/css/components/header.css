@@ -1,0 +1,979 @@
+/* Version: 1.0.3, Author: KW, URI: https://kowb.ru */
+/* ==========================================================================
+   Header Component Styles - EDS System
+   Performance-first approach with minimal media queries
+   ========================================================================== */
+
+/* ==========================================================================
+   Header Container & Base States
+   ========================================================================== */
+
+.edsys-header {
+    position: relative;
+    z-index: 1000;
+    background: var(--edsys-white);
+    border-bottom: var(--edsys-white)!important;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-header__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Sticky Header States - Desktop Only
+   Don't overcomplicate mobile with sticky behavior
+   ========================================================================== */
+
+.edsys-header--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    animation: headerSlideDown var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-header--hidden {
+    transform: translateY(-100%);
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+/* Content compensation when header becomes sticky */
+body.edsys-header-sticky-compensate {
+    padding-top: var(--header-height, 120px);
+}
+
+/* Sticky header optimizations */
+.edsys-header--sticky .edsys-header__top {
+    padding: var(--space-2xs) 0;
+}
+
+.edsys-header--sticky .edsys-header__nav {
+    display: none; /* Hide nav in sticky mode for cleaner UX */
+}
+
+.edsys-header--sticky .edsys-header__logo img {
+    height: clamp(2rem, 2.5vw, 3rem);
+    transition: height var(--edsys-transition-medium) var(--edsys-ease);
+}
+.edsys-header__logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+/* Header slide-down animation */
+@keyframes headerSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Mobile Header Layout
+   Mobile-first approach with progressive enhancement
+   ========================================================================== */
+
+.edsys-header__mobile-top {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(0.5rem, 2vh, 0.75rem) 0;
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-header__mobile-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--edsys-bg-light);
+    color: var(--edsys-text);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: var(--edsys-transition);
+}
+
+.edsys-header__mobile-contact:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+.edsys-header__mobile-contact i {
+    font-size: 1.25rem;
+}
+
+.edsys-header__mobile-search {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    padding: clamp(0.5rem, 2vh, 0.75rem) 0;
+}
+
+.edsys-header__mobile-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    flex-shrink: 0;
+}
+
+.edsys-header__mobile-search-btn:hover {
+    background: var(--edsys-primary-dark);
+}
+
+.edsys-header__mobile-search-btn i {
+    font-size: 1.35rem;
+}
+
+.edsys-header__mobile-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    border: 1px solid var(--edsys-border);
+    color: var(--edsys-text);
+    cursor: pointer;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+}
+
+.edsys-header__mobile-hamburger i {
+    font-size: 1.35rem;
+}
+
+/* ==========================================================================
+   Desktop Header Layout
+   Fluid grid with intelligent resizing
+   ========================================================================== */
+
+.edsys-header__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-xs) 0;
+    flex-wrap: nowrap;
+    transition: padding var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+/* Logo with smart scaling */
+.edsys-header__logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edsys-header__logo img {
+    height: clamp(3rem, 4.8vw, 3.3rem);
+    width: auto;
+    transition: height var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-header__title {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(0.8rem, 1vw, 0.96rem);
+    line-height: 1.05;
+    color: var(--edsys-carbon);
+    letter-spacing: 0.05em;
+}
+
+.edsys-header__title span {
+    white-space: nowrap;
+}
+.edsys-header__logo-link:hover {
+    text-decoration: none;
+}
+
+.edsys-header--sticky .edsys-header__title {
+    font-size: clamp(0.3rem, 1vw, 0.76rem);
+}
+/* ==========================================================================
+   Catalog Button - Primary CTA
+   ========================================================================== */
+
+.edsys-header__catalog {
+    position: relative;
+    z-index: 1002;
+}
+
+.edsys-header__catalog-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: calc(var(--space-2xs) + 1px) var(--space-sm);
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: var(--edsys-font-bold);
+    transition: var(--edsys-transition);
+    border: none;
+    font-size: var(--fs-sm);
+    white-space: nowrap;
+    position: relative;
+    line-height: 1;
+}
+
+.edsys-header__catalog-text {
+    transition: var(--edsys-transition);
+}
+
+.edsys-header__catalog-btn:hover {
+    background: var(--edsys-primary-dark);
+    cursor: pointer!important;
+}
+
+.edsys-header__catalog-btn i {
+    font-size: 1.85em;
+}
+
+/* ==========================================================================
+   Search Component with Autocomplete
+   ========================================================================== */
+
+.edsys-header__search {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+.edsys-header__search-form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.edsys-header__search-input {
+    width: 100%;
+    height: 2.75rem; 
+    padding: 0 3.5rem 0 var(--space-md); 
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    transition: var(--edsys-transition);
+    line-height: normal; 
+    box-sizing: border-box; 
+}
+
+.edsys-header__search-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.25rem; 
+    height: 2.25rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--edsys-steel);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    background: var(--edsys-bg-light);
+}
+
+.edsys-header__search-btn:hover {
+    background: var(--edsys-primary);
+    color: var(--edsys-white);
+}
+
+.edsys-header__search-btn i {
+    font-size: 1.25rem;
+}
+
+/* Search autocomplete dropdown */
+.edsys-search-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.edsys-search-autocomplete li {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    border-bottom: 1px solid var(--edsys-border);
+    transition: var(--edsys-transition);
+}
+
+.edsys-search-autocomplete li:last-child {
+    border-bottom: none;
+}
+
+.edsys-search-autocomplete li:hover {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-primary);
+}
+
+/* Search error states */
+.edsys-search-error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #dc3545;
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    font-size: var(--fs-xs);
+    z-index: 1001;
+}
+
+/* ==========================================================================
+   Header Actions - User Account Area
+   ========================================================================== */
+
+.edsys-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
+
+.edsys-header__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    text-decoration: none;
+    color: var(--edsys-text);
+    font-size: var(--fs-xs);
+    transition: var(--edsys-transition);
+    padding: var(--space-xs);
+    min-width: max-content;
+}
+
+.edsys-header__action:hover {
+    color: var(--edsys-primary);
+}
+
+.edsys-header__action i {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    color: var(--edsys-titanium);
+}
+
+.edsys-header__action-text {
+    white-space: nowrap;
+    transition: var(--edsys-transition);
+}
+
+/* ==========================================================================
+   Main Navigation with Dropdowns
+   Clean horizontal nav with hover states
+   ========================================================================== */
+
+.edsys-header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    padding: var(--space-xs) 0;
+    border-top: 1px solid var(--edsys-border);
+    flex-wrap: wrap;
+    transition: padding var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-header__nav-link {
+    text-decoration: none;
+    color: var(--edsys-text);
+    font-size: var(--fs-xs);
+    padding: var(--space-xs) 0;
+    transition: var(--edsys-transition);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: var(--edsys-tracking-wide);
+}
+
+.edsys-header__nav-link:hover {
+    color: var(--edsys-primary);
+}
+
+/* Dropdown navigation */
+.edsys-header__nav-dropdown {
+    position: relative;
+}
+
+.edsys-header__nav-link--dropdown {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.edsys-header__nav-link--dropdown i {
+    font-size: 0.875rem;
+    transition: transform var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-header__nav-dropdown:hover .edsys-header__nav-link--dropdown i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu styling */
+.edsys-header__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 18rem;
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    margin-top: 0.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+/* Dropdown arrow indicator */
+.edsys-header__dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--edsys-white);
+    border-left: 1px solid var(--edsys-border);
+    border-top: 1px solid var(--edsys-border);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.edsys-header__dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0.75rem;
+}
+
+.edsys-header__dropdown-link {
+    display: block;
+    padding: var(--space-xs) var(--space-md);
+    color: var(--edsys-text);
+    text-decoration: none;
+    font-size: var(--fs-xs);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    border-bottom: 1px solid var(--edsys-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-header__dropdown-link:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect with accent border */
+.edsys-header__dropdown-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--edsys-primary);
+    transform: translateX(-100%);
+    transition: transform var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-header__dropdown-link:hover {
+    background: var(--edsys-bg-light);
+    color: var(--edsys-primary);
+}
+
+.edsys-header__dropdown-link:hover::before {
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   Mega Menu - Primary Catalog Navigation
+   Performance-optimized with GPU acceleration
+   ========================================================================== */
+
+.edsys-megamenu {
+    position: fixed;
+    top: calc(100% + 5px);
+    left: 50%;
+    width: clamp(20rem, 95vw, 80rem);
+    max-width: min(80rem, calc(100vw - 2rem));
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-top: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    z-index: 1004;
+    border-radius: var(--radius-md);
+    pointer-events: none;
+
+    transition:
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edsys-megamenu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.edsys-megamenu__container {
+    max-width: 100%;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.edsys-megamenu__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+    align-items: start;
+}
+
+.edsys-megamenu__column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+}
+
+.edsys-megamenu__item {
+    transition: var(--edsys-transition);
+}
+
+.edsys-megamenu__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--edsys-text);
+    border-radius: var(--radius-md);
+    transition: var(--edsys-transition);
+    font-size: var(--fs-xs);
+    min-height: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.02rem;
+}
+.edsys-megamenu__link:hover {
+    background: var(--edsys-bg);
+    color: var(--edsys-primary);
+    text-decoration: none;
+}
+
+.edsys-megamenu__image {
+    width: clamp(2rem, 3vw, 4rem);
+    height: clamp(2rem, 3vw, 4rem);
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    margin: 10px;
+    border-right: 1px solid var(--edsys-border);
+    padding-right: 10px;
+}
+
+/* ==========================================================================
+   Overlay System - Unified Modal Background
+   Single overlay for all modal states (mega menu, mobile menus)
+   ========================================================================== */
+
+.edsys-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1001; /* ВАЖНО: ниже мегаменю */
+    transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    pointer-events: none; /* ВАЖНО: не блокируем события по умолчанию */
+}
+
+.edsys-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Включаем только когда активен */
+}
+
+/* Desktop mega menu gets lighter overlay */
+@media (min-width: 769px) {
+    .edsys-overlay.edsys-overlay--megamenu-only {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Mobile gets stronger overlay for better UX */
+@media (max-width: 768px) {
+    .edsys-overlay {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* ==========================================================================
+   Mobile Navigation Components
+   Bottom navigation + slide-out menus
+   ========================================================================== */
+
+/* Bottom mobile navigation bar */
+.edsys-mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--edsys-white);
+    border-top: 1px solid var(--edsys-border);
+    padding: var(--space-xs);
+    z-index: 1002;
+    display: none;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.edsys-mobile-nav__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xs);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.edsys-mobile-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: var(--edsys-text);
+    padding: var(--space-xs);
+    font-size: var(--fs-xs);
+    transition: var(--edsys-transition);
+    border-radius: var(--radius-sm);
+    min-height: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edsys-mobile-nav__item:hover,
+.edsys-mobile-nav__item:focus {
+    color: var(--edsys-primary);
+    background: var(--edsys-bg-light);
+}
+
+.edsys-mobile-nav__item i {
+    font-size: 1.5rem;
+}
+
+.edsys-mobile-nav__item span {
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Mobile slide-out menu */
+.edsys-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(20rem, 80vw);
+    height: 100vh;
+    background: var(--edsys-white);
+    padding: 1rem;
+    z-index: 99999;
+    transition: var(--edsys-transition);
+    overflow-y: auto;
+    border-left: 1px solid var(--edsys-border);
+}
+
+.edsys-mobile-menu.active {
+    right: 0;
+}
+
+.edsys-mobile-menu__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.edsys-mobile-menu__nav {
+    padding-top: 3rem;
+}
+
+.edsys-mobile-menu__nav ul {
+    list-style: none;
+}
+
+.edsys-mobile-menu__nav a {
+    display: block;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    color: var(--edsys-text);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+/* Mobile catalog slide-out */
+.edsys-mobile-catalog {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(20rem, 80vw);
+    height: 100vh;
+    background: var(--edsys-white);
+    padding: 1rem;
+    z-index: 99999;
+    transition: var(--edsys-transition);
+    overflow-y: auto;
+    border-right: 1px solid var(--edsys-border);
+}
+
+.edsys-mobile-catalog.active {
+    left: 0;
+}
+
+.edsys-mobile-catalog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--edsys-border);
+    margin-bottom: 1rem;
+}
+
+.edsys-mobile-catalog__close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.edsys-mobile-catalog__list {
+    list-style: none;
+}
+
+.edsys-mobile-catalog__item {
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-mobile-catalog__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    text-decoration: none;
+    color: var(--edsys-text);
+}
+
+.edsys-mobile-catalog__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints - Strategic Media Queries Only
+   Mobile-first with minimal breakpoint dependency
+   ========================================================================== */
+
+/* Tablet optimization - 2-column mega menu */
+@media (max-width: 1200px) {
+    .edsys-megamenu__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edsys-header__dropdown-menu {
+        min-width: 16rem;
+    }
+}
+
+/* Tablet text hiding for space optimization */
+@media (max-width: 900px) {
+    .edsys-header__action-text {
+        display: none;
+    }
+
+    .edsys-header__catalog-text {
+        display: none;
+    }
+
+    .edsys-header__catalog-btn {
+        padding: clamp(0.2rem, 2vw, 0.25rem);
+    }
+
+    .edsys-megamenu {
+        width: clamp(16rem, 88vw, 70rem);
+    }
+
+    .edsys-megamenu__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile breakpoint - Complete layout switch */
+@media (max-width: 768px) {
+    /* Hide desktop header */
+    .edsys-header__top {
+        display: none;
+    }
+
+    .edsys-header__nav {
+        display: none;
+    }
+
+    /* Show mobile header */
+    .edsys-header__mobile-top {
+        display: flex;
+    }
+
+    .edsys-header__mobile-search {
+        display: flex;
+    }
+
+    .edsys-header__search-form {
+        width: 100%;
+    }
+
+    /* Show mobile navigation */
+    .edsys-mobile-nav {
+        display: block !important;
+    }
+
+
+    /* Body compensation for mobile nav */
+    body {
+        padding-bottom: 5rem;
+    }
+
+    /* Hide desktop-only components */
+    .edsys-megamenu {
+        display: none;
+    }
+
+    .edsys-header__nav-dropdown {
+        display: none;
+    }
+
+    /* Disable sticky behavior on mobile - Keep it simple */
+    .edsys-header--sticky {
+        position: relative;
+        background: var(--edsys-white);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+    }
+
+    body.edsys-header-sticky-compensate {
+        padding-top: 0;
+    }
+}
+
+/* ==========================================================================
+   Touch Device Optimizations
+   Hover states only for devices that support hover
+   ========================================================================== */
+
+@media (hover: hover) {
+    .edsys-header__catalog-btn:hover {
+        background: var(--edsys-primary-dark);
+    }
+}
+
+/* ==========================================================================
+   Performance Optimizations
+   GPU acceleration hints for smooth animations
+   ========================================================================== */
+
+.edsys-megamenu,
+.edsys-mobile-menu,
+.edsys-mobile-catalog,
+.edsys-overlay {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-header,
+    .edsys-megamenu,
+    .edsys-overlay,
+    .edsys-mobile-menu,
+    .edsys-mobile-catalog {
+        transition: none;
+        animation: none;
+    }
+}
+
+.edsys-good__all {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--edsys-accent);
+  color: var(--edsys-white);
+  border: none;
+  border-radius: var(--radius-md);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  font-weight: var(--edsys-font-bold);
+  line-height: var(--edsys-lh-normal);
+  transition: background-color var(--edsys-transition-medium) var(--edsys-ease);
+  min-height: 44px; /* Ensure touch-friendly tap target */
+  -webkit-appearance: none; /* Reset default button styles for consistency */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.edsys-good__all:hover {
+  background-color: var(--edsys-accent-hover);
+}

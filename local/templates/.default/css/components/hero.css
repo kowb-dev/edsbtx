@@ -1,0 +1,930 @@
+/* ==========================================================================
+   Hero Component Styles
+   ========================================================================== */
+
+.edsys-hero {
+    padding: var(--space-lg) 0;
+    background: var(--edsys-bg);
+}
+
+/* ==========================================================================
+   Banner Grid
+   ========================================================================== */
+
+.edsys-banners-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--container-padding) 0 0;
+}
+
+@media (min-width: 768px) {
+    .edsys-banners-grid {
+        grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+        align-items: stretch;
+    }
+}
+
+@media (min-width: 1100px) {
+    .edsys-banners-grid {
+        grid-template-columns: minmax(0, 2.5fr) minmax(320px, .8fr);
+    }
+}
+
+@media (max-width: 1099px) {
+    .edsys-banner--small {
+        display: none;
+    }
+
+    .edsys-banners-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .edsys-banners-grid {
+        padding-top: 1rem;
+    }
+}
+
+/* ==========================================================================
+   Carousel Container
+   ========================================================================== */
+
+.edsys-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    margin-bottom: var(--space-xl);
+    height: var(--carousel-height);
+    min-height: var(--carousel-height);
+}
+
+@media (max-width: 767px) {
+    .edsys-carousel {
+        overflow: visible;
+        margin-top: 1rem;
+    }
+
+    .edsys-carousel__wrapper {
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        position: relative;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .edsys-carousel {
+        height: clamp(15rem, 20vw, 17.5rem);
+        min-height: clamp(15rem, 20vw, 17.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .edsys-carousel {
+        height: clamp(18rem, 25vw, 20rem);
+        min-height: clamp(18rem, 25vw, 20rem);
+    }
+}
+
+/* ==========================================================================
+   Video Background
+   ========================================================================== */
+
+.edsys-carousel__video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.edsys-carousel__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.edsys-carousel__video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px), linear-gradient(329deg, rgb(124 27 27 / 88%) 0%, rgb(57 35 118 / 70%) 100%);
+    background-size: 6px 6px, 100% 100%;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .edsys-carousel__video-overlay {
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0.5px, transparent 0.8px), linear-gradient(329deg, rgb(135 32 32 / 79%) 0%, rgb(45 24 101 / 80%) 100%);
+        background-size: 6px 6px, 100% 100%;
+        z-index: 2;
+    }
+}
+
+/* ==========================================================================
+   Carousel Wrapper
+   ========================================================================== */
+
+.edsys-carousel__wrapper {
+    display: flex;
+    transition: opacity var(--edsys-transition-slow) var(--edsys-ease);
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+.edsys-carousel__slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity var(--edsys-transition-slow) var(--edsys-ease);
+}
+
+.edsys-carousel__slide--active {
+    position: relative;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Large Banner Styles
+   ========================================================================== */
+
+.edsys-banner--large .edsys-carousel__slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: var(--space-xl) var(--space-2xl);
+    color: var(--edsys-white);
+    overflow: hidden;
+}
+
+.edsys-banner--large .edsys-carousel__slide::before {
+    display: none;
+}
+
+/* ==========================================================================
+   Small Banner Styles
+   ========================================================================== */
+
+.edsys-banner--small .edsys-carousel__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    color: var(--edsys-white);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.edsys-banner--small .edsys-banner__subtitle{
+    font-size: var(--fs-sm);
+}
+
+.edsys-slide--calc1 {
+    background-image: url('/img/calc-1.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-slide--calc2 {
+    background-image: url('/img/calc-2.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-slide--calc3 {
+    background-image: url('/img/calc-3.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-slide--calc4 {
+    background-image: url('/img/calc-4.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-slide--calc5 {
+    background-image: url('/img/calc-5.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-slide--calc6 {
+    background-image: url('/img/calc-6.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.edsys-banner--small .edsys-banner__content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: clamp(0.75rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
+    max-width: 95%;
+    width: auto;
+    min-width: 280px;
+}
+
+/* ==========================================================================
+   Banner Content
+   ========================================================================== */
+
+.edsys-banner__content {
+    z-index: 4;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+}
+
+.edsys-banner--large .edsys-banner__content {
+    flex: 1 1 60%;
+    max-width: 60%;
+    padding: 0;
+    margin-right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.edsys-banner__title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    word-wrap: break-word;
+}
+
+h1.edsys-banner__title {
+    font-size: clamp(1.125rem, 2.5vw + 0.5rem, 1.6rem);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+}
+
+h2.edsys-banner__title {
+    font-size: clamp(.95rem, 2vw + 0.5rem, 1.725rem);
+}
+
+h3.edsys-banner__title {
+    font-size: clamp(0.875rem, 2vw + 0.25rem, 1.125rem);
+    margin-bottom: var(--space-xs);
+    line-height: 1.3;
+}
+
+.edsys-banner__subtitle {
+    font-size: var(--fs-base);
+    font-weight: var(--edsys-font-regulard);
+    line-height: var(--edsys-lh-snug);
+    letter-spacing: var(--edsys-tracking-normal);
+    margin-bottom: var(--space-xs);
+    opacity: 0.95;
+    word-wrap: break-word;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.edsys-banner__description {
+    font-size: clamp(0.6875rem, 1vw + 0.25rem, 0.95rem);
+    font-weight: var(--edsys-font-regular);
+    line-height: var(--edsys-lh-relaxed);
+    letter-spacing: var(--edsys-tracking-wide);
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+    word-wrap: break-word;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.edsys-banner__badge {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-xs);
+    font-weight: var(--edsys-font-bold);
+    letter-spacing: var(--edsys-tracking-wide);
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 767px) {
+    .edsys-carousel,
+    .edsys-carousel__wrapper,
+    .edsys-carousel__container,
+    .edsys-carousel__slide,
+    .edsys-slide--energy {
+        overflow: visible !important;
+    }
+
+    .edsys-banner__badge {
+        position: absolute;
+        top: -1rem;
+        right: 2.8rem;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.625rem;
+        background: var(--edsys-accent);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        z-index: 9;
+    }
+}
+
+/* ==========================================================================
+   CTA Buttons
+   ========================================================================== */
+
+.edsys-banner__cta {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 4;
+    position: relative;
+    flex-direction: column;
+}
+
+.edsys-banner--large .edsys-banner__cta {
+    flex: 0 0 auto;
+    align-self: center;
+    min-width: 200px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.edsys-banner__btn {
+    font-family: var(--edsys-font-primary);
+    font-size: clamp(0.75rem, 1.5vw + 0.25rem, 0.875rem);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-normal);
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 3vw, 1.5rem);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: max-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.edsys-banner__btn--primary {
+    background: var(--edsys-white);
+    color: var(--edsys-text);
+}
+
+.edsys-banner__btn--secondary {
+    background: transparent;
+    color: var(--edsys-white);
+    border: 2px solid var(--edsys-white);
+}
+
+.edsys-banner__btn--accent {
+    background: var(--edsys-spark);
+    color: var(--edsys-text);
+}
+
+.edsys-banner__btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.edsys-banner--small .edsys-banner__btn {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+.edsys-banner--small .edsys-banner__btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.edsys-banner--small .edsys-banner__btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ==========================================================================
+   Carousel Navigation
+   ========================================================================== */
+
+.edsys-carousel__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    z-index: 6;
+    backdrop-filter: blur(0.5rem);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.edsys-carousel__nav:hover {
+    background: var(--edsys-white);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.edsys-carousel__nav--prev {
+    left: var(--space-md);
+}
+
+.edsys-carousel__nav--next {
+    right: var(--space-md);
+}
+
+.edsys-carousel__nav i {
+    font-size: 1.25rem;
+    color: var(--edsys-text);
+}
+
+@media (max-width: 767px) {
+    .edsys-carousel__nav {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .edsys-carousel__nav--prev {
+        left: -1rem;
+    }
+
+    .edsys-carousel__nav--next {
+        right: -1rem;
+    }
+}
+
+/* ==========================================================================
+   Service Blocks
+   ========================================================================== */
+
+.edsys-services-container {
+    position: relative;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.edsys-services {
+    display: flex;
+    margin: var(--space-xl) 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: var(--space-sm);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: none;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+}
+
+.edsys-services::-webkit-scrollbar {
+    display: none;
+}
+
+.edsys-service {
+    flex-shrink: 0;
+    height: 4.5rem;
+    background: var(--edsys-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--edsys-shadow);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    border: 1px solid var(--edsys-border);
+    position: relative;
+    margin: 0;
+    padding: 0 var(--space-md);
+    margin-right: var(--grid-gap);
+}
+
+.edsys-service:last-child,
+.edsys-service:last-of-type {
+    margin-right: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+    .edsys-service {
+        width: clamp(16rem, 20vw, 20rem);
+        padding: 0 var(--space-md);
+    }
+
+    .edsys-services {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+}
+
+@media (max-width: 767px) {
+    .edsys-service {
+        /*width: var(--card-width-mobile);*/
+        height: 4rem;
+        padding: 0 var(--space-sm);
+        gap: var(--space-xs);
+        margin-right: var(--card-gap-mobile);
+    }
+    .edsys-services-container {
+        padding: 0 var(--container-padding);
+        max-width: max-content;
+    }
+    .edsys-service:last-child,
+    .edsys-service:last-of-type {
+        margin-right: var(--card-gap-mobile);
+    }
+
+    .edsys-services {
+        padding-left: var(--space-xs);
+        padding-right: var(--space-xs);
+        scroll-padding: 0 var(--space-xs);
+    }
+}
+
+.edsys-service--cloned {
+    opacity: 1;
+}
+
+@media (min-width: 1200px) {
+    .edsys-service {
+        width: 20rem;
+        margin-right: var(--grid-gap);
+    }
+
+    .edsys-services {
+        padding-left: var(--space-lg);
+        padding-right: var(--space-lg);
+    }
+}
+
+@media (hover: hover) {
+    .edsys-service:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+    }
+}
+
+@media (hover: none) {
+    .edsys-service:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+.edsys-service__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+@media (max-width: 767px) {
+    .edsys-service__icon {
+        font-size: 1.25rem;
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.edsys-service__icon--delivery { color: var(--edsys-circuit); }
+.edsys-service__icon--support { color: var(--edsys-voltage); }
+.edsys-service__icon--warranty { color: var(--edsys-wire); }
+.edsys-service__icon--production { color: var(--edsys-accent); }
+.edsys-service__icon--cert { color: var(--edsys-power); }
+.edsys-service__icon--calc { color: var(--edsys-charge); }
+.edsys-service__icon--tech { color: var(--edsys-pulse); }
+
+.edsys-service__divider {
+    width: 1px;
+    height: 2.5rem;
+    background: var(--edsys-border);
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .edsys-service__divider {
+        height: 2rem;
+    }
+}
+
+.edsys-service__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.edsys-service__title {
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-normal);
+    color: var(--edsys-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+    .edsys-service__title {
+        font-size: var(--fs-xs);
+    }
+}
+
+.edsys-service__subtitle {
+    font-size: var(--fs-xs);
+    font-weight: var(--edsys-font-regular);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-wide);
+    color: var(--edsys-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+    .edsys-service__subtitle {
+        font-size: 0.625rem;
+    }
+}
+
+/* ==========================================================================
+   Services Navigation
+   ========================================================================== */
+
+.edsys-services-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--edsys-transition);
+    z-index: 2;
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-services-nav:hover {
+    background: var(--edsys-accent);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-services-nav:hover i {
+    color: var(--edsys-white);
+}
+
+.edsys-services-nav--prev {
+    left: -1rem;
+}
+
+.edsys-services-nav--next {
+    right: -1rem;
+}
+
+.edsys-services-nav i {
+    font-size: 1rem;
+    color: var(--edsys-text);
+    transition: var(--edsys-transition);
+}
+
+@media (min-width: 1200px) {
+    .edsys-services-nav {
+        display: flex;
+    }
+   }
+
+@media (max-width: 1199px) {
+    .edsys-services {
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+    }
+
+    .edsys-service {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+    }
+}
+
+.edsys-services.is-scrolling {
+    scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .edsys-services {
+        scroll-behavior: auto;
+    }
+
+    .edsys-service {
+        scroll-snap-align: none;
+    }
+}
+
+.edsys-services {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+@supports (-webkit-appearance: none) {
+    .edsys-services {
+        -webkit-overflow-scrolling: touch;
+        transform: translateZ(0);
+    }
+
+    .edsys-service {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .edsys-banner--large .edsys-carousel__slide {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: clamp(1rem, 3vw, 1.5rem);
+        gap: var(--space-md);
+    }
+
+    .edsys-banner--large .edsys-banner__content {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .edsys-banner--large .edsys-banner__cta {
+        width: 100%;
+        margin-top: var(--space-md);
+    }
+}
+
+@media (max-width: 767px) {
+    .edsys-banner__content {
+        text-align: center;
+        padding: 0;
+    }
+
+    .edsys-banner__description-mob{
+        display: none;
+    }
+
+    .edsys-banner--large .edsys-carousel__slide {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: var(--space-lg);
+    }
+
+    .edsys-banner--large .edsys-banner__content {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: var(--space-lg);
+    }
+
+    .edsys-banner--large .edsys-banner__cta {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    h1.edsys-banner__title {
+        font-size: clamp(1rem, 4vw + 0.25rem, 1.5rem);
+        line-height: 1.2;
+        padding-top: 2rem;
+    }
+
+    .edsys-carousel__slide:not(.edsys-slide--power) h2.edsys-banner__title {
+        font-size: clamp(1.25rem, 5vw + 0.25rem, 1.75rem);
+        line-height: 1.15;
+        margin-bottom: var(--space-sm);
+    }
+
+    .edsys-carousel__slide:not(.edsys-slide--power) .edsys-banner__subtitle {
+        font-size: clamp(0.875rem, 3vw, 1.125rem);
+        margin-bottom: var(--space-sm);
+    }
+
+    .edsys-carousel__slide:not(.edsys-slide--power) .edsys-banner__description {
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+        margin-bottom: var(--space-lg);
+        line-height: 1.5;
+    }
+
+    .edsys-banner__cta {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-sm);
+    }
+
+    .edsys-banner__btn {
+        width: 100%;
+        max-width: 20rem;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Video Performance Optimization
+   ========================================================================== */
+
+.edsys-carousel__video {
+    will-change: transform;
+}
+
+@media (max-width: 768px) {
+    .edsys-carousel__video {
+        filter: blur(0.5px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .edsys-carousel__video {
+        display: none;
+    }
+
+    .edsys-carousel__video-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/banner-bg-1.webp');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (hover: hover) {
+    .edsys-banner__btn--secondary:hover {
+        background: var(--edsys-white);
+        color: var(--edsys-text);
+    }
+}

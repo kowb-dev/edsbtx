@@ -1,0 +1,163 @@
+/**
+ * Search Page Styles
+ *
+ * @author      KW https://kowb.ru
+ * @version     1.0
+ */
+
+/* ==========================================================================
+   Search Page Layout
+   ========================================================================== */
+
+.edsys-search-page {
+    display: grid;
+    gap: var(--space-2xl);
+    padding-block: var(--space-2xl);
+}
+
+/* ==========================================================================
+   Search Bar
+   ========================================================================== */
+
+.edsys-search-bar__wrapper {
+    text-align: center;
+}
+
+.edsys-search-bar__title {
+    font-size: var(--edsys-fs-h1);
+    margin-block-end: var(--space-lg);
+}
+
+.edsys-search-bar__form {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.edsys-search-bar__input-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.edsys-search-bar__input {
+    flex-grow: 1;
+    padding: var(--space-md);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-base);
+}
+
+.edsys-search-bar__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--edsys-accent);
+    color: var(--edsys-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--fs-base);
+    cursor: pointer;
+    transition: background-color var(--edsys-transition-fast);
+}
+
+.edsys-search-bar__button:hover {
+    background-color: var(--edsys-accent-hover);
+}
+
+.edsys-search-bar__button i {
+    font-size: 1.2em;
+}
+
+/* ==========================================================================
+   Search Categories
+   ========================================================================== */
+
+.edsys-search-categories__title {
+    font-size: var(--edsys-fs-h2);
+    text-align: center;
+    margin-block-end: var(--space-lg);
+}
+
+.edsys-search-categories__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.edsys-search-category {
+    display: block;
+    padding: var(--space-lg);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: transform var(--edsys-transition-fast), box-shadow var(--edsys-transition-fast);
+}
+
+.edsys-search-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-search-category__icon {
+    font-size: 3em;
+    color: var(--edsys-accent);
+    margin-block-end: var(--space-md);
+}
+
+.edsys-search-category__title {
+    font-size: var(--edsys-fs-h3);
+    margin-block-end: var(--space-sm);
+}
+
+.edsys-search-category__description {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+}
+
+/* ==========================================================================
+   Search Results
+   ========================================================================== */
+
+.edsys-search-results {
+    margin-block-start: var(--space-2xl);
+}
+
+.edsys-search-results__list {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.edsys-search-result-item {
+    padding: var(--space-lg);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+}
+
+.edsys-search-result-item__title a {
+    font-size: var(--edsys-fs-h3);
+    text-decoration: none;
+    color: var(--edsys-text);
+    transition: color var(--edsys-transition-fast);
+}
+
+.edsys-search-result-item__title a:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-search-result-item__body {
+    margin-block-start: var(--space-sm);
+    color: var(--edsys-text-muted);
+}
+
+
+
+.edsys-search-no-results {
+    text-align: center;
+    padding: var(--space-2xl);
+    border: 1px dashed var(--edsys-border);
+    border-radius: var(--radius-lg);
+}
+

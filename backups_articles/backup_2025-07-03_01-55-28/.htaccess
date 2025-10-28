@@ -1,0 +1,91 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  # Перенаправление с /new на корневой домен
+  RewriteRule ^new/?$ / [R=301,L]
+
+  # WordPress-совместимые URL для категорий: /cat/category-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/([^/]+)/?$ /cat/index.php?category=$1 [QSA,L]
+
+  # Главная страница каталога: /cat/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^cat/?$ /cat/index.php [QSA,L]
+
+  # WordPress-совместимые URL для товаров: /product/product-slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^product/([^/]+)/?$ /product/index.php?product=$1 [QSA,L]
+
+  # Перенаправления со старых Битрикс URL на новые WordPress URL (если есть)
+  # RewriteRule ^catalog/([^/]+)/?$ /cat/$1/ [R=301,L]
+  # RewriteRule ^catalog/([^/]+)/([^/]+)/?$ /product/$2/ [R=301,L]
+
+  # Стандартные правила Битрикса (должны быть в конце)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+# Единая секция кеширования статических ресурсов
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  # Кеширование изображений
+  ExpiresByType image/jpeg "access plus 7 day"
+  ExpiresByType image/gif "access plus 7 day"
+  ExpiresByType image/png "access plus 7 day"
+  ExpiresByType image/webp "access plus 7 day"
+  ExpiresByType image/svg+xml "access plus 30 day"
+
+  # Кеширование CSS и JS
+  ExpiresByType text/css "access plus 7 day"
+  ExpiresByType application/javascript "access plus 7 day"
+  ExpiresByType text/javascript "access plus 7 day"
+
+  # Кеширование шрифтов
+  ExpiresByType font/woff "access plus 30 day"
+  ExpiresByType font/woff2 "access plus 30 day"
+  ExpiresByType application/font-woff "access plus 30 day"
+  ExpiresByType application/font-woff2 "access plus 30 day"
+</IfModule>
+
+# Настройки CORS для ES6 модулей (если поддерживается mod_headers)
+<IfModule mod_headers.c>
+    # Настройки CORS для модулей ES6
+    <FilesMatch "\.(js)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type"
+    </FilesMatch>
+
+    # Базовые заголовки безопасности
+    Header always append X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options nosniff
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REMOTE_ADDR} !^77\.244\.75\.142$
+RewriteCond %{REMOTE_ADDR} !^94\.242\.176\.192$
+RewriteCond %{REMOTE_ADDR} !^46\.37\.123\.153$
+RewriteRule ^ - [F]
+</IfModule>

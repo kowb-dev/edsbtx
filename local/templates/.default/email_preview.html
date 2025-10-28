@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать в рассылку EDS!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .email-container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+            max-height: 95vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .email-header {
+            background: #ffffff;
+            border-bottom: 3px solid #ff2545;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,37,69,0.05)"/><circle cx="20" cy="20" r="1" fill="rgba(255,37,69,0.05)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,37,69,0.05)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .logo svg path {
+            fill: #ff2545;
+        }
+
+        .welcome-title {
+            color: #2d3748;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-subtitle {
+            color: #6c757d;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .email-content {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .greeting {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .benefits::before {
+            content: '🎯';
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits h3 {
+            color: #ff2545;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 37, 69, 0.1);
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            color: #ff2545;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            color: #495057;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .contact-item::before {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .contact-item.email::before {
+            content: '📧';
+        }
+
+        .contact-item.phone::before {
+            content: '☎️';
+        }
+
+        .contact-item.website::before {
+            content: '🌐';
+        }
+
+        .contact-item a {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ff2545;
+        }
+
+
+
+        .footer {
+            background: #2d3748;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .footer h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ff2545;
+        }
+
+        .footer p {
+            font-size: 11px;
+            opacity: 0.9;
+            line-height: 1.3;
+            margin: 0 0 10px 0;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 6px;
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 11px;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            .email-container {
+                border-radius: 12px;
+                max-height: 95vh;
+            }
+
+            .email-header {
+                padding: 15px;
+            }
+
+            .welcome-title {
+                font-size: 20px;
+            }
+
+            .welcome-subtitle {
+                font-size: 12px;
+            }
+
+            .email-content {
+                padding: 15px;
+            }
+
+            .benefits {
+                padding: 15px;
+            }
+
+            .contact-info {
+                padding: 15px;
+            }
+
+            .footer {
+                padding: 15px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                margin: 6px 0;
+            }
+
+            .contact-item::before {
+                margin-right: 0;
+                margin-bottom: 3px;
+            }
+
+            .contact-combined {
+                flex-direction: column;
+            }
+
+            .contact-combined span {
+                margin: 4px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 18px;
+            }
+
+            .benefits-list li {
+                font-size: 13px;
+                padding: 3px 0;
+            }
+
+            .contact-item {
+                font-size: 13px;
+            }
+
+
+        }
+
+        @media (max-height: 700px) {
+            .email-container {
+                max-height: 98vh;
+            }
+            
+            .email-header {
+                padding: 12px;
+            }
+            
+            .email-content {
+                padding: 12px;
+            }
+            
+            .benefits {
+                margin: 8px 0;
+                padding: 12px;
+            }
+            
+            .contact-info {
+                margin: 8px 0;
+                padding: 12px;
+            }
+            
+
+            
+            .footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <div class="logo">
+                <svg viewBox="0 0 734 734" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                    <path d="M151.662 194.22c-30.267 2.8-62 9.866-79.866 17.733-33.6 14.933-51.734 44.933-45.734 76.133 5.067 26.667 19.334 50.934 45.6 77.467 8.934 9.067 16.8 16.533 17.467 16.533s1.333-17.466 1.6-41.066l.4-40.934 162.933-.4c114.533-.266 165.6.134 171.867 1.2 45.2 7.467 70.933 59.334 49.6 99.867-2.134 4-4 7.733-4.267 8.267-.267.666 38 1.066 85.067 1.066 93.466 0 91.333.134 94.533-7.733 2-4.667.8-9.867-2.8-13.2-2.533-2.267-7.2-2.4-66.933-3.067l-64.134-.666-8.933-4.4c-9.333-4.534-14.267-9.6-19.867-20.267-2.666-5.067-3.2-8-3.2-18 0-10.933.4-12.667 4.134-19.333 5.333-9.2 14-16.667 23.6-20 6.533-2.4 11.066-2.667 35.866-2.667h28.4l-9.333-5.467c-12-7.066-47.333-24.8-63.467-32-76.8-33.866-160.8-56.666-244.533-66.533-27.467-3.2-86-4.667-108-2.533"/>
+                    <path d="M120.329 330.086v24h157.733l-.8 3.6c-.4 2.134-2.667 8.934-4.933 15.334l-4.267 11.733H120.329v11.2c0 7.733.533 11.333 1.733 11.733.8.4 37.867.534 82.267.534l80.666-.134v-77.333l-82.266-.4zm196 .667v78.133l53.066-.4 52.934-.4 7.6-3.733c13.733-6.667 21.2-18.267 22.133-34.267.533-8.4.133-11.333-2.4-17.066-3.467-8-10.933-15.334-19.867-19.467-6-2.667-7.733-2.8-59.733-2.8zm202 4c-5.2 5.067-4.934 11.733.8 16.933l3.866 3.734h62.667c38.133 0 64 .533 66.267 1.333 3.466 1.2 3.333.933-1.6-3.467-2.934-2.666-10.134-8.666-16-13.333l-10.534-8.533H521.529zm162.666 63.067c0 9.6-.666 12.666-3.2 17.6-5.333 10.133-10.533 15.733-18.533 19.6l-7.6 3.733H412.729c-131.467 0-239.067.267-239.067.667 0 1.066 25.2 14.8 44 24.133 59.733 29.466 121.067 49.466 197.333 64.533 110.934 21.867 212.934 13.467 262.134-21.467 32.533-22.933 40-56.666 20.933-94.266-4.667-9.333-14-24.133-16-25.333-.667-.4-1.067 4.533-1.067 10.8"/>
+                </svg>
+            </div>
+            <h1 class="welcome-title">Добро пожаловать!</h1>
+            <p class="welcome-subtitle">Спасибо за подписку на рассылку EDS</p>
+        </div>
+
+        <!-- Content -->
+        <div class="email-content">
+            <div class="greeting">
+                <strong>Здравствуйте!</strong><br>
+                Спасибо за подписку на рассылку EDS - Electric Distribution Systems!
+            </div>
+
+            <div class="benefits">
+                <h3>Теперь вы будете получать:</h3>
+                <ul class="benefits-list">
+                    <li>Новости о продуктах и решениях</li>
+                    <li>Специальные предложения и скидки</li>
+                    <li>Технические обновления и инструкции</li>
+                    <li>Отраслевые новости и тренды</li>
+                </ul>
+            </div>
+
+            <div class="contact-info">
+                <h3>Наши контакты</h3>
+                <div class="contact-item phone">
+                    <a href="tel:+79105273538">+7 (910) 527-35-38</a>
+                </div>
+                <div class="contact-combined">
+                    <span class="email-span">
+                        <a href="mailto:sales@edsy.ru">sales@edsy.ru</a>
+                    </span>
+                    <span class="website-span">
+                        <a href="https://edsy.ru" target="_blank">edsy.ru</a>
+                    </span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h4>EDS - Electric Distribution Systems</h4>
+            <p>
+                Профессиональные решения для электроснабжения<br>
+                Качество, надежность, инновации
+            </p>
+            <div class="social-links">
+                <a href="https://edsy.ru" target="_blank">🌐 Сайт</a>
+                <a href="mailto:sales@edsy.ru">📧 Email</a>
+                <a href="tel:+79105273538">📞 Телефон</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,378 @@
+/**
+ * Calculators Page Styles
+ * Version: 1.0.0
+ * Author: EdSys Development Team
+ * Description: Styles for calculators page with mobile-first approach
+ */
+
+/* Import CSS variables from global system */
+@import url("../local/templates/main/css/variables.css");
+
+/* ========================================
+   MAIN LAYOUT
+   ======================================== */
+
+.edsys-calculators-main {
+    min-height: 100vh;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-3xl);
+}
+
+.edsys-calculators-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.edsys-calculators-hero {
+    background: linear-gradient(135deg,
+    var(--edsys-bg-light) 0%,
+    var(--edsys-surface) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-lg);
+    margin-bottom: var(--space-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-calculators-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e0e0e0" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.edsys-calculators-hero__title {
+    font-size: var(--edsys-fs-hero);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    letter-spacing: var(--edsys-tracking-tight);
+    margin: 0 0 var(--space-lg);
+    position: relative;
+    z-index: 2;
+}
+
+.edsys-calculators-hero__description {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   CALCULATORS GRID
+   ======================================== */
+
+.edsys-calculators-section {
+    margin-bottom: var(--space-3xl);
+    container-type: inline-size;
+}
+
+.edsys-calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(280px, 30%), 1fr));
+    gap: clamp(1rem, 4cqi, 2rem);
+    margin-bottom: var(--space-2xl);
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container query для больших экранов */
+@container (min-width: 768px) {
+    .edsys-calculators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+        gap: clamp(1.5rem, 3cqi, 2.5rem);
+    }
+}
+
+/* Container query для очень больших экранов */
+@container (min-width: 1200px) {
+    .edsys-calculators-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ========================================
+   CALCULATOR CARDS
+   ======================================== */
+
+.edsys-calculator-card {
+    background: var(--edsys-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--edsys-shadow);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    min-height: 20rem;
+}
+
+.edsys-calculator-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+    var(--edsys-accent) 0%,
+    var(--edsys-voltage) 50%,
+    var(--edsys-circuit) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card:hover::before {
+    transform: scaleX(1);
+}
+
+.edsys-calculator-card:hover {
+    transform: translateZ(0) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--edsys-accent);
+}
+
+.edsys-calculator-card:focus-within {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Card Icon */
+.edsys-calculator-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg,
+    var(--edsys-accent) 0%,
+    var(--edsys-voltage) 100%);
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card__icon i {
+    font-size: 2.5rem;
+    color: var(--edsys-white);
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card:hover .edsys-calculator-card__icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 4px 20px rgba(255, 37, 69, 0.3);
+}
+
+.edsys-calculator-card:hover .edsys-calculator-card__icon i {
+    transform: scale(1.1);
+}
+
+/* Card Content */
+.edsys-calculator-card__content {
+    flex: 1;
+    text-align: center;
+}
+
+.edsys-calculator-card__title {
+    font-size: var(--edsys-fs-h3);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    line-height: var(--edsys-lh-tight);
+    margin: 0 0 var(--space-sm);
+    transition: color var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card:hover .edsys-calculator-card__title {
+    color: var(--edsys-accent);
+}
+
+.edsys-calculator-card__description {
+    font-size: var(--fs-sm);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-normal);
+    margin: 0;
+}
+
+/* Card Action */
+.edsys-calculator-card__action {
+    margin: auto;
+}
+
+.edsys-calculator-card__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--fs-sm);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-accent);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid var(--edsys-accent);
+    border-radius: var(--radius-md);
+    background: transparent;
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card__button i {
+    font-size: 1.2rem;
+    transition: transform var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-calculator-card:hover .edsys-calculator-card__button {
+    background: var(--edsys-accent);
+    color: var(--edsys-white);
+    transform: translateX(4px);
+}
+
+.edsys-calculator-card:hover .edsys-calculator-card__button i {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   INFO SECTION
+   ======================================== */
+
+.edsys-calculators-info {
+    background: var(--edsys-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.edsys-calculators-info::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: radial-gradient(circle at center,
+    rgba(255, 37, 69, 0.05) 0%,
+    transparent 70%);
+    animation: edsys-pulse 4s ease-in-out infinite;
+}
+
+@keyframes edsys-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.1; }
+}
+
+.edsys-calculators-info__content {
+    position: relative;
+    z-index: 2;
+}
+
+.edsys-calculators-info__title {
+    font-size: var(--edsys-fs-h2);
+    font-weight: var(--edsys-font-bold);
+    color: var(--edsys-text);
+    margin: 0 0 var(--space-lg);
+    line-height: var(--edsys-lh-tight);
+}
+
+.edsys-calculators-info__text {
+    font-size: var(--fs-lg);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+/* ========================================
+   ACCESSIBILITY & INTERACTIONS
+   ======================================== */
+
+/* Focus states */
+.edsys-calculator-card:focus {
+    outline: 2px solid var(--edsys-accent);
+    outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .edsys-calculator-card,
+    .edsys-calculator-card::before,
+    .edsys-calculator-card__icon,
+    .edsys-calculator-card__icon i,
+    .edsys-calculator-card__button,
+    .edsys-calculator-card__button i {
+        transition: none;
+    }
+
+    .edsys-calculators-info::before {
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .edsys-calculator-card {
+        border: 2px solid var(--edsys-text);
+    }
+
+    .edsys-calculator-card:hover {
+        border-color: var(--edsys-accent);
+    }
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+.edsys-calculator-card.edsys-loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.edsys-calculator-card.edsys-loading .edsys-calculator-card__icon {
+    animation: edsys-spin 1s linear infinite;
+}
+
+@keyframes edsys-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .edsys-calculators-main {
+        padding: 0;
+    }
+
+    .edsys-calculator-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--edsys-border);
+    }
+
+    .edsys-calculator-card__icon {
+        background: var(--edsys-text) !important;
+    }
+}
