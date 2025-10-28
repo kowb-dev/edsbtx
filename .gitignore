@@ -49,3 +49,15 @@ yarn.lock
 .ssh/
 
 .ssh/
+# IDE и кэши
+.vscode/
+.vscode-server/
+.cursor-server/
+.nvm/
+
+# Gemini / SDK кэши
+.gemini/
+google-cloud-sdk/
+
+# Прочие локальные мусорные каталоги
+.ssh/
