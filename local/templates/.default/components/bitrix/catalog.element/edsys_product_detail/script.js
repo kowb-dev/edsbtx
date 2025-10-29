@@ -109,8 +109,8 @@ function findElements() {
     elements.quantityInput = document.getElementById('productQuantity');
     elements.quantityButtons = Array.from(document.querySelectorAll('.edsys-quantity__btn'));
     elements.cartButton = document.querySelector('.edsys-purchase__cart');
-    elements.wishlistButton = document.querySelector('.edsys-button--icon[aria-label*="избранное"]');
-    elements.compareButton = document.querySelector('.edsys-button--icon[aria-label*="сравнению"]');
+    elements.wishlistButton = document.querySelector('.edsys-button--icon[data-action="add-to-favorites"], .edsys-button--icon[aria-label*="избранное"]');
+    elements.compareButton = document.querySelector('.edsys-button--icon[data-compare-action="toggle"], .edsys-button--icon[aria-label*="сравнению"]');
 
     // Related slider
     elements.relatedTrack = document.querySelector('.edsys-related__track');
@@ -505,7 +505,7 @@ function findElements() {
        ========================================================================== */
 
     /**
-     * Initialize wishlist state on page load
+     * Initialize wishlist state on page load - Updated to support guest users
      */
     function initWishlistState() {
         if (!elements.wishlistButton) return;
@@ -513,7 +513,24 @@ function findElements() {
         const config = window.EDSProductConfig || {};
         const productId = config.productId;
 
-        if (!productId || !window.wishlistProductIds) return;
+        if (!productId) return;
+
+        // For guests, load from localStorage
+        if (!config.isAuthorized) {
+            try {
+                const favorites = JSON.parse(localStorage.getItem('userFavorites')) || [];
+                window.wishlistProductIds = favorites;
+                updateFavoritesCounter(favorites.length);
+            } catch (e) {
+                console.error('Error loading favorites from localStorage:', e);
+                window.wishlistProductIds = [];
+            }
+        }
+
+        // Update button state
+        if (!window.wishlistProductIds) {
+            window.wishlistProductIds = [];
+        }
 
         const icon = elements.wishlistButton.querySelector('i');
         
@@ -529,12 +546,13 @@ function findElements() {
 
         console.log('Wishlist state initialized:', { 
             productId, 
-            inFavorites: window.wishlistProductIds.includes(productId) 
+            inFavorites: window.wishlistProductIds.includes(productId),
+            isGuest: !config.isAuthorized
         });
     }
 
     /**
-     * Toggle wishlist
+     * Toggle wishlist - Updated to support guest users
      */
     function toggleWishlist(e) {
         e.preventDefault();
@@ -554,14 +572,6 @@ function findElements() {
             return;
         }
 
-        if (!config.isAuthorized) {
-            showNotification('Войдите в аккаунт для добавления в избранное', 'warning');
-            setTimeout(() => {
-                window.location.href = '/auth/?backurl=' + encodeURIComponent(window.location.pathname);
-            }, 1500);
-            return;
-        }
-
         const icon = elements.wishlistButton.querySelector('i');
         const isActive = icon.classList.contains('ph-fill');
 
@@ -571,6 +581,59 @@ function findElements() {
         elements.wishlistButton.style.opacity = '0.6';
         elements.wishlistButton.style.pointerEvents = 'none';
 
+        // Для гостей работаем с localStorage
+        if (!config.isAuthorized) {
+            try {
+                let favorites = JSON.parse(localStorage.getItem('userFavorites')) || [];
+                const index = favorites.indexOf(productId);
+                const willAdd = (index === -1);
+
+                if (willAdd) {
+                    favorites.push(productId);
+                    icon.classList.remove('ph-thin');
+                    icon.classList.add('ph-fill');
+                    elements.wishlistButton.setAttribute('aria-label', 'Удалить из избранного');
+                    showNotification('Товар добавлен в избранное', 'success');
+                } else {
+                    favorites.splice(index, 1);
+                    icon.classList.remove('ph-fill');
+                    icon.classList.add('ph-thin');
+                    elements.wishlistButton.setAttribute('aria-label', 'Добавить в избранное');
+                    showNotification('Товар удалён из избранного', 'info');
+                }
+
+                localStorage.setItem('userFavorites', JSON.stringify(favorites));
+                updateFavoritesCounter(favorites.length);
+
+                // Update global wishlist if available
+                if (window.wishlistProductIds) {
+                    window.wishlistProductIds = favorites;
+                }
+
+                // Dispatch event for other parts of the app
+                document.dispatchEvent(new CustomEvent('edsys:favoriteToggled', {
+                    detail: {
+                        productId: productId,
+                        inFavorites: willAdd,
+                        count: favorites.length
+                    }
+                }));
+
+            } catch (e) {
+                console.error('localStorage error:', e);
+                showNotification('Ошибка при сохранении', 'error');
+            }
+
+            setTimeout(() => {
+                state.isTogglingWishlist = false;
+                elements.wishlistButton.disabled = false;
+                elements.wishlistButton.style.opacity = originalOpacity || '1';
+                elements.wishlistButton.style.pointerEvents = '';
+            }, 300);
+            return;
+        }
+
+        // Авторизованный пользователь - работаем с сервером
         console.log('Toggling wishlist:', { productId, isActive });
 
         fetch('/local/ajax/favorites.php', {

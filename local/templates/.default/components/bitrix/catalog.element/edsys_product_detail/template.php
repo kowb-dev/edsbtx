@@ -47,15 +47,15 @@ $documents = $arResult['DOCUMENTS'] ?? [];
     <!-- Хлебные крошки -->
     <nav class="edsys-breadcrumb" aria-label="<?= Loc::getMessage('EDSYS_BREADCRUMB_LABEL') ?>">
         <ol class="edsys-breadcrumb__list">
-			<?php foreach ($breadcrumbs as $breadcrumb): ?>
+            <?php foreach ($breadcrumbs as $breadcrumb): ?>
                 <li class="edsys-breadcrumb__item <?= !empty($breadcrumb['CURRENT']) ? 'edsys-breadcrumb__item--current' : '' ?>" <?= !empty($breadcrumb['CURRENT']) ? 'aria-current="page"' : '' ?>>
-					<?php if (!empty($breadcrumb['LINK']) && empty($breadcrumb['CURRENT'])): ?>
+                    <?php if (!empty($breadcrumb['LINK']) && empty($breadcrumb['CURRENT'])): ?>
                         <a href="<?= htmlspecialchars($breadcrumb['LINK']) ?>" class="edsys-breadcrumb__link"><?= htmlspecialchars($breadcrumb['TITLE']) ?></a>
-					<?php else: ?>
-						<?= htmlspecialchars($breadcrumb['TITLE']) ?>
-					<?php endif; ?>
+                    <?php else: ?>
+                        <?= htmlspecialchars($breadcrumb['TITLE']) ?>
+                    <?php endif; ?>
                 </li>
-			<?php endforeach; ?>
+            <?php endforeach; ?>
         </ol>
     </nav>
 
@@ -69,7 +69,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
         <!-- Галерея изображений -->
         <section class="edsys-product__gallery">
             <div class="edsys-gallery">
-				<?php if (!empty($productImages)): ?>
+                <?php if (!empty($productImages)): ?>
                     <div class="edsys-gallery__main">
                         <img
                                 src="<?= htmlspecialchars($productImages[0]['SRC']) ?>"
@@ -90,9 +90,9 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                         </button>
                     </div>
 
-					<?php if (count($productImages) > 1): ?>
+                    <?php if (count($productImages) > 1): ?>
                         <div class="edsys-gallery__thumbnails">
-							<?php foreach ($productImages as $index => $image): ?>
+                            <?php foreach ($productImages as $index => $image): ?>
                                 <button
                                         class="edsys-gallery__thumbnail <?= $index === 0 ? 'edsys-gallery__thumbnail--active' : '' ?>"
                                         data-image="<?= htmlspecialchars($image['SRC']) ?>"
@@ -108,10 +108,10 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                             loading="lazy"
                                     >
                                 </button>
-							<?php endforeach; ?>
+                            <?php endforeach; ?>
                         </div>
-					<?php endif; ?>
-				<?php else: ?>
+                    <?php endif; ?>
+                <?php else: ?>
                     <div class="edsys-gallery__main">
                         <img
                                 src="/local/templates/main/images/no-image.jpg"
@@ -123,7 +123,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                 id="mainProductImage"
                         >
                     </div>
-				<?php endif; ?>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -131,20 +131,20 @@ $documents = $arResult['DOCUMENTS'] ?? [];
         <section class="edsys-product__specs">
 
             <div class="edsys-specs" itemprop="description">
-				                <?php
-								// Check if DETAIL_TEXT is available and not empty
-								if (!empty($arResult['DETAIL_TEXT'])) {
-				                    // --- KW: Start ---
-				                    // Remove the old button from the description
-				                    $detailText = $arResult['DETAIL_TEXT'];
-				                    $detailText = preg_replace('/<div class="baton">.*?<\/div>/s', '', $detailText);
-				                    echo $detailText;
-				                    // --- KW: End ---
-								} else {
-									// Optional: Provide a fallback message if the description is missing.
-									echo '<p>Подробное описание товара готовится к публикации.</p>';
-								}
-								?>
+                                <?php
+                                // Check if DETAIL_TEXT is available and not empty
+                                if (!empty($arResult['DETAIL_TEXT'])) {
+                                    // --- KW: Start ---
+                                    // Remove the old button from the description
+                                    $detailText = $arResult['DETAIL_TEXT'];
+                                    $detailText = preg_replace('/<div class="baton">.*?<\/div>/s', '', $detailText);
+                                    echo $detailText;
+                                    // --- KW: End ---
+                                } else {
+                                    // Optional: Provide a fallback message if the description is missing.
+                                    echo '<p>Подробное описание товара готовится к публикации.</p>';
+                                }
+                                ?>
                 <div class="edsys-specs__actions">
                     <button
                             class="edsys-button edsys-button--secondary edsys-specs__copy"
@@ -155,7 +155,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                         Копировать характеристики
                     </button>
 
-					                    <?php if ($hasPassport): ?>
+                                        <?php if ($hasPassport): ?>
                         <div class="edsys-specs__download">
                             <a
                                     href="/upload/passport/<?= htmlspecialchars($productSlug) ?>.pdf"
@@ -170,7 +170,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                     <?php endif; ?>
 
                     <!-- Поле для добавления видео -->
-					<?php if (!empty($arResult['PROPERTIES']['VIDEO_URL']['VALUE'])): ?>
+                    <?php if (!empty($arResult['PROPERTIES']['VIDEO_URL']['VALUE'])): ?>
                         <div class="edsys-specs__video-link">
                             <strong>Видеообзор:</strong>
                             <a href="<?= htmlspecialchars($arResult['PROPERTIES']['VIDEO_URL']['VALUE']) ?>" target="_blank" rel="noopener noreferrer">
@@ -180,7 +180,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                 Добавьте ссылку на видео в свойство VIDEO_URL товара
                             </small>
                         </div>
-					<?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
@@ -194,45 +194,45 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                     <span class="edsys-purchase__article-value" itemprop="sku"><?= htmlspecialchars($arResult['SCHEMA']['SKU']) ?></span>
                 </div>
 
-				<?php if (!empty($arResult['SCHEMA']['CATEGORY'])): ?>
+                <?php if (!empty($arResult['SCHEMA']['CATEGORY'])): ?>
                     <div class="edsys-purchase__category">
                         <span class="edsys-purchase__category-label">Категория:</span>
                         <a href="<?= $arResult['SECTION_URL'] ?: '/catalog/' ?>" class="edsys-purchase__category-link" itemprop="category">
-							<?= htmlspecialchars($arResult['SCHEMA']['CATEGORY']) ?>
+                            <?= htmlspecialchars($arResult['SCHEMA']['CATEGORY']) ?>
                         </a>
                     </div>
-				<?php endif; ?>
+                <?php endif; ?>
 
                 <!-- Наличие товара - показываем только авторизованным пользователям -->
-				<?php if ($isAuthorized): ?>
+                <?php if ($isAuthorized): ?>
                     <div class="edsys-purchase__availability">
                         <span class="edsys-purchase__stock <?= $stockStatus['AVAILABLE'] ? 'edsys-purchase__stock--available' : 'edsys-purchase__stock--preorder' ?>" itemprop="availability" content="http://schema.org/<?= $stockStatus['AVAILABLE'] ? 'InStock' : 'PreOrder' ?>">
                             <i class="ph ph-thin ph-<?= $stockStatus['AVAILABLE'] ? 'check-circle' : 'clock' ?>" aria-hidden="true"></i>
                             <?= htmlspecialchars($stockStatus['TEXT']) ?>
                         </span>
                     </div>
-				<?php endif; ?>
+                <?php endif; ?>
 
-				<?php if ($isAuthorized): ?>
+                <?php if ($isAuthorized): ?>
                     <!-- Блок для авторизованных пользователей -->
-					<?php if (!empty($pricesData)): ?>
+                    <?php if (!empty($pricesData)): ?>
                         <div class="edsys-purchase__prices">
-							<?php if (!empty($pricesData['RETAIL']['VALUE'])): ?>
+                            <?php if (!empty($pricesData['RETAIL']['VALUE'])): ?>
                                 <div class="edsys-purchase__price edsys-purchase__price--retail">
                                     <span class="edsys-purchase__price-label">Розничная цена:</span>
                                     <span class="edsys-purchase__price-value"><?= $pricesData['RETAIL']['FORMATTED'] ?></span>
                                 </div>
-							<?php endif; ?>
+                            <?php endif; ?>
 
-							<?php if (!empty($pricesData['USER']['VALUE'])): ?>
+                            <?php if (!empty($pricesData['USER']['VALUE'])): ?>
                                 <div class="edsys-purchase__price edsys-purchase__price--user">
                                     <span class="edsys-purchase__price-label">Ваша цена:</span>
                                     <span class="edsys-purchase__price-value" itemprop="price"><?= $pricesData['USER']['FORMATTED'] ?></span>
                                     <meta itemprop="priceCurrency" content="RUB">
                                 </div>
-							<?php endif; ?>
+                            <?php endif; ?>
                         </div>
-					<?php endif; ?>
+                    <?php endif; ?>
 
                     <div class="edsys-purchase__controls">
                         <div class="edsys-quantity">
@@ -261,7 +261,14 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                             </button>
 
                             <div class="edsys-purchase__secondary">
-                                <button type="button" class="edsys-button edsys-button--icon" aria-label="Добавить в избранное" title="Добавить в избранное">
+                                <button 
+                                    type="button" 
+                                    class="edsys-button edsys-button--icon" 
+                                    data-action="add-to-favorites"
+                                    data-product-id="<?= $arResult['ID'] ?>"
+                                    aria-label="Добавить в избранное" 
+                                    title="Добавить в избранное"
+                                >
                                     <i class="ph ph-thin ph-heart" aria-hidden="true"></i>
                                 </button>
                                 
@@ -278,7 +285,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                             </div>
                         </div>
                     </div>
-				<?php else: ?>
+                <?php else: ?>
                     <!-- Блок для неавторизованных пользователей -->
                     <div class="edsys-purchase__auth-required">
                         <div class="edsys-purchase__auth-message">
@@ -288,25 +295,54 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                 чтобы увидеть цены с Вашей персональной скидкой
                             </p>
                         </div>
+                        
+                        <!-- Кнопка избранного для гостей -->
+                        <div class="edsys-purchase__guest-actions" style="margin-top: var(--space-lg); display: flex; justify-content: center; gap: var(--space-md);">
+                            <button 
+                                type="button" 
+                                class="edsys-button edsys-button--icon" 
+                                data-action="add-to-favorites"
+                                data-product-id="<?= $arResult['ID'] ?>"
+                                aria-label="Добавить в избранное" 
+                                title="Добавить в избранное"
+                                style="width: auto; padding: var(--space-md) var(--space-lg); gap: var(--space-sm);"
+                            >
+                                <i class="ph ph-thin ph-heart" aria-hidden="true"></i>
+                                <span>В избранное</span>
+                            </button>
+                            
+                            <button 
+                                type="button" 
+                                class="edsys-button edsys-button--icon" 
+                                data-compare-action="toggle"
+                                data-product-id="<?= $arResult['ID'] ?>"
+                                title="Добавить к сравнению"
+                                aria-label="Добавить <?= htmlspecialchars($arResult['NAME']) ?> к сравнению"
+                                style="width: auto; padding: var(--space-md) var(--space-lg); gap: var(--space-sm);"
+                            >
+                                <i class="ph ph-thin ph-chart-bar" aria-hidden="true"></i>
+                                <span>Сравнить</span>
+                            </button>
+                        </div>
                     </div>
-				<?php endif; ?>
+                <?php endif; ?>
             </div>
         </aside>
     </div>
 
     <!-- Видео обзор -->
-	<?php if ($hasVideo): ?>
+    <?php if ($hasVideo): ?>
         <section class="edsys-product__video">
             <div class="edsys-video">
                 <div class="edsys-video__container">
                     <h2 class="edsys-video__title">Видеообзор товара</h2>
                     <div class="edsys-video__embed">
-						<?= $videoEmbedCode ?>
+                        <?= $videoEmbedCode ?>
                     </div>
                 </div>
             </div>
         </section>
-	<?php endif; ?>
+    <?php endif; ?>
 
     <!-- Похожие товары -->
     <section class="edsys-product__related">
@@ -325,8 +361,8 @@ $documents = $arResult['DOCUMENTS'] ?? [];
 
             <div class="edsys-related__slider">
                 <div class="edsys-related__track">
-					<?php if (!empty($relatedProducts) && count($relatedProducts) > 0): ?>
-						<?php foreach ($relatedProducts as $product): ?>
+                    <?php if (!empty($relatedProducts) && count($relatedProducts) > 0): ?>
+                        <?php foreach ($relatedProducts as $product): ?>
                             <article class="edsys-product-card">
                                 <a href="<?= htmlspecialchars($product['URL']) ?>" class="edsys-product-card__link">
                                     <div class="edsys-product-card__image">
@@ -341,33 +377,33 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                     <div class="edsys-product-card__content">
                                         <div class="edsys-product-card__article">АРТ. <?= htmlspecialchars($product['ARTICLE']) ?></div>
                                         <h3 class="edsys-product-card__title"><?= htmlspecialchars($product['NAME']) ?></h3>
-										<?php if (!empty($product['DESCRIPTION'])): ?>
+                                        <?php if (!empty($product['DESCRIPTION'])): ?>
                                             <div class="edsys-product-card__description">
-												<?php
-												// Дополнительная обработка HTML если он попал в описание
-												$description = $product['DESCRIPTION'];
+                                                <?php
+                                                // Дополнительная обработка HTML если он попал в описание
+                                                $description = $product['DESCRIPTION'];
 
-												// Если в описании есть HTML теги класса, убираем их
-												$description = preg_replace('/<(\w+)[^>]*class="[^"]*"[^>]*>/', '<$1>', $description);
+                                                // Если в описании есть HTML теги класса, убираем их
+                                                $description = preg_replace('/<(\w+)[^>]*class="[^"]*"[^>]*>/', '<$1>', $description);
 
-												// Убираем span теги полностью, но оставляем содержимое
-												$description = preg_replace('/<\/?span[^>]*>/', '', $description);
+                                                // Убираем span теги полностью, но оставляем содержимое
+                                                $description = preg_replace('/<\/?span[^>]*>/', '', $description);
 
-												// Разрешаем только базовые теги
-												$description = strip_tags($description, '<br><strong><em><b><i>');
+                                                // Разрешаем только базовые теги
+                                                $description = strip_tags($description, '<br><strong><em><b><i>');
 
-												echo $description;
-												?>
+                                                echo $description;
+                                                ?>
                                             </div>
-										<?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </a>
                                 <div class="edsys-product-card__footer">
                                     <button class="edsys-product-card__order">Под заказ</button>
                                 </div>
                             </article>
-						<?php endforeach; ?>
-					<?php else: ?>
+                        <?php endforeach; ?>
+                    <?php else: ?>
                         <!-- Заглушка если нет товаров - всегда показываем для демонстрации -->
                         <article class="edsys-product-card">
                             <a href="/product/etc-402-9-1-pct/" class="edsys-product-card__link">
@@ -464,7 +500,7 @@ $documents = $arResult['DOCUMENTS'] ?? [];
                                 <button class="edsys-product-card__order">Под заказ</button>
                             </div>
                         </article>
-					<?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
