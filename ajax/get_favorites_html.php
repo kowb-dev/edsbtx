@@ -1,94 +1,69 @@
-<?
-// This is a simplified ajax handler. For a real project, consider using a D7 controller.
+<?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php');
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Context;
 
 if (!Loader::includeModule('iblock') || !Loader::includeModule('catalog')) {
+    http_response_code(500);
+    echo 'Required modules not installed';
     return;
 }
 
 $request = Context::getCurrent()->getRequest();
+$postData = json_decode($request->getInput(), true);
+$ids = $postData['ids'] ?? [];
 
-if ($request->isPost() && check_bitrix_sessid()) {
-    $ids = $request->getPost('ids');
+if ($request->isPost() && !empty($ids) && is_array($ids)) {
+    $arSelect = [
+        "ID", "IBLOCK_ID", "NAME", "PREVIEW_PICTURE", "DETAIL_PICTURE",
+        "DETAIL_PAGE_URL", "PREVIEW_TEXT"
+    ];
+    $arFilter = ["IBLOCK_ID" => 7, "ID" => $ids, "ACTIVE" => "Y"];
+    $res = CIBlockElement::GetList(["NAME" => "ASC"], $arFilter, false, false, $arSelect);
 
-    if (!empty($ids) && is_array($ids)) {
-        global $arrFavoritesFilter;
-        $arrFavoritesFilter = ['ID' => $ids];
+    while ($ob = $res->GetNextElement()) {
+        $arFields = $ob->GetFields();
+        $arProps = $ob->GetProperties();
 
-        $APPLICATION->IncludeComponent(
-            "bitrix:catalog.section",
-            "edsys_products",
-            array(
-                "IBLOCK_TYPE" => "catalog",
-                "IBLOCK_ID" => "7",
-                "ELEMENT_SORT_FIELD" => "name",
-                "ELEMENT_SORT_ORDER" => "asc",
-                "ELEMENT_SORT_FIELD2" => "id",
-                "ELEMENT_SORT_ORDER2" => "desc",
-                "PROPERTY_CODE" => array("CML2_ARTICLE", "BRAND", "SPECIFICATIONS"),
-                "META_KEYWORDS" => "-",
-                "META_DESCRIPTION" => "-",
-                "BROWSER_TITLE" => "-",
-                "SET_LAST_MODIFIED" => "N",
-                "INCLUDE_SUBSECTIONS" => "Y",
-                "BASKET_URL" => "/personal/basket.php",
-                "ACTION_VARIABLE" => "action",
-                "PRODUCT_ID_VARIABLE" => "id",
-                "SECTION_ID_VARIABLE" => "SECTION_ID",
-                "PRODUCT_QUANTITY_VARIABLE" => "quantity",
-                "PRODUCT_PROPS_VARIABLE" => "prop",
-                "FILTER_NAME" => "arrFavoritesFilter",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "36000000",
-                "CACHE_FILTER" => "N",
-                "CACHE_GROUPS" => "Y",
-                "SET_TITLE" => "N", // No need to set title in AJAX response
-                "MESSAGE_404" => "",
-                "SET_STATUS_404" => "N",
-                "SHOW_404" => "N",
-                "FILE_404" => "",
-                "DISPLAY_COMPARE" => "Y",
-                "PAGE_ELEMENT_COUNT" => "30", // Show all favorites
-                "LINE_ELEMENT_COUNT" => "3",
-                "PRICE_CODE" => array("BASE", "RETAIL"),
-                "USE_PRICE_COUNT" => "N",
-                "SHOW_PRICE_COUNT" => "1",
-                "PRICE_VAT_INCLUDE" => "Y",
-                "USE_PRODUCT_QUANTITY" => "N",
-                "ADD_PROPERTIES_TO_BASKET" => "Y",
-                "PARTIAL_PRODUCT_PROPERTIES" => "N",
-                "PRODUCT_PROPERTIES" => array(),
-                "DISPLAY_TOP_PAGER" => "N",
-                "DISPLAY_BOTTOM_PAGER" => "N",
-                "PAGER_TITLE" => "Товары",
-                "PAGER_SHOW_ALWAYS" => "N",
-                "PAGER_TEMPLATE" => "",
-                "PAGER_DESC_NUMBERING" => "N",
-                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                "PAGER_SHOW_ALL" => "N",
-                "PAGER_BASE_LINK_ENABLE" => "N",
-                "PAGER_BASE_LINK" => "",
-                "PAGER_PARAMS_NAME" => "arrPager",
-                "OFFERS_CART_PROPERTIES" => array(),
-                "OFFERS_FIELD_CODE" => array("NAME", "PREVIEW_PICTURE", "DETAIL_PICTURE"),
-                "OFFERS_PROPERTY_CODE" => array(""),
-                "OFFERS_SORT_FIELD" => "name",
-                "OFFERS_SORT_ORDER" => "asc",
-                "OFFERS_SORT_FIELD2" => "id",
-                "OFFERS_SORT_ORDER2" => "desc",
-                "OFFERS_LIMIT" => "5",
-                "SECTION_URL" => "",
-                "DETAIL_URL" => "",
-                "USE_MAIN_ELEMENT_SECTION" => "N",
-                "CONVERT_CURRENCY" => "N",
-                "CURRENCY_ID" => "RUB",
-                "HIDE_NOT_AVAILABLE" => "N",
-            ),
-            false
+        $article = '';
+        $articleProps = ['CML2_ARTICLE', 'ARTICLE', 'ART', 'ARTICUL'];
+        foreach ($articleProps as $propCode) {
+            if (!empty($arProps[$propCode]['VALUE'])) {
+                $article = is_array($arProps[$propCode]['VALUE']) ? $arProps[$propCode]['VALUE'][0] : $arProps[$propCode]['VALUE'];
+                break;
+            }
+        }
+
+        $arImage = CFile::ResizeImageGet(
+            $arFields['PREVIEW_PICTURE'] ?: $arFields['DETAIL_PICTURE'],
+            ['width' => 100, 'height' => 100],
+            BX_RESIZE_IMAGE_PROPORTIONAL,
+            true
         );
+        ?>
+        <a href="<?= $arFields['DETAIL_PAGE_URL'] ?>" class="edsys-favorite-item">
+            <div class="edsys-favorite-item__image">
+                <?php if ($arImage && $arImage['src']): ?>
+                    <img src="<?= $arImage['src'] ?>" alt="<?= htmlspecialchars($arFields['NAME']) ?>" width="100" height="100" loading="lazy">
+                <?php else: ?>
+                    <div class="edsys-favorite-item__no-image"><i class="ph ph-thin ph-image"></i></div>
+                <?php endif; ?>
+            </div>
+            <div class="edsys-favorite-item__info">
+                <h3 class="edsys-favorite-item__title"><?= $arFields['NAME'] ?></h3>
+                <?php if (!empty($arFields['PREVIEW_TEXT'])): ?>
+                    <div class="edsys-favorite-item__description">
+                        <?= strip_tags($arFields['PREVIEW_TEXT']) ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="edsys-favorite-item__article">
+                <span>Артикул</span>
+                <span><?= !empty($article) ? htmlspecialchars($article) : '—' ?></span>
+            </div>
+        </a>
+        <?php
     }
 }
 

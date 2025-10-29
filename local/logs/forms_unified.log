@@ -1,9 +1,0 @@
-[2025-07-18 14:36:46] [v2.2.0] === NEW REQUEST === | {"method":"POST","ip":"46.37.123.153","user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/138.0.0.0 Safari\/537.36"}
-[2025-07-18 14:36:46] [v2.2.0] Input data received | {"raw":"{\"form_type\":\"newsletter\",\"email\":\"kon4994@ya.ru\",\"timestamp\":1752838606561,\"sessid\":\"3d9c0e725ca895948259a9e5fc41519a\"}","parsed":{"form_type":"newsletter","email":"kon4994@ya.ru","timestamp":1752838606561,"sessid":"3d9c0e725ca895948259a9e5fc41519a"}}
-[2025-07-18 14:36:46] [v2.2.0] Processing newsletter subscription | {"email":"kon4994@ya.ru","timestamp":"2025-07-18 14:36:46"}
-[2025-07-18 14:36:46] [v2.2.0] Sending email | {"to":"a0123e@ya.ru","subject":"🔔 Новая подписка на рассылку EDS","type":"admin"}
-[2025-07-18 14:36:47] [v2.2.0] Email send result | {"to":"a0123e@ya.ru","encoded_subject":"=?UTF-8?B?8J+UlCDQndC+0LLQsNGPINC\/0L7QtNC\/0LjRgdC60LAg0L3QsCDRgNCw0YHRgdGL0LvQutGDIEVEUw==?=","result":true,"last_error":null}
-[2025-07-18 14:36:47] [v2.2.0] Sending email | {"to":"ae001t@gmail.com","subject":"🔔 Новая подписка на рассылку EDS","type":"admin"}
-[2025-07-18 14:36:47] [v2.2.0] Email send result | {"to":"ae001t@gmail.com","encoded_subject":"=?UTF-8?B?8J+UlCDQndC+0LLQsNGPINC\/0L7QtNC\/0LjRgdC60LAg0L3QsCDRgNCw0YHRgdGL0LvQutGDIEVEUw==?=","result":true,"last_error":null}
-[2025-07-18 14:36:47] [v2.2.0] Sending email | {"to":"kon4994@ya.ru","subject":"🎉 Добро пожаловать в рассылку EDS!","type":"welcome"}
-[2025-07-18 14:36:47] [v2.2.0] Email send result | {"to":"kon4994@ya.ru","encoded_subject":"=?UTF-8?B?8J+OiSDQlNC+0LHRgNC+INC\/0L7QttCw0LvQvtCy0LDRgtGMINCyINGA0LDRgdGB0YvQu9C60YMgRURTIQ==?=","result":true,"last_error":null}

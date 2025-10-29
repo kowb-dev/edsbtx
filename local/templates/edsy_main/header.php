@@ -284,7 +284,11 @@ if (!$USER->IsAdmin()) {
                     <i class="ph ph-thin ph-package"></i>
                     <span class="edsys-header__action-text">Заказы</span>
                 </a>
-                <a href="/personal/favorites/" class="edsys-header__action">
+                <?if ($USER->IsAuthorized()):?>
+                    <a href="/personal/favorites/" class="edsys-header__action">
+                <?else:?>
+                    <a href="/favorites/" class="edsys-header__action">
+                <?endif;?>
                     <i class="ph ph-thin ph-heart"></i>
                     <span class="edsys-header__action-text">Избранное</span>
                     <span id="favorites-counter"></span>
@@ -593,7 +597,11 @@ $CATALOG_BASE_URL = "https://btx.edsy.ru";
             <i class="ph ph-thin ph-shopping-cart"></i>
             <span>Корзина</span>
         </a>
-        <a href="/personal/favorites/" class="edsys-mobile-nav__item">
+        <?if ($USER->IsAuthorized()):?>
+            <a href="/personal/favorites/" class="edsys-mobile-nav__item">
+        <?else:?>
+            <a href="/favorites/" class="edsys-mobile-nav__item">
+        <?endif;?>
             <i class="ph ph-thin ph-heart"></i>
             <span>Избранное</span>
         </a>

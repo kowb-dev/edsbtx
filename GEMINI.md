@@ -77,7 +77,7 @@ Always provide practical, actionable advice with relevant code examples that can
 Always provide filenames and names of directories.
 Always add version to the file and change the version when make changes in file.
 Add author: KW and URI https://kowb.ru
-Please answer in English.
+Please answer in Russian.
 
 
 The main CSS file contains these variables, please use them in styles:

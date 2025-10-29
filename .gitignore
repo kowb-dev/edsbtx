@@ -61,3 +61,10 @@ google-cloud-sdk/
 
 # Прочие локальные мусорные каталоги
 .ssh/
+/.npm
+
+# Ignore history and log files
+.bash_history
+.config/
+bitrix/site_checker_*.log
+local/logs/
