@@ -3,7 +3,7 @@
  * Страница смены пароля
  * Файл: /personal/password/index.php
  * 
- * @version 1.3.1
+ * @version 1.4.0
  * @author KW https://kowb.ru
  */
 
@@ -18,8 +18,8 @@ if (!$USER->IsAuthorized()) {
 
 $APPLICATION->SetTitle("Смена пароля");
 
-$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.4.0");
-$APPLICATION->AddHeadScript("/local/templates/.default/components/bitrix/sale.personal.section/.default/script.js?v=1.4.0");
+$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.2.0");
+$APPLICATION->AddHeadScript("/local/templates/.default/components/bitrix/sale.personal.section/.default/script.js?v=1.2.0");
 
 $arUser = $USER->GetByID($USER->GetID())->Fetch();
 $userCompany = $arUser['WORK_COMPANY'] ?? '';

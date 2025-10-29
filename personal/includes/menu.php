@@ -3,7 +3,7 @@
  * Общее меню для всех страниц личного кабинета
  * Файл: /personal/includes/menu.php
  * 
- * @version 1.2.0
+ * @version 1.3.0
  * @author KW https://kowb.ru
  */
 
@@ -40,43 +40,74 @@ if (strpos($curPage, '/personal/profile') !== false) {
 ?>
 
 <style>
+/* Mobile-First мобильное меню личного кабинета */
+
+/* Mobile (default) - меню скрыто, выезжает слева */
+.edsys-account__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(85vw, 22rem);
+    height: 100vh;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0.5rem 0 2rem rgba(0, 0, 0, 0.15);
+    will-change: transform;
+}
+
 .edsys-account__sidebar.is-open {
     transform: translateX(0);
     visibility: visible;
 }
 
+/* Overlay для мобильной версии */
 .edsys-account.has-overlay::before {
     content: '';
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 998;
-    animation: edsysOverlayFadeIn 0.3s ease;
+    opacity: 0;
+    animation: edsysOverlayFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes edsysOverlayFadeIn {
-    from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@media (max-width: 1023px) {
+/* Блокировка скролла body при открытом меню */
+body.edsys-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Tablet и Desktop - меню статичное */
+@media (min-width: 48rem) {
     .edsys-account__sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: min(80vw, 320px);
-        transform: translateX(-100%);
-        visibility: hidden;
-        transition: transform 0.3s ease, visibility 0.3s ease;
-        z-index: 999;
-        overflow-y: auto;
-        background: #fff;
-        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+        visibility: visible;
+        transition: none;
+        z-index: auto;
+        overflow-y: visible;
+        box-shadow: none;
     }
     
     body.edsys-menu-open {
-        overflow: hidden;
+        overflow: visible;
+        position: static;
+    }
+    
+    .edsys-account.has-overlay::before {
+        display: none;
     }
 }
 </style>

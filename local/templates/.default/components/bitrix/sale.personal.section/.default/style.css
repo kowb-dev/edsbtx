@@ -2,7 +2,7 @@
  * Стили личного кабинета пользователя
  * Компонент: sale.personal.section
  * 
- * @version 1.1.0
+ * @version 1.2.0
  * @author KW https://kowb.ru
  */
 
@@ -429,10 +429,7 @@
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     }
 }
-@media (max-width: 768px) {
-     .edsys-account__nav {
-    margin-top: 10rem;
-}}
+
 /* ==========================================================================
    Адаптивность от 1024px
    ========================================================================== */
@@ -446,9 +443,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 .container-fluid.sale-order-detail {
-    width: var(--container-max)!important;
-    padding: var(--container-padding)!important;
+    width: var(--container-max) !important;
+    padding: var(--container-padding) !important;
 }
 
 /* ==========================================================================
@@ -828,5 +826,342 @@
         background-color: var(--edsys-bg-light);
         color: var(--edsys-accent);
         border-color: var(--edsys-accent);
+    }
+}
+
+/* ==========================================================================
+   Стили страницы "Адреса доставки" - Mobile First
+   ========================================================================== */
+
+/* Заголовок контента */
+.edsys-content-header {
+    margin-block-end: var(--space-xl);
+    padding-block-end: var(--space-lg);
+    border-bottom: 1px solid var(--edsys-border);
+}
+
+.edsys-content-header .edsys-dashboard__title {
+    margin-block-end: var(--space-xs);
+}
+
+.edsys-content-header .edsys-dashboard__subtitle {
+    color: var(--edsys-text-muted);
+}
+
+/* Контейнер профилей/адресов */
+.bx-soa-customer-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* Заголовок списка профилей */
+.bx-soa-customer-profiles h2,
+.bx-soa-customer-profiles .bx-soa-section-title {
+    margin-block-end: var(--space-md);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+}
+
+/* Список профилей */
+.bx-soa-profiles-list {
+    display: grid;
+    gap: var(--space-md);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Карточка профиля */
+.bx-soa-profile-item {
+    position: relative;
+    padding: var(--space-lg);
+    background: var(--edsys-bg-light);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.bx-soa-profile-item:active {
+    transform: scale(0.98);
+}
+
+/* Название профиля */
+.bx-soa-profile-name {
+    display: block;
+    margin-block-end: var(--space-md);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+    line-height: var(--edsys-lh-tight);
+}
+
+/* Информация о профиле */
+.bx-soa-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-block-end: var(--space-md);
+}
+
+.bx-soa-profile-info-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-sm);
+    align-items: start;
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+}
+
+.bx-soa-profile-info-label {
+    color: var(--edsys-text-light);
+    font-weight: var(--edsys-font-medium);
+}
+
+.bx-soa-profile-info-value {
+    color: var(--edsys-text);
+}
+
+/* Действия профиля */
+.bx-soa-profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-block-start: var(--space-md);
+    padding-block-start: var(--space-md);
+    border-top: 1px solid var(--edsys-border);
+}
+
+.bx-soa-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    min-width: 44px;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    color: var(--edsys-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    line-height: var(--edsys-lh-snug);
+}
+
+.bx-soa-profile-btn i {
+    font-size: var(--fs-lg);
+}
+
+.bx-soa-profile-btn:active {
+    transform: scale(0.95);
+}
+
+.bx-soa-profile-btn--primary {
+    background: var(--edsys-accent);
+    border-color: var(--edsys-accent);
+    color: var(--edsys-white);
+}
+
+.bx-soa-profile-btn--delete {
+    background: transparent;
+    border-color: var(--edsys-error, #dc3545);
+    color: var(--edsys-error, #dc3545);
+}
+
+/* Форма добавления/редактирования профиля */
+.bx-soa-profile-form {
+    padding: var(--space-xl);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-lg);
+    margin-block-start: var(--space-lg);
+}
+
+.bx-soa-profile-form h3 {
+    margin-block-end: var(--space-lg);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-bold);
+}
+
+/* Поля формы */
+.bx-soa-customer-field {
+    margin-block-end: var(--space-lg);
+}
+
+.bx-soa-customer-field label {
+    display: block;
+    margin-block-end: var(--space-xs);
+    color: var(--edsys-text);
+    font-weight: var(--edsys-font-medium);
+    line-height: var(--edsys-lh-snug);
+}
+
+.bx-soa-customer-field input[type="text"],
+.bx-soa-customer-field input[type="email"],
+.bx-soa-customer-field input[type="tel"],
+.bx-soa-customer-field select,
+.bx-soa-customer-field textarea {
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--edsys-white);
+    border: 1px solid var(--edsys-border);
+    border-radius: var(--radius-md);
+    color: var(--edsys-text);
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    line-height: var(--edsys-lh-normal);
+}
+
+.bx-soa-customer-field input:focus,
+.bx-soa-customer-field select:focus,
+.bx-soa-customer-field textarea:focus {
+    outline: none;
+    border-color: var(--edsys-accent);
+    box-shadow: 0 0 0 3px rgba(255, 37, 69, 0.1);
+}
+
+.bx-soa-customer-field textarea {
+    min-height: 6rem;
+    resize: vertical;
+}
+
+/* Обязательное поле */
+.bx-soa-customer-field.required label::after {
+    content: ' *';
+    color: var(--edsys-accent);
+}
+
+/* Описание поля */
+.bx-soa-customer-field-desc {
+    margin-block-start: var(--space-xs);
+    color: var(--edsys-text-light);
+    line-height: var(--edsys-lh-relaxed);
+}
+
+/* Ошибка поля */
+.bx-soa-customer-field.error input,
+.bx-soa-customer-field.error select,
+.bx-soa-customer-field.error textarea {
+    border-color: var(--edsys-error, #dc3545);
+}
+
+.bx-soa-customer-field-error {
+    display: block;
+    margin-block-start: var(--space-xs);
+    color: var(--edsys-error, #dc3545);
+    line-height: var(--edsys-lh-snug);
+}
+
+/* Кнопки формы */
+.bx-soa-profile-form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-block-start: var(--space-xl);
+}
+
+.bx-soa-profile-form-buttons button,
+.bx-soa-profile-form-buttons .btn {
+    width: 100%;
+    min-width: 44px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+    font-weight: var(--edsys-font-medium);
+    line-height: var(--edsys-lh-snug);
+}
+
+.bx-soa-profile-form-buttons .btn-primary {
+    background: var(--edsys-accent);
+    border: 1px solid var(--edsys-accent);
+    color: var(--edsys-white);
+}
+
+.bx-soa-profile-form-buttons .btn-primary:active {
+    transform: scale(0.98);
+}
+
+.bx-soa-profile-form-buttons .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--edsys-border);
+    color: var(--edsys-text);
+}
+
+/* Пустое состояние */
+.bx-soa-profiles-empty {
+    padding: var(--space-2xl);
+    text-align: center;
+    background: var(--edsys-bg-light);
+    border-radius: var(--radius-lg);
+}
+
+.bx-soa-profiles-empty i {
+    display: block;
+    margin-block-end: var(--space-lg);
+    font-size: clamp(3rem, 8vw, 4rem);
+    color: var(--edsys-text-light);
+}
+
+.bx-soa-profiles-empty h3 {
+    margin-block-end: var(--space-sm);
+    color: var(--edsys-text);
+}
+
+.bx-soa-profiles-empty p {
+    margin-block-end: var(--space-lg);
+    color: var(--edsys-text-muted);
+    line-height: var(--edsys-lh-relaxed);
+}
+
+/* Адаптивность от 768px */
+@media (min-width: 48rem) {
+    .bx-soa-profiles-list {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    }
+
+    .bx-soa-profile-form-buttons {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .bx-soa-profile-form-buttons button,
+    .bx-soa-profile-form-buttons .btn {
+        width: auto;
+        min-width: 10rem;
+    }
+}
+
+/* Desktop hover эффекты */
+@media (hover: hover) {
+    .bx-soa-profile-item:hover {
+        border-color: var(--edsys-accent);
+        box-shadow: 0 2px 12px rgba(255, 37, 69, 0.15);
+    }
+
+    .bx-soa-profile-btn:hover {
+        border-color: var(--edsys-accent);
+        color: var(--edsys-accent);
+    }
+
+    .bx-soa-profile-btn--primary:hover {
+        background: var(--edsys-accent-hover);
+        border-color: var(--edsys-accent-hover);
+        color: var(--edsys-white);
+        box-shadow: 0 2px 8px rgba(255, 37, 69, 0.3);
+    }
+
+    .bx-soa-profile-btn--delete:hover {
+        background: var(--edsys-error, #dc3545);
+        color: var(--edsys-white);
+    }
+
+    .bx-soa-profile-form-buttons .btn-primary:hover {
+        background: var(--edsys-accent-hover);
+        box-shadow: 0 2px 8px rgba(255, 37, 69, 0.3);
+    }
+
+    .bx-soa-profile-form-buttons .btn-secondary:hover {
+        border-color: var(--edsys-accent);
+        color: var(--edsys-accent);
     }
 }
