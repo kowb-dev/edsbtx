@@ -2,7 +2,7 @@
 /**
  * Live Search AJAX Results Template
  * 
- * @version 2.0.0
+ * @version 2.1.0
  * @author KW
  * @link https://kowb.ru
  * Path: /local/templates/edsy_main/components/bitrix/search.title/visual_custom/ajax.php
@@ -70,13 +70,13 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
                 ?>
                 
                 <a href="<?= htmlspecialchars($arItem['URL']) ?>" class="edsys-live-search-item">
-                    <?php if (is_array($arElement['PICTURE'])): ?>
+                    <?php if (!empty($arElement['PICTURE']) && is_array($arElement['PICTURE']) && !empty($arElement['PICTURE']['src'])): ?>
                         <div class="edsys-live-search-item__image">
                             <img 
                                 src="<?= htmlspecialchars($arElement['PICTURE']['src']) ?>" 
                                 alt="<?= htmlspecialchars($arItem['NAME']) ?>"
-                                width="64"
-                                height="64"
+                                width="49"
+                                height="49"
                                 loading="lazy"
                             >
                         </div>
@@ -125,18 +125,18 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 .edsys-live-search-results {
     display: flex;
     flex-direction: column;
-    max-height: min(70vh, 500px);
+    max-height: min(70vh, 385px);
     overflow-y: auto;
     background: #fff;
-    border-radius: clamp(0.5rem, 1vw, 0.75rem);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: clamp(0.38rem, 0.77vw, 0.58rem);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .edsys-live-search-item {
     display: flex;
     align-items: flex-start;
-    gap: clamp(0.75rem, 2vw, 1rem);
-    padding: clamp(0.75rem, 2vw, 1rem);
+    gap: clamp(0.58rem, 1.54vw, 0.77rem);
+    padding: clamp(0.58rem, 1.54vw, 0.77rem);
     text-decoration: none;
     color: inherit;
     border-bottom: 1px solid #f0f0f0;
@@ -156,9 +156,9 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 
 .edsys-live-search-item__image {
     flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 0.5rem;
+    width: 49px;
+    height: 49px;
+    border-radius: 0.38rem;
     overflow: hidden;
     background: #f5f5f5;
     display: flex;
@@ -167,7 +167,7 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 }
 
 .edsys-live-search-item__image--placeholder {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     color: #ccc;
 }
 
@@ -184,20 +184,21 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 
 .edsys-live-search-item__title {
     font-weight: 500;
-    margin-bottom: 0.25rem;
-    line-height: 1.4;
+    margin-bottom: 0.19rem;
+    line-height: 1.3;
+    font-size: 0.92rem;
 }
 
 .edsys-live-search-item__article {
-    font-size: 0.875rem;
+    font-size: 0.67rem;
     color: #666;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.19rem;
 }
 
 .edsys-live-search-item__preview {
-    font-size: 0.75rem;
+    font-size: 0.58rem;
     color: #999;
-    line-height: 1.4;
+    line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -208,18 +209,19 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 .edsys-live-search-divider {
     height: 1px;
     background: #e0e0e0;
-    margin: 0.5rem 0;
+    margin: 0.38rem 0;
 }
 
 .edsys-live-search-all {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: clamp(0.75rem, 2vw, 1rem);
+    padding: clamp(0.58rem, 1.54vw, 0.77rem);
     text-decoration: none;
     color: var(--edsys-accent, #007bff);
     font-weight: 500;
     transition: background-color 0.2s ease;
+    font-size: 0.92rem;
 }
 
 @media (hover: hover) {
@@ -229,6 +231,6 @@ if (!empty($elementIDs) && CModule::IncludeModule('iblock')) {
 }
 
 .edsys-live-search-item--other {
-    padding-left: 80px;
+    padding-left: 62px;
 }
 </style>

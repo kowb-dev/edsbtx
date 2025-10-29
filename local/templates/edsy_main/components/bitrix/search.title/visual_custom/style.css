@@ -1,4 +1,4 @@
-/* Version: 1.0.1, Author: KW, URI: https://kowb.ru */
+/* Version: 1.1.0, Author: KW, URI: https://kowb.ru */
 /* Reset and base styles from existing site */
 .edsys-header__search-form {
     display: flex;
@@ -6,6 +6,7 @@
     border: 1px solid var(--edsys-border);
     border-radius: var(--radius-sm);
     overflow: hidden;
+    position: relative;
 }
 
 .edsys-header__search-input {
@@ -58,15 +59,19 @@
 
 /* Styles for the dropdown */
 div.title-search-result {
-	border:1px solid var(--edsys-border);
-	display:none;
-	overflow:hidden;
-	z-index:999;
-	min-width: 370px;
-	margin-top: 5px;
-	background-color: var(--edsys-white);
+    border:1px solid var(--edsys-border);
+    display:none;
+    overflow:hidden;
+    z-index:9999;
+    min-width: 370px;
+    margin-top: 5px;
+    background-color: var(--edsys-white);
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
 }
 
 .bx_searche .bx_item_block {
