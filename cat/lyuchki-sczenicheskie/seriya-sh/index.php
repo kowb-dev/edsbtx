@@ -2,7 +2,7 @@
 /**
  * Страница серии SH - Лючки сценические обрезные
  * 
- * @version 1.0.0
+ * @version 1.1.0
  * @author KW
  * @link https://kowb.ru
  * @file /cat/lyuchki-sczenicheskie/seriya-sh/index.php
@@ -13,33 +13,62 @@ $APPLICATION->SetTitle("Лючки сценические обрезные се�
 $APPLICATION->SetPageProperty("description", "Лючки сценические обрезные серии SH - широкий выбор моделей для профессионального сценического оборудования.");
 ?>
 
-<?$APPLICATION->IncludeComponent(
-    "bitrix:breadcrumb",
-    "",
-    Array(
-        "START_FROM" => "0", 
-        "PATH" => "", 
-        "SITE_ID" => "s1" 
-    )
-);?>
-
 <style>
 .edsys-series-page {
     max-width: min(1600px, 95vw);
-    margin: clamp(2rem, 5vw, 5rem) auto;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 3vw, 2rem);
+}
+
+.edsys-breadcrumb {
+    margin-bottom: var(--space-lg);
+}
+
+.edsys-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.edsys-breadcrumb__item {
+    display: flex;
+    align-items: center;
+}
+
+.edsys-breadcrumb__link {
+    color: var(--edsys-voltage);
+    text-decoration: none;
+    transition: color var(--edsys-transition-fast);
+}
+
+.edsys-breadcrumb__link:hover {
+    color: var(--edsys-accent);
+}
+
+.edsys-breadcrumb__item:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-xs);
+    color: var(--edsys-text-light);
 }
 
 .edsys-series-page__title {
-    margin-block-end: clamp(2rem, 4vw, 3rem);
+    margin-block-end: clamp(1rem, 2vw, 1.5rem);
     text-align: center;
 }
 
 .edsys-product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
-    margin-block-end: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    flex: 1;
+    align-content: start;
 }
 
 @media (min-width: 768px) {
@@ -55,8 +84,7 @@ $APPLICATION->SetPageProperty("description", "Лючки сценические 
     color: inherit;
     border: 1px solid #e5e5e5;
     border-radius: clamp(0.5rem, 1vw, 0.75rem);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    background: #fff;
+    padding: clamp(0.75rem, 1.5vw, 1rem);
     transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -75,10 +103,9 @@ $APPLICATION->SetPageProperty("description", "Лючки сценические 
 .edsys-product-card__figure {
     width: 100%;
     aspect-ratio: 4 / 3;
-    margin: 0 0 clamp(0.75rem, 2vw, 1.25rem) 0;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
     overflow: hidden;
     border-radius: clamp(0.25rem, 0.5vw, 0.5rem);
-    background: #f8f8f8;
 }
 
 .edsys-product-card__image {
@@ -93,32 +120,26 @@ $APPLICATION->SetPageProperty("description", "Лючки сценические 
     text-align: center;
     line-height: 1.4;
 }
-
-.edsys-back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid #e5e5e5;
-    border-radius: 0.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (hover: hover) {
-    .edsys-back-link:hover {
-        background: #f8f8f8;
-        border-color: #d0d0d0;
-    }
-}
-
-.edsys-back-link i {
-    font-size: 1.25em;
-}
 </style>
 
 <main class="edsys-series-page">
+    <nav class="edsys-breadcrumb" aria-label="Навигация">
+        <ol class="edsys-breadcrumb__list">
+            <li class="edsys-breadcrumb__item">
+                <a href="/" class="edsys-breadcrumb__link">Главная</a>
+            </li>
+            <li class="edsys-breadcrumb__item">
+                <a href="/cat/" class="edsys-breadcrumb__link">Каталог</a>
+            </li>
+            <li class="edsys-breadcrumb__item">
+                <a href="/cat/lyuchki-sczenicheskie/" class="edsys-breadcrumb__link">Лючки сценические</a>
+            </li>
+            <li class="edsys-breadcrumb__item">
+                Серия SH
+            </li>
+        </ol>
+    </nav>
+
     <h1 class="edsys-series-page__title">Лючки сценические обрезные серии SH</h1>
     
     <div class="edsys-product-grid">
@@ -218,11 +239,6 @@ $APPLICATION->SetPageProperty("description", "Лючки сценические 
             </a>
         </article>
     </div>
-
-    <a href="/cat/lyuchki-sczenicheskie/" class="edsys-back-link">
-        <i class="ph ph-thin ph-arrow-left" aria-hidden="true"></i>
-        <span>Вернуться к выбору серии</span>
-    </a>
 </main>
 
 <?php

@@ -2,7 +2,7 @@
 /**
  * Catalog Section Template - Table View
  * 
- * @version 1.4.0
+ * @version 1.5.0
  * @author KW
  * @link https://kowb.ru
  */
@@ -180,6 +180,31 @@ if ($arResult['CODE'] == 'korobki-kommutatsionnye') {
     <div class="edsys-catalog" itemscope itemtype="https://schema.org/CollectionPage">
         <div class="edsys-catalog__container">
             
+            <nav class="edsys-breadcrumb" aria-label="Навигация">
+                <ol class="edsys-breadcrumb__list">
+                    <li class="edsys-breadcrumb__item">
+                        <a href="/" class="edsys-breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="edsys-breadcrumb__item">
+                        <a href="/cat/" class="edsys-breadcrumb__link">Каталог</a>
+                    </li>
+                    <?php if (!empty($arResult['SECTION']['PATH'])): ?>
+                        <?php foreach ($arResult['SECTION']['PATH'] as $pathItem): ?>
+                            <li class="edsys-breadcrumb__item">
+                                <a href="<?= htmlspecialchars($pathItem['SECTION_PAGE_URL']) ?>" class="edsys-breadcrumb__link">
+                                    <?= htmlspecialchars($pathItem['NAME']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if (!empty($arResult['NAME'])): ?>
+                        <li class="edsys-breadcrumb__item">
+                            <?= htmlspecialchars($arResult['NAME']) ?>
+                        </li>
+                    <?php endif; ?>
+                </ol>
+            </nav>
+
             <button 
                 class="edsys-catalog__filter-toggle" 
                 type="button"
