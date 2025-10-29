@@ -1,17 +1,27 @@
+/**
+ * EDS - Electric Distribution Systems
+ * Main Styles
+ * 
+ * @file local/templates/edsy_main/css/main.css
+ * @author KW
+ * @version 1.1.0
+ * @URI https://kowb.ru
+ */
+
 .bx-auth-profile {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--space-xl);
     background-color: var(--edsys-white);
     border: 1px solid var(--edsys-border);
-    border-radius: 5px;
+    border-radius: var(--radius-md);
 }
 
 .bx-auth-profile h3 {
-    font-size: 24px;
+    font-size: var(--edsys-fs-h2);
     font-weight: var(--edsys-font-bold);
     color: var(--edsys-text);
-    margin-bottom: 20px;
+    margin-bottom: var(--space-lg);
 }
 
 .profile-table {
@@ -20,7 +30,7 @@
 }
 
 .profile-table td {
-    padding: 10px;
+    padding: var(--space-sm);
     border-bottom: 1px solid var(--edsys-border);
 }
 
@@ -39,21 +49,21 @@
 .profile-table select,
 .profile-table textarea {
     width: 100%;
-    padding: 10px;
+    padding: var(--space-sm);
     border: 1px solid var(--edsys-border);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     font-family: var(--edsys-font-primary);
-    font-size: 14px;
+    font-size: var(--fs-sm);
     color: var(--edsys-text);
 }
 
 .profile-table input[type="submit"],
 .profile-table input[type="reset"] {
-    padding: 10px 20px;
+    padding: var(--space-sm) var(--space-lg);
     border: none;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     font-family: var(--edsys-font-primary);
-    font-size: 14px;
+    font-size: var(--fs-sm);
     font-weight: var(--edsys-font-bold);
     cursor: pointer;
 }

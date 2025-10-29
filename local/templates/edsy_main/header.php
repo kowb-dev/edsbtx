@@ -2,7 +2,7 @@
 <?
 /**
  * @author KW
- * @version 1.5
+ * @version 1.7
  * @URI https://kowb.ru
  */
 ?>
@@ -10,55 +10,57 @@
 <?php
 
 if (!defined('DEFAULT_TEMPLATE_PATH')) {
-	define('DEFAULT_TEMPLATE_PATH', '/local/templates/' . SITE_TEMPLATE_ID);
+    define('DEFAULT_TEMPLATE_PATH', '/local/templates/' . SITE_TEMPLATE_ID);
 }
 
 // Альтернативный вариант если SITE_TEMPLATE_ID не работает
 if (!defined('DEFAULT_TEMPLATE_PATH') || DEFAULT_TEMPLATE_PATH === '/local/templates/') {
-	define('DEFAULT_TEMPLATE_PATH', '/local/templates/edsy_main');
+    define('DEFAULT_TEMPLATE_PATH', '/local/templates/edsy_main');
 }
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<?php
-	use Bitrix\Main\Page\Asset;
-	$APPLICATION->ShowHead();
-	$APPLICATION->ShowHead();
-	?>
+    <?php
+    use Bitrix\Main\Page\Asset;
+    $APPLICATION->ShowHead();
+    ?>
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 
-	<?php
-	Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
-	// Подключение jQuery из ядра Битрикса
-	Asset::getInstance()->addJs("/bitrix/js/main/jquery/jquery-3.7.1.min.js");
-	Asset::getInstance()->addString('<script src="/local/templates/edsy_main/js/favorites.js?v=2.0.0"></script>');
+    <?php
+    Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1">');
+    // Подключение jQuery из ядра Битрикса
+    Asset::getInstance()->addJs("/bitrix/js/main/jquery/jquery-3.7.1.min.js");
+    Asset::getInstance()->addString('<script src="/local/templates/edsy_main/js/favorites.js?v=2.0.0"></script>');
 Asset::getInstance()->addString('<script src="/local/templates/edsy_main/js/favorites-init.js?v=2.0.0"></script>');
 
-	// Preconnect для оптимизации загрузки шрифтов
-	Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
-	Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+    // Preconnect для оптимизации загрузки шрифтов
+    Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
+    Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
 
-	// Async загрузка шрифтов
-	Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">');
+    // Async загрузка шрифтов
+    Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">');
 
-	// Preload основных стилей и скриптов
-//	Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/css/main.css" as="style">');
-	Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/js/main.js" as="script" crossorigin>');
+    // Preload основных стилей и скриптов
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/css/variables.css" as="style">');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/js/main.js" as="script" crossorigin>');
 
-	// Подключение основных стилей
-	Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/main.css");
+    // Подключение основных стилей
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/variables.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/reset.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/utilities.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/main.css");
 
-	// Подключение основных скриптов
-	Asset::getInstance()->addString('<script type="module" src="' . DEFAULT_TEMPLATE_PATH . '/js/main.js"></script>');
+    // Подключение основных скриптов
+    Asset::getInstance()->addString('<script type="module" src="' . DEFAULT_TEMPLATE_PATH . '/js/main.js"></script>');
 
 
-	// Phosphor Icons
-	Asset::getInstance()->addString('<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">');
-	Asset::getInstance()->addString('<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">');
+    // Phosphor Icons
+    Asset::getInstance()->addString('<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">');
+    Asset::getInstance()->addString('<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">');
 
-	// Inline critical CSS (для предотвращения FOUC и ускорения загрузки)
-	Asset::getInstance()->addString('
+    // Inline critical CSS (для предотвращения FOUC и ускорения загрузки)
+    Asset::getInstance()->addString('
         <style>
             :root {
                 --edsys-font-primary: \'Open Sans\', -apple-system, BlinkMacSystemFont, \'Segoe UI\', sans-serif;
@@ -132,8 +134,8 @@ Asset::getInstance()->addString('<script src="/local/templates/edsy_main/js/favo
         }
         </style>
     ');
-	?>
-	<?php $APPLICATION->IncludeFile('/local/templates/.default/include/catalog_styles.php'); ?>
+    ?>
+    <?php $APPLICATION->IncludeFile('/local/templates/.default/include/catalog_styles.php'); ?>
     <script>
         window.SITE_CONFIG = {
             ASSETS: {
@@ -165,18 +167,18 @@ if (!$USER->IsAdmin()) {
             </a>
 
             <div class="edsys-header__logo">
-		        <?php if($APPLICATION->GetCurPage() !== '/'): ?>
+                <?php if($APPLICATION->GetCurPage() !== '/'): ?>
                 <a href="/" class="edsys-header__logo-link">
-			        <?php endif; ?>
+                    <?php endif; ?>
                     <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/logo.svg" alt="EDS">
                     <div class="edsys-header__title">
                         <span>ELECTRIC</span>
                         <span>DISTRIBUTION</span>
                         <span>SYSTEMS</span>
                     </div>
-			        <?php if($APPLICATION->GetCurPage() !== '/'): ?>
+                    <?php if($APPLICATION->GetCurPage() !== '/'): ?>
                 </a>
-	        <?php endif; ?>
+            <?php endif; ?>
             </div>
 
             <a href="tel:+79105273538" class="edsys-header__mobile-contact" aria-label="Позвонить">
@@ -192,28 +194,28 @@ if (!$USER->IsAdmin()) {
 
             <div class="edsys-header__search">
                 <?$APPLICATION->IncludeComponent(
-                	"bitrix:search.title", 
-                	"visual_custom", 
-                	array(
-                		"NUM_CATEGORIES" => "1",
-                		"TOP_COUNT" => "5",
-                		"ORDER" => "date",
-                		"USE_LANGUAGE_GUESS" => "N",
-                		"CHECK_DATES" => "N",
-                		"SHOW_OTHERS" => "N",
-                		"PAGE" => "/search/",
-                		"CATEGORY_0_TITLE" => "Товары",
-                		"CATEGORY_0" => array(
-                			0 => "iblock_catalog",
-                		),
-                		"CATEGORY_0_iblock_catalog" => array(
-                			0 => "7",
-                		),
-                		"SHOW_INPUT" => "Y",
-                		"INPUT_ID" => "title-search-input-mobile",
-                		"CONTAINER_ID" => "title-search-mobile",
-                	),
-                	false
+                    "bitrix:search.title", 
+                    "visual_custom", 
+                    array(
+                        "NUM_CATEGORIES" => "1",
+                        "TOP_COUNT" => "5",
+                        "ORDER" => "date",
+                        "USE_LANGUAGE_GUESS" => "N",
+                        "CHECK_DATES" => "N",
+                        "SHOW_OTHERS" => "N",
+                        "PAGE" => "/search/",
+                        "CATEGORY_0_TITLE" => "Товары",
+                        "CATEGORY_0" => array(
+                            0 => "iblock_catalog",
+                        ),
+                        "CATEGORY_0_iblock_catalog" => array(
+                            0 => "7",
+                        ),
+                        "SHOW_INPUT" => "Y",
+                        "INPUT_ID" => "title-search-input-mobile",
+                        "CONTAINER_ID" => "title-search-mobile",
+                    ),
+                    false
                 );?>
             </div>
 
@@ -226,18 +228,18 @@ if (!$USER->IsAdmin()) {
         <div class="edsys-header__top">
             <!-- Logo -->
             <div class="edsys-header__logo">
-		        <?php if($APPLICATION->GetCurPage() !== '/'): ?>
+                <?php if($APPLICATION->GetCurPage() !== '/'): ?>
                 <a href="/" class="edsys-header__logo-link">
-			        <?php endif; ?>
+                    <?php endif; ?>
                     <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/logo.svg" alt="EDS">
                     <div class="edsys-header__title">
                         <span>ELECTRIC</span>
                         <span>DISTRIBUTION</span>
                         <span>SYSTEMS</span>
                     </div>
-			        <?php if($APPLICATION->GetCurPage() !== '/'): ?>
+                    <?php if($APPLICATION->GetCurPage() !== '/'): ?>
                 </a>
-	        <?php endif; ?>
+            <?php endif; ?>
             </div>
 
             <!-- Catalog Button -->
@@ -251,28 +253,28 @@ if (!$USER->IsAdmin()) {
             <!-- Search -->
             <div class="edsys-header__search">
                 <?$APPLICATION->IncludeComponent(
-                	"bitrix:search.title", 
-                	"visual_custom", 
-                	array(
-                		"NUM_CATEGORIES" => "1",
-                		"TOP_COUNT" => "5",
-                		"ORDER" => "date",
-                		"USE_LANGUAGE_GUESS" => "N",
-                		"CHECK_DATES" => "N",
-                		"SHOW_OTHERS" => "N",
-                		"PAGE" => "/search/",
-                		"CATEGORY_0_TITLE" => "Товары",
-                		"CATEGORY_0" => array(
-                			0 => "iblock_catalog",
-                		),
-                		"CATEGORY_0_iblock_catalog" => array(
-                			0 => "7",
-                		),
-                		"SHOW_INPUT" => "Y",
-                		"INPUT_ID" => "title-search-input-desktop",
-                		"CONTAINER_ID" => "title-search-desktop",
-                	),
-                	false
+                    "bitrix:search.title", 
+                    "visual_custom", 
+                    array(
+                        "NUM_CATEGORIES" => "1",
+                        "TOP_COUNT" => "5",
+                        "ORDER" => "date",
+                        "USE_LANGUAGE_GUESS" => "N",
+                        "CHECK_DATES" => "N",
+                        "SHOW_OTHERS" => "N",
+                        "PAGE" => "/search/",
+                        "CATEGORY_0_TITLE" => "Товары",
+                        "CATEGORY_0" => array(
+                            0 => "iblock_catalog",
+                        ),
+                        "CATEGORY_0_iblock_catalog" => array(
+                            0 => "7",
+                        ),
+                        "SHOW_INPUT" => "Y",
+                        "INPUT_ID" => "title-search-input-desktop",
+                        "CONTAINER_ID" => "title-search-desktop",
+                    ),
+                    false
                 );?>
             </div>
 
@@ -310,17 +312,17 @@ if (!$USER->IsAdmin()) {
         </div>
 
         <!-- Навигационное меню -->
-	    <?$APPLICATION->IncludeComponent(
-		    "bitrix:menu",
-		    "header_dropdown",
-		    array(
-			    "ROOT_MENU_TYPE" => "main",
-			    "CHILD_MENU_TYPE" => "left",
-			    "MAX_LEVEL" => "2",
-			    "USE_EXT" => "Y",
-			    "MENU_CACHE_TYPE" => "N" // Отключаем кэш для тестирования
-		    )
-	    );?>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "header_dropdown",
+            array(
+                "ROOT_MENU_TYPE" => "main",
+                "CHILD_MENU_TYPE" => "left",
+                "MAX_LEVEL" => "2",
+                "USE_EXT" => "Y",
+                "MENU_CACHE_TYPE" => "N" // Отключаем кэш для тестирования
+            )
+        );?>
 
     </div>
 </header>
@@ -610,20 +612,20 @@ $CATALOG_BASE_URL = "https://btx.edsy.ru";
 <!-- Mobile Menu -->
 <?php
 $APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"mobile_dropdown",
-	array(
-		"ROOT_MENU_TYPE" => "main",
-		"CHILD_MENU_TYPE" => "left",
-		"MAX_LEVEL" => "2",
-		"USE_EXT" => "Y",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(),
-		"COMPONENT_TEMPLATE" => "mobile_dropdown"
-	),
-	false
+    "bitrix:menu",
+    "mobile_dropdown",
+    array(
+        "ROOT_MENU_TYPE" => "main",
+        "CHILD_MENU_TYPE" => "left",
+        "MAX_LEVEL" => "2",
+        "USE_EXT" => "Y",
+        "MENU_CACHE_TYPE" => "N",
+        "MENU_CACHE_TIME" => "3600",
+        "MENU_CACHE_USE_GROUPS" => "Y",
+        "MENU_CACHE_GET_VARS" => array(),
+        "COMPONENT_TEMPLATE" => "mobile_dropdown"
+    ),
+    false
 );
 ?>
 
