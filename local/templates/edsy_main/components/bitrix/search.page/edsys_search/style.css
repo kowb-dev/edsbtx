@@ -1,3 +1,13 @@
+/**
+ * Search Page Styles
+ * Enhanced with clickable cards
+ * 
+ * @version 2.0.0
+ * @author KW
+ * @link https://kowb.ru
+ * Path: /local/templates/edsy_main/components/bitrix/search.page/edsys_search/style.css
+ */
+
 /* Search Page Container */
 .edsys-search-page {
     max-width: var(--container-max);
@@ -26,11 +36,18 @@
     border-radius: 8px;
     display: flex;
     padding: 1rem;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
-.edsys-search-list-item:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+@media (hover: hover) {
+    .edsys-search-list-item:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-color: var(--edsys-accent, #007bff);
+        transform: translateY(-2px);
+    }
 }
 
 .edsys-search-list-item__image-link {
@@ -56,15 +73,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-}
-
-.edsys-search-list-item__title a {
-    text-decoration: none;
-    color: var(--edsys-text);
-}
-
-.edsys-search-list-item__title a:hover {
-    color: var(--edsys-primary);
+    color: var(--edsys-text, #21242D);
 }
 
 .edsys-search-list-item__article {
@@ -87,7 +96,7 @@
 .edsys-search-list-item__footer {
     margin-top: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 

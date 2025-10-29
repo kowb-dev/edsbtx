@@ -129,7 +129,7 @@ $APPLICATION->SetPageProperty("description", "Лючки сценические 
                 <a href="/" class="edsys-breadcrumb__link">Главная</a>
             </li>
             <li class="edsys-breadcrumb__item">
-                <a href="/cat/" class="edsys-breadcrumb__link">Каталог</a>
+                <a href="/catalog/" class="edsys-breadcrumb__link">Каталог</a>
             </li>
             <li class="edsys-breadcrumb__item">
                 <a href="/cat/lyuchki-sczenicheskie/" class="edsys-breadcrumb__link">Лючки сценические</a>

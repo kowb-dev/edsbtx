@@ -186,7 +186,7 @@ if ($arResult['CODE'] == 'korobki-kommutatsionnye') {
                         <a href="/" class="edsys-breadcrumb__link">Главная</a>
                     </li>
                     <li class="edsys-breadcrumb__item">
-                        <a href="/cat/" class="edsys-breadcrumb__link">Каталог</a>
+                        <a href="/catalog/" class="edsys-breadcrumb__link">Каталог</a>
                     </li>
                     <?php if (!empty($arResult['SECTION']['PATH'])): ?>
                         <?php foreach ($arResult['SECTION']['PATH'] as $pathItem): ?>

@@ -1,7 +1,9 @@
 <?php
 /**
  * AJAX handler for catalog filtering
- * @version 1.1.2 (prev 1.1.0) | author: KW | uri: https://kowb.ru
+ * @version 1.2.0
+ * @author KW
+ * @link https://kowb.ru
  * Path: /local/templates/edsy_main/components/bitrix/catalog.section/catalog_list/ajax.php
  */
 
@@ -111,7 +113,7 @@ try {
         ['SORT'=>'ASC','NAME'=>'ASC'],
         $arFilter,
         false,
-        ['nTopCount'=>200],
+        ['nPageSize'=>30],
         $arSelect
     );
 
