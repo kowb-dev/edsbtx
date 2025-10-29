@@ -1,0 +1,287 @@
+/**
+ * EDS - Electric Distribution Systems
+ * Utility Classes
+ * 
+ * @file local/templates/edsy_main/css/utilities.css
+ * @author KW
+ * @version 1.0.0
+ * @URI https://kowb.ru
+ */
+
+/* ==========================================================================
+   Container & Layout Utilities
+   ========================================================================== */
+
+.edsys-container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+.edsys-container--narrow {
+    max-width: min(75rem, 100vw - 2rem);
+}
+
+.edsys-container--wide {
+    max-width: min(120rem, 100vw - 2rem);
+}
+
+/* ==========================================================================
+   Flexbox Utilities
+   ========================================================================== */
+
+.edsys-flex {
+    display: flex;
+}
+
+.edsys-flex--column {
+    flex-direction: column;
+}
+
+.edsys-flex--center {
+    align-items: center;
+    justify-content: center;
+}
+
+.edsys-flex--between {
+    justify-content: space-between;
+}
+
+.edsys-flex--wrap {
+    flex-wrap: wrap;
+}
+
+.edsys-flex--gap-xs {
+    gap: var(--space-xs);
+}
+
+.edsys-flex--gap-sm {
+    gap: var(--space-sm);
+}
+
+.edsys-flex--gap-md {
+    gap: var(--space-md);
+}
+
+.edsys-flex--gap-lg {
+    gap: var(--space-lg);
+}
+
+.edsys-flex--gap-xl {
+    gap: var(--space-xl);
+}
+
+/* ==========================================================================
+   Grid Utilities
+   ========================================================================== */
+
+.edsys-grid {
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+.edsys-grid--2 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.edsys-grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.edsys-grid--4 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+}
+
+.edsys-grid--auto {
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr));
+}
+
+/* ==========================================================================
+   Spacing Utilities
+   ========================================================================== */
+
+.edsys-mt-xs { margin-block-start: var(--space-xs); }
+.edsys-mt-sm { margin-block-start: var(--space-sm); }
+.edsys-mt-md { margin-block-start: var(--space-md); }
+.edsys-mt-lg { margin-block-start: var(--space-lg); }
+.edsys-mt-xl { margin-block-start: var(--space-xl); }
+.edsys-mt-2xl { margin-block-start: var(--space-2xl); }
+.edsys-mt-3xl { margin-block-start: var(--space-3xl); }
+
+.edsys-mb-xs { margin-block-end: var(--space-xs); }
+.edsys-mb-sm { margin-block-end: var(--space-sm); }
+.edsys-mb-md { margin-block-end: var(--space-md); }
+.edsys-mb-lg { margin-block-end: var(--space-lg); }
+.edsys-mb-xl { margin-block-end: var(--space-xl); }
+.edsys-mb-2xl { margin-block-end: var(--space-2xl); }
+.edsys-mb-3xl { margin-block-end: var(--space-3xl); }
+
+.edsys-py-xs { padding-block: var(--space-xs); }
+.edsys-py-sm { padding-block: var(--space-sm); }
+.edsys-py-md { padding-block: var(--space-md); }
+.edsys-py-lg { padding-block: var(--space-lg); }
+.edsys-py-xl { padding-block: var(--space-xl); }
+.edsys-py-2xl { padding-block: var(--space-2xl); }
+.edsys-py-3xl { padding-block: var(--space-3xl); }
+
+.edsys-px-xs { padding-inline: var(--space-xs); }
+.edsys-px-sm { padding-inline: var(--space-sm); }
+.edsys-px-md { padding-inline: var(--space-md); }
+.edsys-px-lg { padding-inline: var(--space-lg); }
+.edsys-px-xl { padding-inline: var(--space-xl); }
+.edsys-px-2xl { padding-inline: var(--space-2xl); }
+.edsys-px-3xl { padding-inline: var(--space-3xl); }
+
+/* ==========================================================================
+   Text Utilities
+   ========================================================================== */
+
+.edsys-text-center { text-align: center; }
+.edsys-text-left { text-align: left; }
+.edsys-text-right { text-align: right; }
+
+.edsys-text-bold { font-weight: var(--edsys-font-bold); }
+.edsys-text-regular { font-weight: var(--edsys-font-regular); }
+
+.edsys-text-muted { color: var(--edsys-text-muted); }
+.edsys-text-light { color: var(--edsys-text-light); }
+.edsys-text-accent { color: var(--edsys-accent); }
+
+.edsys-lh-tight { line-height: var(--edsys-lh-tight); }
+.edsys-lh-snug { line-height: var(--edsys-lh-snug); }
+.edsys-lh-normal { line-height: var(--edsys-lh-normal); }
+.edsys-lh-relaxed { line-height: var(--edsys-lh-relaxed); }
+
+/* ==========================================================================
+   Border Utilities
+   ========================================================================== */
+
+.edsys-border {
+    border: 1px solid var(--edsys-border);
+}
+
+.edsys-border-top {
+    border-block-start: 1px solid var(--edsys-border);
+}
+
+.edsys-border-bottom {
+    border-block-end: 1px solid var(--edsys-border);
+}
+
+.edsys-rounded-sm { border-radius: var(--radius-sm); }
+.edsys-rounded-md { border-radius: var(--radius-md); }
+.edsys-rounded-lg { border-radius: var(--radius-lg); }
+
+/* ==========================================================================
+   Background Utilities
+   ========================================================================== */
+
+.edsys-bg-white { background-color: var(--edsys-white); }
+.edsys-bg-light { background-color: var(--edsys-bg-light); }
+.edsys-bg-surface { background-color: var(--edsys-surface); }
+.edsys-bg-accent { background-color: var(--edsys-accent); }
+
+/* ==========================================================================
+   Shadow Utilities
+   ========================================================================== */
+
+.edsys-shadow {
+    box-shadow: var(--edsys-shadow);
+}
+
+.edsys-shadow-none {
+    box-shadow: none;
+}
+
+/* ==========================================================================
+   Display Utilities
+   ========================================================================== */
+
+.edsys-hidden {
+    display: none;
+}
+
+.edsys-block {
+    display: block;
+}
+
+.edsys-inline-block {
+    display: inline-block;
+}
+
+/* ==========================================================================
+   Visibility Utilities (Responsive)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    .edsys-hide-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .edsys-hide-desktop {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Interactive Utilities
+   ========================================================================== */
+
+.edsys-clickable {
+    cursor: pointer;
+}
+
+.edsys-no-select {
+    user-select: none;
+}
+
+/* ==========================================================================
+   Transition Utilities
+   ========================================================================== */
+
+.edsys-transition-fast {
+    transition: all var(--edsys-transition-fast) var(--edsys-ease);
+}
+
+.edsys-transition-medium {
+    transition: all var(--edsys-transition-medium) var(--edsys-ease);
+}
+
+.edsys-transition-slow {
+    transition: all var(--edsys-transition-slow) var(--edsys-ease);
+}
+
+/* ==========================================================================
+   Aspect Ratio Utilities
+   ========================================================================== */
+
+.edsys-aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.edsys-aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.edsys-aspect-portrait {
+    aspect-ratio: 3 / 4;
+}
+
+/* ==========================================================================
+   Overflow Utilities
+   ========================================================================== */
+
+.edsys-overflow-hidden {
+    overflow: hidden;
+}
+
+.edsys-overflow-auto {
+    overflow: auto;
+}
+
+.edsys-overflow-scroll {
+    overflow: scroll;
+}

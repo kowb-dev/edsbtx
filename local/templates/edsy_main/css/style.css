@@ -1,3 +1,13 @@
+/**
+ * EDS - Electric Distribution Systems
+ * Search Page Styles
+ * 
+ * @file local/templates/edsy_main/css/style.css
+ * @author KW
+ * @version 1.1.0
+ * @URI https://kowb.ru
+ */
+
 /* ==========================================================================
    Search Page Styles
    ========================================================================== */
@@ -91,12 +101,13 @@
     text-align: center;
     text-decoration: none;
     color: var(--edsys-text);
-    transition: transform var(--edsys-transition-fast), box-shadow var(--edsys-transition-fast);
+    transition: box-shadow var(--edsys-transition-fast);
 }
 
-.edsys-search-category:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--edsys-shadow);
+@media (hover: hover) {
+    .edsys-search-category:hover {
+        box-shadow: var(--edsys-shadow);
+    }
 }
 
 .edsys-search-category__icon {
