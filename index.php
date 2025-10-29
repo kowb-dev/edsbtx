@@ -3,10 +3,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("EDS | Силовые распределители и устройства коммутации (свет, звук, видео)");
 ?>
 
-
-    <!-- Overlay -->
-    <div class="edsys-overlay" id="overlay"></div>
-
     <!-- Hero Section -->
     <section class="edsys-hero edsys-container">
         <!-- Main Banners Grid -->

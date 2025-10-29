@@ -2,11 +2,13 @@
 /**
  * Favorites AJAX Handler
  * Location: /local/ajax/favorites.php
- * Version: 2.0.0
+ * Version: 2.1.0
  * Author: KW
  * URI: https://kowb.ru
  * 
- * Main AJAX endpoint for managing favorites for both authorized and guest users
+ * Main AJAX endpoint for managing favorites
+ * Для авторизованных: сохранение в БД
+ * Для гостей: возврат успешного ответа (сохранение на клиенте в localStorage)
  */
 
 // Disable statistics tracking for AJAX
@@ -85,13 +87,18 @@ try {
     
     // Check authorization
     if (!$USER->IsAuthorized()) {
-        logFavorites('User not authorized', ['productId' => $productId]);
+        logFavorites('Guest user - returning success for client-side handling', ['productId' => $productId]);
         
+        // Для гостей возвращаем успех - сохранение произойдет на клиенте в localStorage
         echo json_encode([
-            'success' => false,
-            'message' => 'Пользователь не авторизован',
-            'error' => 'USER_NOT_AUTHORIZED',
-            'needAuth' => true
+            'success' => true,
+            'message' => 'Изменения сохранены локально',
+            'data' => [
+                'inFavorites' => true, // Клиент сам определит состояние
+                'count' => 0, // Клиент сам посчитает
+                'productId' => $productId,
+                'isGuest' => true // Флаг для клиента
+            ]
         ], JSON_UNESCAPED_UNICODE);
         die();
     }
