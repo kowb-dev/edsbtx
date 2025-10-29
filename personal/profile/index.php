@@ -3,7 +3,7 @@
  * Страница профиля пользователя
  * Файл: /personal/profile/index.php
  *
- * @version 1.2.0
+ * @version 1.3.0
  * @author KW https://kowb.ru
  */
 
@@ -18,8 +18,8 @@ if (!$USER->IsAuthorized()) {
 
 $APPLICATION->SetTitle("Личная информация");
 
-$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.1.0");
-$APPLICATION->AddHeadScript("/local/templates/.default/components/bitrix/sale.personal.section/.default/script.js?v=1.1.0");
+$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.2.0");
+$APPLICATION->AddHeadScript("/local/templates/.default/components/bitrix/sale.personal.section/.default/script.js?v=1.2.0");
 
 $arUser = $USER->GetByID($USER->GetID())->Fetch();
 $userCompany = $arUser['WORK_COMPANY'] ?? '';
