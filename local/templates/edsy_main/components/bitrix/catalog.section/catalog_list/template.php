@@ -2,7 +2,7 @@
 /**
  * Catalog Section Template - Table View
  * 
- * @version 1.5.0
+ * @version 1.6.0
  * @author KW
  * @link https://kowb.ru
  */
@@ -502,7 +502,7 @@ if ($arResult['CODE'] == 'korobki-kommutatsionnye') {
     <script>
         window.edysCatalogConfig = {
             iblockId: <?= $iblockId ?>,
-            ajaxUrl: '<?= $componentPath ?>/ajax.php',
+            ajaxUrl: '<?= $templateFolder ?>/ajax.php',
             sessid: '<?= bitrix_sessid() ?>',
             hierarchy: <?= json_encode($arHierarchy, JSON_NUMERIC_CHECK) ?>,
             totalProducts: <?= $totalProductCount ?>,

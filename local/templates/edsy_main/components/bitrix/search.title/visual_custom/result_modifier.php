@@ -3,7 +3,7 @@
  * Search Title Result Modifier
  * Enhanced with article search support
  * 
- * @version 2.0.0
+ * @version 2.1.0
  * @author KW
  * @link https://kowb.ru
  * Path: /local/templates/edsy_main/components/bitrix/search.title/visual_custom/result_modifier.php
@@ -15,12 +15,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 $PREVIEW_WIDTH = intval($arParams['PREVIEW_WIDTH']);
 if ($PREVIEW_WIDTH <= 0) {
-    $PREVIEW_WIDTH = 75;
+    $PREVIEW_WIDTH = 64;
 }
 
 $PREVIEW_HEIGHT = intval($arParams['PREVIEW_HEIGHT']);
 if ($PREVIEW_HEIGHT <= 0) {
-    $PREVIEW_HEIGHT = 75;
+    $PREVIEW_HEIGHT = 64;
 }
 
 $arParams['PRICE_VAT_INCLUDE'] = (!isset($arParams['PRICE_VAT_INCLUDE']) || $arParams['PRICE_VAT_INCLUDE'] !== 'N');

@@ -2,7 +2,7 @@
  * Catalog Section JavaScript
  * Handles filtering, favorites, compare, and navigation
  * 
- * @version 1.4.0
+ * @version 1.5.0
  * @author KW
  * @link https://kowb.ru
  */
@@ -428,7 +428,10 @@
                 // html + count
                 if (typeof data.html === 'string') {
                     const container = document.querySelector('#catalog-products .edsys-catalog__table-body');
-                    if (container) container.innerHTML = data.html;
+                    if (container) {
+                        container.innerHTML = data.html;
+                        this.initProductActions();
+                    }
                 }
                 if (typeof data.count === 'number') {
                     this.updateProductsCount && this.updateProductsCount(data.count);
