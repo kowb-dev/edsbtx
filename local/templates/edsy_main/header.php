@@ -2,7 +2,7 @@
 <?
 /**
  * @author KW
- * @version 1.7
+ * @version 1.8
  * @URI https://kowb.ru
  */
 ?>
@@ -244,10 +244,10 @@ if (!$USER->IsAdmin()) {
 
             <!-- Catalog Button -->
             <div class="edsys-header__catalog">
-                <button class="edsys-header__catalog-btn" id="catalogBtn">
+                <a href="/catalog/" class="edsys-header__catalog-btn" id="catalogBtn">
                     <i class="ph ph-list-magnifying-glass"></i>
                     <span class="edsys-header__catalog-text">КАТАЛОГ</span>
-                </button>
+                </a>
             </div>
 
             <!-- Search -->
@@ -568,7 +568,9 @@ $CATALOG_BASE_URL = "https://btx.edsy.ru";
         </div>
     </div>
 </div>
-</div>
+
+<!-- Overlay -->
+<div class="edsys-overlay" id="overlay"></div>
 
 <!-- Mobile Navigation -->
 <nav class="edsys-mobile-nav">

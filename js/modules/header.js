@@ -1,5 +1,9 @@
 /**
- * Header Module - исправленная версия мегаменю без мигания
+ * Header Module - версия с фиксами overlay и кнопки Каталог
+ * @file js/modules/header.js
+ * @author KW
+ * @version 1.1.0
+ * @URI https://kowb.ru
  */
 
 export class HeaderModule {
@@ -81,14 +85,25 @@ export class HeaderModule {
             });
         });
 
-        // Click для мобильных и фоллбэк
+        // Click handler - для десктопа только при открытом меню, иначе переход по ссылке
         this.catalogBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (this.isMenuOpen) {
-                this.hideMegaMenu();
-            } else {
-                this.showMegaMenu();
+            // На мобильных всегда открываем меню
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                if (this.isMenuOpen) {
+                    this.hideMegaMenu();
+                } else {
+                    this.showMegaMenu();
+                }
+                return;
             }
+            
+            // На десктопе: если меню открыто, закрываем и блокируем переход
+            if (this.isMenuOpen) {
+                e.preventDefault();
+                this.hideMegaMenu();
+            }
+            // Если меню закрыто, разрешаем переход по ссылке (не preventDefault)
         });
 
         // Закрытие по Escape
@@ -167,7 +182,7 @@ export class HeaderModule {
         this.clearHideTimeout();
         this.hideTimeout = setTimeout(() => {
             this.hideMegaMenu();
-        }, 200); // Уменьшили задержку
+        }, 300);
     }
 
     /**

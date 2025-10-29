@@ -2,9 +2,11 @@
  * Catalog Section JavaScript
  * Handles filtering, favorites, compare, and navigation
  * 
- * @version 1.5.0
+ * @version 1.6.0
  * @author KW
  * @link https://kowb.ru
+ * 
+ * Поддержка избранного для всех пользователей (с localStorage для гостей)
  */
 
 (function() {
@@ -153,16 +155,65 @@
         toggleFavorite(button) {
             if (button.disabled) return;
             
-            const productId = button.dataset.productId;
+            const productId = parseInt(button.dataset.productId);
             const icon = button.querySelector('i');
             const isActive = icon.classList.contains('ph-fill');
 
             button.disabled = true;
             button.style.opacity = '0.6';
 
+            // Для гостей работаем с localStorage
+            const isAuthorized = typeof BX !== 'undefined' && 
+                               typeof BX.message === 'function' && 
+                               BX.message('USER_IS_AUTHORIZED');
+
+            if (!isAuthorized) {
+                // Гость - работаем с localStorage
+                try {
+                    let favorites = JSON.parse(localStorage.getItem('userFavorites')) || [];
+                    const index = favorites.indexOf(productId);
+                    const willAdd = (index === -1);
+
+                    if (willAdd) {
+                        favorites.push(productId);
+                        icon.classList.remove('ph-thin');
+                        icon.classList.add('ph-fill');
+                        button.classList.add('active');
+                        this.showNotification('Товар добавлен в избранное', 'success');
+                    } else {
+                        favorites.splice(index, 1);
+                        icon.classList.remove('ph-fill');
+                        icon.classList.add('ph-thin');
+                        button.classList.remove('active');
+                        this.showNotification('Товар удалён из избранного', 'info');
+                    }
+
+                    localStorage.setItem('userFavorites', JSON.stringify(favorites));
+                    this.updateFavoritesCounter(favorites.length);
+
+                    // Dispatch event for other parts of the app
+                    document.dispatchEvent(new CustomEvent('edsys:favoriteToggled', {
+                        detail: {
+                            productId: productId,
+                            inFavorites: willAdd,
+                            count: favorites.length
+                        }
+                    }));
+
+                } catch (e) {
+                    console.error('localStorage error:', e);
+                    this.showNotification('Ошибка при сохранении', 'error');
+                }
+
+                button.disabled = false;
+                button.style.opacity = '1';
+                return;
+            }
+
+            // Авторизованный пользователь - работаем с сервером
             const formData = new FormData();
             formData.append('action', 'toggle');
-            formData.append('productId', parseInt(productId));
+            formData.append('productId', productId);
             formData.append('sessid', this.config.sessid);
 
             fetch('/local/ajax/favorites.php', {
@@ -188,6 +239,15 @@
                     }
 
                     this.updateFavoritesCounter(data.data.count);
+
+                    // Dispatch event
+                    document.dispatchEvent(new CustomEvent('edsys:favoriteToggled', {
+                        detail: {
+                            productId: productId,
+                            inFavorites: data.data.inFavorites,
+                            count: data.data.count
+                        }
+                    }));
                 } else {
                     this.showNotification(data.message || 'Ошибка при обновлении избранного', 'error');
                 }

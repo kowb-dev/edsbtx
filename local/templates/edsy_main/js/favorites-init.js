@@ -1,11 +1,12 @@
 /**
  * Favorites Initialization Script
  * Location: /local/templates/edsy_main/js/favorites-init.js
- * Version: 2.1.0
+ * Version: 2.2.0
  * Author: KW
  * URI: https://kowb.ru
  * 
  * Initialize favorites state and counter on page load
+ * Поддержка избранного для всех пользователей (авторизованных и гостей)
  */
 
 (function() {
@@ -20,12 +21,29 @@
                            typeof BX.message === 'function' && 
                            BX.message('USER_IS_AUTHORIZED');
 
-        if (!isAuthorized) {
-            return;
+        if (isAuthorized) {
+            // Для авторизованных загружаем с сервера
+            fetchFavoritesFromServer();
+        } else {
+            // Для гостей загружаем из localStorage
+            loadFavoritesFromLocalStorage();
         }
+    }
 
-        // Fetch current favorites from server
-        fetchFavoritesFromServer();
+    /**
+     * Load favorites from localStorage for guests
+     */
+    function loadFavoritesFromLocalStorage() {
+        try {
+            const favorites = JSON.parse(localStorage.getItem('userFavorites')) || [];
+            window.wishlistProductIds = favorites;
+            updateFavoritesUI(favorites);
+            updateFavoritesCounter(favorites.length);
+        } catch (e) {
+            console.error('Error loading favorites from localStorage:', e);
+            window.wishlistProductIds = [];
+            updateFavoritesCounter(0);
+        }
     }
 
     /**
@@ -135,6 +153,19 @@
                     window.wishlistProductIds.push(productId);
                 } else if (!detail.inFavorites && index !== -1) {
                     window.wishlistProductIds.splice(index, 1);
+                }
+                
+                // Для неавторизованных пользователей сохраняем в localStorage
+                const isAuthorized = typeof BX !== 'undefined' && 
+                                   typeof BX.message === 'function' && 
+                                   BX.message('USER_IS_AUTHORIZED');
+                
+                if (!isAuthorized) {
+                    try {
+                        localStorage.setItem('userFavorites', JSON.stringify(window.wishlistProductIds));
+                    } catch (e) {
+                        console.error('Error saving to localStorage:', e);
+                    }
                 }
             }
         });
