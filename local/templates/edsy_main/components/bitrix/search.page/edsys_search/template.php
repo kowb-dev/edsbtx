@@ -156,7 +156,7 @@ if (!empty($elementIds) && CModule::IncludeModule('iblock') && CModule::IncludeM
         
         <style>
         .edsys-search-empty {
-            max-width: 800px;
+            max-width: 1000px;
             margin: clamp(2rem, 5vw, 4rem) auto;
             text-align: center;
             padding: clamp(1rem, 3vw, 2rem);
