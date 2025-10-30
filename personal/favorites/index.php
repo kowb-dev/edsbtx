@@ -23,7 +23,7 @@ if (!$USER->IsAuthorized()) {
 $APPLICATION->SetTitle("Избранное");
 
 // Add CSS
-$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.2.0");
+$APPLICATION->SetAdditionalCSS("/local/templates/.default/components/bitrix/sale.personal.section/.default/style.css?v=1.3.0");
 
 // Load required modules
 Loader::includeModule('iblock');

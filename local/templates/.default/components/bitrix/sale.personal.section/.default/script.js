@@ -2,7 +2,7 @@
  * Скрипты личного кабинета
  * Компонент: sale.personal.section
  * 
- * @version 1.1.0
+ * @version 1.2.0
  * @author KW https://kowb.ru
  */
 
@@ -13,7 +13,8 @@
         selectors: {
             mobileToggle: '.edsys-account__mobile-toggle',
             sidebar: '.edsys-account__sidebar',
-            menuLink: '.edsys-account__menu-link'
+            menuLink: '.edsys-account__menu-link',
+            accountSection: '.edsys-account'
         },
 
         init() {
@@ -26,23 +27,50 @@
         setupMobileMenu() {
             const toggle = document.querySelector(this.selectors.mobileToggle);
             const sidebar = document.querySelector(this.selectors.sidebar);
+            const accountSection = document.querySelector(this.selectors.accountSection);
 
-            if (!toggle || !sidebar) return;
+            if (!toggle || !sidebar || !accountSection) return;
+
+            const openMenu = () => {
+                sidebar.classList.add('is-open');
+                accountSection.classList.add('has-overlay');
+                document.body.classList.add('edsys-menu-open');
+                toggle.setAttribute('aria-expanded', 'true');
+                toggle.setAttribute('aria-label', 'Закрыть меню личного кабинета');
+                sidebar.querySelector(this.selectors.menuLink)?.focus();
+            };
+
+            const closeMenu = () => {
+                sidebar.classList.remove('is-open');
+                accountSection.classList.remove('has-overlay');
+                document.body.classList.remove('edsys-menu-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Открыть меню личного кабинета');
+            };
 
             toggle.addEventListener('click', () => {
-                const isOpen = sidebar.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', isOpen);
-                
-                if (isOpen) {
-                    sidebar.querySelector(this.selectors.menuLink)?.focus();
+                const isOpen = sidebar.classList.contains('is-open');
+                isOpen ? closeMenu() : openMenu();
+            });
+
+            accountSection.addEventListener('click', (e) => {
+                if (accountSection.classList.contains('has-overlay') && 
+                    !sidebar.contains(e.target) && 
+                    !toggle.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                    closeMenu();
                 }
             });
 
             const mediaQuery = window.matchMedia('(min-width: 48rem)');
             const handleMediaChange = (e) => {
                 if (e.matches) {
-                    sidebar.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                    closeMenu();
                 }
             };
 

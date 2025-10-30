@@ -3,7 +3,7 @@
  * Общее меню для всех страниц личного кабинета
  * Файл: /personal/includes/menu.php
  * 
- * @version 1.3.0
+ * @version 1.4.0
  * @author KW https://kowb.ru
  */
 
@@ -38,79 +38,6 @@ if (strpos($curPage, '/personal/profile') !== false) {
     $currentSection = 'dashboard';
 }
 ?>
-
-<style>
-/* Mobile-First мобильное меню личного кабинета */
-
-/* Mobile (default) - меню скрыто, выезжает слева */
-.edsys-account__sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: min(85vw, 22rem);
-    height: 100vh;
-    transform: translateX(-100%);
-    visibility: hidden;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
-                visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
-    overflow-y: auto;
-    background: #fff;
-    box-shadow: 0.5rem 0 2rem rgba(0, 0, 0, 0.15);
-    will-change: transform;
-}
-
-.edsys-account__sidebar.is-open {
-    transform: translateX(0);
-    visibility: visible;
-}
-
-/* Overlay для мобильной версии */
-.edsys-account.has-overlay::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 998;
-    opacity: 0;
-    animation: edsysOverlayFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes edsysOverlayFadeIn {
-    to { opacity: 1; }
-}
-
-/* Блокировка скролла body при открытом меню */
-body.edsys-menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-/* Tablet и Desktop - меню статичное */
-@media (min-width: 48rem) {
-    .edsys-account__sidebar {
-        position: static;
-        width: auto;
-        height: auto;
-        transform: none;
-        visibility: visible;
-        transition: none;
-        z-index: auto;
-        overflow-y: visible;
-        box-shadow: none;
-    }
-    
-    body.edsys-menu-open {
-        overflow: visible;
-        position: static;
-    }
-    
-    .edsys-account.has-overlay::before {
-        display: none;
-    }
-}
-</style>
 
 <section class="edsys-account">
     <div class="edsys-account__container">
@@ -240,5 +167,14 @@ body.edsys-menu-open {
             closeMenu();
         }
     });
+    
+    const mediaQuery = window.matchMedia('(min-width: 48rem)');
+    const handleMediaChange = function(e) {
+        if (e.matches) {
+            closeMenu();
+        }
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaChange);
 })();
 </script>
