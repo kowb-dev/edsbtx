@@ -479,69 +479,81 @@ if (typeof window.EdsCatalogSection === 'undefined') {
          * @param {HTMLElement} button - Favorite button element
          */
         toggleFavorite(button) {
-            if (this.isTogglingFavorite) {
-                console.log('Favorite toggle already in progress, skipping...');
-                return;
-            }
-
+            if (button.disabled) return;
+            
             const productId = parseInt(button.dataset.productId);
+            const icon = button.querySelector('i') || button; // Fallback if no icon
             const isActive = button.classList.contains('active');
 
-            if (!this.config.isAuthorized) {
-                this.showNotification('Войдите в аккаунт для добавления в избранное', 'warning');
-                setTimeout(() => {
-                    window.location.href = '/auth/?backurl=' + encodeURIComponent(window.location.pathname);
-                }, 1500);
-                return;
-            }
-
-            if (!productId || productId <= 0) {
-                console.error('Invalid product ID:', productId);
-                this.showNotification('Ошибка: неверный ID товара', 'error');
-                return;
-            }
-
-            console.log('Toggling favorite:', { productId, isActive });
-
-            this.isTogglingFavorite = true;
             button.disabled = true;
-            const originalOpacity = button.style.opacity;
             button.style.opacity = '0.6';
-            button.style.pointerEvents = 'none';
 
+            if (!this.config.isAuthorized) {
+                // Guest user - use localStorage
+                try {
+                    let favorites = JSON.parse(localStorage.getItem('userFavorites')) || [];
+                    const index = favorites.indexOf(productId);
+                    const willAdd = (index === -1);
+
+                    if (willAdd) {
+                        favorites.push(productId);
+                        button.classList.add('active');
+                        this.showNotification('Товар добавлен в избранное', 'success');
+                    } else {
+                        favorites.splice(index, 1);
+                        button.classList.remove('active');
+                        this.showNotification('Товар удалён из избранного', 'info');
+                    }
+
+                    localStorage.setItem('userFavorites', JSON.stringify(favorites));
+                    this.updateFavoritesCounter(favorites.length);
+
+                    document.dispatchEvent(new CustomEvent('edsys:favoriteToggled', {
+                        detail: {
+                            productId: productId,
+                            inFavorites: willAdd,
+                            count: favorites.length
+                        }
+                    }));
+
+                } catch (e) {
+                    console.error('localStorage error:', e);
+                    this.showNotification('Ошибка при сохранении', 'error');
+                }
+
+                button.disabled = false;
+                button.style.opacity = '1';
+                return;
+            }
+
+            // Authorized user - use server
             const shouldAdd = !isActive;
-            const requestData = {
-                action: 'toggle',
-                productId: productId,
-                add: shouldAdd
-            };
-
             fetch('/local/ajax/favorites.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(requestData)
+                body: JSON.stringify({
+                    action: 'toggle',
+                    productId: productId,
+                    add: shouldAdd
+                })
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('Favorites response:', data);
-                this.handleFavoriteSuccess(button, data, productId, shouldAdd);
+                if (data.success) {
+                    this.handleFavoriteSuccess(button, data, productId, shouldAdd);
+                } else {
+                    this.showNotification(data.message || 'Ошибка при обновлении избранного', 'error');
+                }
             })
             .catch(error => {
-                console.error('Favorite toggle error:', error);
+                console.error('Favorites error:', error);
                 this.handleFavoriteError(button, error);
             })
             .finally(() => {
                 button.disabled = false;
-                button.style.opacity = originalOpacity || '1';
-                button.style.pointerEvents = '';
-                this.isTogglingFavorite = false;
+                button.style.opacity = '1';
             });
         }
 
